@@ -1,0 +1,579 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="nemanpingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="nemanpingModelStoreContainer">
+          <EntitySet Name="ChiMa_Dapeibiao" EntityType="nemanpingModel.Store.ChiMa_Dapeibiao" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DanHao" EntityType="nemanpingModel.Store.DanHao" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GongHuoFang" EntityType="nemanpingModel.Store.GongHuoFang" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="JiaGongChang" EntityType="nemanpingModel.Store.JiaGongChang" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="KuanShiBiao" EntityType="nemanpingModel.Store.KuanShiBiao" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="KuCun" EntityType="nemanpingModel.Store.KuCun" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PeiSe" EntityType="nemanpingModel.Store.PeiSe" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sehao" EntityType="nemanpingModel.Store.Sehao" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserTable" EntityType="nemanpingModel.Store.UserTable" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="ChiMa_Dapeibiao">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LOT#-面料" Type="varchar" MaxLength="255" />
+          <Property Name="STYLE-款式" Type="varchar" MaxLength="255" />
+          <Property Name="ART-货号" Type="varchar" MaxLength="255" />
+          <Property Name="COLOR-颜色" Type="varchar" MaxLength="255" />
+          <Property Name="COLOR#-颜色编号" Type="varchar" MaxLength="255" />
+          <Property Name="JACKET_上衣-PANT_裤子" Type="varchar" MaxLength="255" />
+          <Property Name="34R-28" Type="varchar" MaxLength="255" />
+          <Property Name="36R-30" Type="varchar" MaxLength="255" />
+          <Property Name="38R-32" Type="varchar" MaxLength="255" />
+          <Property Name="40R&#xD;&#xA;-34" Type="varchar" MaxLength="255" />
+          <Property Name="42R-36" Type="varchar" MaxLength="255" />
+          <Property Name="44R-38" Type="varchar" MaxLength="255" />
+          <Property Name="46R-40" Type="varchar" MaxLength="255" />
+          <Property Name="48R-42" Type="varchar" MaxLength="255" />
+          <Property Name="50R-44" Type="varchar" MaxLength="255" />
+          <Property Name="52R-46" Type="varchar" MaxLength="255" />
+          <Property Name="54R-48" Type="varchar" MaxLength="255" />
+          <Property Name="56R-50" Type="varchar" MaxLength="255" />
+          <Property Name="58R-52" Type="varchar" MaxLength="255" />
+          <Property Name="60R-54" Type="varchar" MaxLength="255" />
+          <Property Name="62R-56" Type="varchar" MaxLength="255" />
+          <Property Name="36L-30" Type="varchar" MaxLength="255" />
+          <Property Name="38L-32" Type="varchar" MaxLength="255" />
+          <Property Name="40L-34" Type="varchar" MaxLength="255" />
+          <Property Name="42L-36" Type="varchar" MaxLength="255" />
+          <Property Name="44L-38" Type="varchar" MaxLength="255" />
+          <Property Name="46L-40" Type="varchar" MaxLength="255" />
+          <Property Name="48L-42" Type="varchar" MaxLength="255" />
+          <Property Name="50L-44" Type="varchar" MaxLength="255" />
+          <Property Name="52L-46" Type="varchar" MaxLength="255" />
+          <Property Name="54L-48" Type="varchar" MaxLength="255" />
+          <Property Name="56L-50" Type="varchar" MaxLength="255" />
+          <Property Name="58L-52" Type="varchar" MaxLength="255" />
+          <Property Name="60L-54" Type="varchar" MaxLength="255" />
+          <Property Name="62L-56" Type="varchar" MaxLength="255" />
+          <Property Name="34S-28" Type="varchar" MaxLength="255" />
+          <Property Name="36S-30" Type="varchar" MaxLength="255" />
+          <Property Name="38S-32" Type="varchar" MaxLength="255" />
+          <Property Name="40S-34" Type="varchar" MaxLength="255" />
+          <Property Name="42S-36" Type="varchar" MaxLength="255" />
+          <Property Name="44S-38" Type="varchar" MaxLength="255" />
+          <Property Name="46S-40" Type="varchar" MaxLength="255" />
+          <Property Name="DingdanHeji" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="DanHao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CaiDanNo" Type="varchar" MaxLength="255" />
+          <Property Name="Style" Type="varchar" MaxLength="255" />
+          <Property Name="FABRIC_CONTENT" Type="varchar" MaxLength="255" />
+          <Property Name="DATE" Type="varchar" MaxLength="255" />
+          <Property Name="JiaGongChang" Type="varchar" MaxLength="255" />
+          <Property Name="XuHao" Type="varchar" MaxLength="255" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="HuoHao" Type="varchar" MaxLength="255" />
+          <Property Name="GuiGe" Type="varchar" MaxLength="255" />
+          <Property Name="Yanse" Type="varchar" MaxLength="255" />
+          <Property Name="Danjia" Type="varchar" MaxLength="255" />
+          <Property Name="DanHao" Type="varchar" MaxLength="255" />
+          <Property Name="Jine" Type="varchar" MaxLength="255" />
+          <Property Name="BeiZhu" Type="varchar" MaxLength="255" />
+          <Property Name="ChangShang" Type="varchar" MaxLength="255" />
+          <Property Name="Heji" Type="varchar" MaxLength="255" />
+          <Property Name="Type" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="GongHuoFang">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PingMing" Type="varchar" MaxLength="255" />
+          <Property Name="HuoHao" Type="varchar" MaxLength="255" />
+          <Property Name="Guige" Type="varchar" MaxLength="255" />
+          <Property Name="SeHao" Type="varchar" MaxLength="255" />
+          <Property Name="Yanse" Type="varchar" MaxLength="255" />
+          <Property Name="DanJia" Type="varchar" MaxLength="255" />
+          <Property Name="GongHuoFangA" Type="varchar" MaxLength="255" />
+          <Property Name="GongHuoFangB" Type="varchar" MaxLength="255" />
+          <Property Name="BeiZhu" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="JiaGongChang">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="Address" Type="varchar" MaxLength="255" />
+          <Property Name="Lianxiren" Type="varchar" MaxLength="255" />
+          <Property Name="Phone" Type="varchar" MaxLength="255" />
+          <Property Name="ZengZhiShui" Type="varchar" MaxLength="255" />
+          <Property Name="Kaihuhang" Type="varchar" MaxLength="255" />
+          <Property Name="Zhanghao" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="KuanShiBiao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="STYLE" Type="varchar" MaxLength="255" />
+          <Property Name="DESC" Type="varchar" MaxLength="255" />
+          <Property Name="FABRIC" Type="varchar" MaxLength="255" />
+          <Property Name="JACKET" Type="varchar" MaxLength="255" />
+          <Property Name="PANT" Type="varchar" MaxLength="255" />
+          <Property Name="ShuoMing" Type="varchar" MaxLength="255" />
+          <Property Name="mark1" Type="varchar" MaxLength="255" />
+          <Property Name="mark2" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="KuCun">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PingMing" Type="varchar" MaxLength="255" />
+          <Property Name="HuoHao" Type="varchar" MaxLength="255" />
+          <Property Name="SeHao" Type="varchar" MaxLength="255" />
+          <Property Name="ShuLiang" Type="varchar" MaxLength="255" />
+          <Property Name="GongHuoFang" Type="varchar" MaxLength="255" />
+          <Property Name="CunFangDI" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="PeiSe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Fabrics" Type="varchar" MaxLength="255" />
+          <Property Name="PingMing" Type="varchar" MaxLength="255" />
+          <Property Name="HuoHao" Type="varchar" MaxLength="255" />
+          <Property Name="GuiGe" Type="varchar" MaxLength="255" />
+          <Property Name="61601C1" Type="varchar" MaxLength="255" />
+          <Property Name="61602C1" Type="varchar" MaxLength="255" />
+          <Property Name="61603C1" Type="varchar" MaxLength="255" />
+          <Property Name="61605C1" Type="varchar" MaxLength="255" />
+          <Property Name="61606C1" Type="varchar" MaxLength="255" />
+          <Property Name="61607C1" Type="varchar" MaxLength="255" />
+          <Property Name="61609C1" Type="varchar" MaxLength="255" />
+          <Property Name="61611C1" Type="varchar" MaxLength="255" />
+          <Property Name="61618C1" Type="varchar" MaxLength="255" />
+          <Property Name="61624C1" Type="varchar" MaxLength="255" />
+          <Property Name="61627C1" Type="varchar" MaxLength="255" />
+          <Property Name="61631C1" Type="varchar" MaxLength="255" />
+          <Property Name="61632C1" Type="varchar" MaxLength="255" />
+          <Property Name="61633C1" Type="varchar" MaxLength="255" />
+          <Property Name="61634C1" Type="varchar" MaxLength="255" />
+          <Property Name="MianLiaoYanSe" Type="varchar" MaxLength="255" />
+          <Property Name="Date" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Sehao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="SeHao" Type="varchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="UserTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Pwd" Type="varchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="nemanpingModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="nemanpingEntities3" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="ChiMa_Dapeibiao" EntityType="nemanpingModel.ChiMa_Dapeibiao" />
+          <EntitySet Name="DanHao" EntityType="nemanpingModel.DanHao" />
+          <EntitySet Name="GongHuoFang" EntityType="nemanpingModel.GongHuoFang" />
+          <EntitySet Name="JiaGongChang" EntityType="nemanpingModel.JiaGongChang" />
+          <EntitySet Name="KuanShiBiao" EntityType="nemanpingModel.KuanShiBiao" />
+          <EntitySet Name="KuCun" EntityType="nemanpingModel.KuCun" />
+          <EntitySet Name="PeiSe" EntityType="nemanpingModel.PeiSe" />
+          <EntitySet Name="Sehao" EntityType="nemanpingModel.Sehao" />
+          <EntitySet Name="UserTable" EntityType="nemanpingModel.UserTable" />
+        </EntityContainer>
+        <EntityType Name="ChiMa_Dapeibiao">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="LOT__面料" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="STYLE_款式" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ART_货号" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="COLOR_颜色" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="COLOR__颜色编号" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JACKET_上衣_PANT_裤子" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C34R_28" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36R_30" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38R_32" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40R___34" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42R_36" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44R_38" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C46R_40" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C48R_42" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C50R_44" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C52R_46" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C54R_48" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C56R_50" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C58R_52" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C60R_54" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C62R_56" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36L_30" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38L_32" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40L_34" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42L_36" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44L_38" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C46L_40" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C48L_42" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C50L_44" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C52L_46" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C54L_48" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C56L_50" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C58L_52" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C60L_54" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C62L_56" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C34S_28" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36S_30" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38S_32" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40S_34" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42S_36" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44S_38" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C46S_40" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="DingdanHeji" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="DanHao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CaiDanNo" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Style" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="FABRIC_CONTENT" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="DATE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JiaGongChang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="XuHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="HuoHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="GuiGe" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Yanse" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Danjia" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="DanHao1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Jine" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="BeiZhu" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ChangShang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Heji" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Type" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="GongHuoFang">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PingMing" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="HuoHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Guige" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="SeHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Yanse" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="DanJia" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="GongHuoFangA" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="GongHuoFangB" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="BeiZhu" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="JiaGongChang">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Lianxiren" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ZengZhiShui" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Kaihuhang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Zhanghao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="KuanShiBiao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="STYLE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="DESC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="FABRIC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JACKET" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="PANT" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ShuoMing" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="mark1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="mark2" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="KuCun">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PingMing" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="HuoHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="SeHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ShuLiang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="GongHuoFang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="CunFangDI" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="PeiSe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Fabrics" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="PingMing" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="HuoHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="GuiGe" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C61601C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C61602C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C61603C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C61605C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C61606C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C61607C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C61609C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C61611C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C61618C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C61624C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C61627C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C61631C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C61632C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C61633C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C61634C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="MianLiaoYanSe" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Date" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Sehao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="SeHao1" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="UserTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Pwd" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="nemanpingModelStoreContainer" CdmEntityContainer="nemanpingEntities3">
+          <EntitySetMapping Name="ChiMa_Dapeibiao">
+            <EntityTypeMapping TypeName="nemanpingModel.ChiMa_Dapeibiao">
+              <MappingFragment StoreEntitySet="ChiMa_Dapeibiao">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="LOT__面料" ColumnName="LOT#-面料" />
+                <ScalarProperty Name="STYLE_款式" ColumnName="STYLE-款式" />
+                <ScalarProperty Name="ART_货号" ColumnName="ART-货号" />
+                <ScalarProperty Name="COLOR_颜色" ColumnName="COLOR-颜色" />
+                <ScalarProperty Name="COLOR__颜色编号" ColumnName="COLOR#-颜色编号" />
+                <ScalarProperty Name="JACKET_上衣_PANT_裤子" ColumnName="JACKET_上衣-PANT_裤子" />
+                <ScalarProperty Name="C34R_28" ColumnName="34R-28" />
+                <ScalarProperty Name="C36R_30" ColumnName="36R-30" />
+                <ScalarProperty Name="C38R_32" ColumnName="38R-32" />
+                <ScalarProperty Name="C40R___34" ColumnName="40R&#xD;&#xA;-34" />
+                <ScalarProperty Name="C42R_36" ColumnName="42R-36" />
+                <ScalarProperty Name="C44R_38" ColumnName="44R-38" />
+                <ScalarProperty Name="C46R_40" ColumnName="46R-40" />
+                <ScalarProperty Name="C48R_42" ColumnName="48R-42" />
+                <ScalarProperty Name="C50R_44" ColumnName="50R-44" />
+                <ScalarProperty Name="C52R_46" ColumnName="52R-46" />
+                <ScalarProperty Name="C54R_48" ColumnName="54R-48" />
+                <ScalarProperty Name="C56R_50" ColumnName="56R-50" />
+                <ScalarProperty Name="C58R_52" ColumnName="58R-52" />
+                <ScalarProperty Name="C60R_54" ColumnName="60R-54" />
+                <ScalarProperty Name="C62R_56" ColumnName="62R-56" />
+                <ScalarProperty Name="C36L_30" ColumnName="36L-30" />
+                <ScalarProperty Name="C38L_32" ColumnName="38L-32" />
+                <ScalarProperty Name="C40L_34" ColumnName="40L-34" />
+                <ScalarProperty Name="C42L_36" ColumnName="42L-36" />
+                <ScalarProperty Name="C44L_38" ColumnName="44L-38" />
+                <ScalarProperty Name="C46L_40" ColumnName="46L-40" />
+                <ScalarProperty Name="C48L_42" ColumnName="48L-42" />
+                <ScalarProperty Name="C50L_44" ColumnName="50L-44" />
+                <ScalarProperty Name="C52L_46" ColumnName="52L-46" />
+                <ScalarProperty Name="C54L_48" ColumnName="54L-48" />
+                <ScalarProperty Name="C56L_50" ColumnName="56L-50" />
+                <ScalarProperty Name="C58L_52" ColumnName="58L-52" />
+                <ScalarProperty Name="C60L_54" ColumnName="60L-54" />
+                <ScalarProperty Name="C62L_56" ColumnName="62L-56" />
+                <ScalarProperty Name="C34S_28" ColumnName="34S-28" />
+                <ScalarProperty Name="C36S_30" ColumnName="36S-30" />
+                <ScalarProperty Name="C38S_32" ColumnName="38S-32" />
+                <ScalarProperty Name="C40S_34" ColumnName="40S-34" />
+                <ScalarProperty Name="C42S_36" ColumnName="42S-36" />
+                <ScalarProperty Name="C44S_38" ColumnName="44S-38" />
+                <ScalarProperty Name="C46S_40" ColumnName="46S-40" />
+                <ScalarProperty Name="DingdanHeji" ColumnName="DingdanHeji" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DanHao">
+            <EntityTypeMapping TypeName="nemanpingModel.DanHao">
+              <MappingFragment StoreEntitySet="DanHao">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CaiDanNo" ColumnName="CaiDanNo" />
+                <ScalarProperty Name="Style" ColumnName="Style" />
+                <ScalarProperty Name="FABRIC_CONTENT" ColumnName="FABRIC_CONTENT" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="JiaGongChang" ColumnName="JiaGongChang" />
+                <ScalarProperty Name="XuHao" ColumnName="XuHao" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="HuoHao" ColumnName="HuoHao" />
+                <ScalarProperty Name="GuiGe" ColumnName="GuiGe" />
+                <ScalarProperty Name="Yanse" ColumnName="Yanse" />
+                <ScalarProperty Name="Danjia" ColumnName="Danjia" />
+                <ScalarProperty Name="DanHao1" ColumnName="DanHao" />
+                <ScalarProperty Name="Jine" ColumnName="Jine" />
+                <ScalarProperty Name="BeiZhu" ColumnName="BeiZhu" />
+                <ScalarProperty Name="ChangShang" ColumnName="ChangShang" />
+                <ScalarProperty Name="Heji" ColumnName="Heji" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GongHuoFang">
+            <EntityTypeMapping TypeName="nemanpingModel.GongHuoFang">
+              <MappingFragment StoreEntitySet="GongHuoFang">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PingMing" ColumnName="PingMing" />
+                <ScalarProperty Name="HuoHao" ColumnName="HuoHao" />
+                <ScalarProperty Name="Guige" ColumnName="Guige" />
+                <ScalarProperty Name="SeHao" ColumnName="SeHao" />
+                <ScalarProperty Name="Yanse" ColumnName="Yanse" />
+                <ScalarProperty Name="DanJia" ColumnName="DanJia" />
+                <ScalarProperty Name="GongHuoFangA" ColumnName="GongHuoFangA" />
+                <ScalarProperty Name="GongHuoFangB" ColumnName="GongHuoFangB" />
+                <ScalarProperty Name="BeiZhu" ColumnName="BeiZhu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JiaGongChang">
+            <EntityTypeMapping TypeName="nemanpingModel.JiaGongChang">
+              <MappingFragment StoreEntitySet="JiaGongChang">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Lianxiren" ColumnName="Lianxiren" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="ZengZhiShui" ColumnName="ZengZhiShui" />
+                <ScalarProperty Name="Kaihuhang" ColumnName="Kaihuhang" />
+                <ScalarProperty Name="Zhanghao" ColumnName="Zhanghao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KuanShiBiao">
+            <EntityTypeMapping TypeName="nemanpingModel.KuanShiBiao">
+              <MappingFragment StoreEntitySet="KuanShiBiao">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="STYLE" ColumnName="STYLE" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="FABRIC" ColumnName="FABRIC" />
+                <ScalarProperty Name="JACKET" ColumnName="JACKET" />
+                <ScalarProperty Name="PANT" ColumnName="PANT" />
+                <ScalarProperty Name="ShuoMing" ColumnName="ShuoMing" />
+                <ScalarProperty Name="mark1" ColumnName="mark1" />
+                <ScalarProperty Name="mark2" ColumnName="mark2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KuCun">
+            <EntityTypeMapping TypeName="nemanpingModel.KuCun">
+              <MappingFragment StoreEntitySet="KuCun">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PingMing" ColumnName="PingMing" />
+                <ScalarProperty Name="HuoHao" ColumnName="HuoHao" />
+                <ScalarProperty Name="SeHao" ColumnName="SeHao" />
+                <ScalarProperty Name="ShuLiang" ColumnName="ShuLiang" />
+                <ScalarProperty Name="GongHuoFang" ColumnName="GongHuoFang" />
+                <ScalarProperty Name="CunFangDI" ColumnName="CunFangDI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PeiSe">
+            <EntityTypeMapping TypeName="nemanpingModel.PeiSe">
+              <MappingFragment StoreEntitySet="PeiSe">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Fabrics" ColumnName="Fabrics" />
+                <ScalarProperty Name="PingMing" ColumnName="PingMing" />
+                <ScalarProperty Name="HuoHao" ColumnName="HuoHao" />
+                <ScalarProperty Name="GuiGe" ColumnName="GuiGe" />
+                <ScalarProperty Name="C61601C1" ColumnName="61601C1" />
+                <ScalarProperty Name="C61602C1" ColumnName="61602C1" />
+                <ScalarProperty Name="C61603C1" ColumnName="61603C1" />
+                <ScalarProperty Name="C61605C1" ColumnName="61605C1" />
+                <ScalarProperty Name="C61606C1" ColumnName="61606C1" />
+                <ScalarProperty Name="C61607C1" ColumnName="61607C1" />
+                <ScalarProperty Name="C61609C1" ColumnName="61609C1" />
+                <ScalarProperty Name="C61611C1" ColumnName="61611C1" />
+                <ScalarProperty Name="C61618C1" ColumnName="61618C1" />
+                <ScalarProperty Name="C61624C1" ColumnName="61624C1" />
+                <ScalarProperty Name="C61627C1" ColumnName="61627C1" />
+                <ScalarProperty Name="C61631C1" ColumnName="61631C1" />
+                <ScalarProperty Name="C61632C1" ColumnName="61632C1" />
+                <ScalarProperty Name="C61633C1" ColumnName="61633C1" />
+                <ScalarProperty Name="C61634C1" ColumnName="61634C1" />
+                <ScalarProperty Name="MianLiaoYanSe" ColumnName="MianLiaoYanSe" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sehao">
+            <EntityTypeMapping TypeName="nemanpingModel.Sehao">
+              <MappingFragment StoreEntitySet="Sehao">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SeHao1" ColumnName="SeHao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTable">
+            <EntityTypeMapping TypeName="nemanpingModel.UserTable">
+              <MappingFragment StoreEntitySet="UserTable">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -30,8 +30,6 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.菜单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.首页ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.关于我们ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.数据源录入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.色号表录入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.手工ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,6 +55,8 @@
             this.库存表录入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.手工输入ToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.数据表读取ToolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.首页ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.关于我们ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,18 +79,6 @@
             this.菜单ToolStripMenuItem.Name = "菜单ToolStripMenuItem";
             this.菜单ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.菜单ToolStripMenuItem.Text = "菜单";
-            // 
-            // 首页ToolStripMenuItem
-            // 
-            this.首页ToolStripMenuItem.Name = "首页ToolStripMenuItem";
-            this.首页ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.首页ToolStripMenuItem.Text = "帮助";
-            // 
-            // 关于我们ToolStripMenuItem
-            // 
-            this.关于我们ToolStripMenuItem.Name = "关于我们ToolStripMenuItem";
-            this.关于我们ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.关于我们ToolStripMenuItem.Text = "关于我们";
             // 
             // 数据源录入ToolStripMenuItem
             // 
@@ -121,6 +109,7 @@
             this.手工ToolStripMenuItem.Name = "手工ToolStripMenuItem";
             this.手工ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.手工ToolStripMenuItem.Text = "直接输入";
+            this.手工ToolStripMenuItem.Click += new System.EventHandler(this.手工ToolStripMenuItem_Click);
             // 
             // 数据表读取ToolStripMenuItem
             // 
@@ -140,13 +129,13 @@
             // 直接录入ToolStripMenuItem
             // 
             this.直接录入ToolStripMenuItem.Name = "直接录入ToolStripMenuItem";
-            this.直接录入ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.直接录入ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.直接录入ToolStripMenuItem.Text = "直接输入";
             // 
             // 数据表读取ToolStripMenuItem1
             // 
             this.数据表读取ToolStripMenuItem1.Name = "数据表读取ToolStripMenuItem1";
-            this.数据表读取ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.数据表读取ToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
             this.数据表读取ToolStripMenuItem1.Text = "数据表读取";
             // 
             // 加工厂表录入ToolStripMenuItem
@@ -161,13 +150,13 @@
             // 手工输入ToolStripMenuItem
             // 
             this.手工输入ToolStripMenuItem.Name = "手工输入ToolStripMenuItem";
-            this.手工输入ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.手工输入ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.手工输入ToolStripMenuItem.Text = "手工输入";
             // 
             // 数据表读取ToolStripMenuItem2
             // 
             this.数据表读取ToolStripMenuItem2.Name = "数据表读取ToolStripMenuItem2";
-            this.数据表读取ToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.数据表读取ToolStripMenuItem2.Size = new System.Drawing.Size(136, 22);
             this.数据表读取ToolStripMenuItem2.Text = "数据表读取";
             // 
             // 款式表录入ToolStripMenuItem
@@ -182,13 +171,13 @@
             // 直接输入ToolStripMenuItem
             // 
             this.直接输入ToolStripMenuItem.Name = "直接输入ToolStripMenuItem";
-            this.直接输入ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.直接输入ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.直接输入ToolStripMenuItem.Text = "直接输入";
             // 
             // 数据表读取ToolStripMenuItem3
             // 
             this.数据表读取ToolStripMenuItem3.Name = "数据表读取ToolStripMenuItem3";
-            this.数据表读取ToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.数据表读取ToolStripMenuItem3.Size = new System.Drawing.Size(136, 22);
             this.数据表读取ToolStripMenuItem3.Text = "数据表读取";
             // 
             // 供货方表录入ToolStripMenuItem
@@ -203,13 +192,13 @@
             // 手工输入ToolStripMenuItem1
             // 
             this.手工输入ToolStripMenuItem1.Name = "手工输入ToolStripMenuItem1";
-            this.手工输入ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.手工输入ToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
             this.手工输入ToolStripMenuItem1.Text = "手工输入";
             // 
             // 数据表读取ToolStripMenuItem4
             // 
             this.数据表读取ToolStripMenuItem4.Name = "数据表读取ToolStripMenuItem4";
-            this.数据表读取ToolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
+            this.数据表读取ToolStripMenuItem4.Size = new System.Drawing.Size(136, 22);
             this.数据表读取ToolStripMenuItem4.Text = "数据表读取";
             // 
             // 单耗表录入ToolStripMenuItem
@@ -224,13 +213,13 @@
             // 手工输入ToolStripMenuItem2
             // 
             this.手工输入ToolStripMenuItem2.Name = "手工输入ToolStripMenuItem2";
-            this.手工输入ToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.手工输入ToolStripMenuItem2.Size = new System.Drawing.Size(136, 22);
             this.手工输入ToolStripMenuItem2.Text = "手工输入";
             // 
             // 数据表读取ToolStripMenuItem5
             // 
             this.数据表读取ToolStripMenuItem5.Name = "数据表读取ToolStripMenuItem5";
-            this.数据表读取ToolStripMenuItem5.Size = new System.Drawing.Size(152, 22);
+            this.数据表读取ToolStripMenuItem5.Size = new System.Drawing.Size(136, 22);
             this.数据表读取ToolStripMenuItem5.Text = "数据表读取";
             // 
             // 配色表录入ToolStripMenuItem
@@ -245,13 +234,13 @@
             // 手工输入ToolStripMenuItem3
             // 
             this.手工输入ToolStripMenuItem3.Name = "手工输入ToolStripMenuItem3";
-            this.手工输入ToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.手工输入ToolStripMenuItem3.Size = new System.Drawing.Size(136, 22);
             this.手工输入ToolStripMenuItem3.Text = "手工输入";
             // 
             // 数据表读取ToolStripMenuItem6
             // 
             this.数据表读取ToolStripMenuItem6.Name = "数据表读取ToolStripMenuItem6";
-            this.数据表读取ToolStripMenuItem6.Size = new System.Drawing.Size(152, 22);
+            this.数据表读取ToolStripMenuItem6.Size = new System.Drawing.Size(136, 22);
             this.数据表读取ToolStripMenuItem6.Text = "数据表读取";
             // 
             // 库存表录入ToolStripMenuItem
@@ -266,14 +255,26 @@
             // 手工输入ToolStripMenuItem4
             // 
             this.手工输入ToolStripMenuItem4.Name = "手工输入ToolStripMenuItem4";
-            this.手工输入ToolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
+            this.手工输入ToolStripMenuItem4.Size = new System.Drawing.Size(136, 22);
             this.手工输入ToolStripMenuItem4.Text = "手工输入";
             // 
             // 数据表读取ToolStripMenuItem7
             // 
             this.数据表读取ToolStripMenuItem7.Name = "数据表读取ToolStripMenuItem7";
-            this.数据表读取ToolStripMenuItem7.Size = new System.Drawing.Size(152, 22);
+            this.数据表读取ToolStripMenuItem7.Size = new System.Drawing.Size(136, 22);
             this.数据表读取ToolStripMenuItem7.Text = "数据表读取";
+            // 
+            // 首页ToolStripMenuItem
+            // 
+            this.首页ToolStripMenuItem.Name = "首页ToolStripMenuItem";
+            this.首页ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.首页ToolStripMenuItem.Text = "帮助";
+            // 
+            // 关于我们ToolStripMenuItem
+            // 
+            this.关于我们ToolStripMenuItem.Name = "关于我们ToolStripMenuItem";
+            this.关于我们ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.关于我们ToolStripMenuItem.Text = "关于我们";
             // 
             // frmMain
             // 

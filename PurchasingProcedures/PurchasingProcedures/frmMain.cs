@@ -15,7 +15,6 @@ namespace PurchasingProcedures
         public frmMain()
         {
             InitializeComponent();
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 
         }
 
@@ -26,8 +25,14 @@ namespace PurchasingProcedures
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-            LuruShujuyuan lr = new LuruShujuyuan();
-            lr.Show();
+
+        }
+
+        private void 手工ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SeHaoBiaoLuru shlr = new SeHaoBiaoLuru();
+            shlr.MdiParent = this;
+            shlr.Show();
         }
     }
 }

@@ -52,12 +52,71 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiMa_Dapeibiao.cs">
+      <DependentUpon>nemanping.tt</DependentUpon>
+    </Compile>
     <Compile Include="clsAllnew.cs" />
+    <Compile Include="DanHao.cs">
+      <DependentUpon>nemanping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GongHuoFang.cs">
+      <DependentUpon>nemanping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JiaGongChang.cs">
+      <DependentUpon>nemanping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KuanShiBiao.cs">
+      <DependentUpon>nemanping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KuCun.cs">
+      <DependentUpon>nemanping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="nemanping.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>nemanping.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="nemanping.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>nemanping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="nemanping.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>nemanping.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PeiSe.cs">
+      <DependentUpon>nemanping.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sehao.cs">
+      <DependentUpon>nemanping.tt</DependentUpon>
+    </Compile>
     <Compile Include="sqlhelper.cs" />
+    <Compile Include="UserTable.cs">
+      <DependentUpon>nemanping.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="nemanping.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>nemanping.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="nemanping.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>nemanping.edmx</DependentUpon>
+      <LastGenOutput>nemanping.Context.cs</LastGenOutput>
+    </None>
+    <None Include="nemanping.edmx.diagram">
+      <DependentUpon>nemanping.edmx</DependentUpon>
+    </None>
+    <None Include="nemanping.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>nemanping.edmx</DependentUpon>
+      <LastGenOutput>nemanping.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
