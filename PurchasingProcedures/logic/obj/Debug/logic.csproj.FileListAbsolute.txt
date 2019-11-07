@@ -22,3 +22,4 @@ D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\Entity
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\obj\Debug\logic.csprojResolveAssemblyReference.cache
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\obj\Debug\logic.dll
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\obj\Debug\logic.pdb
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\DocumentFormat.OpenXml.dll

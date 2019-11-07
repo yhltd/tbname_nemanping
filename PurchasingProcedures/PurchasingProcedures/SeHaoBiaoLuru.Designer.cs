@@ -28,56 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
             this.Sehao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.颜色 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1.SuspendLayout();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(22, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 42);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "提交";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(142, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(269, 67);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "功能";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(103, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(81, 42);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "数据表读取";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 85);
+            this.groupBox2.Location = new System.Drawing.Point(111, 61);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(399, 302);
+            this.groupBox2.Size = new System.Drawing.Size(397, 326);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
@@ -92,21 +64,12 @@
             this.颜色,
             this.Id});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 17);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(393, 282);
+            this.dataGridView1.Size = new System.Drawing.Size(391, 306);
             this.dataGridView1.TabIndex = 5;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(185, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(81, 42);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "刷新";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Sehao
             // 
@@ -127,33 +90,84 @@
             this.Id.Name = "Id";
             this.Id.Visible = false;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel5,
+            this.toolStripLabel2,
+            this.toolStripLabel4});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(108, 399);
+            this.toolStrip1.TabIndex = 5;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabel5
+            // 
+            this.toolStripLabel5.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.toolStripLabel5.Name = "toolStripLabel5";
+            this.toolStripLabel5.Size = new System.Drawing.Size(105, 26);
+            this.toolStripLabel5.Text = "刷新";
+            this.toolStripLabel5.Click += new System.EventHandler(this.toolStripLabel5_Click);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(105, 26);
+            this.toolStripLabel2.Text = "提交数据";
+            this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click_1);
+            // 
+            // toolStripLabel4
+            // 
+            this.toolStripLabel4.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(105, 26);
+            this.toolStripLabel4.Text = "读取数据表";
+            this.toolStripLabel4.Click += new System.EventHandler(this.toolStripLabel4_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(105, 26);
+            this.toolStripLabel1.Text = "刷新";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "s";
+            // 
             // SeHaoBiaoLuru
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 399);
+            this.ClientSize = new System.Drawing.Size(520, 399);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Name = "SeHaoBiaoLuru";
             this.Text = "色号录入";
-            this.Load += new System.EventHandler(this.SeHaoBiaoLuru_Load);
-            this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sehao;
         private System.Windows.Forms.DataGridViewTextBoxColumn 颜色;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel5;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

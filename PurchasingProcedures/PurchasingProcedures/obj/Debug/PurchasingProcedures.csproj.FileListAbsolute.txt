@@ -36,3 +36,4 @@ D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\b
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\logic.pdb
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\EntityFramework.xml
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\EntityFramework.SqlServer.xml
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\DocumentFormat.OpenXml.dll
