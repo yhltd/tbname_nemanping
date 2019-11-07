@@ -47,9 +47,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(111, 61);
+            this.groupBox2.Location = new System.Drawing.Point(111, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(397, 326);
+            this.groupBox2.Size = new System.Drawing.Size(530, 375);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
@@ -68,7 +68,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(3, 17);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(391, 306);
+            this.dataGridView1.Size = new System.Drawing.Size(524, 355);
             this.dataGridView1.TabIndex = 5;
             // 
             // Sehao
@@ -142,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 399);
+            this.ClientSize = new System.Drawing.Size(641, 399);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox2);
             this.Name = "SeHaoBiaoLuru";
