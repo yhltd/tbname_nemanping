@@ -1,0 +1,10 @@
+D:\yho110\nemanping\PurchasingProcedures\clsBuiness\bin\Debug\clsBuiness.dll
+D:\yho110\nemanping\PurchasingProcedures\clsBuiness\bin\Debug\clsBuiness.pdb
+D:\yho110\nemanping\PurchasingProcedures\clsBuiness\obj\Debug\clsBuiness.dll
+D:\yho110\nemanping\PurchasingProcedures\clsBuiness\obj\Debug\clsBuiness.pdb
+D:\yho110\nemanping\PurchasingProcedures\clsBuiness\bin\Debug\clsBuiness.dll.config
+D:\yho110\nemanping\PurchasingProcedures\clsBuiness\bin\Debug\EntityFramework.dll
+D:\yho110\nemanping\PurchasingProcedures\clsBuiness\bin\Debug\EntityFramework.SqlServer.dll
+D:\yho110\nemanping\PurchasingProcedures\clsBuiness\bin\Debug\EntityFramework.xml
+D:\yho110\nemanping\PurchasingProcedures\clsBuiness\bin\Debug\EntityFramework.SqlServer.xml
+D:\yho110\nemanping\PurchasingProcedures\clsBuiness\obj\Debug\clsBuiness.csprojResolveAssemblyReference.cache

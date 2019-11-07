@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="nemanpingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="nemanpingModelStoreContainer">
+    <EntitySet Name="Sehao" EntityType="nemanpingModel.Store.Sehao" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserTable" EntityType="nemanpingModel.Store.UserTable" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Sehao">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="UserTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Pwd" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+</Schema>
