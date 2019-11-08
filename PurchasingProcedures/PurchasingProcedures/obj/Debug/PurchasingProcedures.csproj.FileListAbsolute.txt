@@ -37,3 +37,8 @@ D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\b
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\EntityFramework.xml
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\EntityFramework.SqlServer.xml
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\DocumentFormat.OpenXml.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.ChiMaDaPei.resources
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.KuanShibiao.resources
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.DanHaoFrm.resources
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.PeiSeBiaoLuru.resources
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.JingDu.resources
