@@ -23,3 +23,16 @@ D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\obj\Debug\logic.
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\obj\Debug\logic.dll
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\obj\Debug\logic.pdb
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\DocumentFormat.OpenXml.dll
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\logic.dll.config
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\logic.dll
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\logic.pdb
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\clsBuiness.dll
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\DocumentFormat.OpenXml.dll
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\EntityFramework.dll
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\EntityFramework.SqlServer.dll
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\clsBuiness.pdb
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\EntityFramework.xml
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\EntityFramework.SqlServer.xml
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\logic\obj\Debug\logic.csprojResolveAssemblyReference.cache
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\logic\obj\Debug\logic.dll
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\logic\obj\Debug\logic.pdb

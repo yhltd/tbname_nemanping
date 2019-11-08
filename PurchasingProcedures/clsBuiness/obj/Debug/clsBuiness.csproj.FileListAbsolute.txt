@@ -18,3 +18,13 @@ D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\E
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\clsBuiness\obj\Debug\clsBuiness.csprojResolveAssemblyReference.cache
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\clsBuiness\obj\Debug\clsBuiness.dll
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\clsBuiness\obj\Debug\clsBuiness.pdb
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\clsBuiness.dll.config
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\clsBuiness.dll
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\clsBuiness.pdb
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\EntityFramework.dll
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\EntityFramework.SqlServer.dll
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\EntityFramework.xml
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\EntityFramework.SqlServer.xml
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\clsBuiness\obj\Debug\clsBuiness.csprojResolveAssemblyReference.cache
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\clsBuiness\obj\Debug\clsBuiness.dll
+F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\clsBuiness\obj\Debug\clsBuiness.pdb

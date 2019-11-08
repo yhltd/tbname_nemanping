@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factoryinput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Factoryinput.Designer.cs">
+      <DependentUpon>Factoryinput.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,15 @@
     <Compile Include="SeHaoBiaoLuru.Designer.cs">
       <DependentUpon>SeHaoBiaoLuru.cs</DependentUpon>
     </Compile>
+    <Compile Include="Thesupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Thesupplier.Designer.cs">
+      <DependentUpon>Thesupplier.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Factoryinput.resx">
+      <DependentUpon>Factoryinput.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +105,9 @@
     </Compile>
     <EmbeddedResource Include="SeHaoBiaoLuru.resx">
       <DependentUpon>SeHaoBiaoLuru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Thesupplier.resx">
+      <DependentUpon>Thesupplier.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
