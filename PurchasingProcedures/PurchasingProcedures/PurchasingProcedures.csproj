@@ -59,6 +59,12 @@
     <Compile Include="ChiMaDaPei.Designer.cs">
       <DependentUpon>ChiMaDaPei.cs</DependentUpon>
     </Compile>
+    <Compile Include="GongHuoFang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GongHuoFang.Designer.cs">
+      <DependentUpon>GongHuoFang.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanHaoFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </Compile>
     <EmbeddedResource Include="ChiMaDaPei.resx">
       <DependentUpon>ChiMaDaPei.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GongHuoFang.resx">
+      <DependentUpon>GongHuoFang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanHaoFrm.resx">
       <DependentUpon>DanHaoFrm.cs</DependentUpon>

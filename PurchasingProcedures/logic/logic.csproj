@@ -56,6 +56,7 @@
     <Compile Include="clsAllnewLogic.cs" />
     <Compile Include="Define factory input.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Thesupplier.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\clsBuiness\clsBuiness.csproj">
