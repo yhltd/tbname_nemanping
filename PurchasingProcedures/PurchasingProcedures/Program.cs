@@ -22,7 +22,11 @@ namespace PurchasingProcedures
                 Application.Exit();
 
             }
-            Application.Run(new frmMain());
+            else 
+            {
+                Application.Run(new frmMain());
+            }
+            
         }
     }
 }

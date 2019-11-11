@@ -37,24 +37,34 @@ D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\b
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\EntityFramework.xml
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\EntityFramework.SqlServer.xml
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\DocumentFormat.OpenXml.dll
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\PurchasingProcedures.exe.config
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.exe
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.pdb
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\PurchasingProcedures.exe
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\PurchasingProcedures.pdb
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\clsBuiness.dll
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\EntityFramework.dll
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\EntityFramework.SqlServer.dll
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\logic.dll
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\DocumentFormat.OpenXml.dll
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\clsBuiness.pdb
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\logic.pdb
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\EntityFramework.xml
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\EntityFramework.SqlServer.xml
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.csprojResolveAssemblyReference.cache
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.frmMain.resources
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.Login.resources
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.Properties.Resources.resources
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.SeHaoBiaoLuru.resources
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.csproj.GenerateResource.Cache
-F:\yho111\caigou\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.Factoryinput.resources
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.ChiMaDaPei.resources
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.KuanShibiao.resources
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.DanHaoFrm.resources
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.PeiSeBiaoLuru.resources
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.JingDu.resources
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\bin\Debug\PurchasingProcedures.exe.config
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.exe
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.pdb
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\bin\Debug\PurchasingProcedures.exe
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\bin\Debug\PurchasingProcedures.pdb
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\bin\Debug\clsBuiness.dll
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\bin\Debug\EntityFramework.dll
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\bin\Debug\EntityFramework.SqlServer.dll
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\bin\Debug\logic.dll
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\bin\Debug\DocumentFormat.OpenXml.dll
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\bin\Debug\clsBuiness.pdb
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\bin\Debug\logic.pdb
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\bin\Debug\EntityFramework.xml
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\bin\Debug\EntityFramework.SqlServer.xml
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.csprojResolveAssemblyReference.cache
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.ChiMaDaPei.resources
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.DanHaoFrm.resources
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.Factoryinput.resources
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.frmMain.resources
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.JingDu.resources
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.KuanShibiao.resources
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.Login.resources
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.PeiSeBiaoLuru.resources
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.Properties.Resources.resources
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.SeHaoBiaoLuru.resources
+D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.csproj.GenerateResource.Cache

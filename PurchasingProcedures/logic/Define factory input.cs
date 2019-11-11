@@ -65,7 +65,7 @@ namespace logic
                             ZengZhiShui = dr[5].ToString(),
                             Kaihuhang = dr[6].ToString(),
                             Zhanghao = dr[7].ToString()
-                            
+
                         };
                         can.JiaGongChang.Add(insets);
 
@@ -75,13 +75,13 @@ namespace logic
                         int id = Convert.ToInt32(dr[0]);
                         var select = from sc in can.JiaGongChang where sc.ID == id select sc;
                         var target = select.FirstOrDefault<JiaGongChang>();
-                            target.Name = dr[1].ToString();
-                            target.Address = dr[2].ToString();
-                            target.Lianxiren = dr[3].ToString();
-                            target.Phone = dr[4].ToString();
-                            target.ZengZhiShui = dr[5].ToString();
-                            target.Kaihuhang = dr[6].ToString();
-                            target.Zhanghao = dr[7].ToString();
+                        target.Name = dr[1].ToString();
+                        target.Address = dr[2].ToString();
+                        target.Lianxiren = dr[3].ToString();
+                        target.Phone = dr[4].ToString();
+                        target.ZengZhiShui = dr[5].ToString();
+                        target.Kaihuhang = dr[6].ToString();
+                        target.Zhanghao = dr[7].ToString();
 
                     }
                 }
@@ -89,7 +89,7 @@ namespace logic
 
             }
         }
-        #endregion 
+        #endregion
         #region 读取色号表
         public List<JiaGongChang> readerJiaGongChangExcel(string fileName)
         {

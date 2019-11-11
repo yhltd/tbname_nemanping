@@ -33,6 +33,7 @@
             this.btn_Login = new System.Windows.Forms.Button();
             this.txt_pwd = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // txt_User
@@ -84,6 +85,13 @@
             this.label2.Text = "密码";
             this.label2.Click += new System.EventHandler(this.label1_Click);
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork_1);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted_1);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -109,6 +117,7 @@
         private System.Windows.Forms.Button btn_Login;
         private System.Windows.Forms.TextBox txt_pwd;
         private System.Windows.Forms.Label label2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

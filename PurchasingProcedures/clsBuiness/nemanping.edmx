@@ -309,10 +309,10 @@
           <Property Name="STYLE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="DESC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="FABRIC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="JACKET" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="PANT" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="ShuoMing" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="mark1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JACKET" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="PANT" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="ShuoMing" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="mark1" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
           <Property Name="mark2" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
         </EntityType>
         <EntityType Name="KuCun">
