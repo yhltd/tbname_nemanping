@@ -147,5 +147,15 @@ namespace PurchasingProcedures
             {
             }
         }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

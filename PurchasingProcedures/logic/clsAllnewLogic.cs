@@ -24,94 +24,95 @@ namespace logic
         }
         #region 功能：色号录入
 
-        #region 查询色号
-        public List<Sehao> selectSehao()
-        {
-            using (nemanpingEntities3 can = new nemanpingEntities3())
+            #region 查询色号
+            public List<Sehao> selectSehao()
             {
-                List<Sehao> sehao = new List<Sehao>();
-                var select = from s in can.Sehao select s;
-                sehao = select.ToList<Sehao>();
+                using (nemanpingEntities3 can = new nemanpingEntities3())
+                {
+                    List<Sehao> sehao = new List<Sehao>();
+                    var select = from s in can.Sehao select s;
+                    sehao = select.ToList<Sehao>();
                 
-                return sehao;
-            }
-        }
-        #endregion
-
-        #region 添加色号
-        public void insertSehao(DataTable dt)
-        {
-            using (nemanpingEntities3 can = new nemanpingEntities3())
-            {
-                foreach (DataRow dr in dt.Rows)
-                {
-
-                    if (dr[0] is DBNull || Convert.ToInt32(dr[0]) == 0)
-                    {
-                        Sehao insets = new Sehao()
-                        {
-                            Name = dr[1].ToString(),
-                            SeHao1 = dr[2].ToString()
-                        };
-                        can.Sehao.Add(insets);
-
-                    }
-                    else
-                    {
-                        int id = Convert.ToInt32(dr[0]);
-                        var select = from sc in can.Sehao where sc.Id == id select sc;
-                        var target = select.FirstOrDefault<Sehao>();
-                        target.Name = dr[1].ToString();
-                        target.SeHao1 = dr[2].ToString();
-
-                    }
+                    return sehao;
                 }
-                can.SaveChanges();
-
             }
-        }
-        #endregion
+            #endregion
 
-        #region 读取色号表
-        public List<Sehao> readerSehaoExcel(string fileName)
-        {
-            List<Sehao> list = new List<Sehao>();
-            using (SpreadsheetDocument document = SpreadsheetDocument.Open(fileName, false))
+            #region 添加色号
+            public void insertSehao(DataTable dt)
             {
-                WorkbookPart wbPart = document.WorkbookPart;
-                List<Sheet> sheets = wbPart.Workbook.Descendants<Sheet>().ToList();
-                var versionSheet = wbPart.Workbook.Descendants<Sheet>().FirstOrDefault();
-                WorksheetPart worksheetPart = (WorksheetPart)wbPart.GetPartById(versionSheet.Id);
-                int rowindex = 0;
-                foreach (Row row in worksheetPart.Worksheet.Descendants<Row>())
+                using (nemanpingEntities3 can = new nemanpingEntities3())
                 {
-                    if (rowindex < 1)
+                    foreach (DataRow dr in dt.Rows)
                     {
-                        rowindex++;
-                        continue;
-                    }
-                    Sehao s = new Sehao();
-                    foreach (Cell cell in row)
-                    {
-                        string rev = cell.CellReference.Value;
-                        if (rev.StartsWith("B"))
+
+                        if (dr[0] is DBNull || Convert.ToInt32(dr[0]) == 0)
                         {
-                            s.Name = GetCellValue(wbPart, cell);
+                            Sehao insets = new Sehao()
+                            {
+                                Name = dr[1].ToString(),
+                                SeHao1 = dr[2].ToString()
+                            };
+                            can.Sehao.Add(insets);
+
                         }
-                        if (rev.StartsWith("A"))
+                        else
                         {
-                            s.SeHao1 = GetCellValue(wbPart, cell);
+                            int id = Convert.ToInt32(dr[0]);
+                            var select = from sc in can.Sehao where sc.Id == id select sc;
+                            var target = select.FirstOrDefault<Sehao>();
+                            target.Name = dr[1].ToString();
+                            target.SeHao1 = dr[2].ToString();
+
                         }
                     }
-                    list.Add(s);
+                    can.SaveChanges();
+
                 }
-                return list;
             }
-        }
-        #endregion 
+            #endregion
+
+            #region 读取色号表
+            public List<Sehao> readerSehaoExcel(string fileName)
+            {
+                List<Sehao> list = new List<Sehao>();
+                using (SpreadsheetDocument document = SpreadsheetDocument.Open(fileName, false))
+                {
+                    WorkbookPart wbPart = document.WorkbookPart;
+                    List<Sheet> sheets = wbPart.Workbook.Descendants<Sheet>().ToList();
+                    var versionSheet = wbPart.Workbook.Descendants<Sheet>().FirstOrDefault();
+                    WorksheetPart worksheetPart = (WorksheetPart)wbPart.GetPartById(versionSheet.Id);
+                    int rowindex = 0;
+                    foreach (Row row in worksheetPart.Worksheet.Descendants<Row>())
+                    {
+                        if (rowindex < 1)
+                        {
+                            rowindex++;
+                            continue;
+                        }
+                        Sehao s = new Sehao();
+                        foreach (Cell cell in row)
+                        {
+                            string rev = cell.CellReference.Value;
+                            if (rev.StartsWith("B"))
+                            {
+                                s.Name = GetCellValue(wbPart, cell);
+                            }
+                            if (rev.StartsWith("A"))
+                            {
+                                s.SeHao1 = GetCellValue(wbPart, cell);
+                            }
+                        }
+                        list.Add(s);
+                    }
+                    return list;
+                }
+            }
+            #endregion 
         #endregion
 
         #region 读取EXCEL表格相关代码
+
         public static string GetCellValue(WorkbookPart wbPart, Cell theCell)
         {
             string value = theCell.InnerText;
@@ -703,15 +704,249 @@ namespace logic
 
         #region 功能:单耗表录入
             #region 查询单耗表
-                public List<DanHao> SelectDanHao() 
+                public List<DanHao> SelectDanHao(string strwhere) 
                 {
                     using (nemanpingEntities3 npe = new nemanpingEntities3())
                     {
                         List<DanHao> list = new List<DanHao>();
+                        if (strwhere.Equals(string.Empty))
+                        {
+                            var select = from cm in npe.DanHao
+                                         select cm;
+                            list = select.ToList<DanHao>();
+                        }
+                        else 
+                        {
+                            var select = from cm in npe.DanHao
+                                         where cm.CaiDanNo.Equals(strwhere)
+                                         select cm;
+                            list = select.ToList<DanHao>();
+                        }
+                        return list;
+                    }
+                }
+            #endregion
 
-                        var select = from cm in npe.DanHao
-                                     select cm;
-                        list = select.ToList<DanHao>();
+            #region 提交单耗表
+                public void insertDanhao(DataTable dt) 
+                {
+                    using(nemanpingEntities3 nep = new nemanpingEntities3())
+                    {
+                        foreach (DataRow dr in dt.Rows)
+                        {
+
+                            if (dr[0] is DBNull || Convert.ToInt32(dr[0]) == 0)
+                            {
+                                DanHao insets = new DanHao()
+                                {
+                                    CaiDanNo = dr[1].ToString(),
+                                    Style = dr[2].ToString(),
+                                    FABRIC_CONTENT = dr[3].ToString(),
+                                    DATE = dr[4].ToString(),
+                                    JiaGongChang = dr[5].ToString(),
+                                    Name = dr[6].ToString(),
+                                    HuoHao = dr[7].ToString(),
+                                    GuiGe = dr[8].ToString(),
+                                    Yanse = dr[9].ToString(),
+                                    Danjia = dr[10].ToString(),
+                                    DanHao1 = dr[11].ToString(),
+                                    Jine = dr[12].ToString(),
+                                    BeiZhu = dr[13].ToString(),
+                                    ChangShang = dr[14].ToString(),
+                                    Heji = dr[15].ToString(),
+                                    Type = dr[16].ToString()
+                                };
+
+                                nep.DanHao.Add(insets);
+
+                            }
+                            else
+                            {
+                                int id = Convert.ToInt32(dr[0]);
+                                var select = from sc in nep.DanHao where sc.Id == id select sc;
+                                var target = select.FirstOrDefault<DanHao>();
+                                target.Name = dr[6].ToString();
+                                target.HuoHao = dr[7].ToString();
+                                target.GuiGe = dr[8].ToString();
+                                target.Yanse = dr[9].ToString();
+                                target.Danjia = dr[10].ToString();
+                                target.DanHao1 = dr[11].ToString();
+                                target.Jine = dr[12].ToString();
+                                target.BeiZhu = dr[13].ToString();
+                                target.ChangShang = dr[14].ToString();
+                                target.Heji = dr[15].ToString();
+                                target.Type = dr[16].ToString();
+                            }
+                        }
+                        nep.SaveChanges();
+                    }
+                }
+
+            #endregion
+
+            #region 读取EXCEL单耗表
+                public List<DanHao> Readerdh(string fileName) 
+                {
+                    List<DanHao> list = new List<DanHao>();
+                    using (SpreadsheetDocument document = SpreadsheetDocument.Open(fileName, false))
+                    {
+                        WorkbookPart wbPart = document.WorkbookPart;
+                        List<Sheet> sheets = wbPart.Workbook.Descendants<Sheet>().ToList();
+                        var versionSheet = wbPart.Workbook.Descendants<Sheet>().FirstOrDefault();
+                        WorksheetPart worksheetPart = (WorksheetPart)wbPart.GetPartById(versionSheet.Id);
+                        int rowindex = 0;
+                        int InsertPd = 0;
+                        string jiagongchang="";
+                        string caidanhao="";
+                        string kuanshi="";
+                        string mlcf="";
+                        string riqi="";
+                        bool addpd = false;
+                        bool typepd = false;
+                        foreach (Row row in worksheetPart.Worksheet.Descendants<Row>())
+                        {
+                            if (rowindex < 1)
+                            {
+                                rowindex++;
+                                continue;
+                            }
+                            DanHao d = new DanHao();
+                            foreach (Cell cell in row)
+                            {
+                                string rev = cell.CellReference.Value;
+                                if (InsertPd == 0) 
+                                {
+                                    if (rev.StartsWith("A") && rev.EndsWith("2"))
+                                    {
+                                        caidanhao = GetCellValue(wbPart, cell).Split('：')[1];
+                                    }
+
+                                    if (rev.StartsWith("A") && rev.EndsWith("3"))
+                                    {
+                                        kuanshi = GetCellValue(wbPart, cell).Split('：')[1];
+                                    }
+                                    if (rev.StartsWith("E") && rev.EndsWith("2"))
+                                    {
+                                        riqi = GetCellValue(wbPart, cell).Split('：')[1];
+                                    }
+
+                                    if (rev.StartsWith("E") && rev.EndsWith("3"))
+                                    {
+                                        jiagongchang = GetCellValue(wbPart, cell).Split('：')[1];
+                                    }
+                                    if (rev.StartsWith("A") && rev.EndsWith("4"))
+                                    {
+                                        mlcf = GetCellValue(wbPart, cell).Split('：')[1];
+                                        InsertPd++;
+                                    }
+                                }
+                                if (!rev.EndsWith("5")) 
+                                {
+                                    if (InsertPd >= 1)
+                                    {
+                                        addpd = true;
+                                        d.CaiDanNo = caidanhao;
+                                        d.JiaGongChang = jiagongchang;
+                                        d.DATE = riqi;
+                                        d.Style = kuanshi;
+                                        d.FABRIC_CONTENT = mlcf;
+                                        if (typepd)
+                                        {
+                                            if (rev.StartsWith("B"))
+                                            {
+                                                d.Name = GetCellValue(wbPart, cell);
+                                            }
+                                            if (rev.StartsWith("C"))
+                                            {
+                                                d.HuoHao = GetCellValue(wbPart, cell);
+                                            }
+                                            if (rev.StartsWith("D"))
+                                            {
+                                                d.GuiGe = GetCellValue(wbPart, cell);
+                                            }
+                                            if (rev.StartsWith("E"))
+                                            {
+                                                d.Yanse = GetCellValue(wbPart, cell);
+                                            }
+                                            if (rev.StartsWith("F"))
+                                            {
+                                                d.Danjia = GetCellValue(wbPart, cell);
+                                            }
+                                            if (rev.StartsWith("G"))
+                                            {
+                                                d.DanHao1 = GetCellValue(wbPart, cell);
+                                            }
+                                            if (rev.StartsWith("H"))
+                                            {
+                                                d.Jine = GetCellValue(wbPart, cell);
+                                            }
+                                            if (rev.StartsWith("I"))
+                                            {
+                                                d.BeiZhu = GetCellValue(wbPart, cell);
+                                            }
+                                            if (rev.StartsWith("J"))
+                                            {
+                                                d.ChangShang = GetCellValue(wbPart, cell);
+                                            }
+                                            d.Type = "辅料";
+                                        }
+                                        else
+                                        {
+                                            if (rev.StartsWith("B"))
+                                            {
+                                                d.Name = GetCellValue(wbPart, cell);
+                                            }
+                                            if (rev.StartsWith("C"))
+                                            {
+                                                d.HuoHao = GetCellValue(wbPart, cell);
+                                            }
+                                            if (rev.StartsWith("D"))
+                                            {
+                                                d.GuiGe = GetCellValue(wbPart, cell);
+                                            }
+                                            if (rev.StartsWith("E"))
+                                            {
+                                                d.Yanse = GetCellValue(wbPart, cell);
+                                            }
+                                            if (rev.StartsWith("F"))
+                                            {
+                                                d.Danjia = GetCellValue(wbPart, cell);
+                                            }
+                                            if (rev.StartsWith("G"))
+                                            {
+                                                d.DanHao1 = GetCellValue(wbPart, cell);
+                                            }
+                                            if (rev.StartsWith("H"))
+                                            {
+                                                d.Jine = GetCellValue(wbPart, cell);
+                                            }
+                                            if (rev.StartsWith("I"))
+                                            {
+                                                d.BeiZhu = GetCellValue(wbPart, cell);
+                                            }
+                                            if (rev.StartsWith("J"))
+                                            {
+                                                d.ChangShang = GetCellValue(wbPart, cell);
+                                            }
+                                            d.Type = "面料";
+                                        }
+                                        if (GetCellValue(wbPart, cell).Contains("辅料"))
+                                        {
+                                            typepd = true;
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+                            if (addpd) 
+                            {
+                                list.Add(d);
+                                addpd = false;
+                            }
+                            
+                        }
                         return list;
                     }
                 }
@@ -719,20 +954,20 @@ namespace logic
         #endregion
 
         #region 功能:配色表录入
-            #region 查询配色表
-                public List<PeiSe> selectPeise(int strwhere)
+                #region 查询配色表
+                public List<PeiSe> selectPeise(string strwhere)
                 {
                     using (nemanpingEntities3 can = new nemanpingEntities3())
                     {
                         List<PeiSe> sehao = new List<PeiSe>();
-                        if (strwhere ==0)
+                        if (strwhere.Equals(string.Empty))
                         {
                             var select = from s in can.PeiSe select s;
                             sehao = select.ToList<PeiSe>();
                         }
                         else 
                         {
-                            var select = from s in can.PeiSe where s.Id == strwhere select s;
+                            var select = from s in can.PeiSe where s.Fabrics == strwhere select s;
                             sehao = select.ToList<PeiSe>();
                         }
                        
@@ -742,20 +977,20 @@ namespace logic
                 }
             #endregion
 
-            #region 提交配色信息
-                public void insertPeise(DataTable dt) 
+                #region 提交配色信息
+                public void insertPeise(DataTable dt, string Fabrics,string date) 
                 {
                     using (nemanpingEntities3 nep = new nemanpingEntities3()) 
                     {
                         foreach (DataRow dr in dt.Rows)
                         {
 
-                            if (dr[22] is DBNull || Convert.ToInt32(dr[22]) == 0)
+                            if (dr[19] is DBNull || Convert.ToInt32(dr[19]) == 0)
                             {
                                 PeiSe ps = new PeiSe() 
                                 {
-                                    Fabrics = dr[21].ToString(),
-                                    Date = dr[23].ToString(),
+                                    
+                                    
                                     PingMing =dr[0].ToString(),
                                     HuoHao = dr[1].ToString(),
                                     GuiGe = dr[2].ToString(),
@@ -776,15 +1011,35 @@ namespace logic
                                     C61634C1 = dr[17].ToString(),
                                     MianLiaoYanSe = dr[18].ToString(),
                                 };
-
+                                if (!ps.PingMing.Equals(string.Empty)) 
+                                {
+                                    if (!dr[20].ToString().Equals(string.Empty))
+                                    {
+                                        ps.Fabrics = dr[20].ToString();
+                                    }
+                                    else
+                                    {
+                                        ps.Fabrics = Fabrics;
+                                    }
+                                    if (!dr[21].ToString().Equals(string.Empty))
+                                    {
+                                        ps.Date = dr[21].ToString();
+                                    }
+                                    else
+                                    {
+                                        ps.Date = date;
+                                    }
+                                    nep.PeiSe.Add(ps);
+                                }
+                                
                             }
                             else
                             {
-                                int id = Convert.ToInt32(dr[22]);
+                                int id = Convert.ToInt32(dr[19]);
                                 var select = from ks in nep.PeiSe where ks.Id == id select ks;
                                 var target = select.FirstOrDefault<PeiSe>();
-                                target.Fabrics = dr[21].ToString();
-                                target.Date = dr[23].ToString();
+                                target.Fabrics = dr[20].ToString();
+                                target.Date = dr[21].ToString();
                                 target.PingMing =dr[0].ToString();
                                 target.HuoHao = dr[1].ToString();
                                 target.GuiGe = dr[2].ToString();
@@ -809,6 +1064,188 @@ namespace logic
                         }
                         nep.SaveChanges();
                     }
+                }
+            #endregion
+
+                #region 读取配色数据表EXCEL
+                public List<PeiSe> ReaderPeiSe(string fileName) 
+                {
+                    List<PeiSe> list = new List<PeiSe>();
+                    using (SpreadsheetDocument document = SpreadsheetDocument.Open(fileName, false))
+                    {
+                        WorkbookPart wbPart = document.WorkbookPart;
+                        List<Sheet> sheets = wbPart.Workbook.Descendants<Sheet>().ToList();
+                        var versionSheet = wbPart.Workbook.Descendants<Sheet>().FirstOrDefault();
+                        WorksheetPart worksheetPart = (WorksheetPart)wbPart.GetPartById(versionSheet.Id);
+                        int rowindex = 0;
+                        int insertpd = 0;
+                        foreach (Row row in worksheetPart.Worksheet.Descendants<Row>())
+                        {
+                            if (rowindex < 2)
+                            {
+                                rowindex++;
+                                continue;
+                            }
+                            PeiSe ps = new PeiSe();
+                            
+                            foreach (Cell cell in row)
+                            {
+                                string rev = cell.CellReference.Value;
+                                if (rev.StartsWith("C") && rowindex ==2 ) 
+                                {
+                                    ps.Fabrics = GetCellValue(wbPart, cell);
+                                    //insertpd = 1;
+                                }
+                                if (rev.StartsWith("P") && rowindex == 2)
+                                {
+                                    ps.Date = GetCellValue(wbPart, cell);
+                                    insertpd = 1;
+                                }
+                                if (insertpd == 1)
+                                {
+                                    if (rowindex >= 5)
+                                    {
+                                        if (rev.StartsWith("A"))
+                                        {
+                                            ps.PingMing = GetCellValue(wbPart, cell);
+                                        }
+                                        if (rev.StartsWith("B"))
+                                        {
+                                            ps.HuoHao = GetCellValue(wbPart, cell);
+                                        }
+                                        if (rev.StartsWith("C"))
+                                        {
+                                            ps.GuiGe = GetCellValue(wbPart, cell);
+                                        }
+                                        if (rev.StartsWith("D"))
+                                        {
+                                            ps.C61601C1 = GetCellValue(wbPart, cell);
+                                        }
+                                        if (rev.StartsWith("E"))
+                                        {
+                                            ps.C61602C1 = GetCellValue(wbPart, cell);
+                                        }
+                                        if (rev.StartsWith("F"))
+                                        {
+                                            ps.C61603C1 = GetCellValue(wbPart, cell);
+                                        }
+                                        if (rev.StartsWith("G"))
+                                        {
+                                            ps.C61605C1 = GetCellValue(wbPart, cell);
+                                        }
+                                        if (rev.StartsWith("H"))
+                                        {
+                                            ps.C61606C1 = GetCellValue(wbPart, cell);
+                                        }
+                                        if (rev.StartsWith("I"))
+                                        {
+                                            ps.C61607C1 = GetCellValue(wbPart, cell);
+                                        }
+                                        if (rev.StartsWith("J"))
+                                        {
+                                            ps.C61609C1 = GetCellValue(wbPart, cell);
+                                        }
+                                        if (rev.StartsWith("K"))
+                                        {
+                                            ps.C61611C1 = GetCellValue(wbPart, cell);
+                                        }
+                                        if (rev.StartsWith("L"))
+                                        {
+                                            ps.C61618C1 = GetCellValue(wbPart, cell);
+                                        }
+                                        if (rev.StartsWith("M"))
+                                        {
+                                            ps.C61624C1 = GetCellValue(wbPart, cell);
+                                        }
+                                        if (rev.StartsWith("N"))
+                                        {
+                                            ps.C61627C1 = GetCellValue(wbPart, cell);
+                                        }
+                                        if (rev.StartsWith("O"))
+                                        {
+                                            ps.C61631C1 = GetCellValue(wbPart, cell);
+                                        }
+                                        if (rev.StartsWith("P"))
+                                        {
+                                            ps.C61632C1 = GetCellValue(wbPart, cell);
+                                        }
+                                        if (rev.StartsWith("Q"))
+                                        {
+                                            ps.C61633C1 = GetCellValue(wbPart, cell);
+                                        }
+                                        if (rev.StartsWith("R"))
+                                        {
+                                            ps.C61634C1 = GetCellValue(wbPart, cell);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        rowindex++;
+                                    }
+                                }
+                            }
+                            list.Add(ps);
+                        }
+                        return list;
+                    }
+                }
+            #endregion
+        #endregion
+
+        #region 功能:库存表录入
+            #region 查询库存
+                public List<KuCun> SelectKC() 
+                {
+                    List<KuCun> list = new List<KuCun>();
+                    using (nemanpingEntities3 nep = new nemanpingEntities3()) 
+                    {
+                        var select = from kc in nep.KuCun
+                                     select kc;
+                        list = select.ToList<KuCun>();
+
+                    }
+                    return list;
+                }
+            #endregion
+            #region 提交库存
+                public void insertKucun(DataTable dt ) 
+                {
+                    using (nemanpingEntities3 can = new nemanpingEntities3())
+                    {
+                        foreach (DataRow dr in dt.Rows)
+                        {
+
+                            if (dr[0] is DBNull || Convert.ToInt32(dr[0]) == 0)
+                            {
+                                KuCun insets = new KuCun()
+                                {
+                                    PingMing= dr[1].ToString(),
+                                    HuoHao = dr[2].ToString(),
+                                    SeHao = dr[3].ToString(),
+                                    ShuLiang = dr[4].ToString(),
+                                    GongHuoFang = dr[5].ToString(),
+                                    CunFangDI = dr[6].ToString()
+                                };
+                                can.KuCun.Add(insets);
+
+                            }
+                            else
+                            {
+                                int id = Convert.ToInt32(dr[0]);
+                                var select = from sc in can.KuCun where sc.Id == id select sc;
+                                var target = select.FirstOrDefault<KuCun>();
+                                target.PingMing= dr[1].ToString();
+                                target.HuoHao = dr[2].ToString();
+                                target.SeHao = dr[3].ToString();
+                                target.ShuLiang = dr[4].ToString();
+                                target.GongHuoFang = dr[5].ToString();
+                                target.CunFangDI = dr[6].ToString();
+                            }
+                        }
+                        can.SaveChanges();
+
+                    }
+
                 }
             #endregion
         #endregion

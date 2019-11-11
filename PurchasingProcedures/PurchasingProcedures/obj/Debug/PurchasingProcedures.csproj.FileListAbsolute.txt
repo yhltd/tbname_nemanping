@@ -68,3 +68,9 @@ D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingPro
 D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.Properties.Resources.resources
 D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.SeHaoBiaoLuru.resources
 D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.csproj.GenerateResource.Cache
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.Factoryinput.resources
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.Kucun.resources
+D:\yho110\nemanping\tbname_nemanping - 副本 (2)\PurchasingProcedures\PurchasingProcedures\bin\Debug\PurchasingProcedures.exe.config
+D:\yho110\nemanping\tbname_nemanping - 副本 (2)\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.exe
+D:\yho110\nemanping\tbname_nemanping - 副本 (2)\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.pdb
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.GongHuoFang.resources

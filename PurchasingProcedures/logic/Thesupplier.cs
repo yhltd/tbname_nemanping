@@ -70,7 +70,7 @@ namespace logic
                             GongHuoFangA = dr[7].ToString(),
                             GongHuoFangB = dr[8].ToString(),
                             BeiZhu = dr[9].ToString()
-                            
+
                         };
                         can.GongHuoFang.Add(insets);
 
@@ -80,16 +80,16 @@ namespace logic
                         int id = Convert.ToInt32(dr[0]);
                         var select = from sc in can.GongHuoFang where sc.Id == id select sc;
                         var target = select.FirstOrDefault<GongHuoFang>();
-                            target. PingMing = dr[1].ToString();
-                            target.HuoHao = dr[2].ToString();
-                            target.Guige = dr[3].ToString();
-                            target.SeHao = dr[4].ToString();
-                            target.Yanse = dr[5].ToString();
-                            target.DanJia = dr[6].ToString();
-                            target.GongHuoFangA = dr[7].ToString();
-                            target.GongHuoFangB = dr[8].ToString();
-                            target.BeiZhu = dr[9].ToString();
-                                
+                        target.PingMing = dr[1].ToString();
+                        target.HuoHao = dr[2].ToString();
+                        target.Guige = dr[3].ToString();
+                        target.SeHao = dr[4].ToString();
+                        target.Yanse = dr[5].ToString();
+                        target.DanJia = dr[6].ToString();
+                        target.GongHuoFangA = dr[7].ToString();
+                        target.GongHuoFangB = dr[8].ToString();
+                        target.BeiZhu = dr[9].ToString();
+
                     }
                 }
                 can.SaveChanges();
@@ -210,6 +210,6 @@ namespace logic
 
 
 
-       
+
     }
 }

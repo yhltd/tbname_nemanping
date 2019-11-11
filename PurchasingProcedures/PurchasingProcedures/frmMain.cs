@@ -151,5 +151,19 @@ namespace PurchasingProcedures
                 fci.TopMost = true;
             }
         }
+
+        private void 库存表录入ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Kucun kc = new Kucun();
+            if (!HaveOpened(this, kc.Name))
+            {
+                kc.MdiParent = this;
+                kc.Show();
+            }
+            else
+            {
+                kc.TopMost = true;
+            }
+        }
     }
 }

@@ -90,7 +90,7 @@ namespace logic
             }
         }
         #endregion
-        #region 读取色号表
+        #region 读取工厂
         public List<JiaGongChang> readerJiaGongChangExcel(string fileName)
         {
             List<JiaGongChang> list = new List<JiaGongChang>();
@@ -101,48 +101,61 @@ namespace logic
                 var versionSheet = wbPart.Workbook.Descendants<Sheet>().FirstOrDefault();
                 WorksheetPart worksheetPart = (WorksheetPart)wbPart.GetPartById(versionSheet.Id);
                 int rowindex = 0;
+                int insertpd = 0;
+                JiaGongChang s = new JiaGongChang();
                 foreach (Row row in worksheetPart.Worksheet.Descendants<Row>())
                 {
-                    if (rowindex < 1)
-                    {
-                        rowindex++;
-                        continue;
-                    }
-                    JiaGongChang s = new JiaGongChang();
+                    //if (rowindex < 1)
+                    //{
+                    //    rowindex++;
+                    //    continue;
+                    //}
+                    
                     foreach (Cell cell in row)
                     {
                         string rev = cell.CellReference.Value;
-                        if (rev.StartsWith("A"))
-                        {
-                            s.Name = GetCellValue(wbPart, cell);
-                        }
                         if (rev.StartsWith("B"))
                         {
-                            s.Address = GetCellValue(wbPart, cell);
+                            if (rev.EndsWith("1")) 
+                            {
+                                s.Name = GetCellValue(wbPart, cell);
+                            }
+                            if (rev.EndsWith("2"))
+                            {
+                                s.Address = GetCellValue(wbPart, cell);
+                            }
+                            if (rev.EndsWith("3"))
+                            {
+                                s.Lianxiren = GetCellValue(wbPart, cell);
+                            }
+                            if (rev.EndsWith("4"))
+                            {
+                                s.Phone = GetCellValue(wbPart, cell);
+                            }
+                            if (rev.EndsWith("5"))
+                            {
+                                s.ZengZhiShui = GetCellValue(wbPart, cell);
+                            }
+                            if (rev.EndsWith("6"))
+                            {
+                                s.Kaihuhang = GetCellValue(wbPart, cell);
+                            }
+                            if (rev.EndsWith("7"))
+                            {
+                                s.Zhanghao = GetCellValue(wbPart, cell);
+                                insertpd = 1;
+                            }
                         }
-                        if (rev.StartsWith("C"))
-                        {
-                            s.Lianxiren = GetCellValue(wbPart, cell);
-                        }
-                        if (rev.StartsWith("D"))
-                        {
-                            s.Phone = GetCellValue(wbPart, cell);
-                        }
-                        if (rev.StartsWith("E"))
-                        {
-                            s.ZengZhiShui = GetCellValue(wbPart, cell);
-                        }
-                        if (rev.StartsWith("F"))
-                        {
-                            s.Kaihuhang = GetCellValue(wbPart, cell);
-                        }
-                        if (rev.StartsWith("G"))
-                        {
-                            s.Zhanghao = GetCellValue(wbPart, cell);
-                        }
+                        
 
                     }
-                    list.Add(s);
+                    if (insertpd == 1) 
+                    {
+                        
+                        list.Add(s);
+                        insertpd = 0;
+                        s = new JiaGongChang();
+                    }
                 }
                 return list;
             }

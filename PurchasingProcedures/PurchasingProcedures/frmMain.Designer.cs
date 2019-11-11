@@ -64,6 +64,7 @@
             this.款式表数据录入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.单号表录入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.面料表录入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.加工厂表录入ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.裁单输入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.面辅料订购ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.表格生成ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,7 +74,7 @@
             this.面辅料订购单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.预计成本实际成本单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
-            this.加工厂表录入ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.库存表录入ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -84,9 +85,9 @@
             this.菜单ToolStripMenuItem,
             this.首页ToolStripMenuItem,
             this.关于我们ToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(207, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(177, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(677, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(707, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -282,32 +283,36 @@
             this.预计成本实际成本单ToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(207, 506);
+            this.menuStrip2.Size = new System.Drawing.Size(177, 506);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
             // 
             // toolStripMenuItem1
             // 
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(200, 21);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(170, 26);
             this.toolStripMenuItem1.Text = " ";
             // 
             // toolStripMenuItem3
             // 
+            this.toolStripMenuItem3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(200, 21);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(170, 26);
             this.toolStripMenuItem3.Text = " ";
             // 
             // toolStripMenuItem4
             // 
+            this.toolStripMenuItem4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(200, 21);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(170, 26);
             this.toolStripMenuItem4.Text = " ";
             // 
             // toolStripMenuItem2
             // 
+            this.toolStripMenuItem2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(200, 21);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(170, 26);
             this.toolStripMenuItem2.Text = " ";
             // 
             // 数据录入ToolStripMenuItem
@@ -318,59 +323,67 @@
             this.款式表数据录入ToolStripMenuItem,
             this.单号表录入ToolStripMenuItem,
             this.面料表录入ToolStripMenuItem,
-            this.加工厂表录入ToolStripMenuItem1});
-            this.数据录入ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.加工厂表录入ToolStripMenuItem1,
+            this.库存表录入ToolStripMenuItem1});
+            this.数据录入ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.数据录入ToolStripMenuItem.Name = "数据录入ToolStripMenuItem";
-            this.数据录入ToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
+            this.数据录入ToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.数据录入ToolStripMenuItem.Text = " 数据录入";
             // 
             // 色号录入ToolStripMenuItem
             // 
             this.色号录入ToolStripMenuItem.Name = "色号录入ToolStripMenuItem";
-            this.色号录入ToolStripMenuItem.Size = new System.Drawing.Size(217, 30);
+            this.色号录入ToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.色号录入ToolStripMenuItem.Text = "色号录入";
             this.色号录入ToolStripMenuItem.Click += new System.EventHandler(this.色号录入ToolStripMenuItem_Click);
             // 
             // 尺码搭配表录入ToolStripMenuItem
             // 
             this.尺码搭配表录入ToolStripMenuItem.Name = "尺码搭配表录入ToolStripMenuItem";
-            this.尺码搭配表录入ToolStripMenuItem.Size = new System.Drawing.Size(217, 30);
+            this.尺码搭配表录入ToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.尺码搭配表录入ToolStripMenuItem.Text = "尺码搭配表录入";
             this.尺码搭配表录入ToolStripMenuItem.Click += new System.EventHandler(this.尺码搭配表录入ToolStripMenuItem_Click);
             // 
             // 款式表数据录入ToolStripMenuItem
             // 
             this.款式表数据录入ToolStripMenuItem.Name = "款式表数据录入ToolStripMenuItem";
-            this.款式表数据录入ToolStripMenuItem.Size = new System.Drawing.Size(217, 30);
+            this.款式表数据录入ToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.款式表数据录入ToolStripMenuItem.Text = "款式表数据录入";
             this.款式表数据录入ToolStripMenuItem.Click += new System.EventHandler(this.款式表数据录入ToolStripMenuItem_Click);
             // 
             // 单号表录入ToolStripMenuItem
             // 
             this.单号表录入ToolStripMenuItem.Name = "单号表录入ToolStripMenuItem";
-            this.单号表录入ToolStripMenuItem.Size = new System.Drawing.Size(217, 30);
+            this.单号表录入ToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.单号表录入ToolStripMenuItem.Text = "单耗表录入";
             this.单号表录入ToolStripMenuItem.Click += new System.EventHandler(this.单号表录入ToolStripMenuItem_Click);
             // 
             // 面料表录入ToolStripMenuItem
             // 
             this.面料表录入ToolStripMenuItem.Name = "面料表录入ToolStripMenuItem";
-            this.面料表录入ToolStripMenuItem.Size = new System.Drawing.Size(217, 30);
+            this.面料表录入ToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.面料表录入ToolStripMenuItem.Text = "配色表录入";
             this.面料表录入ToolStripMenuItem.Click += new System.EventHandler(this.面料表录入ToolStripMenuItem_Click);
             // 
+            // 加工厂表录入ToolStripMenuItem1
+            // 
+            this.加工厂表录入ToolStripMenuItem1.Name = "加工厂表录入ToolStripMenuItem1";
+            this.加工厂表录入ToolStripMenuItem1.Size = new System.Drawing.Size(192, 26);
+            this.加工厂表录入ToolStripMenuItem1.Text = "加工厂表录入";
+            this.加工厂表录入ToolStripMenuItem1.Click += new System.EventHandler(this.加工厂表录入ToolStripMenuItem1_Click);
+            // 
             // 裁单输入ToolStripMenuItem
             // 
-            this.裁单输入ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.裁单输入ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.裁单输入ToolStripMenuItem.Name = "裁单输入ToolStripMenuItem";
-            this.裁单输入ToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
+            this.裁单输入ToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.裁单输入ToolStripMenuItem.Text = "裁单输入";
             // 
             // 面辅料订购ToolStripMenuItem
             // 
-            this.面辅料订购ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.面辅料订购ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.面辅料订购ToolStripMenuItem.Name = "面辅料订购ToolStripMenuItem";
-            this.面辅料订购ToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
+            this.面辅料订购ToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.面辅料订购ToolStripMenuItem.Text = "面辅料订购";
             // 
             // 表格生成ToolStripMenuItem
@@ -379,59 +392,59 @@
             this.配色表ToolStripMenuItem,
             this.单耗表ToolStripMenuItem,
             this.核定成本ToolStripMenuItem});
-            this.表格生成ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.表格生成ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.表格生成ToolStripMenuItem.Name = "表格生成ToolStripMenuItem";
-            this.表格生成ToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
+            this.表格生成ToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.表格生成ToolStripMenuItem.Text = "表格生成";
             // 
             // 配色表ToolStripMenuItem
             // 
             this.配色表ToolStripMenuItem.Name = "配色表ToolStripMenuItem";
-            this.配色表ToolStripMenuItem.Size = new System.Drawing.Size(160, 30);
+            this.配色表ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.配色表ToolStripMenuItem.Text = "配色表";
             // 
             // 单耗表ToolStripMenuItem
             // 
             this.单耗表ToolStripMenuItem.Name = "单耗表ToolStripMenuItem";
-            this.单耗表ToolStripMenuItem.Size = new System.Drawing.Size(160, 30);
+            this.单耗表ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.单耗表ToolStripMenuItem.Text = "单耗表";
             // 
             // 核定成本ToolStripMenuItem
             // 
             this.核定成本ToolStripMenuItem.Name = "核定成本ToolStripMenuItem";
-            this.核定成本ToolStripMenuItem.Size = new System.Drawing.Size(160, 30);
+            this.核定成本ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.核定成本ToolStripMenuItem.Text = "核定成本";
             // 
             // 面辅料订购单ToolStripMenuItem
             // 
-            this.面辅料订购单ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.面辅料订购单ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.面辅料订购单ToolStripMenuItem.Name = "面辅料订购单ToolStripMenuItem";
-            this.面辅料订购单ToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
+            this.面辅料订购单ToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.面辅料订购单ToolStripMenuItem.Text = "面辅料订购单";
             // 
             // 预计成本实际成本单ToolStripMenuItem
             // 
-            this.预计成本实际成本单ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.预计成本实际成本单ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.预计成本实际成本单ToolStripMenuItem.Name = "预计成本实际成本单ToolStripMenuItem";
-            this.预计成本实际成本单ToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
+            this.预计成本实际成本单ToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.预计成本实际成本单ToolStripMenuItem.Text = "预计成本/实际成本单";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(52, 25);
+            this.label2.Location = new System.Drawing.Point(36, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 42);
             this.label2.TabIndex = 4;
             this.label2.Text = "功能列";
             // 
-            // 加工厂表录入ToolStripMenuItem1
+            // 库存表录入ToolStripMenuItem1
             // 
-            this.加工厂表录入ToolStripMenuItem1.Name = "加工厂表录入ToolStripMenuItem1";
-            this.加工厂表录入ToolStripMenuItem1.Size = new System.Drawing.Size(217, 30);
-            this.加工厂表录入ToolStripMenuItem1.Text = "加工厂表录入";
-            this.加工厂表录入ToolStripMenuItem1.Click += new System.EventHandler(this.加工厂表录入ToolStripMenuItem1_Click);
+            this.库存表录入ToolStripMenuItem1.Name = "库存表录入ToolStripMenuItem1";
+            this.库存表录入ToolStripMenuItem1.Size = new System.Drawing.Size(192, 26);
+            this.库存表录入ToolStripMenuItem1.Text = "库存表录入";
+            this.库存表录入ToolStripMenuItem1.Click += new System.EventHandler(this.库存表录入ToolStripMenuItem1_Click);
             // 
             // frmMain
             // 
@@ -505,6 +518,7 @@
         private System.Windows.Forms.ToolStripMenuItem 单号表录入ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 面料表录入ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 加工厂表录入ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 库存表录入ToolStripMenuItem1;
 
     }
 }

@@ -59,12 +59,6 @@
     <Compile Include="ChiMaDaPei.Designer.cs">
       <DependentUpon>ChiMaDaPei.cs</DependentUpon>
     </Compile>
-    <Compile Include="GongHuoFang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GongHuoFang.Designer.cs">
-      <DependentUpon>GongHuoFang.cs</DependentUpon>
-    </Compile>
     <Compile Include="DanHaoFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +77,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="GongHuoFang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GongHuoFang.Designer.cs">
+      <DependentUpon>GongHuoFang.cs</DependentUpon>
+    </Compile>
     <Compile Include="JingDu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +94,12 @@
     </Compile>
     <Compile Include="KuanShibiao.Designer.cs">
       <DependentUpon>KuanShibiao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kucun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kucun.Designer.cs">
+      <DependentUpon>Kucun.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -118,9 +124,6 @@
     <EmbeddedResource Include="ChiMaDaPei.resx">
       <DependentUpon>ChiMaDaPei.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GongHuoFang.resx">
-      <DependentUpon>GongHuoFang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DanHaoFrm.resx">
       <DependentUpon>DanHaoFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,11 +133,17 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GongHuoFang.resx">
+      <DependentUpon>GongHuoFang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="JingDu.resx">
       <DependentUpon>JingDu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KuanShibiao.resx">
       <DependentUpon>KuanShibiao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kucun.resx">
+      <DependentUpon>Kucun.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

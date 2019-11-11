@@ -49,7 +49,7 @@ namespace PurchasingProcedures
                 dt.Columns.Add("BeiZhu11", typeof(String));
                 foreach (clsBuiness.GongHuoFang s in list2)
                 {
-                    dt.Rows.Add(s.Id,s.PingMing, s.HuoHao, s.Guige, s.SeHao, s.Yanse, s.DanJia, s.GongHuoFangA , s.GongHuoFangB, s.BeiZhu);
+                    dt.Rows.Add(s.Id, s.PingMing, s.HuoHao, s.Guige, s.SeHao, s.Yanse, s.DanJia, s.GongHuoFangA, s.GongHuoFangB, s.BeiZhu);
                 }
                 dataGridView2.DataSource = dt;
                 MessageBox.Show("刷新成功");
@@ -68,7 +68,7 @@ namespace PurchasingProcedures
 
         private void toolStripLabel1_Click_1(object sender, EventArgs e)
         {
-            try 
+            try
             {
                 this.backgroundWorker11.RunWorkerAsync(); // 运行 backgroundWorker 组件
 
@@ -81,11 +81,11 @@ namespace PurchasingProcedures
                 MessageBox.Show("提交成功！");
                 toolStripLabel5_Click(sender, e);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 throw ex;
             }
-            
+
 
         #endregion
         }
@@ -104,49 +104,50 @@ namespace PurchasingProcedures
 
         private void toolStripLabel4_Click(object sender, EventArgs e)
         {
-             {
-            try 
             {
-                this.backgroundWorker11.RunWorkerAsync(); // 运行 backgroundWorker 组件
-
-                JingDu form = new JingDu(this.backgroundWorker11, "提交中");// 显示进度条窗体
-                form.ShowDialog(this);
-                form.Close();
-                if (this.openFileDialog2.ShowDialog() == DialogResult.OK)
+                try
                 {
-                    string path = openFileDialog2.FileName;
-                    if (!path.Equals(string.Empty))
+                    this.backgroundWorker11.RunWorkerAsync(); // 运行 backgroundWorker 组件
+
+                    JingDu form = new JingDu(this.backgroundWorker11, "提交中");// 显示进度条窗体
+                    form.ShowDialog(this);
+                    form.Close();
+                    if (this.openFileDialog2.ShowDialog() == DialogResult.OK)
                     {
-                        list2 = cal1.readerGongHuoFangExcel(path);
-                        DataTable dt = new DataTable();
-                        dt.Columns.Add("Id22", typeof(int));
-                        dt.Columns.Add("PingMing11", typeof(String));
-                        dt.Columns.Add("HuoHao11", typeof(String));
-                        dt.Columns.Add("Guige11", typeof(String));
-                        dt.Columns.Add("SeHao12", typeof(String));
-                        dt.Columns.Add("Yanse11", typeof(String));
-                        dt.Columns.Add("DanJia11", typeof(String));
-                        dt.Columns.Add("GongHuoFangA11", typeof(String));
-                        dt.Columns.Add("GongHuoFangB11", typeof(String));
-                        dt.Columns.Add("BeiZhu11", typeof(String));
-                        foreach (clsBuiness.GongHuoFang s in list2)
+                        string path = openFileDialog2.FileName;
+                        if (!path.Equals(string.Empty))
                         {
-                            dt.Rows.Add(s.Id, s.PingMing, s.HuoHao, s.Guige, s.SeHao, s.Yanse, s.DanJia, s.GongHuoFangA,s.GongHuoFangB,s.BeiZhu);
+                            list2 = cal1.readerGongHuoFangExcel(path);
+                            DataTable dt = new DataTable();
+                            dt.Columns.Add("Id22", typeof(int));
+                            dt.Columns.Add("PingMing11", typeof(String));
+                            dt.Columns.Add("HuoHao11", typeof(String));
+                            dt.Columns.Add("Guige11", typeof(String));
+                            dt.Columns.Add("SeHao12", typeof(String));
+                            dt.Columns.Add("Yanse11", typeof(String));
+                            dt.Columns.Add("DanJia11", typeof(String));
+                            dt.Columns.Add("GongHuoFangA11", typeof(String));
+                            dt.Columns.Add("GongHuoFangB11", typeof(String));
+                            dt.Columns.Add("BeiZhu11", typeof(String));
+                            foreach (clsBuiness.GongHuoFang s in list2)
+                            {
+                                dt.Rows.Add(s.Id, s.PingMing, s.HuoHao, s.Guige, s.SeHao, s.Yanse, s.DanJia, s.GongHuoFangA, s.GongHuoFangB, s.BeiZhu);
+                            }
+                            dataGridView2.DataSource = dt;
                         }
-                        dataGridView2.DataSource = dt;
+                        MessageBox.Show("读取成功！");
+
                     }
-                    MessageBox.Show("读取成功！");
-
                 }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            
-             }}
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
 
-   
+            }
+        }
+
+
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
@@ -175,9 +176,14 @@ namespace PurchasingProcedures
             {
             }
         }
-        }
 
-       
+        private void GongHuoFang_Load(object sender, EventArgs e)
+        {
+
         }
-    
+    }
+
+
+}
+
 
