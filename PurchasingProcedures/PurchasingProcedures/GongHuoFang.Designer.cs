@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.GongHuoFangB11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GongHuoFangA11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,8 +57,11 @@
             this.Id11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BeiZhu11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog2
@@ -125,6 +129,7 @@
             this.toolStripLabel4.Name = "toolStripLabel4";
             this.toolStripLabel4.Size = new System.Drawing.Size(105, 26);
             this.toolStripLabel4.Text = "读取数据表";
+            this.toolStripLabel4.Click += new System.EventHandler(this.toolStripLabel4_Click);
             // 
             // toolStripLabel1
             // 
@@ -132,6 +137,7 @@
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(105, 24);
             this.toolStripLabel1.Text = "提交";
+            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click_1);
             // 
             // toolStripLabel2
             // 
@@ -144,6 +150,7 @@
             this.toolStripLabel5.Name = "toolStripLabel5";
             this.toolStripLabel5.Size = new System.Drawing.Size(105, 26);
             this.toolStripLabel5.Text = "刷新";
+            this.toolStripLabel5.Click += new System.EventHandler(this.toolStripLabel5_Click);
             // 
             // toolStrip1
             // 
@@ -155,7 +162,8 @@
             this.toolStripLabel4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(108, 522);
+            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip1.Size = new System.Drawing.Size(108, 617);
             this.toolStrip1.TabIndex = 12;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -228,6 +236,8 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id22,
@@ -240,17 +250,32 @@
             this.GongHuoFangA11,
             this.GongHuoFangB11,
             this.BeiZhu11});
+            this.dataGridView2.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView2.Location = new System.Drawing.Point(111, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(950, 510);
+            this.dataGridView2.Size = new System.Drawing.Size(1094, 617);
             this.dataGridView2.TabIndex = 13;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(101, 26);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(100, 22);
+            this.toolStripMenuItem2.Text = "删除";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // GongHuoFang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 522);
+            this.ClientSize = new System.Drawing.Size(1216, 617);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dataGridView2);
             this.Name = "GongHuoFang";
@@ -259,6 +284,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,6 +320,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id11;
         private System.Windows.Forms.DataGridViewTextBoxColumn BeiZhu11;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
 
     }
 }

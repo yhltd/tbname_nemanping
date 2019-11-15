@@ -14,7 +14,7 @@ namespace clsBuiness
     
     public partial class JiaGongChang
     {
-        public int ID { get; set; }
+        public int id { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
         public string Lianxiren { get; set; }

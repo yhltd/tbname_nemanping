@@ -1,6 +1,69 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="nemanpingModelStoreContainer" CdmEntityContainer="nemanpingEntities3">
+  <EntityContainerMapping StorageEntityContainer="nemanpingModelStoreContainer" CdmEntityContainer="nemanpingEntities5">
+    <EntitySetMapping Name="CaiDan">
+      <EntityTypeMapping TypeName="nemanpingModel.CaiDan">
+        <MappingFragment StoreEntitySet="CaiDan">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DESC" ColumnName="DESC" />
+          <ScalarProperty Name="FABRIC" ColumnName="FABRIC" />
+          <ScalarProperty Name="STYLE" ColumnName="STYLE" />
+          <ScalarProperty Name="shuoming" ColumnName="shuoming" />
+          <ScalarProperty Name="Jacket" ColumnName="Jacket" />
+          <ScalarProperty Name="Pant" ColumnName="Pant" />
+          <ScalarProperty Name="LABEL" ColumnName="LABEL" />
+          <ScalarProperty Name="JiaGongchang" ColumnName="JiaGongchang" />
+          <ScalarProperty Name="CaiDanHao" ColumnName="CaiDanHao" />
+          <ScalarProperty Name="ZhiDanRiqi" ColumnName="ZhiDanRiqi" />
+          <ScalarProperty Name="JiaoHuoRiqi" ColumnName="JiaoHuoRiqi" />
+          <ScalarProperty Name="RN_NO" ColumnName="RN_NO" />
+          <ScalarProperty Name="MianLiao" ColumnName="MianLiao" />
+          <ScalarProperty Name="LOT" ColumnName="LOT" />
+          <ScalarProperty Name="ChimaSTYLE" ColumnName="ChimaSTYLE" />
+          <ScalarProperty Name="ART" ColumnName="ART" />
+          <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+          <ScalarProperty Name="COLORID" ColumnName="COLORID" />
+          <ScalarProperty Name="JACKET_PANT" ColumnName="JACKET_PANT" />
+          <ScalarProperty Name="C34R" ColumnName="C34R" />
+          <ScalarProperty Name="C36R" ColumnName="C36R" />
+          <ScalarProperty Name="C38R" ColumnName="C38R" />
+          <ScalarProperty Name="C40R" ColumnName="C40R" />
+          <ScalarProperty Name="C42R" ColumnName="C42R" />
+          <ScalarProperty Name="C44R" ColumnName="C44R" />
+          <ScalarProperty Name="C46R" ColumnName="C46R" />
+          <ScalarProperty Name="C48R" ColumnName="C48R" />
+          <ScalarProperty Name="C50R" ColumnName="C50R" />
+          <ScalarProperty Name="C52R" ColumnName="C52R" />
+          <ScalarProperty Name="C54R" ColumnName="C54R" />
+          <ScalarProperty Name="C56R" ColumnName="C56R" />
+          <ScalarProperty Name="C58R" ColumnName="C58R" />
+          <ScalarProperty Name="C60R" ColumnName="C60R" />
+          <ScalarProperty Name="C62R" ColumnName="C62R" />
+          <ScalarProperty Name="C36L" ColumnName="C36L" />
+          <ScalarProperty Name="C38L" ColumnName="C38L" />
+          <ScalarProperty Name="C40L" ColumnName="C40L" />
+          <ScalarProperty Name="C42L" ColumnName="C42L" />
+          <ScalarProperty Name="C44L" ColumnName="C44L" />
+          <ScalarProperty Name="C46L" ColumnName="C46L" />
+          <ScalarProperty Name="C48L" ColumnName="C48L" />
+          <ScalarProperty Name="C50L" ColumnName="C50L" />
+          <ScalarProperty Name="C52L" ColumnName="C52L" />
+          <ScalarProperty Name="C54L" ColumnName="C54L" />
+          <ScalarProperty Name="C56L" ColumnName="C56L" />
+          <ScalarProperty Name="C58L" ColumnName="C58L" />
+          <ScalarProperty Name="C60L" ColumnName="C60L" />
+          <ScalarProperty Name="C62L" ColumnName="C62L" />
+          <ScalarProperty Name="C34S" ColumnName="C34S" />
+          <ScalarProperty Name="C36S" ColumnName="C36S" />
+          <ScalarProperty Name="C38S" ColumnName="C38S" />
+          <ScalarProperty Name="C40S" ColumnName="C40S" />
+          <ScalarProperty Name="C42S" ColumnName="C42S" />
+          <ScalarProperty Name="C44S" ColumnName="C44S" />
+          <ScalarProperty Name="C46S" ColumnName="C46S" />
+          <ScalarProperty Name="Sub_Total" ColumnName="Sub_Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="ChiMa_Dapeibiao">
       <EntityTypeMapping TypeName="nemanpingModel.ChiMa_Dapeibiao">
         <MappingFragment StoreEntitySet="ChiMa_Dapeibiao">
@@ -48,6 +111,7 @@
           <ScalarProperty Name="C44S_38" ColumnName="44S-38" />
           <ScalarProperty Name="C46S_40" ColumnName="46S-40" />
           <ScalarProperty Name="DingdanHeji" ColumnName="DingdanHeji" />
+          <ScalarProperty Name="BiaoName" ColumnName="BiaoName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -94,7 +158,7 @@
     <EntitySetMapping Name="JiaGongChang">
       <EntityTypeMapping TypeName="nemanpingModel.JiaGongChang">
         <MappingFragment StoreEntitySet="JiaGongChang">
-          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="Lianxiren" ColumnName="Lianxiren" />

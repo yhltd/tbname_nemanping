@@ -12,15 +12,15 @@ namespace logic
 {
     public class Definefactoryinput
     {
-        public bool Login(string name, string pwd)
-        {
-            using (nemanpingEntities3 can = new nemanpingEntities3())
-            {
-                var user = can.UserTable.First(u => u.Name.Equals(name) && u.Pwd.Equals(pwd));
-                return true;
-            }
+        //public bool Login(string name, string pwd)
+        //{
+        //    using (nemanpingEntities3 can = new nemanpingEntities3())
+        //    {
+        //        var user = can.UserTable.First(u => u.Name.Equals(name) && u.Pwd.Equals(pwd));
+        //        return true;
+        //    }
 
-        }
+        //}
         #region 查询加工厂信息
         public List<JiaGongChang> selectJiaGongChang()
         {
@@ -31,7 +31,7 @@ namespace logic
                 foreach (var item in select)
                 {
                     JiaGongChang s = new JiaGongChang();
-                    s.ID = item.ID;
+                    s.id = item.id;
                     s.Name = item.Name;
                     s.Address = item.Address;
                     s.Lianxiren = item.Lianxiren;
@@ -73,7 +73,7 @@ namespace logic
                     else
                     {
                         int id = Convert.ToInt32(dr[0]);
-                        var select = from sc in can.JiaGongChang where sc.ID == id select sc;
+                        var select = from sc in can.JiaGongChang where sc.id == id select sc;
                         var target = select.FirstOrDefault<JiaGongChang>();
                         target.Name = dr[1].ToString();
                         target.Address = dr[2].ToString();
@@ -159,6 +159,30 @@ namespace logic
                 }
                 return list;
             }
+        }
+        #endregion
+        #region 删除加工厂信息
+        public void deleteJaGongChang(List<int> id)
+        {
+            using (nemanpingEntities3 npe = new nemanpingEntities3())
+            {
+                foreach (int strid in id)
+                {
+                    if (strid != null)
+                    {
+                        if (strid != 0)
+                        {
+                            var select = from s in npe.JiaGongChang where s.id == strid select s;
+                            foreach (var item in select)
+                            {
+                                npe.JiaGongChang.Remove(item);
+                            }
+                        }
+                    }
+                }
+                npe.SaveChanges();
+            }
+
         }
         #endregion
         public static string GetCellValue(WorkbookPart wbPart, Cell theCell)

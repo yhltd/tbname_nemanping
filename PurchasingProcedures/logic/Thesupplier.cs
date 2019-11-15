@@ -165,6 +165,32 @@ namespace logic
             }
         }
         #endregion
+
+        #region 删除供货方信息
+        public void deleteGongHuoFang(List<int> id)
+        {
+            using (nemanpingEntities3 npe = new nemanpingEntities3())
+            {
+                foreach (int strid in id)
+                {
+                    if (strid != null)
+                    {
+                        if (strid != 0)
+                        {
+                            var select = from s in npe.GongHuoFang where s.Id == strid select s;
+                            foreach (var item in select)
+                            {
+                                npe.GongHuoFang.Remove(item);
+                            }
+                        }
+                    }
+                }
+                npe.SaveChanges();
+            }
+
+        }
+        #endregion
+
         public static string GetCellValue(WorkbookPart wbPart, Cell theCell)
         {
             string value = theCell.InnerText;

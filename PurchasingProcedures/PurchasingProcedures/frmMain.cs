@@ -165,5 +165,39 @@ namespace PurchasingProcedures
                 kc.TopMost = true;
             }
         }
+
+        private void 供货方录入ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GongHuoFang ghf = new GongHuoFang();
+            if (!HaveOpened(this, ghf.Name))
+            {
+                ghf.MdiParent = this;
+                ghf.Show();
+            }
+            else
+            {
+                ghf.TopMost = true;
+            }
+        }
+
+        private void 裁单输入ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputCaiDanHao IC = new InputCaiDanHao("裁单","请输入Style：");
+            IC.Show();
+        }
+
+        private void 面辅料订购ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            inputMianLiaoDingGou mfl = new inputMianLiaoDingGou();
+            if (!HaveOpened(this, mfl.Name))
+            {
+                mfl.MdiParent = this;
+                mfl.Show();
+            }
+            else
+            {
+                mfl.TopMost = true;
+            }
+        }
     }
 }

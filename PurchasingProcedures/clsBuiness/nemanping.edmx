@@ -6,6 +6,7 @@
     <edmx:StorageModels>
       <Schema Namespace="nemanpingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="nemanpingModelStoreContainer">
+          <EntitySet Name="CaiDan" EntityType="nemanpingModel.Store.CaiDan" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ChiMa_Dapeibiao" EntityType="nemanpingModel.Store.ChiMa_Dapeibiao" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="DanHao" EntityType="nemanpingModel.Store.DanHao" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="GongHuoFang" EntityType="nemanpingModel.Store.GongHuoFang" store:Type="Tables" Schema="dbo" />
@@ -16,6 +17,68 @@
           <EntitySet Name="Sehao" EntityType="nemanpingModel.Store.Sehao" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="UserTable" EntityType="nemanpingModel.Store.UserTable" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
+        <EntityType Name="CaiDan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DESC" Type="varchar" MaxLength="255" />
+          <Property Name="FABRIC" Type="varchar" MaxLength="255" />
+          <Property Name="STYLE" Type="varchar" MaxLength="255" />
+          <Property Name="shuoming" Type="varchar" MaxLength="255" />
+          <Property Name="Jacket" Type="varchar" MaxLength="255" />
+          <Property Name="Pant" Type="varchar" MaxLength="255" />
+          <Property Name="LABEL" Type="varchar" MaxLength="255" />
+          <Property Name="JiaGongchang" Type="varchar" MaxLength="255" />
+          <Property Name="CaiDanHao" Type="varchar" MaxLength="255" />
+          <Property Name="ZhiDanRiqi" Type="varchar" MaxLength="255" />
+          <Property Name="JiaoHuoRiqi" Type="varchar" MaxLength="255" />
+          <Property Name="RN_NO" Type="varchar" MaxLength="255" />
+          <Property Name="MianLiao" Type="varchar" MaxLength="255" />
+          <Property Name="LOT" Type="varchar" MaxLength="255" />
+          <Property Name="ChimaSTYLE" Type="varchar" MaxLength="255" />
+          <Property Name="ART" Type="varchar" MaxLength="255" />
+          <Property Name="COLOR" Type="varchar" MaxLength="255" />
+          <Property Name="COLORID" Type="varchar" MaxLength="255" />
+          <Property Name="JACKET_PANT" Type="varchar" MaxLength="255" />
+          <Property Name="C34R" Type="varchar" MaxLength="255" />
+          <Property Name="C36R" Type="varchar" MaxLength="255" />
+          <Property Name="C38R" Type="varchar" MaxLength="255" />
+          <Property Name="C40R" Type="varchar" MaxLength="255" />
+          <Property Name="C42R" Type="varchar" MaxLength="255" />
+          <Property Name="C44R" Type="varchar" MaxLength="255" />
+          <Property Name="C46R" Type="varchar" MaxLength="255" />
+          <Property Name="C48R" Type="varchar" MaxLength="255" />
+          <Property Name="C50R" Type="varchar" MaxLength="255" />
+          <Property Name="C52R" Type="varchar" MaxLength="255" />
+          <Property Name="C54R" Type="varchar" MaxLength="255" />
+          <Property Name="C56R" Type="varchar" MaxLength="255" />
+          <Property Name="C58R" Type="varchar" MaxLength="255" />
+          <Property Name="C60R" Type="varchar" MaxLength="255" />
+          <Property Name="C62R" Type="varchar" MaxLength="255" />
+          <Property Name="C36L" Type="varchar" MaxLength="255" />
+          <Property Name="C38L" Type="varchar" MaxLength="255" />
+          <Property Name="C40L" Type="varchar" MaxLength="255" />
+          <Property Name="C42L" Type="varchar" MaxLength="255" />
+          <Property Name="C44L" Type="varchar" MaxLength="255" />
+          <Property Name="C46L" Type="varchar" MaxLength="255" />
+          <Property Name="C48L" Type="varchar" MaxLength="255" />
+          <Property Name="C50L" Type="varchar" MaxLength="255" />
+          <Property Name="C52L" Type="varchar" MaxLength="255" />
+          <Property Name="C54L" Type="varchar" MaxLength="255" />
+          <Property Name="C56L" Type="varchar" MaxLength="255" />
+          <Property Name="C58L" Type="varchar" MaxLength="255" />
+          <Property Name="C60L" Type="varchar" MaxLength="255" />
+          <Property Name="C62L" Type="varchar" MaxLength="255" />
+          <Property Name="C34S" Type="varchar" MaxLength="255" />
+          <Property Name="C36S" Type="varchar" MaxLength="255" />
+          <Property Name="C38S" Type="varchar" MaxLength="255" />
+          <Property Name="C40S" Type="varchar" MaxLength="255" />
+          <Property Name="C42S" Type="varchar" MaxLength="255" />
+          <Property Name="C44S" Type="varchar" MaxLength="255" />
+          <Property Name="C46S" Type="varchar" MaxLength="255" />
+          <Property Name="Sub_Total" Type="varchar" MaxLength="255" />
+        </EntityType>
         <EntityType Name="ChiMa_Dapeibiao">
           <Key>
             <PropertyRef Name="id" />
@@ -64,6 +127,7 @@
           <Property Name="44S-38" Type="varchar" MaxLength="255" />
           <Property Name="46S-40" Type="varchar" MaxLength="255" />
           <Property Name="DingdanHeji" Type="varchar" MaxLength="255" />
+          <Property Name="BiaoName" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="DanHao">
           <Key>
@@ -105,9 +169,9 @@
         </EntityType>
         <EntityType Name="JiaGongChang">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="varchar" MaxLength="255" />
           <Property Name="Address" Type="varchar" MaxLength="255" />
           <Property Name="Lianxiren" Type="varchar" MaxLength="255" />
@@ -124,10 +188,10 @@
           <Property Name="STYLE" Type="varchar" MaxLength="255" />
           <Property Name="DESC" Type="varchar" MaxLength="255" />
           <Property Name="FABRIC" Type="varchar" MaxLength="255" />
-          <Property Name="JACKET" Type="varchar" MaxLength="255" />
-          <Property Name="PANT" Type="varchar" MaxLength="255" />
-          <Property Name="ShuoMing" Type="varchar" MaxLength="255" />
-          <Property Name="mark1" Type="varchar" MaxLength="255" />
+          <Property Name="JACKET" Type="varchar" MaxLength="1000" />
+          <Property Name="PANT" Type="varchar" MaxLength="1000" />
+          <Property Name="ShuoMing" Type="varchar" MaxLength="1000" />
+          <Property Name="mark1" Type="varchar" MaxLength="1000" />
           <Property Name="mark2" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="KuCun">
@@ -190,7 +254,8 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="nemanpingModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="nemanpingEntities3" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="nemanpingEntities5" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="CaiDan" EntityType="nemanpingModel.CaiDan" />
           <EntitySet Name="ChiMa_Dapeibiao" EntityType="nemanpingModel.ChiMa_Dapeibiao" />
           <EntitySet Name="DanHao" EntityType="nemanpingModel.DanHao" />
           <EntitySet Name="GongHuoFang" EntityType="nemanpingModel.GongHuoFang" />
@@ -201,6 +266,68 @@
           <EntitySet Name="Sehao" EntityType="nemanpingModel.Sehao" />
           <EntitySet Name="UserTable" EntityType="nemanpingModel.UserTable" />
         </EntityContainer>
+        <EntityType Name="CaiDan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DESC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="FABRIC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="STYLE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="shuoming" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Jacket" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Pant" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="LABEL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JiaGongchang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="CaiDanHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ZhiDanRiqi" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JiaoHuoRiqi" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="RN_NO" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="MianLiao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="LOT" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ChimaSTYLE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ART" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="COLOR" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="COLORID" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JACKET_PANT" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C34R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C46R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C48R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C50R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C52R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C54R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C56R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C58R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C60R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C62R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C46L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C48L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C50L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C52L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C54L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C56L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C58L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C60L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C62L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C34S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C46S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Sub_Total" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
         <EntityType Name="ChiMa_Dapeibiao">
           <Key>
             <PropertyRef Name="id" />
@@ -249,6 +376,7 @@
           <Property Name="C44S_38" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="C46S_40" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="DingdanHeji" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="BiaoName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
         </EntityType>
         <EntityType Name="DanHao">
           <Key>
@@ -290,9 +418,9 @@
         </EntityType>
         <EntityType Name="JiaGongChang">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="Address" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="Lianxiren" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
@@ -375,7 +503,70 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="nemanpingModelStoreContainer" CdmEntityContainer="nemanpingEntities3">
+        <EntityContainerMapping StorageEntityContainer="nemanpingModelStoreContainer" CdmEntityContainer="nemanpingEntities5">
+          <EntitySetMapping Name="CaiDan">
+            <EntityTypeMapping TypeName="nemanpingModel.CaiDan">
+              <MappingFragment StoreEntitySet="CaiDan">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="FABRIC" ColumnName="FABRIC" />
+                <ScalarProperty Name="STYLE" ColumnName="STYLE" />
+                <ScalarProperty Name="shuoming" ColumnName="shuoming" />
+                <ScalarProperty Name="Jacket" ColumnName="Jacket" />
+                <ScalarProperty Name="Pant" ColumnName="Pant" />
+                <ScalarProperty Name="LABEL" ColumnName="LABEL" />
+                <ScalarProperty Name="JiaGongchang" ColumnName="JiaGongchang" />
+                <ScalarProperty Name="CaiDanHao" ColumnName="CaiDanHao" />
+                <ScalarProperty Name="ZhiDanRiqi" ColumnName="ZhiDanRiqi" />
+                <ScalarProperty Name="JiaoHuoRiqi" ColumnName="JiaoHuoRiqi" />
+                <ScalarProperty Name="RN_NO" ColumnName="RN_NO" />
+                <ScalarProperty Name="MianLiao" ColumnName="MianLiao" />
+                <ScalarProperty Name="LOT" ColumnName="LOT" />
+                <ScalarProperty Name="ChimaSTYLE" ColumnName="ChimaSTYLE" />
+                <ScalarProperty Name="ART" ColumnName="ART" />
+                <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+                <ScalarProperty Name="COLORID" ColumnName="COLORID" />
+                <ScalarProperty Name="JACKET_PANT" ColumnName="JACKET_PANT" />
+                <ScalarProperty Name="C34R" ColumnName="C34R" />
+                <ScalarProperty Name="C36R" ColumnName="C36R" />
+                <ScalarProperty Name="C38R" ColumnName="C38R" />
+                <ScalarProperty Name="C40R" ColumnName="C40R" />
+                <ScalarProperty Name="C42R" ColumnName="C42R" />
+                <ScalarProperty Name="C44R" ColumnName="C44R" />
+                <ScalarProperty Name="C46R" ColumnName="C46R" />
+                <ScalarProperty Name="C48R" ColumnName="C48R" />
+                <ScalarProperty Name="C50R" ColumnName="C50R" />
+                <ScalarProperty Name="C52R" ColumnName="C52R" />
+                <ScalarProperty Name="C54R" ColumnName="C54R" />
+                <ScalarProperty Name="C56R" ColumnName="C56R" />
+                <ScalarProperty Name="C58R" ColumnName="C58R" />
+                <ScalarProperty Name="C60R" ColumnName="C60R" />
+                <ScalarProperty Name="C62R" ColumnName="C62R" />
+                <ScalarProperty Name="C36L" ColumnName="C36L" />
+                <ScalarProperty Name="C38L" ColumnName="C38L" />
+                <ScalarProperty Name="C40L" ColumnName="C40L" />
+                <ScalarProperty Name="C42L" ColumnName="C42L" />
+                <ScalarProperty Name="C44L" ColumnName="C44L" />
+                <ScalarProperty Name="C46L" ColumnName="C46L" />
+                <ScalarProperty Name="C48L" ColumnName="C48L" />
+                <ScalarProperty Name="C50L" ColumnName="C50L" />
+                <ScalarProperty Name="C52L" ColumnName="C52L" />
+                <ScalarProperty Name="C54L" ColumnName="C54L" />
+                <ScalarProperty Name="C56L" ColumnName="C56L" />
+                <ScalarProperty Name="C58L" ColumnName="C58L" />
+                <ScalarProperty Name="C60L" ColumnName="C60L" />
+                <ScalarProperty Name="C62L" ColumnName="C62L" />
+                <ScalarProperty Name="C34S" ColumnName="C34S" />
+                <ScalarProperty Name="C36S" ColumnName="C36S" />
+                <ScalarProperty Name="C38S" ColumnName="C38S" />
+                <ScalarProperty Name="C40S" ColumnName="C40S" />
+                <ScalarProperty Name="C42S" ColumnName="C42S" />
+                <ScalarProperty Name="C44S" ColumnName="C44S" />
+                <ScalarProperty Name="C46S" ColumnName="C46S" />
+                <ScalarProperty Name="Sub_Total" ColumnName="Sub_Total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ChiMa_Dapeibiao">
             <EntityTypeMapping TypeName="nemanpingModel.ChiMa_Dapeibiao">
               <MappingFragment StoreEntitySet="ChiMa_Dapeibiao">
@@ -423,6 +614,7 @@
                 <ScalarProperty Name="C44S_38" ColumnName="44S-38" />
                 <ScalarProperty Name="C46S_40" ColumnName="46S-40" />
                 <ScalarProperty Name="DingdanHeji" ColumnName="DingdanHeji" />
+                <ScalarProperty Name="BiaoName" ColumnName="BiaoName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -469,7 +661,7 @@
           <EntitySetMapping Name="JiaGongChang">
             <EntityTypeMapping TypeName="nemanpingModel.JiaGongChang">
               <MappingFragment StoreEntitySet="JiaGongChang">
-                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Lianxiren" ColumnName="Lianxiren" />

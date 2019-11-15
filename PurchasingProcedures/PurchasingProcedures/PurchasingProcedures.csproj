@@ -40,6 +40,15 @@
       <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Spire.License">
+      <HintPath>..\..\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf">
+      <HintPath>..\..\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.XLS">
+      <HintPath>..\..\Spire.XLS.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -53,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaiDan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CaiDan.Designer.cs">
+      <DependentUpon>CaiDan.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChiMaDaPei.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +98,18 @@
     <Compile Include="GongHuoFang.Designer.cs">
       <DependentUpon>GongHuoFang.cs</DependentUpon>
     </Compile>
+    <Compile Include="InputCaiDanHao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputCaiDanHao.Designer.cs">
+      <DependentUpon>InputCaiDanHao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inputMianLiaoDingGou.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inputMianLiaoDingGou.Designer.cs">
+      <DependentUpon>inputMianLiaoDingGou.cs</DependentUpon>
+    </Compile>
     <Compile Include="JingDu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +134,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MianFuLiaoDingGou.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MianFuLiaoDingGou.Designer.cs">
+      <DependentUpon>MianFuLiaoDingGou.cs</DependentUpon>
+    </Compile>
     <Compile Include="PeiSeBiaoLuru.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +154,9 @@
     <Compile Include="SeHaoBiaoLuru.Designer.cs">
       <DependentUpon>SeHaoBiaoLuru.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CaiDan.resx">
+      <DependentUpon>CaiDan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChiMaDaPei.resx">
       <DependentUpon>ChiMaDaPei.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +172,12 @@
     <EmbeddedResource Include="GongHuoFang.resx">
       <DependentUpon>GongHuoFang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InputCaiDanHao.resx">
+      <DependentUpon>InputCaiDanHao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inputMianLiaoDingGou.resx">
+      <DependentUpon>inputMianLiaoDingGou.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="JingDu.resx">
       <DependentUpon>JingDu.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MianFuLiaoDingGou.resx">
+      <DependentUpon>MianFuLiaoDingGou.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PeiSeBiaoLuru.resx">
       <DependentUpon>PeiSeBiaoLuru.cs</DependentUpon>

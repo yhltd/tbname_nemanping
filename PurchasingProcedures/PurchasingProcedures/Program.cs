@@ -25,6 +25,7 @@ namespace PurchasingProcedures
             else 
             {
                 Application.Run(new frmMain());
+                //Application.Run(new Form1());
             }
             
         }

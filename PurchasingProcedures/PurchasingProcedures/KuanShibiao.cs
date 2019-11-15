@@ -18,6 +18,7 @@ namespace PurchasingProcedures
         public KuanShibiao()
         {
             InitializeComponent();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
         private void 刷新ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -29,31 +30,35 @@ namespace PurchasingProcedures
         {
 
         }
-
+        public void bindDataGirdview() 
+        {
+            List<KuanShiBiao> list = cal.SelectKuanshi();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Id", typeof(int));
+            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+            {
+                if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("Id"))
+                {
+                    dt.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
+                }
+            }
+            foreach (KuanShiBiao s in list)
+            {
+                dt.Rows.Add(s.Id, s.STYLE, s.DESC, s.FABRIC, s.JACKET, s.PANT, s.mark1, s.ShuoMing, s.mark2);
+            }
+            dataGridView1.DataSource = dt;
+        }
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             try
             {
+                bindDataGirdview();
                 this.backgroundWorker1.RunWorkerAsync(); // 运行 backgroundWorker 组件
 
                 JingDu form = new JingDu(this.backgroundWorker1, "刷新中");// 显示进度条窗体
                 form.ShowDialog(this);
                 form.Close();
-                List<KuanShiBiao> list = cal.SelectKuanshi();
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Id", typeof(int));
-                for (int i = 0; i < dataGridView1.Columns.Count; i++)
-                {
-                    if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("Id"))
-                    {
-                        dt.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
-                    }
-                }
-                foreach (KuanShiBiao s in list)
-                {
-                    dt.Rows.Add(s.Id, s.STYLE, s.DESC, s.FABRIC, s.JACKET, s.PANT, s.mark1, s.ShuoMing, s.mark2);
-                }
-                dataGridView1.DataSource = dt;
+                
                 MessageBox.Show("刷新成功！");
 
             }
@@ -73,8 +78,28 @@ namespace PurchasingProcedures
                 form.ShowDialog(this);
                 form.Close();
                 DataTable dt = dataGridView1.DataSource as DataTable;
+                if (dt == null)
+                {
+                    dt = new DataTable();
+                    dt.Columns.Add("Id", typeof(int));
+                    for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                    {
+                        if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("Id"))
+                        {
+                            dt.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
+                        }
+                    }
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        if (dataGridView1.Rows[i].Cells[6].Value != null)
+                        {
+                            dt.Rows.Add(dataGridView1.Rows[i].Cells[0].Value, dataGridView1.Rows[i].Cells[1].Value, dataGridView1.Rows[i].Cells[2].Value, dataGridView1.Rows[i].Cells[3].Value, dataGridView1.Rows[i].Cells[4].Value, dataGridView1.Rows[i].Cells[5].Value, dataGridView1.Rows[i].Cells[6].Value, dataGridView1.Rows[i].Cells[7].Value, dataGridView1.Rows[i].Cells[8].Value);
+                        }
+                    }
+                }
                 cal.insertKuanShi(dt);
                 MessageBox.Show("提交成功！");
+                bindDataGirdview();
             }
             catch (Exception ex)
             {
@@ -152,6 +177,43 @@ namespace PurchasingProcedures
             }
             else
             {
+            }
+        }
+
+        private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<int> idtrr = new List<int>();
+                for (int i = this.dataGridView1.SelectedRows.Count; i > 0; i--)
+                {
+                    if (dataGridView1.SelectedRows[i - 1].Cells[0].Value == null || dataGridView1.SelectedRows[i - 1].Cells[0].Value is DBNull)
+                    {
+                        DataRowView drv = dataGridView1.SelectedRows[i - 1].DataBoundItem as DataRowView;
+                        if (drv != null)
+                        {
+                            drv.Delete();
+                            i = i - 1;
+                        }
+                        i = i - 1;
+                    }
+                    else
+                    {
+                        idtrr.Add(Convert.ToInt32(dataGridView1.SelectedRows[i - 1].Cells[0].Value));
+
+                    }
+                }
+                cal.deleteKuanshi(idtrr);
+                this.backgroundWorker1.RunWorkerAsync();
+                JingDu form = new JingDu(this.backgroundWorker1, "删除中");// 显示进度条窗体
+                form.ShowDialog(this);
+                form.Close();
+                MessageBox.Show("删除成功！");
+                bindDataGirdview();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }

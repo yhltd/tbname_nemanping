@@ -74,3 +74,11 @@ D:\yho110\nemanping\tbname_nemanping - 副本 (2)\PurchasingProcedures\Purchasin
 D:\yho110\nemanping\tbname_nemanping - 副本 (2)\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.exe
 D:\yho110\nemanping\tbname_nemanping - 副本 (2)\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.pdb
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.GongHuoFang.resources
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.CaiDan.resources
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.InputCaiDanHao.resources
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\NPOI.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\Spire.License.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\Spire.Pdf.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\Spire.XLS.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.MianFuLiaoDingGou.resources
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.inputMianLiaoDingGou.resources

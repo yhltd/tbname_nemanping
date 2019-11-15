@@ -25,6 +25,7 @@ namespace clsBuiness
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<CaiDan> CaiDan { get; set; }
         public DbSet<ChiMa_Dapeibiao> ChiMa_Dapeibiao { get; set; }
         public DbSet<DanHao> DanHao { get; set; }
         public DbSet<GongHuoFang> GongHuoFang { get; set; }

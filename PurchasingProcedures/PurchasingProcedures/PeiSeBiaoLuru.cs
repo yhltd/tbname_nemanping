@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using clsBuiness;
 using logic;
+using System.Threading;
 namespace PurchasingProcedures
 {
     public partial class PeiSeBiaoLuru : Form
@@ -17,6 +18,7 @@ namespace PurchasingProcedures
         public PeiSeBiaoLuru()
         {
             InitializeComponent();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,8 +67,15 @@ namespace PurchasingProcedures
 
         private void cb_MianLiao_TextChanged(object sender, EventArgs e)
         {
-       
-            
+            if (cb_MianLiao.Text.Equals(string.Empty))
+            {
+                DataTable dt = new DataTable();
+                for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                {
+                    dt.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
+                }
+                dataGridView1.DataSource = dt;
+            }
         }
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
@@ -74,9 +83,34 @@ namespace PurchasingProcedures
             try
             {
                 DataTable dt = dataGridView1.DataSource as DataTable;
+                if (dt == null)
+                {
+                    dt = new DataTable();
+                    dt.Columns.Add("Id", typeof(int));
+                    for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                    {
+                        if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("Id"))
+                        {
+                            dt.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
+                        }
+                    }
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        if (dataGridView1.Rows[i].Cells[6].Value != null)
+                        {
+                            dt.Rows.Add(dataGridView1.Rows[i].Cells[19].Value, dataGridView1.Rows[i].Cells[0].Value, dataGridView1.Rows[i].Cells[1].Value, dataGridView1.Rows[i].Cells[2].Value, dataGridView1.Rows[i].Cells[3].Value, dataGridView1.Rows[i].Cells[4].Value, dataGridView1.Rows[i].Cells[5].Value, dataGridView1.Rows[i].Cells[6].Value, dataGridView1.Rows[i].Cells[7].Value, dataGridView1.Rows[i].Cells[8].Value, dataGridView1.Rows[i].Cells[9].Value, dataGridView1.Rows[i].Cells[10].Value, dataGridView1.Rows[i].Cells[11].Value, dataGridView1.Rows[i].Cells[12].Value, dataGridView1.Rows[i].Cells[13].Value, dataGridView1.Rows[i].Cells[14].Value, dataGridView1.Rows[i].Cells[15].Value, dataGridView1.Rows[i].Cells[16].Value, dataGridView1.Rows[i].Cells[17].Value, dataGridView1.Rows[i].Cells[18].Value, dataGridView1.Rows[i].Cells[20].Value, dataGridView1.Rows[i].Cells[21].Value);
+                        }
+                    }
+                }
+                this.backgroundWorker1.RunWorkerAsync(); // 运行 backgroundWorker 组件
+                JingDu form = new JingDu(this.backgroundWorker1, "提交中");// 显示进度条窗体
+                form.ShowDialog(this);
+                form.Close();
                 cal.insertPeise(dt, cb_MianLiao.Text, dateTimePicker1.Text);
                 MessageBox.Show("提交成功！");
-                comboBox1_SelectedIndexChanged(sender, e);
+                string cbtext = cb_MianLiao.Text;
+                PeiSeBiaoLuru_Load(sender,e);
+                cb_MianLiao.Text = cbtext;
             }
             catch (Exception ex) 
             {
@@ -99,6 +133,10 @@ namespace PurchasingProcedures
                         {
                             if (path.Trim().Contains("xlsx"))
                             {
+                                this.backgroundWorker1.RunWorkerAsync(); // 运行 backgroundWorker 组件
+                                JingDu form = new JingDu(this.backgroundWorker1, "读取中");// 显示进度条窗体
+                                form.ShowDialog(this);
+                                form.Close();
                                 List<PeiSe> list = cal.ReaderPeiSe(path);
                                 DataTable dt = new DataTable();
                                 if (list[0].Date != null)
@@ -142,6 +180,101 @@ namespace PurchasingProcedures
 
             }
             
+        }
+
+        private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<int> idtrr = new List<int>();
+                for (int i = this.dataGridView1.SelectedRows.Count; i > 0; i--)
+                {
+                    if (dataGridView1.SelectedRows[i - 1].Cells[19].Value == null || dataGridView1.SelectedRows[i - 1].Cells[19].Value is DBNull)
+                    {
+                        DataRowView drv = dataGridView1.SelectedRows[i - 1].DataBoundItem as DataRowView;
+                        if (drv != null)
+                        {
+                            drv.Delete();
+                            i = i - 1;
+                        }
+                    }
+                    else
+                    {
+                        idtrr.Add(Convert.ToInt32(dataGridView1.SelectedRows[i - 1].Cells[19].Value));
+
+                    }
+                }
+
+                cal.deletePeiseSession(idtrr);
+                this.backgroundWorker1.RunWorkerAsync();
+                JingDu form = new JingDu(this.backgroundWorker1, "删除中");// 显示进度条窗体
+                form.ShowDialog(this);
+                form.Close();
+                MessageBox.Show("删除成功！");
+                comboBox1_SelectedIndexChanged(sender, e);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            for (int i = 0; i < 100; i++)
+            {
+                Thread.Sleep(10);
+                worker.ReportProgress(i);
+                if (worker.CancellationPending)  // 如果用户取消则跳出处理数据代码 
+                {
+                    e.Cancel = true;
+                    break;
+                }
+            }
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Error != null)
+            {
+                MessageBox.Show(e.Error.Message);
+            }
+            else if (e.Cancelled)
+            {
+            }
+            else
+            {
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult dr = MessageBox.Show("确认要删除    面料号为：'" + cb_MianLiao.Text + "'的单耗表吗？", "提示", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    cal.deletps(cb_MianLiao.Text);
+                    this.backgroundWorker1.RunWorkerAsync();
+                    JingDu form = new JingDu(this.backgroundWorker1, "删除中");// 显示进度条窗体
+                    form.ShowDialog(this);
+                    form.Close();
+                    MessageBox.Show("删除成功！");
+                    PeiSeBiaoLuru_Load(sender, e);
+                    cb_MianLiao.Text = cb_MianLiao.Text;
+                    comboBox1_SelectedIndexChanged(sender, e);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

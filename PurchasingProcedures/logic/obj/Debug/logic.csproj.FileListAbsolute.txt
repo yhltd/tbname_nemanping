@@ -36,3 +36,5 @@ D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\logic\bin\Deb
 D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\logic\obj\Debug\logic.csprojResolveAssemblyReference.cache
 D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\logic\obj\Debug\logic.dll
 D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\logic\obj\Debug\logic.pdb
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\NPOI.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\NPOI.OOXML.dll

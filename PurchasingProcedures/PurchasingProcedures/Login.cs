@@ -35,8 +35,8 @@ namespace PurchasingProcedures
         {
             try
             {
+                
                 this.backgroundWorker1.RunWorkerAsync(); // 运行 backgroundWorker 组件
-
                 JingDu form = new JingDu(this.backgroundWorker1, "后台验证中");// 显示进度条窗体
                 form.ShowDialog(this);
                 form.Close();

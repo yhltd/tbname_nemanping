@@ -58,5 +58,6 @@ namespace clsBuiness
         public string C44S_38 { get; set; }
         public string C46S_40 { get; set; }
         public string DingdanHeji { get; set; }
+        public string BiaoName { get; set; }
     }
 }

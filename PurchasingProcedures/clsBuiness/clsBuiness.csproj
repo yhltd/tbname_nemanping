@@ -52,6 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaiDan.cs">
+      <DependentUpon>nemanping.tt</DependentUpon>
+    </Compile>
     <Compile Include="ChiMa_Dapeibiao.cs">
       <DependentUpon>nemanping.tt</DependentUpon>
     </Compile>
@@ -62,6 +65,7 @@
     <Compile Include="GongHuoFang.cs">
       <DependentUpon>nemanping.tt</DependentUpon>
     </Compile>
+    <Compile Include="HeSuan.cs" />
     <Compile Include="JiaGongChang.cs">
       <DependentUpon>nemanping.tt</DependentUpon>
     </Compile>

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="nemanpingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="nemanpingModelStoreContainer">
+    <EntitySet Name="CaiDan" EntityType="nemanpingModel.Store.CaiDan" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ChiMa_Dapeibiao" EntityType="nemanpingModel.Store.ChiMa_Dapeibiao" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DanHao" EntityType="nemanpingModel.Store.DanHao" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="GongHuoFang" EntityType="nemanpingModel.Store.GongHuoFang" store:Type="Tables" Schema="dbo" />
@@ -11,6 +12,68 @@
     <EntitySet Name="Sehao" EntityType="nemanpingModel.Store.Sehao" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UserTable" EntityType="nemanpingModel.Store.UserTable" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
+  <EntityType Name="CaiDan">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DESC" Type="varchar" MaxLength="255" />
+    <Property Name="FABRIC" Type="varchar" MaxLength="255" />
+    <Property Name="STYLE" Type="varchar" MaxLength="255" />
+    <Property Name="shuoming" Type="varchar" MaxLength="255" />
+    <Property Name="Jacket" Type="varchar" MaxLength="255" />
+    <Property Name="Pant" Type="varchar" MaxLength="255" />
+    <Property Name="LABEL" Type="varchar" MaxLength="255" />
+    <Property Name="JiaGongchang" Type="varchar" MaxLength="255" />
+    <Property Name="CaiDanHao" Type="varchar" MaxLength="255" />
+    <Property Name="ZhiDanRiqi" Type="varchar" MaxLength="255" />
+    <Property Name="JiaoHuoRiqi" Type="varchar" MaxLength="255" />
+    <Property Name="RN_NO" Type="varchar" MaxLength="255" />
+    <Property Name="MianLiao" Type="varchar" MaxLength="255" />
+    <Property Name="LOT" Type="varchar" MaxLength="255" />
+    <Property Name="ChimaSTYLE" Type="varchar" MaxLength="255" />
+    <Property Name="ART" Type="varchar" MaxLength="255" />
+    <Property Name="COLOR" Type="varchar" MaxLength="255" />
+    <Property Name="COLORID" Type="varchar" MaxLength="255" />
+    <Property Name="JACKET_PANT" Type="varchar" MaxLength="255" />
+    <Property Name="C34R" Type="varchar" MaxLength="255" />
+    <Property Name="C36R" Type="varchar" MaxLength="255" />
+    <Property Name="C38R" Type="varchar" MaxLength="255" />
+    <Property Name="C40R" Type="varchar" MaxLength="255" />
+    <Property Name="C42R" Type="varchar" MaxLength="255" />
+    <Property Name="C44R" Type="varchar" MaxLength="255" />
+    <Property Name="C46R" Type="varchar" MaxLength="255" />
+    <Property Name="C48R" Type="varchar" MaxLength="255" />
+    <Property Name="C50R" Type="varchar" MaxLength="255" />
+    <Property Name="C52R" Type="varchar" MaxLength="255" />
+    <Property Name="C54R" Type="varchar" MaxLength="255" />
+    <Property Name="C56R" Type="varchar" MaxLength="255" />
+    <Property Name="C58R" Type="varchar" MaxLength="255" />
+    <Property Name="C60R" Type="varchar" MaxLength="255" />
+    <Property Name="C62R" Type="varchar" MaxLength="255" />
+    <Property Name="C36L" Type="varchar" MaxLength="255" />
+    <Property Name="C38L" Type="varchar" MaxLength="255" />
+    <Property Name="C40L" Type="varchar" MaxLength="255" />
+    <Property Name="C42L" Type="varchar" MaxLength="255" />
+    <Property Name="C44L" Type="varchar" MaxLength="255" />
+    <Property Name="C46L" Type="varchar" MaxLength="255" />
+    <Property Name="C48L" Type="varchar" MaxLength="255" />
+    <Property Name="C50L" Type="varchar" MaxLength="255" />
+    <Property Name="C52L" Type="varchar" MaxLength="255" />
+    <Property Name="C54L" Type="varchar" MaxLength="255" />
+    <Property Name="C56L" Type="varchar" MaxLength="255" />
+    <Property Name="C58L" Type="varchar" MaxLength="255" />
+    <Property Name="C60L" Type="varchar" MaxLength="255" />
+    <Property Name="C62L" Type="varchar" MaxLength="255" />
+    <Property Name="C34S" Type="varchar" MaxLength="255" />
+    <Property Name="C36S" Type="varchar" MaxLength="255" />
+    <Property Name="C38S" Type="varchar" MaxLength="255" />
+    <Property Name="C40S" Type="varchar" MaxLength="255" />
+    <Property Name="C42S" Type="varchar" MaxLength="255" />
+    <Property Name="C44S" Type="varchar" MaxLength="255" />
+    <Property Name="C46S" Type="varchar" MaxLength="255" />
+    <Property Name="Sub_Total" Type="varchar" MaxLength="255" />
+  </EntityType>
   <EntityType Name="ChiMa_Dapeibiao">
     <Key>
       <PropertyRef Name="id" />
@@ -59,6 +122,7 @@
     <Property Name="44S-38" Type="varchar" MaxLength="255" />
     <Property Name="46S-40" Type="varchar" MaxLength="255" />
     <Property Name="DingdanHeji" Type="varchar" MaxLength="255" />
+    <Property Name="BiaoName" Type="varchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="DanHao">
     <Key>
@@ -100,9 +164,9 @@
   </EntityType>
   <EntityType Name="JiaGongChang">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="id" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="varchar" MaxLength="255" />
     <Property Name="Address" Type="varchar" MaxLength="255" />
     <Property Name="Lianxiren" Type="varchar" MaxLength="255" />
@@ -119,10 +183,10 @@
     <Property Name="STYLE" Type="varchar" MaxLength="255" />
     <Property Name="DESC" Type="varchar" MaxLength="255" />
     <Property Name="FABRIC" Type="varchar" MaxLength="255" />
-    <Property Name="JACKET" Type="varchar" MaxLength="255" />
-    <Property Name="PANT" Type="varchar" MaxLength="255" />
-    <Property Name="ShuoMing" Type="varchar" MaxLength="255" />
-    <Property Name="mark1" Type="varchar" MaxLength="255" />
+    <Property Name="JACKET" Type="varchar" MaxLength="1000" />
+    <Property Name="PANT" Type="varchar" MaxLength="1000" />
+    <Property Name="ShuoMing" Type="varchar" MaxLength="1000" />
+    <Property Name="mark1" Type="varchar" MaxLength="1000" />
     <Property Name="mark2" Type="varchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="KuCun">

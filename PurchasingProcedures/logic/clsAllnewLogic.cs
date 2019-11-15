@@ -7,7 +7,6 @@ using clsBuiness;
 using System.Data;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
-
 namespace logic
 {
     public class clsAllnewLogic
@@ -109,65 +108,102 @@ namespace logic
                 }
             }
             #endregion 
+
+            #region 删除色号表
+            public void deleteSehao(List<int> id) 
+            {
+                using(nemanpingEntities3 npe = new nemanpingEntities3())
+                {
+                    foreach (int strid in id) 
+                    {
+                        if (strid != null)
+                        {
+                            if (strid != 0) 
+                            {
+                                var select = from s in npe.Sehao where s.Id == strid select s;
+                                foreach (var item in select)
+                                {
+                                    npe.Sehao.Remove(item);
+                                }
+                            }
+                        }
+                    }
+                    npe.SaveChanges();
+                }
+                
+            }
+            #endregion
         #endregion
 
         #region 读取EXCEL表格相关代码
 
         public static string GetCellValue(WorkbookPart wbPart, Cell theCell)
+    {
+        string value = theCell.InnerText;
+        //  String value1 = theCell.CellValue.InnerText;
+        if (theCell.DataType != null)
         {
-            string value = theCell.InnerText;
-            //  String value1 = theCell.CellValue.InnerText;
-            if (theCell.DataType != null)
+            switch (theCell.DataType.Value)
             {
-                switch (theCell.DataType.Value)
-                {
-                    case CellValues.SharedString:
-                        var stringTable = wbPart.
-                          GetPartsOfType<SharedStringTablePart>().FirstOrDefault();
-                        if (stringTable != null)
-                        {
-                            value = stringTable.SharedStringTable.ElementAt(int.Parse(value)).InnerText;
-                        }
-                        break;
+                case CellValues.SharedString:
+                    var stringTable = wbPart.
+                        GetPartsOfType<SharedStringTablePart>().FirstOrDefault();
+                    if (stringTable != null)
+                    {
+                        value = stringTable.SharedStringTable.ElementAt(int.Parse(value)).InnerText;
+                    }
+                    break;
 
-                    case CellValues.Boolean:
-                        switch (value)
-                        {
-                            case "0":
-                                value = "FALSE";
-                                break;
-                            default:
-                                value = "TRUE";
-                                break;
-                        }
-                        break;
-                }
+                case CellValues.Boolean:
+                    switch (value)
+                    {
+                        case "0":
+                            value = "FALSE";
+                            break;
+                        default:
+                            value = "TRUE";
+                            break;
+                    }
+                    break;
             }
-            return value;
         }
-        public String GetValue(Cell cell, WorkbookPart wbPart)
-        {
-            SharedStringTablePart stringTablePart = wbPart.SharedStringTablePart;
-            if (cell.ChildElements.Count == 0)
-                return null;
-            String value = cell.CellValue.InnerText;
-            if ((cell.DataType != null) && (cell.DataType == CellValues.SharedString))
-                return stringTablePart.SharedStringTable.ChildElements[Int32.Parse(value)].InnerText;
-            return value;
-        } 
-        #endregion
+        return value;
+    }
+    public String GetValue(Cell cell, WorkbookPart wbPart)
+    {
+        SharedStringTablePart stringTablePart = wbPart.SharedStringTablePart;
+        if (cell.ChildElements.Count == 0)
+            return null;
+        String value = cell.CellValue.InnerText;
+        if ((cell.DataType != null) && (cell.DataType == CellValues.SharedString))
+            return stringTablePart.SharedStringTable.ChildElements[Int32.Parse(value)].InnerText;
+        return value;
+    } 
+    #endregion
 
         #region 功能:尺码搭配表录入
             #region 查询尺码搭配表
-        public List<ChiMa_Dapeibiao> SelectChiMaDapei() 
+        public List<ChiMa_Dapeibiao> SelectChiMaDapei(string strwhere) 
         {
             using(nemanpingEntities3 npe = new nemanpingEntities3())
             {
                 List<ChiMa_Dapeibiao> list = new List<ChiMa_Dapeibiao>();
 
-                var select = from cm in npe.ChiMa_Dapeibiao
-                             select cm;
-                list = select.ToList<ChiMa_Dapeibiao>();
+                if (strwhere.Equals(string.Empty))
+                {
+                    
+                    var select = from cm in npe.ChiMa_Dapeibiao
+                                 select cm;
+                    list = select.ToList<ChiMa_Dapeibiao>();
+                    
+                }
+                else 
+                {
+                    var select = from cm in npe.ChiMa_Dapeibiao
+                                 where cm.BiaoName.Equals(strwhere)
+                                 select cm;
+                    list = select.ToList<ChiMa_Dapeibiao>();
+                }
                 return list;
             }
             
@@ -175,7 +211,7 @@ namespace logic
             #endregion
 
             #region 添加修改 尺码搭配表
-                public void InsertChima(DataTable dt) 
+                public void InsertChima(DataTable dt,string biaogeName) 
                 {
                     using (nemanpingEntities3 npe = new nemanpingEntities3()) 
                     {
@@ -185,6 +221,7 @@ namespace logic
                             {
                                 ChiMa_Dapeibiao cd = new ChiMa_Dapeibiao()
                                 {
+                                    BiaoName = biaogeName,
                                     LOT__面料 = dr[1].ToString(),
                                     STYLE_款式 = dr[2].ToString(),
                                     ART_货号 = dr[3].ToString(),
@@ -489,10 +526,61 @@ namespace logic
                     return list;
                 }
             #endregion
-        #endregion
+
+            #region 删除尺码搭配信息
+                public void deleteChiMa(List<int> id) 
+                {
+                    using (nemanpingEntities3 npe = new nemanpingEntities3())
+                    {
+                        foreach (int strid in id)
+                        {
+                            if (strid != null)
+                            {
+                                if (strid != 0)
+                                {
+                                    var select = from s in npe.ChiMa_Dapeibiao where s.id == strid select s;
+                                    foreach (var item in select)
+                                    {
+                                        npe.ChiMa_Dapeibiao.Remove(item);
+                                    }
+                                }
+                            }
+                        }
+                        npe.SaveChanges();
+                    }
+                
+                }
+            #endregion
+
+            #region 删除尺码搭配表
+                public void deleteChiMaBiao(string id)
+                {
+                    using (nemanpingEntities3 npe = new nemanpingEntities3())
+                    {
+                        foreach (int strid in id)
+                        {
+                            if (strid != null)
+                            {
+                                if (strid != 0)
+                                {
+                                    var select = from s in npe.ChiMa_Dapeibiao where s.BiaoName.Equals(id) select s;
+                                    foreach (var item in select)
+                                    {
+                                        npe.ChiMa_Dapeibiao.Remove(item);
+                                    }
+                                }
+                            }
+                        }
+                        npe.SaveChanges();
+                    }
+
+                }
+
+            #endregion
+       #endregion
 
         #region 功能:款式表录入
-            #region 查询款式表
+                #region 查询款式表
                 public List<KuanShiBiao> SelectKuanshi()
                 {
                     using (nemanpingEntities3 npe = new nemanpingEntities3())
@@ -698,6 +786,31 @@ namespace logic
                         }
                         return list;
                     }
+                }
+            #endregion
+
+            #region 删除款式表
+                public void deleteKuanshi(List<int> id)
+                {
+                    using (nemanpingEntities3 npe = new nemanpingEntities3())
+                    {
+                        foreach (int strid in id)
+                        {
+                            if (strid != null)
+                            {
+                                if (strid != 0)
+                                {
+                                    var select = from s in npe.KuanShiBiao where s.Id == strid select s;
+                                    foreach (var item in select)
+                                    {
+                                        npe.KuanShiBiao.Remove(item);
+                                    }
+                                }
+                            }
+                        }
+                        npe.SaveChanges();
+                    }
+
                 }
             #endregion
         #endregion
@@ -951,6 +1064,51 @@ namespace logic
                     }
                 }
             #endregion
+
+            #region 删除单耗表数据
+                public void deleteDanHao(List<int> id)
+                {
+                    using (nemanpingEntities3 npe = new nemanpingEntities3())
+                    {
+                        foreach (int strid in id)
+                        {
+                            if (strid != null)
+                            {
+                                if (strid != 0)
+                                {
+                                    var select = from s in npe.DanHao where s.Id == strid select s;
+                                    foreach (var item in select)
+                                    {
+                                        npe.DanHao.Remove(item);
+                                    }
+                                }
+                            }
+                        }
+                        npe.SaveChanges();
+                    }
+
+                }
+            #endregion
+
+            #region 删除单耗表
+                public void deletDh(string caidanhao) 
+                {
+                    using (nemanpingEntities3 npe = new nemanpingEntities3())
+                    {
+
+                        if (caidanhao != null)
+                            {
+                                var select = from s in npe.DanHao where s.CaiDanNo.Equals(caidanhao) select s;
+                                foreach (var item in select)
+                                {
+                                    npe.DanHao.Remove(item);
+                                }
+                            }
+                        
+                        npe.SaveChanges();
+                    }
+                }
+                #endregion
         #endregion
 
         #region 功能:配色表录入
@@ -975,6 +1133,7 @@ namespace logic
                         return sehao;
                     }
                 }
+            
             #endregion
 
                 #region 提交配色信息
@@ -1190,64 +1349,192 @@ namespace logic
                     }
                 }
             #endregion
-        #endregion
+
+                #region 删除配色表信息
+                public void deletePeiseSession(List<int> id)
+                {
+                    using (nemanpingEntities3 npe = new nemanpingEntities3())
+                    {
+                        foreach (int strid in id)
+                        {
+                            if (strid != null)
+                            {
+                                if (strid != 0)
+                                {
+                                    var select = from s in npe.PeiSe where s.Id == strid select s;
+                                    foreach (var item in select)
+                                    {
+                                        npe.PeiSe.Remove(item);
+                                    }
+                                }
+                            }
+                        }
+                        npe.SaveChanges();
+                    }
+
+                }
+                #endregion
+
+                #region 删除配色表
+                    public void deletps(string caidanhao) 
+                {
+                    using (nemanpingEntities3 npe = new nemanpingEntities3())
+                    {
+
+                        if (caidanhao != null)
+                            {
+                                var select = from s in npe.PeiSe where s.Fabrics.Equals(caidanhao) select s;
+                                foreach (var item in select)
+                                {
+                                    npe.PeiSe.Remove(item);
+                                }
+                            }
+                        
+                        npe.SaveChanges();
+                    }
+                }
+                #endregion
+            #endregion
 
         #region 功能:库存表录入
             #region 查询库存
-                public List<KuCun> SelectKC() 
+            public List<KuCun> SelectKC() 
+            {
+                List<KuCun> list = new List<KuCun>();
+                using (nemanpingEntities3 nep = new nemanpingEntities3()) 
                 {
-                    List<KuCun> list = new List<KuCun>();
-                    using (nemanpingEntities3 nep = new nemanpingEntities3()) 
-                    {
-                        var select = from kc in nep.KuCun
-                                     select kc;
-                        list = select.ToList<KuCun>();
+                    var select = from kc in nep.KuCun
+                                    select kc;
+                    list = select.ToList<KuCun>();
 
+                }
+                return list;
+            }
+        #endregion
+
+            #region 提交库存
+            public void insertKucun(DataTable dt ) 
+            {
+                using (nemanpingEntities3 can = new nemanpingEntities3())
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+
+                        if (dr[0] is DBNull || Convert.ToInt32(dr[0]) == 0)
+                        {
+                            KuCun insets = new KuCun()
+                            {
+                                PingMing= dr[1].ToString(),
+                                HuoHao = dr[2].ToString(),
+                                SeHao = dr[3].ToString(),
+                                ShuLiang = dr[4].ToString(),
+                                GongHuoFang = dr[5].ToString(),
+                                CunFangDI = dr[6].ToString()
+                            };
+                            can.KuCun.Add(insets);
+
+                        }
+                        else
+                        {
+                            int id = Convert.ToInt32(dr[0]);
+                            var select = from sc in can.KuCun where sc.Id == id select sc;
+                            var target = select.FirstOrDefault<KuCun>();
+                            target.PingMing= dr[1].ToString();
+                            target.HuoHao = dr[2].ToString();
+                            target.SeHao = dr[3].ToString();
+                            target.ShuLiang = dr[4].ToString();
+                            target.GongHuoFang = dr[5].ToString();
+                            target.CunFangDI = dr[6].ToString();
+                        }
+                    }
+                    can.SaveChanges();
+
+                }
+
+            }
+        #endregion
+
+            #region 读取EXCEL库存表
+            public List<KuCun> readerKucunExcel(string fileName)
+            {
+                List<KuCun> list = new List<KuCun>();
+                using (SpreadsheetDocument document = SpreadsheetDocument.Open(fileName, false))
+                {
+                    WorkbookPart wbPart = document.WorkbookPart;
+                    List<Sheet> sheets = wbPart.Workbook.Descendants<Sheet>().ToList();
+                    var versionSheet = wbPart.Workbook.Descendants<Sheet>().FirstOrDefault();
+                    WorksheetPart worksheetPart = (WorksheetPart)wbPart.GetPartById(versionSheet.Id);
+                    int rowindex = 0;
+                    foreach (Row row in worksheetPart.Worksheet.Descendants<Row>())
+                    {
+                        if (rowindex < 1)
+                        {
+                            rowindex++;
+                            continue;
+                        }
+                        KuCun s = new KuCun();
+                        foreach (Cell cell in row)
+                        {
+                            string rev = cell.CellReference.Value;
+                            if (rev.StartsWith("A"))
+                            {
+                                s.PingMing = GetCellValue(wbPart, cell);
+                            }
+                            if (rev.StartsWith("B"))
+                            {
+                                s.HuoHao = GetCellValue(wbPart, cell);
+                            }
+                            if (rev.StartsWith("C"))
+                            {
+                                s.SeHao = GetCellValue(wbPart, cell);
+                            }
+                            if (rev.StartsWith("D"))
+                            {
+                                s.ShuLiang = GetCellValue(wbPart, cell);
+                            }
+                            if (rev.StartsWith("E"))
+                            {
+                                s.GongHuoFang = GetCellValue(wbPart, cell);
+                            }
+                            if (rev.StartsWith("F"))
+                            {
+                                s.CunFangDI = GetCellValue(wbPart, cell);
+                            }
+                        }
+                        list.Add(s);
                     }
                     return list;
                 }
-            #endregion
-            #region 提交库存
-                public void insertKucun(DataTable dt ) 
+            }
+        #endregion
+
+            #region 删除尺码搭配信息
+            public void deleteKucun(List<int> id)
+            {
+                using (nemanpingEntities3 npe = new nemanpingEntities3())
                 {
-                    using (nemanpingEntities3 can = new nemanpingEntities3())
+                    foreach (int strid in id)
                     {
-                        foreach (DataRow dr in dt.Rows)
+                        if (strid != null)
                         {
-
-                            if (dr[0] is DBNull || Convert.ToInt32(dr[0]) == 0)
+                            if (strid != 0)
                             {
-                                KuCun insets = new KuCun()
+                                var select = from s in npe.KuCun where s.Id == strid select s;
+                                foreach (var item in select)
                                 {
-                                    PingMing= dr[1].ToString(),
-                                    HuoHao = dr[2].ToString(),
-                                    SeHao = dr[3].ToString(),
-                                    ShuLiang = dr[4].ToString(),
-                                    GongHuoFang = dr[5].ToString(),
-                                    CunFangDI = dr[6].ToString()
-                                };
-                                can.KuCun.Add(insets);
-
-                            }
-                            else
-                            {
-                                int id = Convert.ToInt32(dr[0]);
-                                var select = from sc in can.KuCun where sc.Id == id select sc;
-                                var target = select.FirstOrDefault<KuCun>();
-                                target.PingMing= dr[1].ToString();
-                                target.HuoHao = dr[2].ToString();
-                                target.SeHao = dr[3].ToString();
-                                target.ShuLiang = dr[4].ToString();
-                                target.GongHuoFang = dr[5].ToString();
-                                target.CunFangDI = dr[6].ToString();
+                                    npe.KuCun.Remove(item);
+                                }
                             }
                         }
-                        can.SaveChanges();
-
                     }
-
+                    npe.SaveChanges();
                 }
+
+            }
             #endregion
-        #endregion
+    #endregion
+
+
+
     }
 }
