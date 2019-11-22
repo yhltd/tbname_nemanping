@@ -32,6 +32,7 @@ namespace clsBuiness
         public DbSet<JiaGongChang> JiaGongChang { get; set; }
         public DbSet<KuanShiBiao> KuanShiBiao { get; set; }
         public DbSet<KuCun> KuCun { get; set; }
+        public DbSet<MianFuLiaoDingGouDan> MianFuLiaoDingGouDan { get; set; }
         public DbSet<PeiSe> PeiSe { get; set; }
         public DbSet<Sehao> Sehao { get; set; }
         public DbSet<UserTable> UserTable { get; set; }

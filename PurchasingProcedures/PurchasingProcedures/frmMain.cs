@@ -199,5 +199,47 @@ namespace PurchasingProcedures
                 mfl.TopMost = true;
             }
         }
+
+        private void 表格生成ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputCaiDanNo icd = new InputCaiDanNo(this,"生成表格");
+            if (!HaveOpened(this, icd.Name))
+            {
+                icd.MdiParent = this;
+                icd.Show();
+            }
+            else
+            {
+                icd.TopMost = true;
+            }
+        }
+
+        private void 预计成本实际成本单ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputCreatYjcb icb = new InputCreatYjcb(this);
+            if (!HaveOpened(this, icb.Name))
+            {
+                icb.MdiParent = this;
+                icb.Show();
+            }
+            else
+            {
+                icb.TopMost = true;
+            }
+        }
+
+        private void 面辅料订购单ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputCaiDanNo icd = new InputCaiDanNo(this, "面辅料订购单");
+            if (!HaveOpened(this, icd.Name))
+            {
+                icd.MdiParent = this;
+                icd.Show();
+            }
+            else
+            {
+                icd.TopMost = true;
+            }
+        }
     }
 }

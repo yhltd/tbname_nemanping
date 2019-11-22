@@ -70,9 +70,6 @@
             this.裁单输入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.面辅料订购ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.表格生成ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.配色表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.单耗表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.核定成本ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.面辅料订购单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.预计成本实际成本单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
@@ -406,32 +403,11 @@
             // 
             // 表格生成ToolStripMenuItem
             // 
-            this.表格生成ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.配色表ToolStripMenuItem,
-            this.单耗表ToolStripMenuItem,
-            this.核定成本ToolStripMenuItem});
             this.表格生成ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.表格生成ToolStripMenuItem.Name = "表格生成ToolStripMenuItem";
             this.表格生成ToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.表格生成ToolStripMenuItem.Text = "表格生成";
-            // 
-            // 配色表ToolStripMenuItem
-            // 
-            this.配色表ToolStripMenuItem.Name = "配色表ToolStripMenuItem";
-            this.配色表ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
-            this.配色表ToolStripMenuItem.Text = "配色表";
-            // 
-            // 单耗表ToolStripMenuItem
-            // 
-            this.单耗表ToolStripMenuItem.Name = "单耗表ToolStripMenuItem";
-            this.单耗表ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
-            this.单耗表ToolStripMenuItem.Text = "单耗表";
-            // 
-            // 核定成本ToolStripMenuItem
-            // 
-            this.核定成本ToolStripMenuItem.Name = "核定成本ToolStripMenuItem";
-            this.核定成本ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
-            this.核定成本ToolStripMenuItem.Text = "核定成本";
+            this.表格生成ToolStripMenuItem.Click += new System.EventHandler(this.表格生成ToolStripMenuItem_Click);
             // 
             // 面辅料订购单ToolStripMenuItem
             // 
@@ -439,6 +415,7 @@
             this.面辅料订购单ToolStripMenuItem.Name = "面辅料订购单ToolStripMenuItem";
             this.面辅料订购单ToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.面辅料订购单ToolStripMenuItem.Text = "面辅料订购单";
+            this.面辅料订购单ToolStripMenuItem.Click += new System.EventHandler(this.面辅料订购单ToolStripMenuItem_Click);
             // 
             // 预计成本实际成本单ToolStripMenuItem
             // 
@@ -446,6 +423,7 @@
             this.预计成本实际成本单ToolStripMenuItem.Name = "预计成本实际成本单ToolStripMenuItem";
             this.预计成本实际成本单ToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.预计成本实际成本单ToolStripMenuItem.Text = "预计成本/实际成本单";
+            this.预计成本实际成本单ToolStripMenuItem.Click += new System.EventHandler(this.预计成本实际成本单ToolStripMenuItem_Click);
             // 
             // label2
             // 
@@ -517,9 +495,6 @@
         private System.Windows.Forms.ToolStripMenuItem 裁单输入ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 面辅料订购ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 表格生成ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 配色表ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 单耗表ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 核定成本ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 面辅料订购单ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 预计成本实际成本单ToolStripMenuItem;
         private System.Windows.Forms.Label label2;

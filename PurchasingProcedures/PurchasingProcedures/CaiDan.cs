@@ -55,6 +55,7 @@ namespace PurchasingProcedures
         {
             try
             {
+                dataGridView1.CellValueChanged -= dataGridView1_CellValueChanged;
                 txt_Style.Text = StyleId;
                 txt_Label.Text = chima;
                 this.txt_desc.Text = cd[0].DESC.ToString();
@@ -66,6 +67,7 @@ namespace PurchasingProcedures
                 cb_jgc.DisplayMember = "Name";
                 cb_jgc.ValueMember = "id";
                 txt_zhidan.Text = DateTime.Now.ToString() ;
+                dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             }
             catch (Exception ex) 
             {
@@ -82,8 +84,8 @@ namespace PurchasingProcedures
 
         private void 裁单输入ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //try 
-            //{
+            try 
+            {
                 FolderBrowserDialog dialog = new FolderBrowserDialog();
                 dialog.Description = "请选择文件路径";
                 if (dialog.ShowDialog() == DialogResult.OK)
@@ -92,8 +94,8 @@ namespace PurchasingProcedures
                     CreateExcel(foldPath);
                     MessageBox.Show("生成成功！");
                 }
-            //}
-            //catch (Exception ex) { throw ex; }
+            }
+            catch (Exception ex) { throw ex; }
          
         }
 
@@ -143,8 +145,8 @@ namespace PurchasingProcedures
         }
         private void 面辅料订购ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try 
-            {
+            //try 
+            //{
                 //isprint = false;
                 //裁单输入ToolStripMenuItem_Click(sender, e); //使用NPOI生成excel
                 string path = Directory.GetCurrentDirectory();
@@ -161,8 +163,8 @@ namespace PurchasingProcedures
                     File.Delete(foldPath);
                     File.Delete(imagePath);
                 } 
-            }
-            catch (Exception ex) { throw ex; }
+            //}
+            //catch (Exception ex) { throw ex; }
             
 
         }
@@ -173,7 +175,7 @@ namespace PurchasingProcedures
             GC.Collect();
             Graphics g = e.Graphics;
             //imagepath是指 excel转成的图片的路径
-            using (Bitmap bitmap = new Bitmap("D:\\image.bmp"))
+            using (Bitmap bitmap = new Bitmap(imagePath))
             {
                 //如何截取自己摸索
                 Rectangle newarea = new Rectangle();
@@ -187,6 +189,37 @@ namespace PurchasingProcedures
                 }
             }
             #endregion
+        }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            //if (e.RowIndex >= 0)
+            //{
+            //    int sum = 0;
+            //    for (int i = 7; i < dataGridView1.Columns.Count; i++)
+            //    {
+               
+            //            sum = sum + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[i].Value);
+                
+            //    }
+            //    dataGridView1.Rows[e.RowIndex].Cells["Column43"].Value = sum;
+            //}
+        }
+
+        private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+
+            dataGridView1.Rows[e.RowIndex].Cells["Column43"].Value = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column7"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column8"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column9"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column10"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column11"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column12"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column13"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column14"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column15"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column16"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column17"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column18"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column19"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column20"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column21"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column22"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column23"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column24"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column25"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column26"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column27"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column28"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column29"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column30"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column31"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column32"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column33"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column34"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column35"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column36"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column37"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column38"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column39"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column40"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column41"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column42"].Value);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

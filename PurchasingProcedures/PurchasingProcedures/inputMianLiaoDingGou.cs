@@ -16,11 +16,13 @@ namespace PurchasingProcedures
     {
         protected clsAllnewLogic cal;
         protected Definefactoryinput dfi;
+        protected GongNeng2 gn;
         public inputMianLiaoDingGou()
         {
             
             InitializeComponent();
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            gn = new GongNeng2();
             cal = new clsAllnewLogic();
             dfi = new Definefactoryinput();
             
@@ -30,11 +32,22 @@ namespace PurchasingProcedures
         {
             try
             {
-
+                List<clsBuiness.CaiDan> cd = gn.selectCaiDan("").GroupBy(c => new { c.STYLE,c.MianLiao}).Select(s=>s.First()).ToList<clsBuiness.CaiDan>();
+                txt_ks.DataSource = cd;
+                txt_ks.DisplayMember = "STYLE";
+                txt_ks.ValueMember = "Id";
+                txt_ml.DataSource = cd;
+                txt_ml.DisplayMember = "MianLiao";
+                txt_ml.ValueMember = "Id";
+                List<clsBuiness.CaiDan> cdID = gn.selectCaiDan("").GroupBy(c => new {c.CaiDanHao}).Select(s=>s.First()).ToList<clsBuiness.CaiDan>();
+                cb_cd.DataSource = cdID;
+                cb_cd.DisplayMember = "CaiDanHao";
+                cb_cd.ValueMember = "Id";
                 List<JiaGongChang> jgc = dfi.selectJiaGongChang().GroupBy(j => j.Name).Select(s => s.First()).ToList<JiaGongChang>();
                 cb_jgc.DataSource = jgc;
                 cb_jgc.DisplayMember = "Name";
                 cb_jgc.ValueMember = "id";
+               
 
             }
             catch (Exception ex) { throw ex; }
@@ -77,7 +90,7 @@ namespace PurchasingProcedures
                 JingDu form = new JingDu(this.backgroundWorker1, "生成核算表中");// 显示进度条窗体
                 form.ShowDialog(this);
                 form.Close();
-                MianFuLiaoDingGou mfdg = new MianFuLiaoDingGou(txt_ml.Text,txt_ks.Text,cb_jgc.Text);
+                MianFuLiaoDingGou mfdg = new MianFuLiaoDingGou(txt_ml.Text, txt_ks.Text, cb_jgc.Text, cb_cd.Text);
                 mfdg.ShowDialog();
                 this.Close();
             }

@@ -75,6 +75,9 @@
     <Compile Include="KuCun.cs">
       <DependentUpon>nemanping.tt</DependentUpon>
     </Compile>
+    <Compile Include="MianFuLiaoDingGouDan.cs">
+      <DependentUpon>nemanping.tt</DependentUpon>
+    </Compile>
     <Compile Include="nemanping.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -182,6 +182,7 @@
             this.groupBox1.Size = new System.Drawing.Size(885, 218);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // cb_jgc
             // 
@@ -482,7 +483,10 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(885, 327);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_DefaultValuesNeeded);
+            this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
             // 
             // printDocument1
             // 
@@ -526,6 +530,7 @@
             this.STYLE.FillWeight = 356.446F;
             this.STYLE.HeaderText = "STYLE-款式";
             this.STYLE.Name = "STYLE";
+            this.STYLE.ReadOnly = true;
             this.STYLE.Width = 90;
             // 
             // Column3
@@ -854,6 +859,7 @@
             this.Column43.FillWeight = 9.226541F;
             this.Column43.HeaderText = "DingdanHeji";
             this.Column43.Name = "Column43";
+            this.Column43.ReadOnly = true;
             this.Column43.Width = 96;
             // 
             // CaiDan

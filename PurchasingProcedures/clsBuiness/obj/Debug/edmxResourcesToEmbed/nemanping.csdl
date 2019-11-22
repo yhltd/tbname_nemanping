@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="nemanpingModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityContainer Name="nemanpingEntities5" p1:LazyLoadingEnabled="true">
+  <EntityContainer Name="nemanpingEntities3" p1:LazyLoadingEnabled="true">
     <EntitySet Name="CaiDan" EntityType="nemanpingModel.CaiDan" />
     <EntitySet Name="ChiMa_Dapeibiao" EntityType="nemanpingModel.ChiMa_Dapeibiao" />
     <EntitySet Name="DanHao" EntityType="nemanpingModel.DanHao" />
@@ -8,6 +8,7 @@
     <EntitySet Name="JiaGongChang" EntityType="nemanpingModel.JiaGongChang" />
     <EntitySet Name="KuanShiBiao" EntityType="nemanpingModel.KuanShiBiao" />
     <EntitySet Name="KuCun" EntityType="nemanpingModel.KuCun" />
+    <EntitySet Name="MianFuLiaoDingGouDan" EntityType="nemanpingModel.MianFuLiaoDingGouDan" />
     <EntitySet Name="PeiSe" EntityType="nemanpingModel.PeiSe" />
     <EntitySet Name="Sehao" EntityType="nemanpingModel.Sehao" />
     <EntitySet Name="UserTable" EntityType="nemanpingModel.UserTable" />
@@ -200,6 +201,27 @@
     <Property Name="ShuLiang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
     <Property Name="GongHuoFang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
     <Property Name="CunFangDI" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MianFuLiaoDingGouDan">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="PingMing" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="GongFang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="XuFang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="HeTongHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="QianYueDiDan" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="QianYueShiJian" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="HuoHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="SeHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="YanSe" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="GuiGe" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="DanWei" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="DanJia" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="ShuLiang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="ZongJinE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="CaiDanHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
   </EntityType>
   <EntityType Name="PeiSe">
     <Key>

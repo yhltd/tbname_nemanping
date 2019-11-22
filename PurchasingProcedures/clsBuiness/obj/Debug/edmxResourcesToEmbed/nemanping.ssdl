@@ -8,6 +8,7 @@
     <EntitySet Name="JiaGongChang" EntityType="nemanpingModel.Store.JiaGongChang" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="KuanShiBiao" EntityType="nemanpingModel.Store.KuanShiBiao" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="KuCun" EntityType="nemanpingModel.Store.KuCun" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MianFuLiaoDingGouDan" EntityType="nemanpingModel.Store.MianFuLiaoDingGouDan" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="PeiSe" EntityType="nemanpingModel.Store.PeiSe" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Sehao" EntityType="nemanpingModel.Store.Sehao" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UserTable" EntityType="nemanpingModel.Store.UserTable" store:Type="Tables" Schema="dbo" />
@@ -200,6 +201,27 @@
     <Property Name="ShuLiang" Type="varchar" MaxLength="255" />
     <Property Name="GongHuoFang" Type="varchar" MaxLength="255" />
     <Property Name="CunFangDI" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="MianFuLiaoDingGouDan">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PingMing" Type="varchar" MaxLength="255" />
+    <Property Name="GongFang" Type="varchar" MaxLength="255" />
+    <Property Name="XuFang" Type="varchar" MaxLength="255" />
+    <Property Name="HeTongHao" Type="varchar" MaxLength="255" />
+    <Property Name="QianYueDiDan" Type="varchar" MaxLength="255" />
+    <Property Name="QianYueShiJian" Type="varchar" MaxLength="255" />
+    <Property Name="HuoHao" Type="varchar" MaxLength="255" />
+    <Property Name="SeHao" Type="varchar" MaxLength="255" />
+    <Property Name="YanSe" Type="varchar" MaxLength="255" />
+    <Property Name="GuiGe" Type="varchar" MaxLength="255" />
+    <Property Name="DanWei" Type="varchar" MaxLength="255" />
+    <Property Name="DanJia" Type="varchar" MaxLength="255" />
+    <Property Name="ShuLiang" Type="varchar" MaxLength="255" />
+    <Property Name="ZongJinE" Type="varchar" MaxLength="255" />
+    <Property Name="CaiDanHao" Type="varchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="PeiSe">
     <Key>

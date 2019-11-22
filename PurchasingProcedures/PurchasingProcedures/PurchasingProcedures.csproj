@@ -80,6 +80,12 @@
     <Compile Include="DanHaoFrm.Designer.cs">
       <DependentUpon>DanHaoFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ETD-ETA-LDP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ETD-ETA-LDP.Designer.cs">
+      <DependentUpon>ETD-ETA-LDP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Factoryinput.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,18 @@
     </Compile>
     <Compile Include="InputCaiDanHao.Designer.cs">
       <DependentUpon>InputCaiDanHao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputCaiDanNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputCaiDanNo.Designer.cs">
+      <DependentUpon>InputCaiDanNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputCreatYjcb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputCreatYjcb.Designer.cs">
+      <DependentUpon>InputCreatYjcb.cs</DependentUpon>
     </Compile>
     <Compile Include="inputMianLiaoDingGou.cs">
       <SubType>Form</SubType>
@@ -134,6 +152,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="mflDgd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mflDgd.Designer.cs">
+      <DependentUpon>mflDgd.cs</DependentUpon>
+    </Compile>
     <Compile Include="MianFuLiaoDingGou.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +178,18 @@
     <Compile Include="SeHaoBiaoLuru.Designer.cs">
       <DependentUpon>SeHaoBiaoLuru.cs</DependentUpon>
     </Compile>
+    <Compile Include="shengchengBiaoge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="shengchengBiaoge.Designer.cs">
+      <DependentUpon>shengchengBiaoge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShengChengBiaoGeXuanZe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShengChengBiaoGeXuanZe.Designer.cs">
+      <DependentUpon>ShengChengBiaoGeXuanZe.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CaiDan.resx">
       <DependentUpon>CaiDan.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanHaoFrm.resx">
       <DependentUpon>DanHaoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ETD-ETA-LDP.resx">
+      <DependentUpon>ETD-ETA-LDP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Factoryinput.resx">
       <DependentUpon>Factoryinput.cs</DependentUpon>
@@ -174,6 +213,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InputCaiDanHao.resx">
       <DependentUpon>InputCaiDanHao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputCaiDanNo.resx">
+      <DependentUpon>InputCaiDanNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputCreatYjcb.resx">
+      <DependentUpon>InputCreatYjcb.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inputMianLiaoDingGou.resx">
       <DependentUpon>inputMianLiaoDingGou.cs</DependentUpon>
@@ -189,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mflDgd.resx">
+      <DependentUpon>mflDgd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MianFuLiaoDingGou.resx">
       <DependentUpon>MianFuLiaoDingGou.cs</DependentUpon>
@@ -207,6 +255,12 @@
     </Compile>
     <EmbeddedResource Include="SeHaoBiaoLuru.resx">
       <DependentUpon>SeHaoBiaoLuru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shengchengBiaoge.resx">
+      <DependentUpon>shengchengBiaoge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShengChengBiaoGeXuanZe.resx">
+      <DependentUpon>ShengChengBiaoGeXuanZe.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

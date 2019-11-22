@@ -184,10 +184,8 @@ namespace logic
             public void CDEXCEL(DataTable dt,CaiDan cd,string file) 
             {
                 string path = Directory.GetCurrentDirectory();
-                //using (FileStream fs = File.OpenWrite(path+"\\Muban\\caidanBiao.xls"))
                 using (FileStream fs = File.Open(path + "\\Muban\\caidanBiao.xls", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {
-                    //insert(cd, fs,dt);
                     FileStream patha = File.OpenWrite(file+"\\裁单表-"+cd.CaiDanHao+".xls");
                     HSSFWorkbook wb = new HSSFWorkbook(fs);
                     fs.Close();
@@ -243,26 +241,85 @@ namespace logic
             }
             #endregion
 
-            public List<CaiDan> selectCaiDan(string jgc,string ml,string style) 
+            public List<CaiDan> selectCaiDan(string cdhao) 
             {
                 List<CaiDan> list = new List<CaiDan>();
                 using (nemanpingEntities3 nep = new nemanpingEntities3()) 
                 {
-                    if (!ml.Equals(string.Empty))
+                    if (!cdhao.Equals(string.Empty))
                     {
                         var select = from n in nep.CaiDan
-                                     where n.MianLiao.Equals(ml) && n.JiaGongchang.Equals(jgc) && n.STYLE.Equals(style)
+                                     where n.CaiDanHao.Equals(cdhao)
                                      select n;
                         list = select.ToList();
                     }
                     else
                     {
-                        var select = from n in nep.CaiDan where n.JiaGongchang.Equals(jgc) && n.MianLiao.Equals(ml) && n.STYLE.Equals(style) select n;
+                        var select = from n in nep.CaiDan
+                                     select n;
                         list = select.ToList();
                     }
                 }
                 return list;
             }
         #endregion
+
+            #region 保存配色表为EXCEL
+            public void SavePeiSeToExcel(DataTable dt,DataTable dt2, string filePath, string style, string cdno)
+            {
+                string path = Directory.GetCurrentDirectory();
+                if (dt != null && dt.Rows.Count>0)
+                {
+                    using (FileStream fs = File.Open(path + "\\Muban\\PeiSeBiao.xls", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    {
+                        FileStream patha = File.OpenWrite(filePath + "\\配色表-" + style + "-" + cdno + ".xls");
+                        HSSFWorkbook wb = new HSSFWorkbook(fs);
+                        fs.Close();
+                        Sheet st1 = wb.GetSheet("Sheet1");
+                        Row r1 = st1.GetRow(1);
+                        Cell cdNo = r1.CreateCell(1);
+                        cdNo.SetCellValue(cdno);//裁单号
+                        Row r2 = st1.GetRow(2);
+                        Cell STYLE = r2.CreateCell(1);
+                        STYLE.SetCellValue(style);//裁单号
+                        //表内数据
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            Row row = st1.CreateRow(i + 5);
+                            for (int j = 0; j < dt.Columns.Count; j++)
+                            {
+                                Cell cell = row.CreateCell(j);
+                                cell.SetCellValue(dt.Rows[i][j].ToString());
+                            }
+                        }
+                        wb.Write(patha);//向打开的这个xls文件中写入并保存。  
+                        patha.Close();
+                    }
+                }
+                if (dt2 != null && dt2.Rows.Count>0) 
+                {
+                    using (FileStream fs = File.Open(path + "\\Muban\\DanHao.xls", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    {
+                        FileStream patha = File.OpenWrite(filePath + "\\单耗-" + style + "-" + cdno + ".xls");
+                        HSSFWorkbook wb = new HSSFWorkbook(fs);
+                        fs.Close();
+                        Sheet st1 = wb.GetSheet("Sheet1");
+                        //表内数据
+                        for (int i = 0; i < dt2.Rows.Count; i++)
+                        {
+                            Row row = st1.CreateRow(i + 5);
+                            for (int j = 0; j < dt2.Columns.Count; j++)
+                            {
+                                Cell cell = row.CreateCell(j);
+                                cell.SetCellValue(dt2.Rows[i][j].ToString());
+                            }
+                        }
+                        wb.Write(patha);//向打开的这个xls文件中写入并保存。  
+                        patha.Close();
+                    }
+                }
+            }
+            #endregion
+
     }
 }

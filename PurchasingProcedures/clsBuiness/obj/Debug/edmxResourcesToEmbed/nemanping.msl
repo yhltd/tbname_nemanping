@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="nemanpingModelStoreContainer" CdmEntityContainer="nemanpingEntities5">
+  <EntityContainerMapping StorageEntityContainer="nemanpingModelStoreContainer" CdmEntityContainer="nemanpingEntities3">
     <EntitySetMapping Name="CaiDan">
       <EntityTypeMapping TypeName="nemanpingModel.CaiDan">
         <MappingFragment StoreEntitySet="CaiDan">
@@ -194,6 +194,28 @@
           <ScalarProperty Name="ShuLiang" ColumnName="ShuLiang" />
           <ScalarProperty Name="GongHuoFang" ColumnName="GongHuoFang" />
           <ScalarProperty Name="CunFangDI" ColumnName="CunFangDI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MianFuLiaoDingGouDan">
+      <EntityTypeMapping TypeName="nemanpingModel.MianFuLiaoDingGouDan">
+        <MappingFragment StoreEntitySet="MianFuLiaoDingGouDan">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PingMing" ColumnName="PingMing" />
+          <ScalarProperty Name="GongFang" ColumnName="GongFang" />
+          <ScalarProperty Name="XuFang" ColumnName="XuFang" />
+          <ScalarProperty Name="HeTongHao" ColumnName="HeTongHao" />
+          <ScalarProperty Name="QianYueDiDan" ColumnName="QianYueDiDan" />
+          <ScalarProperty Name="QianYueShiJian" ColumnName="QianYueShiJian" />
+          <ScalarProperty Name="HuoHao" ColumnName="HuoHao" />
+          <ScalarProperty Name="SeHao" ColumnName="SeHao" />
+          <ScalarProperty Name="YanSe" ColumnName="YanSe" />
+          <ScalarProperty Name="GuiGe" ColumnName="GuiGe" />
+          <ScalarProperty Name="DanWei" ColumnName="DanWei" />
+          <ScalarProperty Name="DanJia" ColumnName="DanJia" />
+          <ScalarProperty Name="ShuLiang" ColumnName="ShuLiang" />
+          <ScalarProperty Name="ZongJinE" ColumnName="ZongJinE" />
+          <ScalarProperty Name="CaiDanHao" ColumnName="CaiDanHao" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

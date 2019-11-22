@@ -19,9 +19,10 @@ namespace PurchasingProcedures
         protected Define1 df;
         private string ml;
         private string ks;
+        private string cdhao;
         private string jgc;
 
-        public MianFuLiaoDingGou(string ml,string ks,string jgc)
+        public MianFuLiaoDingGou(string ml, string ks, string jgc, string cdh)
         {
             InitializeComponent();
             cal = new clsAllnewLogic();
@@ -30,6 +31,7 @@ namespace PurchasingProcedures
             this.ml = ml;
             this.ks = ks;
             this.jgc = jgc;
+            cdhao = cdh;
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -41,7 +43,7 @@ namespace PurchasingProcedures
         {
             try 
             {
-               List<DanHao> list =  cal.SelectDanHao("").GroupBy(gp => gp.Name).Select(s => s.First()).ToList<DanHao>();
+                List<DanHao> list = cal.SelectDanHao("").FindAll(d => d.CaiDanNo.Trim().Equals(cdhao)).GroupBy(gp => gp.Name.Trim()).Select(s => s.First()).ToList<DanHao>();
                foreach (DanHao dh in list) 
                {
                    ToolStripMenuItem ms = new ToolStripMenuItem();
@@ -98,20 +100,7 @@ namespace PurchasingProcedures
                 form.Close();
                 if (name.Equals("辅料"))
                 {
-                    List<clsBuiness.CaiDan> caidanlist = gn.selectCaiDan(jgc, ml, ks);
-                    List<HeSuan> hs = new List<HeSuan>();
-                    Dictionary<string, string> dic = new Dictionary<string, string>();
-                    //List<string> Yanse = new List<string>();
-                    foreach (clsBuiness.CaiDan c in caidanlist)//成衣数量
-                    {
-                        dic[c.LOT] = "";
-                    }
-                    List<PeiSe> peiselist = cal.selectPeise("");
-                    foreach (PeiSe ps in peiselist) 
-                    {
-                        
-                    }
-
+                   list= CreateFuLiao(e);
                 }
                 else
                 {
@@ -133,6 +122,160 @@ namespace PurchasingProcedures
            
 
        
+        }
+
+        private List<HeSuan> CreateFuLiao(ToolStripItemClickedEventArgs e)
+        {
+            List<clsBuiness.CaiDan> caidanlist = gn.selectCaiDan(cdhao);
+            List<HeSuan> hs = new List<HeSuan>();
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            List<PeiSe> peiselist = cal.selectPeise("").FindAll(p => p.PingMing.Equals(e.ClickedItem.Text));
+            //获取配色表里的信息 加以计算（色号+总数）start
+            foreach (PeiSe ps in peiselist)
+            {
+                foreach (clsBuiness.CaiDan cd in caidanlist)
+                {
+                    if (cd.ART.Equals(ps.HuoHao))
+                    {
+                        if (dic.ContainsKey(cd.LOT))
+                        {
+                            dic[cd.LOT] = (Convert.ToInt32(dic[cd.LOT]) + Convert.ToInt32(cd.Sub_Total)).ToString();
+                        }
+                        else
+                        {
+                            dic.Add(cd.LOT, cd.Sub_Total);
+                        }
+                    }
+                }
+            }
+            //end 获取配色表里的信息 加以计算（色号+总数）
+            foreach (clsBuiness.CaiDan c in caidanlist)
+            {
+                if (dic.ContainsKey(c.LOT))
+                {
+                    if (dic[c.LOT].Split('=').Length < 2)
+                    {
+                        dic[c.LOT] = dic[c.LOT] + "=" + c.COLORID.Trim() + c.COLOR.Trim(); //色号&颜色
+                    }
+                    else 
+                    {
+                        dic[c.LOT] = dic[c.LOT] + "=" + " ";
+                    }
+                }
+            }
+            List<clsBuiness.GongHuoFang> ghflist = df.selectGongHuoFang();
+            // foreach (KeyValuePair<string,string>kvp in dic)
+            //{               
+
+            //}
+            List<clsBuiness.DanHao> dhlist = cal.SelectDanHao("");
+            List<clsBuiness.KuCun> kclist = cal.SelectKC();
+            List<string> key = new List<string>(dic.Keys);
+
+            for (int i = 0; i < key.Count; i++)
+            {
+                foreach (clsBuiness.GongHuoFang g in ghflist)
+                {
+                    if(dic.ContainsKey(key[i])){
+                        if (dic[key[i]].Split('=')[1].Equals(g.SeHao.Trim() + g.Yanse.Trim()) && g.PingMing.Trim().Equals(e.ClickedItem.Text.Trim())) 
+                        {
+                            dic[key[i]] = dic[key[i]] + "=" + g.DanJia;//单价
+                        }else
+                        {
+                            dic[key[i]] = dic[key[i]] + "=" + "";
+                        }
+                    
+                    }
+                }
+                foreach (clsBuiness.DanHao d in dhlist)
+                {
+                    if (dic.ContainsKey(key[i]))
+                    {
+                        if (d.Style.Equals(ks) && d.JiaGongChang.Equals(jgc) && d.Name.Trim().Equals(e.ClickedItem.Text.Trim()) && d.Yanse.Trim().Equals(dic[key[i]].Split('=')[1].Trim() + " " + dic[key[i]].Split('=')[2].Trim()))
+                        {
+                            dic[key[i]] = dic[key[i]] + "=" + d.DanHao1;//预计单耗
+                            dic[key[i]] = dic[key[i]] + "=" + Convert.ToInt32(dic[key[i]].Split('=')[2]) * Convert.ToInt32(d.DanHao1);//预计成本
+                            dic[key[i]] = dic[key[i]] + "=" + Convert.ToInt32(dic[key[i]].Split('=')[0]) * Convert.ToInt32(d.DanHao1);//预计用量
+                        }
+                        else
+                        {
+                            dic[key[i]] = dic[key[i]] + "=" + "";
+                        }
+                    }
+                }
+                foreach (clsBuiness.KuCun kc in kclist)
+                {
+                    if (dic.ContainsKey(key[i]))
+                    {
+                        if (kc.PingMing.Trim().Equals(e.ClickedItem.Text.Trim()) && kc.SeHao.Trim().Equals(dic[key[i]].Split('=')[1]))
+                        {
+                            dic[key[i]] = dic[key[i]] + "=" + kc.ShuLiang;
+                            dic[key[i]] = dic[key[i]] + "=" + (Convert.ToInt32(dic[key[i]].Split('=')[5].ToString()) - Convert.ToInt32(kc.ShuLiang.ToString())); //订量
+                            dic[key[i]] = dic[key[i]] + "=" + " ";
+                            //dic[kvp.Key] = dic[kvp.Key] + "=" +
+                        }
+                        else
+                        {
+                            dic[key[i]] = dic[key[i]] + "=" + "";
+                        }
+                    }
+                }
+
+            }
+            List<HeSuan> endlist = new List<HeSuan>();
+            for (int i = 0; i < key.Count; i++)
+            {
+                HeSuan endhs = new HeSuan();
+                endhs.LOT = key[i];
+                if (dic[key[i]].Split('=').Length > 0)
+                {
+                    endhs.订单数量 = dic[key[i]].Split('=')[0];
+                }
+                endhs.Name = key[i];
+                if (dic[key[i]].Split('=').Length > 1)
+                {
+                    endhs.色号颜色 = dic[key[i]].Split('=')[1];
+                }
+                if (dic[key[i]].Split('=').Length > 2)
+                {
+                    endhs.单价 = dic[key[i]].Split('=')[2];
+                }
+                if (dic[key[i]].Split('=').Length > 3)
+                {
+                    endhs.预计单耗 = dic[key[i]].Split('=')[3];
+                }
+                if (dic[key[i]].Split('=').Length > 4)
+                {
+                    endhs.预计成本 = dic[key[i]].Split('=')[4];
+                }
+                if (dic[key[i]].Split('=').Length > 5)
+                {
+                    endhs.预计用量 = dic[key[i]].Split('=')[5];
+                }
+                if (dic[key[i]].Split('=').Length > 6)
+                {
+                    endhs.库存 = dic[key[i]].Split('=')[6];
+                }
+                if (dic[key[i]].Split('=').Length > 7)
+                {
+                    endhs.订量 = dic[key[i]].Split('=')[7];
+                }
+                if (dic[key[i]].Split('=').Length > 8)
+                {
+                    endhs.实际到货量 = dic[key[i]].Split('=')[8];
+                }
+
+                if (endhs.实际到货量 != null && endhs.单价 != null && !endhs.实际到货量.Equals(string.Empty) && !endhs.单价.Equals(string.Empty))
+                {
+                    endhs.实际到货金额 = (Convert.ToInt32(endhs.单价) * Convert.ToInt32(endhs.实际到货量)).ToString();
+                }
+                //if (!endhs.库存.Equals(string.Empty) && !endhs.实际到货量.Equals(string.Empty) && !endhs.剩余数量.Equals(string.Empty))
+                //{
+                //   endhs.平均单耗 = (endhs.单价-endhs.剩余数量+endhs.库存)
+                //}
+                endlist.Add(endhs);
+            }
+            return endlist;
         }
 
         private static DataTable DataGirdViewHeader(ToolStripItemClickedEventArgs e)
@@ -168,7 +311,7 @@ namespace PurchasingProcedures
 
         private List<HeSuan> GetHeSuanList(ToolStripItemClickedEventArgs e)
         {
-            List<clsBuiness.CaiDan> caidanlist = gn.selectCaiDan(jgc, ml, ks);
+            List<clsBuiness.CaiDan> caidanlist = gn.selectCaiDan(cdhao);
             List<HeSuan> hs = new List<HeSuan>();
             Dictionary<string, string> dic = new Dictionary<string, string>();
             foreach (clsBuiness.CaiDan c in caidanlist)//成衣数量
@@ -185,7 +328,10 @@ namespace PurchasingProcedures
             }
             foreach (clsBuiness.CaiDan c in caidanlist)
             {
-                dic[c.LOT] = dic[c.LOT] + "=" + c.COLORID.Trim() + c.COLOR.Trim(); //色号&颜色
+                if (dic[c.LOT].Split('=').Length < 2)
+                {
+                    dic[c.LOT] = dic[c.LOT] + "=" + c.COLORID.Trim() + c.COLOR.Trim(); //色号&颜色
+                }
             }
             List<clsBuiness.GongHuoFang> ghflist = df.selectGongHuoFang();
             // foreach (KeyValuePair<string,string>kvp in dic)
@@ -200,28 +346,46 @@ namespace PurchasingProcedures
             {
                 foreach (clsBuiness.GongHuoFang g in ghflist)
                 {
-                    if (dic[key[i]].Split('=')[1].Equals(g.SeHao.Trim() + g.Yanse.Trim()) && g.PingMing.Trim().Equals(e.ClickedItem.Text.Trim())) { }
+                    if (dic.ContainsKey(key[i]))
                     {
-                        dic[key[i]] = dic[key[i]] + "=" + g.DanJia;//单价
+                        if (dic[key[i]].Split('=')[1].Equals(g.SeHao.Trim() + g.Yanse.Trim()) && g.PingMing.Trim().Equals(e.ClickedItem.Text.Trim())) 
+                        {
+                            dic[key[i]] = dic[key[i]] + "=" + g.DanJia;//单价
+                        }else
+                        {
+                            dic[key[i]] = dic[key[i]] + "=" + "";
+                        }
                     }
                 }
                 foreach (clsBuiness.DanHao d in dhlist)
                 {
-                    if (d.Style.Equals(ks) && d.JiaGongChang.Equals(jgc) && d.Name.Trim().Equals(e.ClickedItem.Text.Trim()) && d.Yanse.Trim().Equals(dic[key[i]].Split('=')[1].Trim() + " " + dic[key[i]].Split('=')[2].Trim()))
+                    if(dic.ContainsKey(key[i]))
                     {
-                        dic[key[i]] = dic[key[i]] + "=" + d.DanHao1;//预计单耗
-                        dic[key[i]] = dic[key[i]] + "=" + Convert.ToInt32(dic[key[i]].Split('=')[2]) * Convert.ToInt32(d.DanHao1);//预计成本
-                        dic[key[i]] = dic[key[i]] + "=" + Convert.ToInt32(dic[key[i]].Split('=')[0]) * Convert.ToInt32(d.DanHao1);//预计用量
+                        if (d.Style.Equals(ks) && d.JiaGongChang.Equals(jgc) && d.Name.Trim().Equals(e.ClickedItem.Text.Trim()) && d.Yanse.Trim().Equals(dic[key[i]].Split('=')[1].Trim() + " " + dic[key[i]].Split('=')[2].Trim()))
+                        {
+                            dic[key[i]] = dic[key[i]] + "=" + d.DanHao1;//预计单耗
+                            dic[key[i]] = dic[key[i]] + "=" + Convert.ToInt32(dic[key[i]].Split('=')[2]) * Convert.ToInt32(d.DanHao1);//预计成本
+                            dic[key[i]] = dic[key[i]] + "=" + Convert.ToInt32(dic[key[i]].Split('=')[0]) * Convert.ToInt32(d.DanHao1);//预计用量
+                        }else
+                        {
+                            dic[key[i]] = dic[key[i]] + "=" + "";
+                        }
                     }
                 }
                 foreach (clsBuiness.KuCun kc in kclist)
                 {
-                    if (kc.PingMing.Trim().Equals(e.ClickedItem.Text.Trim()) && kc.SeHao.Trim().Equals(dic[key[i]].Split('=')[1]))
+                    if(dic.ContainsKey(key[i]))
                     {
-                        dic[key[i]] = dic[key[i]] + "=" + kc.ShuLiang;
-                        dic[key[i]] = dic[key[i]] + "=" + (Convert.ToInt32(dic[key[i]].Split('=')[5].ToString()) - Convert.ToInt32(kc.ShuLiang.ToString())); //订量
-                        dic[key[i]] = dic[key[i]] + "=" + " ";
-                        //dic[kvp.Key] = dic[kvp.Key] + "=" +
+                        if (kc.PingMing.Trim().Equals(e.ClickedItem.Text.Trim()) && kc.SeHao.Trim().Equals(dic[key[i]].Split('=')[1]))
+                        {
+                            dic[key[i]] = dic[key[i]] + "=" + kc.ShuLiang;
+                            dic[key[i]] = dic[key[i]] + "=" + (Convert.ToInt32(dic[key[i]].Split('=')[5].ToString()) - Convert.ToInt32(kc.ShuLiang.ToString())); //订量
+                            dic[key[i]] = dic[key[i]] + "=" + " ";
+                            //dic[kvp.Key] = dic[kvp.Key] + "=" +
+                        }else
+                        {
+                            dic[key[i]] = dic[key[i]] + "=" + "";
+                        }
                     }
                 }
 
