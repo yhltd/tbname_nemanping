@@ -11,6 +11,7 @@ namespace clsBuiness
         public string LOT{get;set;}
         public string 订单数量 { get; set; }
         public string Name { get; set; }
+        public string 实际出口数量 { get; set; }
         public string 色号颜色 { get; set; }
         public string 单价 { get; set; }
         public string 预计单耗 { get; set; }

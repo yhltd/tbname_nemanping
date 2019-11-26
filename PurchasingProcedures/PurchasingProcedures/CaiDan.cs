@@ -221,5 +221,26 @@ namespace PurchasingProcedures
         {
 
         }
+
+        private void 生成面辅料订购单ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MianFuLiaoDingGou mfldg = new MianFuLiaoDingGou(txt_mianlioa.Text, txt_Style.Text, cb_jgc.Text, txt_CaidanNo.Text);
+                if (!mfldg.IsDisposed)
+                {
+                    mfldg.Show();
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void 预计成本ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

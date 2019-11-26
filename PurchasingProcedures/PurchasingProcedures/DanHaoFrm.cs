@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using logic;
 using clsBuiness;
+
 using System.Threading;
 namespace PurchasingProcedures
 {
@@ -68,7 +69,7 @@ namespace PurchasingProcedures
                     dataGridView2.DataSource = dt2;
                     //MessageBox.Show("刷新成功！");
                 }
-                
+
             }
             catch (Exception ex)
             {

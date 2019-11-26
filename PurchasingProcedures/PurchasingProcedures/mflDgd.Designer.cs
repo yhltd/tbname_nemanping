@@ -30,16 +30,17 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_shijian = new System.Windows.Forms.TextBox();
+            this.txt_didian = new System.Windows.Forms.TextBox();
+            this.txt_hetonghao = new System.Windows.Forms.TextBox();
+            this.txt_XuFang = new System.Windows.Forms.TextBox();
+            this.txt_gongfang = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,8 +52,6 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -71,11 +70,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txt_shijian);
+            this.groupBox1.Controls.Add(this.txt_didian);
+            this.groupBox1.Controls.Add(this.txt_hetonghao);
+            this.groupBox1.Controls.Add(this.txt_XuFang);
+            this.groupBox1.Controls.Add(this.txt_gongfang);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -87,40 +86,40 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
-            // textBox5
+            // txt_shijian
             // 
-            this.textBox5.Location = new System.Drawing.Point(605, 63);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 21);
-            this.textBox5.TabIndex = 3;
+            this.txt_shijian.Location = new System.Drawing.Point(605, 63);
+            this.txt_shijian.Name = "txt_shijian";
+            this.txt_shijian.Size = new System.Drawing.Size(100, 21);
+            this.txt_shijian.TabIndex = 3;
             // 
-            // textBox4
+            // txt_didian
             // 
-            this.textBox4.Location = new System.Drawing.Point(605, 39);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 21);
-            this.textBox4.TabIndex = 3;
+            this.txt_didian.Location = new System.Drawing.Point(605, 39);
+            this.txt_didian.Name = "txt_didian";
+            this.txt_didian.Size = new System.Drawing.Size(100, 21);
+            this.txt_didian.TabIndex = 3;
             // 
-            // textBox3
+            // txt_hetonghao
             // 
-            this.textBox3.Location = new System.Drawing.Point(605, 15);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 21);
-            this.textBox3.TabIndex = 3;
+            this.txt_hetonghao.Location = new System.Drawing.Point(605, 15);
+            this.txt_hetonghao.Name = "txt_hetonghao";
+            this.txt_hetonghao.Size = new System.Drawing.Size(100, 21);
+            this.txt_hetonghao.TabIndex = 3;
             // 
-            // textBox2
+            // txt_XuFang
             // 
-            this.textBox2.Location = new System.Drawing.Point(66, 56);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 3;
+            this.txt_XuFang.Location = new System.Drawing.Point(66, 56);
+            this.txt_XuFang.Name = "txt_XuFang";
+            this.txt_XuFang.Size = new System.Drawing.Size(100, 21);
+            this.txt_XuFang.TabIndex = 3;
             // 
-            // textBox1
+            // txt_gongfang
             // 
-            this.textBox1.Location = new System.Drawing.Point(66, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 3;
+            this.txt_gongfang.Location = new System.Drawing.Point(66, 24);
+            this.txt_gongfang.Name = "txt_gongfang";
+            this.txt_gongfang.Size = new System.Drawing.Size(100, 21);
+            this.txt_gongfang.TabIndex = 3;
             // 
             // label5
             // 
@@ -164,6 +163,7 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.Column1,
             this.Column2,
             this.Column3,
@@ -179,6 +179,13 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(737, 280);
             this.dataGridView1.TabIndex = 3;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
             // 
             // Column1
             // 
@@ -242,54 +249,34 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 175);
+            this.groupBox2.Size = new System.Drawing.Size(200, 85);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "搜索框";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(60, 56);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 59);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 12);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "品名";
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(18, 114);
+            this.button1.Location = new System.Drawing.Point(107, 34);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
-            this.button1.Text = "生成";
+            this.button1.Text = "保存";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(106, 114);
+            this.button2.Location = new System.Drawing.Point(17, 34);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 7;
             this.button2.Text = "查询";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button1_Click);
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // mflDgd
             // 
@@ -306,7 +293,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -319,12 +305,16 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_shijian;
+        private System.Windows.Forms.TextBox txt_didian;
+        private System.Windows.Forms.TextBox txt_hetonghao;
+        private System.Windows.Forms.TextBox txt_XuFang;
+        private System.Windows.Forms.TextBox txt_gongfang;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -335,10 +325,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
     }
 }

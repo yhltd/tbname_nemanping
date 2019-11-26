@@ -49,6 +49,10 @@ namespace PurchasingProcedures
             comboBox1.DisplayMember = "BiaoName";
             comboBox1.ValueMember = "id";
             comboBox1.DataSource = list;
+            List<clsBuiness.KuanShiBiao> cdlist = cal.SelectKuanshi().GroupBy(g => g.STYLE).Select(pc=>pc.First()).ToList<clsBuiness.KuanShiBiao>();
+            textBox1.DataSource = cdlist;
+            textBox1.DisplayMember = "STYLE";
+            textBox1.ValueMember = "Id";
 
         }
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)

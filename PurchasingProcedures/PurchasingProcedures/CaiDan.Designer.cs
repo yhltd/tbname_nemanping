@@ -61,9 +61,6 @@
             this.txt_desc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LOT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STYLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -108,6 +105,12 @@
             this.Column41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.生成面辅料订购单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -120,10 +123,13 @@
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.裁单输入ToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.面辅料订购ToolStripMenuItem});
+            this.面辅料订购ToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.生成面辅料订购单ToolStripMenuItem,
+            this.toolStripMenuItem3});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(105, 575);
+            this.menuStrip2.Size = new System.Drawing.Size(153, 575);
             this.menuStrip2.TabIndex = 3;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -131,21 +137,21 @@
             // 
             this.裁单输入ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.裁单输入ToolStripMenuItem.Name = "裁单输入ToolStripMenuItem";
-            this.裁单输入ToolStripMenuItem.Size = new System.Drawing.Size(98, 26);
+            this.裁单输入ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.裁单输入ToolStripMenuItem.Text = "保存至表格";
             this.裁单输入ToolStripMenuItem.Click += new System.EventHandler(this.裁单输入ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(98, 21);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(146, 21);
             this.toolStripMenuItem1.Text = " ";
             // 
             // 面辅料订购ToolStripMenuItem
             // 
             this.面辅料订购ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.面辅料订购ToolStripMenuItem.Name = "面辅料订购ToolStripMenuItem";
-            this.面辅料订购ToolStripMenuItem.Size = new System.Drawing.Size(98, 26);
+            this.面辅料订购ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.面辅料订购ToolStripMenuItem.Text = "打印表格";
             this.面辅料订购ToolStripMenuItem.Click += new System.EventHandler(this.面辅料订购ToolStripMenuItem_Click);
             // 
@@ -177,9 +183,9 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txt_desc);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(108, 12);
+            this.groupBox1.Location = new System.Drawing.Point(156, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(885, 218);
+            this.groupBox1.Size = new System.Drawing.Size(837, 218);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -478,35 +484,15 @@
             this.Column41,
             this.Column42,
             this.Column43});
-            this.dataGridView1.Location = new System.Drawing.Point(108, 236);
+            this.dataGridView1.Location = new System.Drawing.Point(156, 236);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(885, 327);
+            this.dataGridView1.Size = new System.Drawing.Size(837, 327);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_DefaultValuesNeeded);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
-            // 
-            // printDocument1
-            // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // printPreviewDialog1
-            // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Document = this.printDocument1;
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
-            // 
-            // printDialog1
-            // 
-            this.printDialog1.Document = this.printDocument1;
-            this.printDialog1.UseEXDialog = true;
             // 
             // Id
             // 
@@ -522,7 +508,7 @@
             this.LOT.FillWeight = 391.9781F;
             this.LOT.HeaderText = "LOT#-面料";
             this.LOT.Name = "LOT";
-            this.LOT.Width = 84;
+            this.LOT.Width = 67;
             // 
             // STYLE
             // 
@@ -531,7 +517,7 @@
             this.STYLE.HeaderText = "STYLE-款式";
             this.STYLE.Name = "STYLE";
             this.STYLE.ReadOnly = true;
-            this.STYLE.Width = 90;
+            this.STYLE.Width = 72;
             // 
             // Column3
             // 
@@ -539,7 +525,7 @@
             this.Column3.FillWeight = 324.1528F;
             this.Column3.HeaderText = "ART-货号";
             this.Column3.Name = "Column3";
-            this.Column3.Width = 78;
+            this.Column3.Width = 61;
             // 
             // Column4
             // 
@@ -547,7 +533,7 @@
             this.Column4.FillWeight = 294.8034F;
             this.Column4.HeaderText = "COLOR-颜色";
             this.Column4.Name = "Column4";
-            this.Column4.Width = 90;
+            this.Column4.Width = 72;
             // 
             // Column5
             // 
@@ -862,6 +848,46 @@
             this.Column43.ReadOnly = true;
             this.Column43.Width = 96;
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.Document = this.printDocument1;
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // 生成面辅料订购单ToolStripMenuItem
+            // 
+            this.生成面辅料订购单ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.生成面辅料订购单ToolStripMenuItem.Name = "生成面辅料订购单ToolStripMenuItem";
+            this.生成面辅料订购单ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.生成面辅料订购单ToolStripMenuItem.Text = "生成面辅料订购单";
+            this.生成面辅料订购单ToolStripMenuItem.Click += new System.EventHandler(this.生成面辅料订购单ToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(146, 21);
+            this.toolStripMenuItem2.Text = " ";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(154, 21);
+            this.toolStripMenuItem3.Text = " ";
+            // 
             // CaiDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -964,5 +990,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column41;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column42;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column43;
+        private System.Windows.Forms.ToolStripMenuItem 生成面辅料订购单ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
     }
 }

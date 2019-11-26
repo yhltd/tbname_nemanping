@@ -25,10 +25,14 @@ namespace PurchasingProcedures
         private string STYLE;
         private List<string> color;
         private string insertStr;
-        public shengchengBiaoge(string caidanNo)
+        private List<HeSuan> mllist;
+        private List<HeSuan> Fuliao;
+        public shengchengBiaoge(string caidanNo,List<HeSuan> ml,List<HeSuan>fuliao)
         {
             InitializeComponent();
             cdNo = caidanNo;
+            mllist = ml;
+            Fuliao = fuliao.GroupBy(g => new {g.Name}).Select(s => s.First()).ToList<HeSuan>();
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             gn = new GongNeng2();
             cal = new clsAllnewLogic();
@@ -43,7 +47,8 @@ namespace PurchasingProcedures
              CreatePeiSe();
             //单耗
              CreateDanHao();
-            
+            //核定
+             CreateHeding();
         }
 
         private  void CreateDanHao()
@@ -190,8 +195,8 @@ namespace PurchasingProcedures
       
         private void button3_Click(object sender, EventArgs e)
         {
-           //try 
-           // {
+            try
+            {
             ShengChengBiaoGeXuanZe scbgz = new ShengChengBiaoGeXuanZe("打印", dgv_ps,dgv_dh,color,lie,STYLE,cdNo);
                 scbgz.ShowDialog();
 
@@ -200,10 +205,30 @@ namespace PurchasingProcedures
                     
 
                 
-           // }
-           //catch (Exception ex) { throw ex; }
+            }
+           catch (Exception ex) { throw ex; }
         }
-
+        public void CreateHeding() 
+        {
+            //List<clsBuiness.CaiDan> cdlist = gn.selectCaiDan(cdNo);
+            DataTable dt = new DataTable();
+            //dt.Columns.Add("面辅料结算成本", typeof(string));
+            dt.Columns.Add("类型", typeof(string));
+            //foreach (clsBuiness.HeSuan c in Fuliao)
+            //{
+            //    dt.Columns.Add(c.Name);
+            //}
+            dt.Columns.Add("服装数量", typeof(string));
+            dt.Columns.Add("单价成本", typeof(string));
+            //dt.Columns.Add("总计", typeof(string));
+            dt.Rows.Add("面辅料结算成本",mllist.Sum(s=> Convert.ToInt32(s.订单数量)),mllist[0].结算成本);
+            foreach (HeSuan hs in Fuliao) 
+            {
+                dt.Rows.Add(hs.Name,hs.订单数量 ,hs.结算成本);
+            }
+            //foreach
+            dataGridView1.DataSource = dt;
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("确认要保存‘单耗’‘配色’两份表格吗？", "系统提示", MessageBoxButtons.YesNo);

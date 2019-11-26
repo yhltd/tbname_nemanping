@@ -17,9 +17,13 @@ namespace PurchasingProcedures
         protected clsAllnewLogic cal;
         protected Definefactoryinput df;
         protected Form fm;
-        public InputCreatYjcb(Form frm)
+        private string cdno;
+        private List<HeSuan> hesuan;
+        public InputCreatYjcb(Form frm,string cd,List<HeSuan> hs)
         {
             InitializeComponent();
+            cdno = cd;
+            hesuan = hs;
             cal = new clsAllnewLogic();
             df = new Definefactoryinput();
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -28,7 +32,7 @@ namespace PurchasingProcedures
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ETD_ETA_LDP EEL = new ETD_ETA_LDP();
+            ETD_ETA_LDP EEL = new ETD_ETA_LDP(cdno, comboBox1.Text, textBox1.Text, hesuan);
             EEL.Show();
         }
 
@@ -38,6 +42,10 @@ namespace PurchasingProcedures
             comboBox1.DataSource = jgc;
             comboBox1.DisplayMember = "Name";
             comboBox1.ValueMember = "id";
+            List<clsBuiness.KuanShiBiao> cdlist = cal.SelectKuanshi().GroupBy(g => g.STYLE).Select(pc => pc.First()).ToList<clsBuiness.KuanShiBiao>();
+            textBox1.DataSource = cdlist;
+            textBox1.DisplayMember = "STYLE";
+            textBox1.ValueMember = "Id";
         }
     }
 }

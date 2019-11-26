@@ -13,6 +13,15 @@ namespace logic
 {
     public class clsAllnewLogic
     {
+        public clsAllnewLogic()
+        {
+            
+        }
+        public clsAllnewLogic(string a , string b) 
+        {
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+        }
         public bool Login(string name , string pwd) 
         {
             using (nemanpingEntities3 can = new nemanpingEntities3())
@@ -824,13 +833,14 @@ namespace logic
                     using (nemanpingEntities3 npe = new nemanpingEntities3())
                     {
                         List<DanHao> list = new List<DanHao>();
+
                         if (strwhere.Equals(string.Empty))
                         {
                             var select = from cm in npe.DanHao
                                          select cm;
                             list = select.ToList<DanHao>();
                         }
-                        else 
+                        else
                         {
                             var select = from cm in npe.DanHao
                                          where cm.CaiDanNo.Equals(strwhere)
@@ -1536,8 +1546,85 @@ namespace logic
             #endregion
     #endregion
 
+        #region 功能 面辅料订购单
+            #region 保存
+            public void SaveMianFuliaoDingGouDan(DataTable dt) 
+            {
+                using(nemanpingEntities3 npe = new nemanpingEntities3())
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
 
-       
+                        if (dr[0] is DBNull || dr[0].Equals(string.Empty) || Convert.ToInt32(dr[0]) == 0)
+                        {
+                            MianFuLiaoDingGouDan insets = new MianFuLiaoDingGouDan()
+                            {
+                                PingMing = dr[1].ToString(),
+                                HuoHao = dr[2].ToString(),
+                                SeHao = dr[3].ToString(),
+                                YanSe = dr[4].ToString(),
+                                GuiGe = dr[5].ToString(),
+                                DanWei = dr[6].ToString(),
+                                DanJia = dr[7].ToString(),
+                                ShuLiang = dr[8].ToString(),
+                                ZongJinE = dr[9].ToString(),
+                                CaiDanHao = dr[10].ToString(),
+                                GongFang = dr[11].ToString(),
+                                XuFang  = dr[12].ToString(),
+                                HeTongHao = dr[13].ToString(),
+                                QianYueShiJian = dr[14].ToString(),
+                                QianYueDiDan = dr[15].ToString(),
+                            };
+                            npe.MianFuLiaoDingGouDan.Add(insets);
+
+                        }
+                        else
+                        {
+                            int id = Convert.ToInt32(dr[0]);
+                            var select = from sc in npe.MianFuLiaoDingGouDan where sc.Id == id select sc;
+                            var target = select.FirstOrDefault<MianFuLiaoDingGouDan>();
+                            target.PingMing = dr[1].ToString();
+                            target.HuoHao = dr[2].ToString();
+                            target.SeHao = dr[3].ToString();
+                            target.YanSe = dr[4].ToString();
+                            target.GuiGe = dr[5].ToString();
+                            target.DanWei = dr[6].ToString();
+                            target.DanJia = dr[7].ToString();
+                            target.ShuLiang = dr[8].ToString();
+                            target.ZongJinE = dr[9].ToString();
+                            target.CaiDanHao = dr[10].ToString();
+                            target.GongFang = dr[11].ToString();
+                            target.XuFang = dr[12].ToString();
+                            target.HeTongHao = dr[13].ToString();
+                            target.QianYueShiJian = dr[14].ToString();
+                            target.QianYueDiDan = dr[15].ToString();
+                        }
+                    }
+                    npe.SaveChanges();
+
+
+                }
+            }
+            #endregion
+
+            #region 查询
+            public List<MianFuLiaoDingGouDan> SelectMianFuLiao()
+            {
+                using (nemanpingEntities3 npe = new nemanpingEntities3())
+                {
+                    List<MianFuLiaoDingGouDan> list = new List<MianFuLiaoDingGouDan>();
+
+                    var select = from cm in npe.MianFuLiaoDingGouDan
+                                 select cm;
+                    list = select.ToList<MianFuLiaoDingGouDan>();
+                    return list;
+                }
+
+            }
+            #endregion
+
+        #endregion
+
 
     }
 }

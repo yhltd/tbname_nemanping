@@ -31,17 +31,17 @@ namespace PurchasingProcedures
             {
                 if (key.Equals("生成表格"))
                 {
-                    shengchengBiaoge scb = new shengchengBiaoge(txt_caidan.Text);
-                    scb.MdiParent = fma;
-                    scb.Show();
+                    //shengchengBiaoge scb = new shengchengBiaoge(txt_caidan.Text);
+                    //scb.MdiParent = fma;
+                    //scb.Show();
                     this.Close();
                 }
                 else 
                 {
-                    mflDgd mfl = new mflDgd(txt_caidan.Text);
-                    mfl.MdiParent = fma;
-                    mfl.Show();
-                    this.Close();
+                    //mflDgd mfl = new mflDgd(txt_caidan.Text);
+                    //mfl.MdiParent = fma;
+                    //mfl.Show();
+                    //this.Close();
                 }
             }
             else 

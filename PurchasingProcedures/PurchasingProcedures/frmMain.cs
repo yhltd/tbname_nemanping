@@ -216,16 +216,16 @@ namespace PurchasingProcedures
 
         private void 预计成本实际成本单ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InputCreatYjcb icb = new InputCreatYjcb(this);
-            if (!HaveOpened(this, icb.Name))
-            {
-                icb.MdiParent = this;
-                icb.Show();
-            }
-            else
-            {
-                icb.TopMost = true;
-            }
+           
+            //if (!HaveOpened(this, icb.Name))
+            //{
+            //    icb.MdiParent = this;
+            //    icb.Show();
+            //}
+            //else
+            //{
+            //    icb.TopMost = true;
+            //}
         }
 
         private void 面辅料订购单ToolStripMenuItem_Click(object sender, EventArgs e)

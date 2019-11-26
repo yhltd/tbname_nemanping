@@ -88,3 +88,4 @@ D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\o
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.InputCreatYjcb.resources
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.ETD_ETA_LDP.resources
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.mflDgd.resources
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.PingMingSelect.resources
