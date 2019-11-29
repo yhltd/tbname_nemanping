@@ -24,16 +24,43 @@ namespace PurchasingProcedures
             InitializeComponent();
             cdno = cd;
             hesuan = hs;
+            fm = frm;
             cal = new clsAllnewLogic();
             df = new Definefactoryinput();
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 
         }
+        //private bool HaveOpened(Form _monthForm, string _childrenFormName)
+        //{
+        //    //查看窗口是否已经被打开
+        //    bool bReturn = false;
+        //    for (int i = 0; i < _monthForm.MdiChildren.Length; i++)
+        //    {
+        //        if (_monthForm.MdiChildren[i].Name == _childrenFormName)
+        //        {
+        //            _monthForm.MdiChildren[i].BringToFront();//将控件带到 Z 顺序的前面。
+        //            bReturn = true;
+        //            break;
+        //        }
+        //    }
+        //    return bReturn;
+        //}
 
         private void button1_Click(object sender, EventArgs e)
         {
             ETD_ETA_LDP EEL = new ETD_ETA_LDP(cdno, comboBox1.Text, textBox1.Text, hesuan);
-            EEL.Show();
+            if (!EEL.IsDisposed)
+            {
+                //if (!HaveOpened(fm, EEL.Name))
+                //{
+                    //EEL.MdiParent = fm;
+                    EEL.Show();
+                //}
+                //else 
+                //{
+                //    EEL.TopMost = true;
+                //}
+            }
         }
 
         private void InputCreatYjcb_Load(object sender, EventArgs e)

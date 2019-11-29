@@ -34,6 +34,7 @@
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -48,7 +49,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(225, 27);
+            this.button2.Location = new System.Drawing.Point(221, 27);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(111, 46);
             this.button2.TabIndex = 0;
@@ -76,13 +77,25 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(405, 27);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(111, 46);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "核定成本表";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // ShengChengBiaoGeXuanZe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 99);
+            this.ClientSize = new System.Drawing.Size(539, 99);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ShengChengBiaoGeXuanZe";
             this.Text = "选择";
             this.Load += new System.EventHandler(this.ShengChengBiaoGeXuanZe_Load);
@@ -97,5 +110,6 @@
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Button button3;
     }
 }

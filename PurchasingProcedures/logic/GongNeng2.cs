@@ -265,7 +265,7 @@ namespace logic
         #endregion
 
             #region 保存配色表为EXCEL
-            public void SavePeiSeToExcel(DataTable dt,DataTable dt2, string filePath, string style, string cdno)
+            public void SavePeiSeToExcel(DataTable dt,DataTable dt2,DataTable dt3, string filePath, string style, string cdno)
             {
                 string path = Directory.GetCurrentDirectory();
                 if (dt != null && dt.Rows.Count>0)
@@ -312,6 +312,29 @@ namespace logic
                             {
                                 Cell cell = row.CreateCell(j);
                                 cell.SetCellValue(dt2.Rows[i][j].ToString());
+                            }
+                        }
+                        wb.Write(patha);//向打开的这个xls文件中写入并保存。  
+                        patha.Close();
+                    }
+                }
+                if (dt3 != null && dt3.Rows.Count > 0) 
+                {
+                    using (FileStream fs = File.Open(path + "\\Muban\\HeDingChengBen.xls", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    {
+                        FileStream patha = File.OpenWrite(filePath + "\\核定成本-" + style + "-" + cdno + ".xls");
+                        HSSFWorkbook wb = new HSSFWorkbook(fs);
+                        fs.Close();
+                        Sheet st1 = wb.GetSheet("Sheet1");
+                        //表内数据
+                        for (int i = 0; i < dt3.Rows.Count; i++)
+                        {
+                            Row row = st1.CreateRow(i + 4);
+                            for (int j = 0; j < dt3.Columns.Count; j++)
+                            {
+       
+                                Cell cell = row.CreateCell(j);
+                                cell.SetCellValue(dt3.Rows[i][j].ToString());
                             }
                         }
                         wb.Write(patha);//向打开的这个xls文件中写入并保存。  

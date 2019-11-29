@@ -17,10 +17,12 @@ namespace PurchasingProcedures
         public clsAllnewLogic cal = new clsAllnewLogic();
         public string insertType;
         public string frmLabel;
-        public InputCaiDanHao(string type,string label)
+        public Form f;
+        public InputCaiDanHao(string type,string label,Form fm)
         {
             InitializeComponent();
             insertType = type;
+            f = fm;
             frmLabel = label;
              this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
         }
@@ -33,10 +35,13 @@ namespace PurchasingProcedures
             frm.Close();
             if(insertType.Equals("裁单"))
             {
-                CaiDan C = new CaiDan(textBox1.Text,comboBox1.Text);
+                CaiDan C = new CaiDan(textBox1.Text,comboBox1.Text,f);
+                
                 if (!C.IsDisposed)
                 {
-                    C.ShowDialog();
+                    C.TopLevel = true;
+                    C.MdiParent = f;
+                    C.Show();
                 }
                 this.Close();
             }

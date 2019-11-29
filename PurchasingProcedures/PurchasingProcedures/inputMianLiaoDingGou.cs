@@ -50,7 +50,10 @@ namespace PurchasingProcedures
                
 
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             
         }
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -90,8 +93,8 @@ namespace PurchasingProcedures
                 JingDu form = new JingDu(this.backgroundWorker1, "生成核算表中");// 显示进度条窗体
                 form.ShowDialog(this);
                 form.Close();
-                MianFuLiaoDingGou mfdg = new MianFuLiaoDingGou(txt_ml.Text, txt_ks.Text, cb_jgc.Text, cb_cd.Text);
-                mfdg.ShowDialog();
+                //MianFuLiaoDingGou mfdg = new MianFuLiaoDingGou(txt_ml.Text, txt_ks.Text, cb_jgc.Text, cb_cd.Text);
+                //mfdg.ShowDialog();
                 this.Close();
             }
             else 

@@ -10,13 +10,23 @@ using System.Windows.Forms;
 using logic;
 using clsBuiness;
 using System.Threading;
+using System.IO;
+using System.Runtime.InteropServices;
 namespace PurchasingProcedures
 {
     public partial class SeHaoBiaoLuru : Form
     {
         //protected DataTable dt;
+         [DllImport("kernel32.dll")]
+        public static extern IntPtr _lopen(string lpPathName, int iReadWrite);
+        public const int OF_READWRITE = 2;
+        public const int OF_SHARE_DENY_NONE = 0x40;
+        public readonly IntPtr HFILE_ERROR = new IntPtr(-1);
         protected List<Sehao> list;
         protected clsAllnewLogic cal ;
+        [DllImport("kernel32.dll")]
+        public static extern bool CloseHandle(IntPtr hObject);
+
         public SeHaoBiaoLuru()
         {
             InitializeComponent();
@@ -31,10 +41,10 @@ namespace PurchasingProcedures
         #region 提交修改按钮
         private void toolStripLabel2_Click_1(object sender, EventArgs e)
         {
+            try 
+            {
                 this.backgroundWorker1.RunWorkerAsync(); // 运行 backgroundWorker 组件
-                DataTable dt =dataGridView1 .DataSource as DataTable;
-                
-
+                DataTable dt = dataGridView1.DataSource as DataTable;
                 if (dt == null)
                 {
                     dt = new DataTable();
@@ -56,10 +66,16 @@ namespace PurchasingProcedures
                 JingDu form = new JingDu(this.backgroundWorker1, "提交中");// 显示进度条窗体
                 form.ShowDialog(this);
                 form.Close();
-                
-            
-            MessageBox.Show("提交成功！");
-            bindDatagridView();
+
+
+                MessageBox.Show("提交成功！");
+                bindDatagridView();
+
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         #endregion
         #region 绑定datagridview
@@ -93,7 +109,8 @@ namespace PurchasingProcedures
             }
             catch (Exception ex)
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -101,29 +118,63 @@ namespace PurchasingProcedures
 
         private void toolStripLabel4_Click(object sender, EventArgs e)
         {
-            if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-               string path = openFileDialog1.FileName;
-               if (!path.Equals(string.Empty))
-               {
-                   list = cal.readerSehaoExcel(path);
-                   this.backgroundWorker1.RunWorkerAsync(); // 运行 backgroundWorker 组件
-                   JingDu form = new JingDu(this.backgroundWorker1, "读取中");// 显示进度条窗体
-                   form.ShowDialog(this);
-                   form.Close();
-                   
-                   DataTable dt = new DataTable();
-                   dt.Columns.Add("Id", typeof(int));
-                   dt.Columns.Add("Name", typeof(String));
-                   dt.Columns.Add("SeHao1", typeof(String));
-                   foreach (Sehao s in list)
-                   {
-                       dt.Rows.Add(s.Id, s.Name, s.SeHao1);
-                   }
-                   dataGridView1.DataSource = dt;
-               }
-               MessageBox.Show("读取成功！");
-               
+                DialogResult queren = MessageBox.Show("读取的'EXCEL文件'后缀必须为.Xlsx，否则读取失败！", "系统提示！", MessageBoxButtons.YesNo);
+                if (queren == DialogResult.Yes)
+                {
+
+                    if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        string path = openFileDialog1.FileName;
+                        if (!path.Equals(string.Empty))
+                        {
+
+                            if (!File.Exists(path))
+                            {
+                                MessageBox.Show("文件不存在！");
+                                return;
+                            }
+                            IntPtr vHandle = _lopen(path, OF_READWRITE | OF_SHARE_DENY_NONE);
+                            if (vHandle == HFILE_ERROR)
+                            {
+                                MessageBox.Show("文件被占用！");
+                                return;
+                            }
+                            CloseHandle(vHandle);
+                            if (path.Trim().Contains("xlsx"))
+                            {
+
+                                list = cal.readerSehaoExcel(path);
+                                this.backgroundWorker1.RunWorkerAsync(); // 运行 backgroundWorker 组件
+                                JingDu form = new JingDu(this.backgroundWorker1, "读取中");// 显示进度条窗体
+                                form.ShowDialog(this);
+                                form.Close();
+
+                                DataTable dt = new DataTable();
+                                dt.Columns.Add("Id", typeof(int));
+                                dt.Columns.Add("Name", typeof(String));
+                                dt.Columns.Add("SeHao1", typeof(String));
+                                foreach (Sehao s in list)
+                                {
+                                    dt.Rows.Add(s.Id, s.Name, s.SeHao1);
+                                }
+                                dataGridView1.DataSource = dt;
+                                MessageBox.Show("读取成功！");
+
+                            }
+                            else 
+                            {
+                                MessageBox.Show("读取失败！原因:读取文件后缀非'xlsx");
+            
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -167,36 +218,41 @@ namespace PurchasingProcedures
         {
             try 
             {
-                List<int> idtrr = new List<int>();
-                for (int i = this.dataGridView1.SelectedRows.Count; i > 0; i--)
+                DialogResult dr = MessageBox.Show("是否要删除？","提示",MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
                 {
-                    if (dataGridView1.SelectedRows[i - 1].Cells[0].Value == null || dataGridView1.SelectedRows[i - 1].Cells[0].Value is DBNull)
+                    List<int> idtrr = new List<int>();
+                    for (int i = this.dataGridView1.SelectedRows.Count; i > 0; i--)
                     {
-                        DataRowView drv = dataGridView1.SelectedRows[i - 1].DataBoundItem as DataRowView;
-                        if (drv != null)
+                        if (dataGridView1.SelectedRows[i - 1].Cells[0].Value == null || dataGridView1.SelectedRows[i - 1].Cells[0].Value is DBNull)
                         {
-                            drv.Delete();
+                            DataRowView drv = dataGridView1.SelectedRows[i - 1].DataBoundItem as DataRowView;
+                            if (drv != null)
+                            {
+                                drv.Delete();
+                                i = i - 1;
+                            }
                             i = i - 1;
                         }
-                        i = i - 1;
-                    }
-                    else 
-                    {
-                        idtrr.Add(Convert.ToInt32(dataGridView1.SelectedRows[i - 1].Cells[0].Value));
+                        else
+                        {
+                            idtrr.Add(Convert.ToInt32(dataGridView1.SelectedRows[i - 1].Cells[0].Value));
 
+                        }
                     }
+                    cal.deleteSehao(idtrr);
+                    this.backgroundWorker1.RunWorkerAsync();
+                    JingDu form = new JingDu(this.backgroundWorker1, "删除中");// 显示进度条窗体
+                    form.ShowDialog(this);
+                    form.Close();
+                    MessageBox.Show("删除成功！");
+                    bindDatagridView();
                 }
-                cal.deleteSehao(idtrr);
-                this.backgroundWorker1.RunWorkerAsync();
-                JingDu form = new JingDu(this.backgroundWorker1, "删除中");// 显示进度条窗体
-                form.ShowDialog(this);
-                form.Close();
-                MessageBox.Show("删除成功！");
-                bindDatagridView();
             }
             catch (Exception ex)
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
             }
         }
 

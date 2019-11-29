@@ -191,7 +191,16 @@ namespace logic
         return value;
     } 
     #endregion
-
+        public List<PeiSe> selectps ()
+        {
+            using (nemanpingEntities3 npe = new nemanpingEntities3())
+            {
+                //List<PeiSe> list = new List<PeiSe>();
+                List<PeiSe> list = npe.Database.SqlQuery<PeiSe>("select P.Id,Fabrics,PingMing,P.HuoHao,P.GuiGe, [61601C1] AS 'C61601C1',[61602C1] AS 'C61602C1' , [61603C1] AS 'C61603C1', [61605C1] AS 'C61605C1',[61606C1] AS 'C61606C1',[61607C1] AS 'C61607C1',[61609C1] AS 'C61609C1',[61611C1] AS'C61611C1',[61618C1] AS 'C61618C1',[61624C1] AS 'C61624C1',[61627C1] AS 'C61627C1',[61631C1] AS 'C61631C1',[61632C1] AS 'C61632C1', [61633C1] AS 'C61633C1' ,[61634C1] AS 'C61634C1' ,MianLiaoYanSe,P.Date from PeiSe p inner join DanHao d on p.PingMing = d.Name ").ToList<PeiSe>();
+                //list = quer .ToList< PeiSe >();
+                return list;
+            }
+        }
         #region 功能:尺码搭配表录入
             #region 查询尺码搭配表
         public List<ChiMa_Dapeibiao> SelectChiMaDapei(string strwhere) 
@@ -226,10 +235,17 @@ namespace logic
                 {
                     using (nemanpingEntities3 npe = new nemanpingEntities3()) 
                     {
+                        List<clsBuiness.ChiMa_Dapeibiao> cmdp = SelectChiMaDapei("");
                         foreach (DataRow dr in dt.Rows) 
                         {
-                            if (dr[0] is DBNull || Convert.ToInt32(dr[0]) == 0)
+                            List<clsBuiness.ChiMa_Dapeibiao> selectcm = new List<ChiMa_Dapeibiao>();
+                            if (dr[0].ToString() != "")
                             {
+                                selectcm = cmdp.FindAll(f => f.id == Convert.ToInt32(dr[0].ToString()) && f.BiaoName.Equals(biaogeName));
+                                //if (dr[0] is DBNull || Convert.ToInt32(dr[0]) == 0)
+                                //{
+                            }
+                            if(selectcm.Count<=0){
                                 ChiMa_Dapeibiao cd = new ChiMa_Dapeibiao()
                                 {
                                     BiaoName = biaogeName,
@@ -857,11 +873,17 @@ namespace logic
                 {
                     using(nemanpingEntities3 nep = new nemanpingEntities3())
                     {
+                        List<clsBuiness.DanHao> biao = SelectDanHao("");
+                        List<clsBuiness.DanHao> dh = new List<DanHao>();
                         foreach (DataRow dr in dt.Rows)
                         {
-
-                            if (dr[0] is DBNull || Convert.ToInt32(dr[0]) == 0)
+                            if(dr[0].ToString() != "" )
                             {
+                                dh = biao.FindAll(f => f.CaiDanNo.Equals(dr[1].ToString()) && f.Id == Convert.ToInt32(dr[0].ToString()));
+                            }
+                            //if (dr[0] is DBNull || Convert.ToInt32(dr[0]) == 0)
+                            //{
+                            if(dh.Count <=0){
                                 DanHao insets = new DanHao()
                                 {
                                     CaiDanNo = dr[1].ToString(),
@@ -1153,11 +1175,17 @@ namespace logic
                 {
                     using (nemanpingEntities3 nep = new nemanpingEntities3()) 
                     {
+                        List<clsBuiness.PeiSe> peise = new List<PeiSe>();
+                        List<clsBuiness.PeiSe> biao = selectPeise("");
                         foreach (DataRow dr in dt.Rows)
                         {
-
-                            if (dr[19] is DBNull || Convert.ToInt32(dr[19]) == 0)
+                            if (dr[19].ToString() !="")
                             {
+                                peise = biao.FindAll(f => f.Id == Convert.ToInt32(dr[19]) && f.Fabrics.Equals(Fabrics));
+                            }
+                            if (peise.Count <=0 ){
+                            //if (dr[19] is DBNull || Convert.ToInt32(dr[19]) == 0)
+                            //{
                                 PeiSe ps = new PeiSe() 
                                 {
                                     
@@ -1184,22 +1212,22 @@ namespace logic
                                 };
                                 if (!ps.PingMing.Equals(string.Empty)) 
                                 {
-                                    if (!dr[20].ToString().Equals(string.Empty))
-                                    {
-                                        ps.Fabrics = dr[20].ToString();
-                                    }
-                                    else
-                                    {
+                                    //if (!dr[20].ToString().Equals(string.Empty))
+                                    //{
+                                    //    ps.Fabrics = dr[20].ToString();
+                                    //}
+                                    //else
+                                    //{
                                         ps.Fabrics = Fabrics;
-                                    }
-                                    if (!dr[21].ToString().Equals(string.Empty))
-                                    {
-                                        ps.Date = dr[21].ToString();
-                                    }
-                                    else
-                                    {
+                                    //}
+                                    //if (!dr[21].ToString().Equals(string.Empty))
+                                    //{
+                                    //    ps.Date = dr[21].ToString();
+                                    //}
+                                    //else
+                                    //{
                                         ps.Date = date;
-                                    }
+                                    //}
                                     nep.PeiSe.Add(ps);
                                 }
                                 

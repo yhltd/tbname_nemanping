@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CaiDan));
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.裁单输入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.面辅料订购ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_CaidanNo = new System.Windows.Forms.ComboBox();
             this.cb_jgc = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_shuoming = new System.Windows.Forms.TextBox();
@@ -53,7 +50,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txt_zhidan = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txt_CaidanNo = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_Label = new System.Windows.Forms.TextBox();
@@ -108,55 +104,16 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.生成面辅料订购单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip2.SuspendLayout();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuStrip2
-            // 
-            this.menuStrip2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.裁单输入ToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.面辅料订购ToolStripMenuItem,
-            this.toolStripMenuItem2,
-            this.生成面辅料订购单ToolStripMenuItem,
-            this.toolStripMenuItem3});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(153, 575);
-            this.menuStrip2.TabIndex = 3;
-            this.menuStrip2.Text = "menuStrip2";
-            // 
-            // 裁单输入ToolStripMenuItem
-            // 
-            this.裁单输入ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.裁单输入ToolStripMenuItem.Name = "裁单输入ToolStripMenuItem";
-            this.裁单输入ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
-            this.裁单输入ToolStripMenuItem.Text = "保存至表格";
-            this.裁单输入ToolStripMenuItem.Click += new System.EventHandler(this.裁单输入ToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(146, 21);
-            this.toolStripMenuItem1.Text = " ";
-            // 
-            // 面辅料订购ToolStripMenuItem
-            // 
-            this.面辅料订购ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.面辅料订购ToolStripMenuItem.Name = "面辅料订购ToolStripMenuItem";
-            this.面辅料订购ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
-            this.面辅料订购ToolStripMenuItem.Text = "打印表格";
-            this.面辅料订购ToolStripMenuItem.Click += new System.EventHandler(this.面辅料订购ToolStripMenuItem_Click);
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txt_CaidanNo);
             this.groupBox1.Controls.Add(this.cb_jgc);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txt_shuoming);
@@ -176,7 +133,6 @@
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.txt_zhidan);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.txt_CaidanNo);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txt_Label);
@@ -185,19 +141,29 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(156, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(837, 218);
+            this.groupBox1.Size = new System.Drawing.Size(852, 218);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txt_CaidanNo
+            // 
+            this.txt_CaidanNo.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold);
+            this.txt_CaidanNo.FormattingEnabled = true;
+            this.txt_CaidanNo.Location = new System.Drawing.Point(689, 46);
+            this.txt_CaidanNo.Name = "txt_CaidanNo";
+            this.txt_CaidanNo.Size = new System.Drawing.Size(148, 30);
+            this.txt_CaidanNo.TabIndex = 7;
+            this.txt_CaidanNo.SelectedIndexChanged += new System.EventHandler(this.txt_CaidanNo_SelectedIndexChanged);
             // 
             // cb_jgc
             // 
             this.cb_jgc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_jgc.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cb_jgc.FormattingEnabled = true;
-            this.cb_jgc.Location = new System.Drawing.Point(692, 11);
+            this.cb_jgc.Location = new System.Drawing.Point(689, 11);
             this.cb_jgc.Name = "cb_jgc";
-            this.cb_jgc.Size = new System.Drawing.Size(175, 30);
+            this.cb_jgc.Size = new System.Drawing.Size(148, 30);
             this.cb_jgc.TabIndex = 6;
             // 
             // label2
@@ -296,7 +262,7 @@
             this.txt_mianlioa.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_mianlioa.Location = new System.Drawing.Point(689, 187);
             this.txt_mianlioa.Name = "txt_mianlioa";
-            this.txt_mianlioa.Size = new System.Drawing.Size(178, 29);
+            this.txt_mianlioa.Size = new System.Drawing.Size(148, 29);
             this.txt_mianlioa.TabIndex = 5;
             this.txt_mianlioa.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -305,7 +271,7 @@
             this.txt_jiaohuo.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_jiaohuo.Location = new System.Drawing.Point(689, 117);
             this.txt_jiaohuo.Name = "txt_jiaohuo";
-            this.txt_jiaohuo.Size = new System.Drawing.Size(178, 29);
+            this.txt_jiaohuo.Size = new System.Drawing.Size(148, 29);
             this.txt_jiaohuo.TabIndex = 5;
             this.txt_jiaohuo.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -334,7 +300,7 @@
             this.txt_RN.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_RN.Location = new System.Drawing.Point(689, 152);
             this.txt_RN.Name = "txt_RN";
-            this.txt_RN.Size = new System.Drawing.Size(178, 29);
+            this.txt_RN.Size = new System.Drawing.Size(148, 29);
             this.txt_RN.TabIndex = 5;
             this.txt_RN.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -353,7 +319,7 @@
             this.txt_zhidan.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_zhidan.Location = new System.Drawing.Point(689, 82);
             this.txt_zhidan.Name = "txt_zhidan";
-            this.txt_zhidan.Size = new System.Drawing.Size(178, 29);
+            this.txt_zhidan.Size = new System.Drawing.Size(148, 29);
             this.txt_zhidan.TabIndex = 5;
             this.txt_zhidan.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -366,15 +332,6 @@
             this.label10.Size = new System.Drawing.Size(74, 22);
             this.label10.TabIndex = 0;
             this.label10.Text = "制单日期";
-            // 
-            // txt_CaidanNo
-            // 
-            this.txt_CaidanNo.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_CaidanNo.Location = new System.Drawing.Point(689, 47);
-            this.txt_CaidanNo.Name = "txt_CaidanNo";
-            this.txt_CaidanNo.Size = new System.Drawing.Size(178, 29);
-            this.txt_CaidanNo.TabIndex = 5;
-            this.txt_CaidanNo.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label9
             // 
@@ -487,7 +444,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(156, 236);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(837, 327);
+            this.dataGridView1.Size = new System.Drawing.Size(852, 327);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
@@ -868,53 +825,62 @@
             this.printDialog1.Document = this.printDocument1;
             this.printDialog1.UseEXDialog = true;
             // 
-            // 生成面辅料订购单ToolStripMenuItem
+            // button1
             // 
-            this.生成面辅料订购单ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.生成面辅料订购单ToolStripMenuItem.Name = "生成面辅料订购单ToolStripMenuItem";
-            this.生成面辅料订购单ToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
-            this.生成面辅料订购单ToolStripMenuItem.Text = "生成面辅料订购单";
-            this.生成面辅料订购单ToolStripMenuItem.Click += new System.EventHandler(this.生成面辅料订购单ToolStripMenuItem_Click);
+            this.button1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(6, 112);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(144, 51);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "打印表格";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // toolStripMenuItem2
+            // button2
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(146, 21);
-            this.toolStripMenuItem2.Text = " ";
+            this.button2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button2.Location = new System.Drawing.Point(6, 199);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(144, 51);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "生成面辅料订单";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // toolStripMenuItem3
+            // button3
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(154, 21);
-            this.toolStripMenuItem3.Text = " ";
+            this.button3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button3.Location = new System.Drawing.Point(6, 20);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(144, 51);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "保存至表格";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // CaiDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(989, 575);
+            this.ClientSize = new System.Drawing.Size(1030, 575);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.menuStrip2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CaiDan";
             this.Text = "裁单";
             this.Load += new System.EventHandler(this.CaiDan_Load);
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem 裁单输入ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 面辅料订购ToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_Style;
@@ -936,7 +902,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txt_zhidan;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txt_CaidanNo;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txt_Label;
@@ -990,8 +955,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column41;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column42;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column43;
-        private System.Windows.Forms.ToolStripMenuItem 生成面辅料订购单ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox txt_CaidanNo;
     }
 }

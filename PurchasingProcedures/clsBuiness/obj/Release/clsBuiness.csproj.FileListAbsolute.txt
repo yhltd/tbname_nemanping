@@ -1,0 +1,10 @@
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Release\clsBuiness.dll.config
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Release\clsBuiness.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Release\clsBuiness.pdb
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Release\EntityFramework.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Release\EntityFramework.SqlServer.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Release\EntityFramework.xml
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Release\EntityFramework.SqlServer.xml
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\clsBuiness\obj\Release\clsBuiness.csprojResolveAssemblyReference.cache
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\clsBuiness\obj\Release\clsBuiness.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\clsBuiness\obj\Release\clsBuiness.pdb

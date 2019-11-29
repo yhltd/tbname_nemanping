@@ -182,7 +182,7 @@ namespace PurchasingProcedures
 
         private void 裁单输入ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InputCaiDanHao IC = new InputCaiDanHao("裁单","请输入Style：");
+            InputCaiDanHao IC = new InputCaiDanHao("裁单","请输入Style：",this);
             IC.Show();
         }
 

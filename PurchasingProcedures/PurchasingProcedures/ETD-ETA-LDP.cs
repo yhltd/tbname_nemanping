@@ -54,9 +54,18 @@ namespace PurchasingProcedures
         private void ETD_ETA_LDP_Load(object sender, EventArgs e)
         {
             List<clsBuiness.DanHao> danhao = cal.SelectDanHao("").FindAll(f => f.Style.Trim().Contains(style.Trim()) && f.JiaGongChang.Trim().Equals(jiagongchang.Trim()) && f.CaiDanNo.Trim().Equals(caidanhao.Trim()));
-            textBox6.Text = danhao.Average(d => Convert.ToDouble(d.Jine)).ToString();
-            textBox7.Text = danhao.Sum(sc => Convert.ToDouble(sc.Jine)).ToString();
-            textBox16.Text = hs.Sum(s => Convert.ToInt32(s.实际出口数量)).ToString();
+            if (danhao.Count > 0)
+            {
+                textBox6.Text = danhao.Average(d => Convert.ToDouble(d.Jine)).ToString();
+                textBox7.Text = danhao.Sum(sc => Convert.ToDouble(sc.Jine)).ToString();
+                textBox16.Text = hs.Sum(s => Convert.ToInt32(s.实际出口数量)).ToString();
+            }
+            else 
+            {
+                MessageBox.Show("生成失败！原因：找不到预计成本/实际成本单！");
+                this.Close();
+                return;
+            }
         }
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)

@@ -10,11 +10,21 @@ using System.Windows.Forms;
 using clsBuiness;
 using logic;
 using System.Threading;
+using System.Runtime.InteropServices;
+using System.IO;
 namespace PurchasingProcedures
 {
     public partial class ChiMaDaPei : Form
     {
+        [DllImport("kernel32.dll")]
+        public static extern IntPtr _lopen(string lpPathName, int iReadWrite);
+        public const int OF_READWRITE = 2;
+        public const int OF_SHARE_DENY_NONE = 0x40;
+        public readonly IntPtr HFILE_ERROR = new IntPtr(-1);
         public clsAllnewLogic cal = new clsAllnewLogic();
+        [DllImport("kernel32.dll")]
+        public static extern bool CloseHandle(IntPtr hObject);
+
         public ChiMaDaPei()
         {
             InitializeComponent();
@@ -81,7 +91,8 @@ namespace PurchasingProcedures
             }
             catch (Exception ex) 
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
             }
             
         }
@@ -99,6 +110,18 @@ namespace PurchasingProcedures
                         string path = openFileDialog1.FileName;
                         if (!path.Equals(string.Empty))
                         {
+                            if (!File.Exists(path))
+                            {
+                                MessageBox.Show("文件不存在！");
+                                return;
+                            }
+                            IntPtr vHandle = _lopen(path, OF_READWRITE | OF_SHARE_DENY_NONE);
+                            if (vHandle == HFILE_ERROR)
+                            {
+                                MessageBox.Show("文件被占用！");
+                                return;
+                            }
+                            CloseHandle(vHandle);
                             if (path.Trim().Contains("xlsx"))
                             {
                                 this.backgroundWorker1.RunWorkerAsync(); // 运行 backgroundWorker 组件
@@ -133,7 +156,8 @@ namespace PurchasingProcedures
             }
             catch (Exception ex) 
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -208,12 +232,15 @@ namespace PurchasingProcedures
                     form.ShowDialog(this);
                     form.Close();
                     MessageBox.Show("删除成功！");
+                    ChiMaDaPei_Load(sender, e);
                     bindDataGirdview(comboBox1.Text);
+
                 }
             }
             catch (Exception ex)
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -230,7 +257,8 @@ namespace PurchasingProcedures
             }
             catch (Exception ex) 
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -263,7 +291,8 @@ namespace PurchasingProcedures
             }
             catch (Exception ex)
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -287,7 +316,8 @@ namespace PurchasingProcedures
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message);
+
             }
         }
 
@@ -305,11 +335,18 @@ namespace PurchasingProcedures
                     cal.deleteChiMaBiao(comboBox1.Text);
                     MessageBox.Show("删除成功！");
                 }
+                ChiMaDaPei_Load(sender, e);
             }
             catch(Exception ex)
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

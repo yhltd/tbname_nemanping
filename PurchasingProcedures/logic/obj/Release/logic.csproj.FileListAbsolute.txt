@@ -1,0 +1,15 @@
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\bin\Release\logic.dll.config
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\bin\Release\logic.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\bin\Release\logic.pdb
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\bin\Release\clsBuiness.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\bin\Release\DocumentFormat.OpenXml.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\bin\Release\EntityFramework.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\bin\Release\EntityFramework.SqlServer.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\bin\Release\NPOI.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\bin\Release\NPOI.OOXML.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\bin\Release\clsBuiness.pdb
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\bin\Release\EntityFramework.xml
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\bin\Release\EntityFramework.SqlServer.xml
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\obj\Release\logic.csprojResolveAssemblyReference.cache
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\obj\Release\logic.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\obj\Release\logic.pdb

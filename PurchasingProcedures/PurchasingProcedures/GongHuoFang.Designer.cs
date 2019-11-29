@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GongHuoFang));
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.GongHuoFangB11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GongHuoFangA11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -278,8 +279,9 @@
             this.ClientSize = new System.Drawing.Size(1216, 617);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dataGridView2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GongHuoFang";
-            this.Text = "GongHuoFang";
+            this.Text = "供货方";
             this.Load += new System.EventHandler(this.GongHuoFang_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

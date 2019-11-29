@@ -11,12 +11,20 @@ using logic;
 using clsBuiness;
 
 using System.Threading;
+using System.Runtime.InteropServices;
+using System.IO;
 namespace PurchasingProcedures
 {
     public partial class DanHaoFrm : Form
     {
         protected clsAllnewLogic cal = new clsAllnewLogic();
-
+        [DllImport("kernel32.dll")]
+        public static extern IntPtr _lopen(string lpPathName, int iReadWrite);
+        public const int OF_READWRITE = 2;
+        public const int OF_SHARE_DENY_NONE = 0x40;
+        public readonly IntPtr HFILE_ERROR = new IntPtr(-1);
+        [DllImport("kernel32.dll")]
+        public static extern bool CloseHandle(IntPtr hObject);
         public DanHaoFrm()
         {
             InitializeComponent();
@@ -73,20 +81,31 @@ namespace PurchasingProcedures
             }
             catch (Exception ex)
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void DanHaoFrm_Load(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndexChanged -= comboBox1_SelectedIndexChanged;
-            //List<DanHao> list = cal.SelectDanHao("").GroupBy(d =>d.CaiDanNo).Select(p => p.First).ToList<DanHao>;
-            List<DanHao> list = cal.SelectDanHao("").GroupBy(d => new {d.CaiDanNo}).Select(s =>s.First()).ToList<DanHao>();
-            comboBox1.DisplayMember = "CaiDanNo";
-            comboBox1.ValueMember = "Id";
-            comboBox1.DataSource = list;
-            comboBox1.SelectedIndex = 0;//设置默认值
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;//注册事件
+            try
+            {
+                comboBox1.SelectedIndexChanged -= comboBox1_SelectedIndexChanged;
+                //List<DanHao> list = cal.SelectDanHao("").GroupBy(d =>d.CaiDanNo).Select(p => p.First).ToList<DanHao>;
+                List<DanHao> list = cal.SelectDanHao("").GroupBy(d => new { d.CaiDanNo }).Select(s => s.First()).ToList<DanHao>();
+                comboBox1.DisplayMember = "CaiDanNo";
+                comboBox1.ValueMember = "Id";
+                comboBox1.DataSource = list;
+                if (list != null && list.Count > 0 )
+                {
+                    comboBox1.SelectedIndex = 0;//设置默认值
+                }
+                comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;//注册事件
+            }catch(Exception ex)
+            {
+                //throw ex;
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
@@ -123,26 +142,26 @@ namespace PurchasingProcedures
                        }
                         foreach (DataRow dr in newDataTable.Rows)
                         {
-                            if (dr[1] is DBNull || dr[1].Equals(string.Empty))
-                            {
+                            //if (dr[1] is DBNull || dr[1].Equals(string.Empty))
+                            //{
                                 dr[1] = comboBox1.Text;
-                            }
-                            if (dr[2] is DBNull || dr[2].Equals(string.Empty))
-                            {
+                            //}
+                            //if (dr[2] is DBNull || dr[2].Equals(string.Empty))
+                            //{
                                 dr[2] = txt_STYLE.Text;
-                            }
-                            if (dr[3] is DBNull || dr[3].Equals(string.Empty))
-                            {
+                            //}
+                            //if (dr[3] is DBNull || dr[3].Equals(string.Empty))
+                            //{
                                 dr[3] = txt_mfcf.Text;
-                            }
-                            if (dr[4] is DBNull || dr[4].Equals(string.Empty))
-                            {
+                            //}
+                            //if (dr[4] is DBNull || dr[4].Equals(string.Empty))
+                            //{
                                 dr[4] = dateTimePicker1.Text;
-                            }
-                            if (dr[5] is DBNull || dr[5].Equals(string.Empty))
-                            {
+                            //}
+                            //if (dr[5] is DBNull || dr[5].Equals(string.Empty))
+                            //{
                                 dr[5] = txt_JGC.Text;
-                            }
+                            //}
                         }
                         this.backgroundWorker1.RunWorkerAsync(); // 运行 backgroundWorker 组件
                         JingDu form = new JingDu(this.backgroundWorker1, "提交中");// 显示进度条窗体
@@ -157,7 +176,8 @@ namespace PurchasingProcedures
             }
             catch (Exception ex)
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
             }
            
         }
@@ -174,6 +194,18 @@ namespace PurchasingProcedures
                         string path = openFileDialog1.FileName;
                         if (!path.Equals(string.Empty))
                         {
+                            if (!File.Exists(path))
+                            {
+                                MessageBox.Show("文件不存在！");
+                                return;
+                            }
+                            IntPtr vHandle = _lopen(path, OF_READWRITE | OF_SHARE_DENY_NONE);
+                            if (vHandle == HFILE_ERROR)
+                            {
+                                MessageBox.Show("文件被占用！");
+                                return;
+                            }
+                            CloseHandle(vHandle);
                             if (path.Trim().Contains("xlsx"))
                             {
                                 List<DanHao> list = cal.Readerdh(path);
@@ -231,7 +263,8 @@ namespace PurchasingProcedures
             }
             catch(Exception ex)
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
             }
              
            
@@ -315,7 +348,8 @@ namespace PurchasingProcedures
             }
             catch (Exception ex)
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -339,7 +373,8 @@ namespace PurchasingProcedures
             }
             catch (Exception ex) 
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -356,7 +391,7 @@ namespace PurchasingProcedures
             }
             catch (Exception ex) 
             {
-            
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -364,12 +399,12 @@ namespace PurchasingProcedures
         {
             double flSum = 0;
             double mlpj = 0;
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                if (dataGridView1.Rows[i].Cells[6].Value != null)
-                {
-                }
-            }
+            //for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            //{
+            //    if (dataGridView1.Rows[i].Cells[6].Value != null)
+            //    {
+            //    }
+            //}
 
             for (int i = 0; i < dataGridView2.Rows.Count; i++)
             {

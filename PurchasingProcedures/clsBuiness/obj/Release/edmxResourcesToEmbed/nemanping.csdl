@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="nemanpingModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="nemanpingEntities3" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="CaiDan" EntityType="nemanpingModel.CaiDan" />
+    <EntitySet Name="ChiMa_Dapeibiao" EntityType="nemanpingModel.ChiMa_Dapeibiao" />
+    <EntitySet Name="DanHao" EntityType="nemanpingModel.DanHao" />
+    <EntitySet Name="GongHuoFang" EntityType="nemanpingModel.GongHuoFang" />
+    <EntitySet Name="JiaGongChang" EntityType="nemanpingModel.JiaGongChang" />
+    <EntitySet Name="KuanShiBiao" EntityType="nemanpingModel.KuanShiBiao" />
+    <EntitySet Name="KuCun" EntityType="nemanpingModel.KuCun" />
+    <EntitySet Name="MianFuLiaoDingGouDan" EntityType="nemanpingModel.MianFuLiaoDingGouDan" />
+    <EntitySet Name="PeiSe" EntityType="nemanpingModel.PeiSe" />
+    <EntitySet Name="Sehao" EntityType="nemanpingModel.Sehao" />
+    <EntitySet Name="UserTable" EntityType="nemanpingModel.UserTable" />
+  </EntityContainer>
+  <EntityType Name="CaiDan">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DESC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="FABRIC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="STYLE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="shuoming" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Jacket" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Pant" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="LABEL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="JiaGongchang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="CaiDanHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="ZhiDanRiqi" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="JiaoHuoRiqi" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="RN_NO" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="MianLiao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="LOT" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="ChimaSTYLE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="ART" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="COLOR" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="COLORID" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="JACKET_PANT" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C34R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C36R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C38R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C40R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C42R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C44R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C46R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C48R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C50R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C52R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C54R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C56R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C58R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C60R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C62R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C36L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C38L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C40L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C42L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C44L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C46L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C48L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C50L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C52L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C54L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C56L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C58L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C60L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C62L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C34S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C36S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C38S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C40S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C42S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C44S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C46S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Sub_Total" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ChiMa_Dapeibiao">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="LOT__面料" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="STYLE_款式" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="ART_货号" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="COLOR_颜色" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="COLOR__颜色编号" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="JACKET_上衣_PANT_裤子" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C34R_28" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C36R_30" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C38R_32" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C40R___34" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C42R_36" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C44R_38" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C46R_40" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C48R_42" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C50R_44" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C52R_46" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C54R_48" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C56R_50" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C58R_52" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C60R_54" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C62R_56" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C36L_30" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C38L_32" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C40L_34" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C42L_36" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C44L_38" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C46L_40" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C48L_42" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C50L_44" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C52L_46" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C54L_48" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C56L_50" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C58L_52" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C60L_54" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C62L_56" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C34S_28" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C36S_30" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C38S_32" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C40S_34" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C42S_36" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C44S_38" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C46S_40" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="DingdanHeji" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="BiaoName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="DanHao">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CaiDanNo" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Style" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="FABRIC_CONTENT" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="DATE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="JiaGongChang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="XuHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="HuoHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="GuiGe" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Yanse" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Danjia" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="DanHao1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Jine" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="BeiZhu" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="ChangShang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Heji" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Type" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="GongHuoFang">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="PingMing" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="HuoHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Guige" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="SeHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Yanse" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="DanJia" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="GongHuoFangA" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="GongHuoFangB" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="BeiZhu" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="JiaGongChang">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Lianxiren" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Phone" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="ZengZhiShui" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Kaihuhang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Zhanghao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="KuanShiBiao">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="STYLE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="DESC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="FABRIC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="JACKET" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="PANT" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="ShuoMing" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="mark1" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="mark2" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="KuCun">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="PingMing" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="HuoHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="SeHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="ShuLiang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="GongHuoFang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="CunFangDI" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MianFuLiaoDingGouDan">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="PingMing" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="GongFang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="XuFang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="HeTongHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="QianYueDiDan" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="QianYueShiJian" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="HuoHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="SeHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="YanSe" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="GuiGe" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="DanWei" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="DanJia" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="ShuLiang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="ZongJinE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="CaiDanHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="PeiSe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Fabrics" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="PingMing" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="HuoHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="GuiGe" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C61601C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C61602C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C61603C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C61605C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C61606C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C61607C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C61609C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C61611C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C61618C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C61624C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C61627C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C61631C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C61632C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C61633C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="C61634C1" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="MianLiaoYanSe" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Date" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sehao">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="SeHao1" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="UserTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Pwd" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+</Schema>

@@ -28,19 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ETD_ETA_LDP));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.textBox24 = new System.Windows.Forms.TextBox();
             this.textBox27 = new System.Windows.Forms.TextBox();
             this.textBox45 = new System.Windows.Forms.TextBox();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.textBox21 = new System.Windows.Forms.TextBox();
             this.textBox35 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -48,19 +56,48 @@
             this.textBox44 = new System.Windows.Forms.TextBox();
             this.textBox34 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.textBox40 = new System.Windows.Forms.TextBox();
             this.textBox30 = new System.Windows.Forms.TextBox();
+            this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox19 = new System.Windows.Forms.TextBox();
             this.textBox39 = new System.Windows.Forms.TextBox();
+            this.textBox18 = new System.Windows.Forms.TextBox();
             this.textBox29 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox38 = new System.Windows.Forms.TextBox();
             this.textBox28 = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -70,45 +107,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -155,17 +156,6 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "起运港费用";
             this.label4.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(12, 262);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 19);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "关税";
-            this.label3.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -224,6 +214,48 @@
             this.textBox1.Size = new System.Drawing.Size(100, 26);
             this.textBox1.TabIndex = 2;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label13.Location = new System.Drawing.Point(164, 25);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(22, 19);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "%";
+            this.label13.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label16.Location = new System.Drawing.Point(280, 19);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(65, 19);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "出口数量";
+            this.label16.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // textBox16
+            // 
+            this.textBox16.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox16.Location = new System.Drawing.Point(355, 16);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(100, 26);
+            this.textBox16.TabIndex = 2;
+            this.textBox16.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(12, 262);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 19);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "关税";
+            this.label3.Click += new System.EventHandler(this.label1_Click);
             // 
             // groupBox2
             // 
@@ -302,6 +334,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "生成信息";
             // 
+            // textBox25
+            // 
+            this.textBox25.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox25.Location = new System.Drawing.Point(508, 255);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(100, 26);
+            this.textBox25.TabIndex = 2;
+            this.textBox25.TextChanged += new System.EventHandler(this.textBox25_TextChanged);
+            // 
+            // textBox24
+            // 
+            this.textBox24.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox24.Location = new System.Drawing.Point(380, 255);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(100, 26);
+            this.textBox24.TabIndex = 2;
+            this.textBox24.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // textBox27
             // 
             this.textBox27.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -319,6 +369,24 @@
             this.textBox45.Size = new System.Drawing.Size(100, 26);
             this.textBox45.TabIndex = 2;
             this.textBox45.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // textBox22
+            // 
+            this.textBox22.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox22.Location = new System.Drawing.Point(226, 255);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(100, 26);
+            this.textBox22.TabIndex = 2;
+            this.textBox22.TextChanged += new System.EventHandler(this.textBox22_TextChanged);
+            // 
+            // textBox21
+            // 
+            this.textBox21.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox21.Location = new System.Drawing.Point(82, 255);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(100, 26);
+            this.textBox21.TabIndex = 2;
+            this.textBox21.TextChanged += new System.EventHandler(this.textBox21_TextChanged);
             // 
             // textBox35
             // 
@@ -383,6 +451,17 @@
             this.textBox10.Size = new System.Drawing.Size(100, 26);
             this.textBox10.TabIndex = 2;
             // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label42.Location = new System.Drawing.Point(614, 254);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(22, 19);
+            this.label42.TabIndex = 1;
+            this.label42.Text = "%";
+            this.label42.Click += new System.EventHandler(this.label1_Click);
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -393,6 +472,259 @@
             this.label10.TabIndex = 1;
             this.label10.Text = "FOB";
             this.label10.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label35.Location = new System.Drawing.Point(615, 288);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(22, 19);
+            this.label35.TabIndex = 1;
+            this.label35.Text = "%";
+            this.label35.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label32.Location = new System.Drawing.Point(615, 121);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(22, 19);
+            this.label32.TabIndex = 1;
+            this.label32.Text = "%";
+            this.label32.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label39.Location = new System.Drawing.Point(614, 189);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(22, 19);
+            this.label39.TabIndex = 1;
+            this.label39.Text = "%";
+            this.label39.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label34.Location = new System.Drawing.Point(615, 223);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(22, 19);
+            this.label34.TabIndex = 1;
+            this.label34.Text = "%";
+            this.label34.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label33.Location = new System.Drawing.Point(615, 157);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(22, 19);
+            this.label33.TabIndex = 1;
+            this.label33.Text = "%";
+            this.label33.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label31.Location = new System.Drawing.Point(615, 89);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(22, 19);
+            this.label31.TabIndex = 1;
+            this.label31.Text = "%";
+            this.label31.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label41.Location = new System.Drawing.Point(350, 254);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(18, 19);
+            this.label41.TabIndex = 1;
+            this.label41.Text = "$";
+            this.label41.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label30.Location = new System.Drawing.Point(615, 58);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(22, 19);
+            this.label30.TabIndex = 1;
+            this.label30.Text = "%";
+            this.label30.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label40.Location = new System.Drawing.Point(198, 257);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(18, 19);
+            this.label40.TabIndex = 1;
+            this.label40.Text = "$";
+            this.label40.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label29.Location = new System.Drawing.Point(351, 288);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(18, 19);
+            this.label29.TabIndex = 1;
+            this.label29.Text = "$";
+            this.label29.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label23.Location = new System.Drawing.Point(199, 291);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(18, 19);
+            this.label23.TabIndex = 1;
+            this.label23.Text = "$";
+            this.label23.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label28.Location = new System.Drawing.Point(351, 118);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(18, 19);
+            this.label28.TabIndex = 1;
+            this.label28.Text = "$";
+            this.label28.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label20.Location = new System.Drawing.Point(199, 121);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(18, 19);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "$";
+            this.label20.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label38.Location = new System.Drawing.Point(350, 189);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(18, 19);
+            this.label38.TabIndex = 1;
+            this.label38.Text = "$";
+            this.label38.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label27.Location = new System.Drawing.Point(351, 223);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(18, 19);
+            this.label27.TabIndex = 1;
+            this.label27.Text = "$";
+            this.label27.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label37.Location = new System.Drawing.Point(198, 192);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(18, 19);
+            this.label37.TabIndex = 1;
+            this.label37.Text = "$";
+            this.label37.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label22.Location = new System.Drawing.Point(199, 226);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(18, 19);
+            this.label22.TabIndex = 1;
+            this.label22.Text = "$";
+            this.label22.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label26.Location = new System.Drawing.Point(351, 86);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(18, 19);
+            this.label26.TabIndex = 1;
+            this.label26.Text = "$";
+            this.label26.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label25.Location = new System.Drawing.Point(351, 157);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(18, 19);
+            this.label25.TabIndex = 1;
+            this.label25.Text = "$";
+            this.label25.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label19.Location = new System.Drawing.Point(199, 89);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(18, 19);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "$";
+            this.label19.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label24.Location = new System.Drawing.Point(351, 55);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(18, 19);
+            this.label24.TabIndex = 1;
+            this.label24.Text = "$";
+            this.label24.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label21.Location = new System.Drawing.Point(199, 160);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(18, 19);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "$";
+            this.label21.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label14.Location = new System.Drawing.Point(199, 58);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(18, 19);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "$";
+            this.label14.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox17
             // 
@@ -421,6 +753,15 @@
             this.textBox30.TabIndex = 2;
             this.textBox30.TextChanged += new System.EventHandler(this.textBox30_TextChanged);
             // 
+            // textBox20
+            // 
+            this.textBox20.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox20.Location = new System.Drawing.Point(508, 190);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(100, 26);
+            this.textBox20.TabIndex = 2;
+            this.textBox20.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // textBox14
             // 
             this.textBox14.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -430,6 +771,15 @@
             this.textBox14.TabIndex = 2;
             this.textBox14.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // textBox19
+            // 
+            this.textBox19.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox19.Location = new System.Drawing.Point(380, 190);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(100, 26);
+            this.textBox19.TabIndex = 2;
+            this.textBox19.TextChanged += new System.EventHandler(this.textBox19_TextChanged);
+            // 
             // textBox39
             // 
             this.textBox39.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -438,6 +788,15 @@
             this.textBox39.Size = new System.Drawing.Size(100, 26);
             this.textBox39.TabIndex = 2;
             this.textBox39.TextChanged += new System.EventHandler(this.textBox39_TextChanged);
+            // 
+            // textBox18
+            // 
+            this.textBox18.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox18.Location = new System.Drawing.Point(226, 190);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(100, 26);
+            this.textBox18.TabIndex = 2;
+            this.textBox18.TextChanged += new System.EventHandler(this.textBox18_TextChanged);
             // 
             // textBox29
             // 
@@ -456,6 +815,14 @@
             this.textBox8.Size = new System.Drawing.Size(100, 26);
             this.textBox8.TabIndex = 2;
             this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            // 
+            // textBox9
+            // 
+            this.textBox9.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox9.Location = new System.Drawing.Point(82, 190);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(100, 26);
+            this.textBox9.TabIndex = 2;
             // 
             // textBox12
             // 
@@ -502,6 +869,17 @@
             this.textBox28.Size = new System.Drawing.Size(100, 26);
             this.textBox28.TabIndex = 2;
             this.textBox28.TextChanged += new System.EventHandler(this.textBox28_TextChanged);
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label36.Location = new System.Drawing.Point(10, 193);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(51, 19);
+            this.label36.TabIndex = 1;
+            this.label36.Text = "海运费";
+            this.label36.Click += new System.EventHandler(this.label1_Click);
             // 
             // label12
             // 
@@ -594,17 +972,6 @@
             this.label17.Text = "美元/UNIT";
             this.label17.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label16.Location = new System.Drawing.Point(280, 19);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(65, 19);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "出口数量";
-            this.label16.Click += new System.EventHandler(this.label1_Click);
-            // 
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -636,372 +1003,6 @@
             this.label6.Text = "面料金额";
             this.label6.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox16
-            // 
-            this.textBox16.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox16.Location = new System.Drawing.Point(355, 16);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(100, 26);
-            this.textBox16.TabIndex = 2;
-            this.textBox16.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label13.Location = new System.Drawing.Point(164, 25);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(22, 19);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "%";
-            this.label13.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(199, 58);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(18, 19);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "$";
-            this.label14.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label19.Location = new System.Drawing.Point(199, 89);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(18, 19);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "$";
-            this.label19.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label20.Location = new System.Drawing.Point(199, 121);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(18, 19);
-            this.label20.TabIndex = 1;
-            this.label20.Text = "$";
-            this.label20.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label21.Location = new System.Drawing.Point(199, 160);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(18, 19);
-            this.label21.TabIndex = 1;
-            this.label21.Text = "$";
-            this.label21.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label22.Location = new System.Drawing.Point(199, 226);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(18, 19);
-            this.label22.TabIndex = 1;
-            this.label22.Text = "$";
-            this.label22.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label23.Location = new System.Drawing.Point(199, 291);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(18, 19);
-            this.label23.TabIndex = 1;
-            this.label23.Text = "$";
-            this.label23.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label24.Location = new System.Drawing.Point(351, 55);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(18, 19);
-            this.label24.TabIndex = 1;
-            this.label24.Text = "$";
-            this.label24.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label25.Location = new System.Drawing.Point(351, 157);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(18, 19);
-            this.label25.TabIndex = 1;
-            this.label25.Text = "$";
-            this.label25.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label26.Location = new System.Drawing.Point(351, 86);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(18, 19);
-            this.label26.TabIndex = 1;
-            this.label26.Text = "$";
-            this.label26.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label27.Location = new System.Drawing.Point(351, 223);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(18, 19);
-            this.label27.TabIndex = 1;
-            this.label27.Text = "$";
-            this.label27.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label28.Location = new System.Drawing.Point(351, 118);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(18, 19);
-            this.label28.TabIndex = 1;
-            this.label28.Text = "$";
-            this.label28.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label29.Location = new System.Drawing.Point(351, 288);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(18, 19);
-            this.label29.TabIndex = 1;
-            this.label29.Text = "$";
-            this.label29.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label30.Location = new System.Drawing.Point(615, 58);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(22, 19);
-            this.label30.TabIndex = 1;
-            this.label30.Text = "%";
-            this.label30.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label31.Location = new System.Drawing.Point(615, 89);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(22, 19);
-            this.label31.TabIndex = 1;
-            this.label31.Text = "%";
-            this.label31.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label32.Location = new System.Drawing.Point(615, 121);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(22, 19);
-            this.label32.TabIndex = 1;
-            this.label32.Text = "%";
-            this.label32.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label33.Location = new System.Drawing.Point(615, 157);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(22, 19);
-            this.label33.TabIndex = 1;
-            this.label33.Text = "%";
-            this.label33.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label34.Location = new System.Drawing.Point(615, 223);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(22, 19);
-            this.label34.TabIndex = 1;
-            this.label34.Text = "%";
-            this.label34.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label35.Location = new System.Drawing.Point(615, 288);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(22, 19);
-            this.label35.TabIndex = 1;
-            this.label35.Text = "%";
-            this.label35.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label36.Location = new System.Drawing.Point(10, 193);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(51, 19);
-            this.label36.TabIndex = 1;
-            this.label36.Text = "海运费";
-            this.label36.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // textBox9
-            // 
-            this.textBox9.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox9.Location = new System.Drawing.Point(82, 190);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 26);
-            this.textBox9.TabIndex = 2;
-            // 
-            // textBox18
-            // 
-            this.textBox18.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox18.Location = new System.Drawing.Point(226, 190);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(100, 26);
-            this.textBox18.TabIndex = 2;
-            this.textBox18.TextChanged += new System.EventHandler(this.textBox18_TextChanged);
-            // 
-            // textBox19
-            // 
-            this.textBox19.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox19.Location = new System.Drawing.Point(380, 190);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(100, 26);
-            this.textBox19.TabIndex = 2;
-            this.textBox19.TextChanged += new System.EventHandler(this.textBox19_TextChanged);
-            // 
-            // textBox20
-            // 
-            this.textBox20.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox20.Location = new System.Drawing.Point(508, 190);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(100, 26);
-            this.textBox20.TabIndex = 2;
-            this.textBox20.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label37.Location = new System.Drawing.Point(198, 192);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(18, 19);
-            this.label37.TabIndex = 1;
-            this.label37.Text = "$";
-            this.label37.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label38.Location = new System.Drawing.Point(350, 189);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(18, 19);
-            this.label38.TabIndex = 1;
-            this.label38.Text = "$";
-            this.label38.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label39.Location = new System.Drawing.Point(614, 189);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(22, 19);
-            this.label39.TabIndex = 1;
-            this.label39.Text = "%";
-            this.label39.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label40.Location = new System.Drawing.Point(198, 257);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(18, 19);
-            this.label40.TabIndex = 1;
-            this.label40.Text = "$";
-            this.label40.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label41.Location = new System.Drawing.Point(350, 254);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(18, 19);
-            this.label41.TabIndex = 1;
-            this.label41.Text = "$";
-            this.label41.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label42.Location = new System.Drawing.Point(614, 254);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(22, 19);
-            this.label42.TabIndex = 1;
-            this.label42.Text = "%";
-            this.label42.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // textBox21
-            // 
-            this.textBox21.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox21.Location = new System.Drawing.Point(82, 255);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(100, 26);
-            this.textBox21.TabIndex = 2;
-            this.textBox21.TextChanged += new System.EventHandler(this.textBox21_TextChanged);
-            // 
-            // textBox22
-            // 
-            this.textBox22.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox22.Location = new System.Drawing.Point(226, 255);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(100, 26);
-            this.textBox22.TabIndex = 2;
-            this.textBox22.TextChanged += new System.EventHandler(this.textBox22_TextChanged);
-            // 
-            // textBox24
-            // 
-            this.textBox24.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox24.Location = new System.Drawing.Point(380, 255);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(100, 26);
-            this.textBox24.TabIndex = 2;
-            this.textBox24.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textBox25
-            // 
-            this.textBox25.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox25.Location = new System.Drawing.Point(508, 255);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(100, 26);
-            this.textBox25.TabIndex = 2;
-            this.textBox25.TextChanged += new System.EventHandler(this.textBox25_TextChanged);
-            // 
             // ETD_ETA_LDP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1009,6 +1010,7 @@
             this.ClientSize = new System.Drawing.Size(751, 491);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ETD_ETA_LDP";
             this.Text = "ETD_ETA_LDP";
             this.Load += new System.EventHandler(this.ETD_ETA_LDP_Load);

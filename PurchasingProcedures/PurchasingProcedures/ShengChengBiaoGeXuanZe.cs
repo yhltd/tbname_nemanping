@@ -17,6 +17,7 @@ namespace PurchasingProcedures
         protected string buttonType ;
         private string foldPath;
         private DataGridView dgv_ps;
+        private DataGridView dataGridView1;
         private DataGridView dgv_dh;
         private List<string> color;
         private int lie;
@@ -27,6 +28,7 @@ namespace PurchasingProcedures
         private string imagePath;
         private string imagePath2;
         private string dayingType;
+
         public ShengChengBiaoGeXuanZe(string type)
         {
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -42,11 +44,12 @@ namespace PurchasingProcedures
             imagePath = Directory.GetCurrentDirectory() + "\\image.bmp";
             sheet.SaveToImage(imagePath); //图片后缀.bmp ,imagepath自己设置
         }
-        public ShengChengBiaoGeXuanZe(string type, DataGridView dv1, DataGridView dv2, List<string> cl, int Lie, string style, string cdno)
+        public ShengChengBiaoGeXuanZe(string type, DataGridView dv1, DataGridView dv2,DataGridView dv3, List<string> cl, int Lie, string style, string cdno)
         {
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             gn = new GongNeng2();
             dgv_ps = dv1;
+            dataGridView1 = dv3;
             dgv_dh = dv2;
             color = cl;
             lie = Lie;
@@ -59,6 +62,7 @@ namespace PurchasingProcedures
         {
             DataTable dt = new DataTable();
             DataTable dt2 = new DataTable();
+            DataTable dt3 = new DataTable();
             if (bctype.Equals("配色"))
             {
                 for (int i = 0; i < dgv_ps.Columns.Count; i++)
@@ -112,7 +116,7 @@ namespace PurchasingProcedures
 
                 foldPath = path + "\\配色表-" + STYLE + "-" + cdNo + ".xls";
             }
-            else
+            else if (bctype.Equals("单耗"))
             {
 
 
@@ -134,7 +138,37 @@ namespace PurchasingProcedures
                 }
                 foldPath = path + "\\单耗-" + STYLE + "-" + cdNo + ".xls";
             }
-            gn.SavePeiSeToExcel(dt, dt2, path, STYLE, cdNo);
+            else 
+            {
+                
+                for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                {
+                    if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("id"))
+                    {
+                        dt3.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
+                    }
+                }
+                dt3.Columns.Add("合计", typeof(string));
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    if (dataGridView1.Rows[i].Cells[0].Value != null)
+                    {
+                        string str = "";
+                        if (!dataGridView1.Rows[i].Cells[1].Value.ToString().Equals(string.Empty) && !dataGridView1.Rows[i].Cells[2].Value.Equals(string.Empty))
+                        {
+                            str = dataGridView1.Rows[i].Cells[0].Value + "=" + dataGridView1.Rows[i].Cells[1].Value + "=" + dataGridView1.Rows[i].Cells[2].Value + "=" + (Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value));
+                        }
+                        else
+                        {
+                            str = dataGridView1.Rows[i].Cells[0].Value + "=" + dataGridView1.Rows[i].Cells[1].Value + "=" + dataGridView1.Rows[i].Cells[2].Value + "=" + 0;
+                        }
+                        dt3.Rows.Add(str.Split('='));
+                    }
+                }
+                foldPath = path + "\\核定成本-" + STYLE + "-" + cdNo + ".xls";
+
+            }
+            gn.SavePeiSeToExcel(dt, dt2,dt3, path, STYLE, cdNo);
 
         }
         public void DaYin(string Type) 
@@ -170,10 +204,14 @@ namespace PurchasingProcedures
                         MessageBox.Show("保存成功！");
                     }
                 }
-                catch (Exception ex) { throw ex; }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             else 
             {
+                MessageBox.Show("建议横向打印");
                 dayingType = "配色";
                 DaYin("配色");
                 
@@ -200,7 +238,10 @@ namespace PurchasingProcedures
                         MessageBox.Show("保存成功！");
                     }
                 }
-                catch (Exception ex) { throw ex; }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             else 
             {
@@ -230,13 +271,44 @@ namespace PurchasingProcedures
                     {
                         g.DrawImage(newbitmap, 0, 0, newbitmap.Width - 430, newbitmap.Height - 150);
                     }
-                    else 
+                    else if (dayingType.Equals("单耗"))
                     {
                         g.DrawImage(newbitmap, 0, 0, newbitmap.Width - 200, newbitmap.Height - 150);
+                    }
+                    else 
+                    {
+                        g.DrawImage(newbitmap, 0, 0, newbitmap.Width +120, newbitmap.Height - 100);
                     }
                 }
             }
             #endregion
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (buttonType.Equals("保存"))
+            {
+                try
+                {
+                    FolderBrowserDialog dialog = new FolderBrowserDialog();
+                    dialog.Description = "请选择文件路径";
+                    if (dialog.ShowDialog() == DialogResult.OK)
+                    {
+                        foldPath = dialog.SelectedPath;
+                        CreateExcel(foldPath, "核定成本");
+                        MessageBox.Show("保存成功！");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                dayingType = "核定成本";
+                DaYin("核定成本");
+            }
         }
     }
 }

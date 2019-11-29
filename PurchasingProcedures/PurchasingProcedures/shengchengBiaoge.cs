@@ -32,7 +32,7 @@ namespace PurchasingProcedures
             InitializeComponent();
             cdNo = caidanNo;
             mllist = ml;
-            Fuliao = fuliao.GroupBy(g => new {g.Name}).Select(s => s.First()).ToList<HeSuan>();
+            Fuliao = fuliao.GroupBy(g => g.Name.Trim()).Select(s => s.First()).ToList<HeSuan>();
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             gn = new GongNeng2();
             cal = new clsAllnewLogic();
@@ -197,16 +197,14 @@ namespace PurchasingProcedures
         {
             try
             {
-            ShengChengBiaoGeXuanZe scbgz = new ShengChengBiaoGeXuanZe("打印", dgv_ps,dgv_dh,color,lie,STYLE,cdNo);
+            ShengChengBiaoGeXuanZe scbgz = new ShengChengBiaoGeXuanZe("打印", dgv_ps,dgv_dh,dataGridView1,color,lie,STYLE,cdNo);
                 scbgz.ShowDialog();
-
-                 
-                    
-                    
-
                 
             }
-           catch (Exception ex) { throw ex; }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         public void CreateHeding() 
         {
@@ -231,7 +229,7 @@ namespace PurchasingProcedures
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("确认要保存‘单耗’‘配色’两份表格吗？", "系统提示", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("确认要保存‘单耗’‘配色’ ‘核定成本’三份表格吗？", "系统提示", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
                 try
@@ -245,11 +243,14 @@ namespace PurchasingProcedures
                         MessageBox.Show("保存成功！");
                     }
                 }
-                catch (Exception ex) { throw ex; }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             else
             {
-                ShengChengBiaoGeXuanZe scbgz = new ShengChengBiaoGeXuanZe("保存",dgv_ps,dgv_dh,color,lie,STYLE,cdNo);
+                ShengChengBiaoGeXuanZe scbgz = new ShengChengBiaoGeXuanZe("保存",dgv_ps,dgv_dh,dataGridView1 ,color,lie,STYLE,cdNo);
                 scbgz.ShowDialog();
 
             }
@@ -330,7 +331,33 @@ namespace PurchasingProcedures
                     dt2.Rows.Add(str.Split('='));
                 }
             }
-            gn.SavePeiSeToExcel(dt,dt2, path,STYLE ,cdNo);
+
+            DataTable dt3 = new DataTable();
+            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+            {
+                if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("id"))
+                {
+                    dt3.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
+                }
+            }
+            dt3.Columns.Add("合计", typeof(string));
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[0].Value != null)
+                {
+                    string str = "";
+                    if (!dataGridView1.Rows[i].Cells[1].Value.ToString().Equals(string.Empty) && !dataGridView1.Rows[i].Cells[2].Value.Equals(string.Empty))
+                    {
+                        str = dataGridView1.Rows[i].Cells[0].Value + "=" + dataGridView1.Rows[i].Cells[1].Value + "=" + dataGridView1.Rows[i].Cells[2].Value + "=" + (Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value));
+                    }
+                    else 
+                    {
+                        str = dataGridView1.Rows[i].Cells[0].Value + "=" + dataGridView1.Rows[i].Cells[1].Value + "=" + dataGridView1.Rows[i].Cells[2].Value + "=" +0;
+                    }
+                    dt3.Rows.Add(str.Split('='));
+                }
+            }
+            gn.SavePeiSeToExcel(dt,dt2,dt3, path,STYLE ,cdNo);
             foldPath = path + "\\配色表-" + STYLE + "-" + cdNo + ".xls";
             //foldPath2 = path + "\\单耗-" + STYLE + "-" + cdNo + ".xls";
         }

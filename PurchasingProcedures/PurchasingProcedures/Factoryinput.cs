@@ -10,11 +10,22 @@ using System.Windows.Forms;
 using logic;
 using clsBuiness;
 using System.Threading;
+using System.Runtime.InteropServices;
+using System.IO;
 namespace PurchasingProcedures
 {
     public partial class Factoryinput : Form
     {
         //protected DataTable dt;
+        [DllImport("kernel32.dll")]
+        public static extern IntPtr _lopen(string lpPathName, int iReadWrite);
+        public const int OF_READWRITE = 2;
+        public const int OF_SHARE_DENY_NONE = 0x40;
+        [DllImport("kernel32.dll")]
+        public static extern bool CloseHandle(IntPtr hObject);
+
+        public readonly IntPtr HFILE_ERROR = new IntPtr(-1);
+
         protected List<JiaGongChang> list1;
         protected Definefactoryinput cal1;
         public Factoryinput()
@@ -60,7 +71,8 @@ namespace PurchasingProcedures
             }
             catch (Exception ex)
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -104,7 +116,9 @@ namespace PurchasingProcedures
             }
             catch (Exception ex) 
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
+
             }
             
 
@@ -125,39 +139,66 @@ namespace PurchasingProcedures
         {
             try 
             {
-                this.backgroundWorker1.RunWorkerAsync(); // 运行 backgroundWorker 组件
-
-                JingDu form = new JingDu(this.backgroundWorker1, "读取中");// 显示进度条窗体
-                form.ShowDialog(this);
-                form.Close();
-                if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
+                DialogResult queren = MessageBox.Show("读取的'EXCEL文件'后缀必须为.Xlsx，否则读取失败！","系统提示！",MessageBoxButtons.YesNo);
+                if (queren == DialogResult.Yes)
                 {
-                    string path = openFileDialog1.FileName;
-                    if (!path.Equals(string.Empty))
-                    {
-                        list1 = cal1.readerJiaGongChangExcel(path);
-                        DataTable dt = new DataTable();
-                        dt.Columns.Add("id1", typeof(int));
-                        dt.Columns.Add("Name1", typeof(String));
-                        dt.Columns.Add("Address", typeof(String));
-                        dt.Columns.Add("Lianxiren", typeof(String));
-                        dt.Columns.Add("Phone", typeof(String));
-                        dt.Columns.Add("ZengZhiShui", typeof(String));
-                        dt.Columns.Add("Kaihuhang", typeof(String));
-                        dt.Columns.Add("Zhanghao", typeof(String));
-                        foreach (JiaGongChang s in list1)
-                        {
-                            dt.Rows.Add(s.id, s.Name, s.Address, s.Lianxiren, s.Phone, s.ZengZhiShui, s.Kaihuhang, s.Zhanghao);
-                        }
-                        dataGridView1.DataSource = dt;
-                    }
-                    MessageBox.Show("读取成功！");
 
+                    this.backgroundWorker1.RunWorkerAsync(); // 运行 backgroundWorker 组件
+
+                    JingDu form = new JingDu(this.backgroundWorker1, "读取中");// 显示进度条窗体
+                    form.ShowDialog(this);
+                    form.Close();
+                    if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        string path = openFileDialog1.FileName;
+                        if (!path.Equals(string.Empty))
+                        {
+                            if (!File.Exists(path))
+                            {
+                                MessageBox.Show("文件不存在！");
+                                return;
+                            }
+                            IntPtr vHandle = _lopen(path, OF_READWRITE | OF_SHARE_DENY_NONE);
+                            if (vHandle == HFILE_ERROR)
+                            {
+                                MessageBox.Show("文件被占用！");
+                                return;
+                            }
+                            CloseHandle(vHandle);
+                            if (path.Trim().Contains("xlsx"))
+                            {
+
+                                list1 = cal1.readerJiaGongChangExcel(path);
+                                DataTable dt = new DataTable();
+                                dt.Columns.Add("id1", typeof(int));
+                                dt.Columns.Add("Name1", typeof(String));
+                                dt.Columns.Add("Address", typeof(String));
+                                dt.Columns.Add("Lianxiren", typeof(String));
+                                dt.Columns.Add("Phone", typeof(String));
+                                dt.Columns.Add("ZengZhiShui", typeof(String));
+                                dt.Columns.Add("Kaihuhang", typeof(String));
+                                dt.Columns.Add("Zhanghao", typeof(String));
+                                foreach (JiaGongChang s in list1)
+                                {
+                                    dt.Rows.Add(s.id, s.Name, s.Address, s.Lianxiren, s.Phone, s.ZengZhiShui, s.Kaihuhang, s.Zhanghao);
+                                }
+                                dataGridView1.DataSource = dt;
+                                MessageBox.Show("读取成功！");
+
+                            }
+                            else 
+                            {
+                                MessageBox.Show("读取失败！原因:读取文件后缀非'xlsx'");
+                            }
+                        }
+                    }
                 }
             }
             catch (Exception ex) 
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
+
             }
             
         }
@@ -234,7 +275,9 @@ namespace PurchasingProcedures
             }
             catch (Exception ex)
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
+
             }
         }
     }

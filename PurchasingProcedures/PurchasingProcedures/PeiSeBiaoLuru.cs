@@ -10,11 +10,21 @@ using System.Windows.Forms;
 using clsBuiness;
 using logic;
 using System.Threading;
+using System.Runtime.InteropServices;
+using System.IO;
 namespace PurchasingProcedures
 {
     public partial class PeiSeBiaoLuru : Form
     {
+        [DllImport("kernel32.dll")]
+        public static extern IntPtr _lopen(string lpPathName, int iReadWrite);
+        public const int OF_READWRITE = 2;
+        public const int OF_SHARE_DENY_NONE = 0x40;
+        public readonly IntPtr HFILE_ERROR = new IntPtr(-1);
         protected clsAllnewLogic cal = new clsAllnewLogic();
+        [DllImport("kernel32.dll")]
+        public static extern bool CloseHandle(IntPtr hObject);
+
         public PeiSeBiaoLuru()
         {
             InitializeComponent();
@@ -43,7 +53,9 @@ namespace PurchasingProcedures
             }
             catch (Exception ex) 
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
+
             }
             
         }
@@ -59,7 +71,9 @@ namespace PurchasingProcedures
             }
             catch (Exception ex) 
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
+
             }
             
             
@@ -67,14 +81,22 @@ namespace PurchasingProcedures
 
         private void cb_MianLiao_TextChanged(object sender, EventArgs e)
         {
-            if (cb_MianLiao.Text.Equals(string.Empty))
+            try
             {
-                DataTable dt = new DataTable();
-                for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                if (cb_MianLiao.Text.Equals(string.Empty))
                 {
-                    dt.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
+                    DataTable dt = new DataTable();
+                    for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                    {
+                        dt.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
+                    }
+                    dataGridView1.DataSource = dt;
                 }
-                dataGridView1.DataSource = dt;
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+
             }
         }
 
@@ -86,19 +108,19 @@ namespace PurchasingProcedures
                 if (dt == null)
                 {
                     dt = new DataTable();
-                    dt.Columns.Add("Id", typeof(int));
+                    //dt.Columns.Add("Id", typeof(int));
                     for (int i = 0; i < dataGridView1.Columns.Count; i++)
                     {
-                        if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("Id"))
-                        {
+                        //if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("Id"))
+                        //{
                             dt.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
-                        }
+                        //}
                     }
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
                         if (dataGridView1.Rows[i].Cells[6].Value != null)
                         {
-                            dt.Rows.Add(dataGridView1.Rows[i].Cells[19].Value, dataGridView1.Rows[i].Cells[0].Value, dataGridView1.Rows[i].Cells[1].Value, dataGridView1.Rows[i].Cells[2].Value, dataGridView1.Rows[i].Cells[3].Value, dataGridView1.Rows[i].Cells[4].Value, dataGridView1.Rows[i].Cells[5].Value, dataGridView1.Rows[i].Cells[6].Value, dataGridView1.Rows[i].Cells[7].Value, dataGridView1.Rows[i].Cells[8].Value, dataGridView1.Rows[i].Cells[9].Value, dataGridView1.Rows[i].Cells[10].Value, dataGridView1.Rows[i].Cells[11].Value, dataGridView1.Rows[i].Cells[12].Value, dataGridView1.Rows[i].Cells[13].Value, dataGridView1.Rows[i].Cells[14].Value, dataGridView1.Rows[i].Cells[15].Value, dataGridView1.Rows[i].Cells[16].Value, dataGridView1.Rows[i].Cells[17].Value, dataGridView1.Rows[i].Cells[18].Value, dataGridView1.Rows[i].Cells[20].Value, dataGridView1.Rows[i].Cells[21].Value);
+                            dt.Rows.Add(dataGridView1.Rows[i].Cells[0].Value, dataGridView1.Rows[i].Cells[1].Value, dataGridView1.Rows[i].Cells[2].Value, dataGridView1.Rows[i].Cells[3].Value, dataGridView1.Rows[i].Cells[4].Value, dataGridView1.Rows[i].Cells[5].Value, dataGridView1.Rows[i].Cells[6].Value, dataGridView1.Rows[i].Cells[7].Value, dataGridView1.Rows[i].Cells[8].Value, dataGridView1.Rows[i].Cells[9].Value, dataGridView1.Rows[i].Cells[10].Value, dataGridView1.Rows[i].Cells[11].Value, dataGridView1.Rows[i].Cells[12].Value, dataGridView1.Rows[i].Cells[13].Value, dataGridView1.Rows[i].Cells[14].Value, dataGridView1.Rows[i].Cells[15].Value, dataGridView1.Rows[i].Cells[16].Value, dataGridView1.Rows[i].Cells[17].Value, dataGridView1.Rows[i].Cells[18].Value, dataGridView1.Rows[i].Cells[19].Value, dataGridView1.Rows[i].Cells[20].Value, dataGridView1.Rows[i].Cells[21].Value);
                         }
                     }
                 }
@@ -114,7 +136,9 @@ namespace PurchasingProcedures
             }
             catch (Exception ex) 
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
+
             }
             
         }
@@ -131,6 +155,18 @@ namespace PurchasingProcedures
                         string path = openFileDialog1.FileName;
                         if (!path.Equals(string.Empty))
                         {
+                            if (!File.Exists(path))
+                            {
+                                MessageBox.Show("文件不存在！");
+                                return;
+                            }
+                            IntPtr vHandle = _lopen(path, OF_READWRITE | OF_SHARE_DENY_NONE);
+                            if (vHandle == HFILE_ERROR)
+                            {
+                                MessageBox.Show("文件被占用！");
+                                return;
+                            }
+                            CloseHandle(vHandle);
                             if (path.Trim().Contains("xlsx"))
                             {
                                 this.backgroundWorker1.RunWorkerAsync(); // 运行 backgroundWorker 组件
@@ -176,8 +212,8 @@ namespace PurchasingProcedures
             }
             catch (Exception ex) 
             {
-                throw ex;
-
+                //throw ex;
+                MessageBox.Show(ex.Message);
             }
             
         }
@@ -186,37 +222,42 @@ namespace PurchasingProcedures
         {
             try
             {
-                List<int> idtrr = new List<int>();
-                for (int i = this.dataGridView1.SelectedRows.Count; i > 0; i--)
+                DialogResult dr = MessageBox.Show("确认要删除 该信息吗？", "系统提示", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
                 {
-                    if (dataGridView1.SelectedRows[i - 1].Cells[19].Value == null || dataGridView1.SelectedRows[i - 1].Cells[19].Value is DBNull)
+                    List<int> idtrr = new List<int>();
+                    for (int i = this.dataGridView1.SelectedRows.Count; i > 0; i--)
                     {
-                        DataRowView drv = dataGridView1.SelectedRows[i - 1].DataBoundItem as DataRowView;
-                        if (drv != null)
+                        if (dataGridView1.SelectedRows[i - 1].Cells[19].Value == null || dataGridView1.SelectedRows[i - 1].Cells[19].Value is DBNull)
                         {
-                            drv.Delete();
-                            i = i - 1;
+                            DataRowView drv = dataGridView1.SelectedRows[i - 1].DataBoundItem as DataRowView;
+                            if (drv != null)
+                            {
+                                drv.Delete();
+                                i = i - 1;
+                            }
+                        }
+                        else
+                        {
+                            idtrr.Add(Convert.ToInt32(dataGridView1.SelectedRows[i - 1].Cells[19].Value));
+
                         }
                     }
-                    else
-                    {
-                        idtrr.Add(Convert.ToInt32(dataGridView1.SelectedRows[i - 1].Cells[19].Value));
 
-                    }
+                    cal.deletePeiseSession(idtrr);
+                    this.backgroundWorker1.RunWorkerAsync();
+                    JingDu form = new JingDu(this.backgroundWorker1, "删除中");// 显示进度条窗体
+                    form.ShowDialog(this);
+                    form.Close();
+                    MessageBox.Show("删除成功！");
+                    comboBox1_SelectedIndexChanged(sender, e);
                 }
-
-                cal.deletePeiseSession(idtrr);
-                this.backgroundWorker1.RunWorkerAsync();
-                JingDu form = new JingDu(this.backgroundWorker1, "删除中");// 显示进度条窗体
-                form.ShowDialog(this);
-                form.Close();
-                MessageBox.Show("删除成功！");
-                comboBox1_SelectedIndexChanged(sender, e);
-
             }
             catch (Exception ex)
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
+
             }
         }
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -268,7 +309,9 @@ namespace PurchasingProcedures
             }
             catch (Exception ex)
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
+
             }
         }
 

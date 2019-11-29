@@ -10,11 +10,22 @@ using System.Windows.Forms;
 using clsBuiness;
 using logic;
 using System.Threading;
+using System.Runtime.InteropServices;
+using System.IO;
 namespace PurchasingProcedures
 {
     public partial class Kucun : Form
     {
         protected clsAllnewLogic cal;
+        [DllImport("kernel32.dll")]
+        public static extern IntPtr _lopen(string lpPathName, int iReadWrite);
+        public const int OF_READWRITE = 2;
+        public const int OF_SHARE_DENY_NONE = 0x40;
+        public readonly IntPtr HFILE_ERROR = new IntPtr(-1);
+        [DllImport("kernel32.dll")]
+        public static extern bool CloseHandle(IntPtr hObject);
+        //protected clsAllnewLogic cal = new clsAllnewLogic();
+       
         public Kucun()
         {
             InitializeComponent();
@@ -41,43 +52,58 @@ namespace PurchasingProcedures
         }
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-            this.backgroundWorker1.RunWorkerAsync();
-            JingDu form = new JingDu(this.backgroundWorker1, "刷新中");// 显示进度条窗体
-            form.ShowDialog(this);
-            form.Close();
-            bindDatagridview();
-            MessageBox.Show("刷新成功！");
+            try
+            {
+                this.backgroundWorker1.RunWorkerAsync();
+                JingDu form = new JingDu(this.backgroundWorker1, "刷新中");// 显示进度条窗体
+                form.ShowDialog(this);
+                form.Close();
+                bindDatagridview();
+                MessageBox.Show("刷新成功！");
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
-            this.backgroundWorker1.RunWorkerAsync();
-            JingDu form = new JingDu(this.backgroundWorker1, "提交中");// 显示进度条窗体
-            form.ShowDialog(this);
-            form.Close();
-            DataTable dt = dataGridView1.DataSource as DataTable;
-            if (dt == null)
+            try
             {
-                dt = new DataTable();
-                dt.Columns.Add("Id", typeof(int));
-                for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                this.backgroundWorker1.RunWorkerAsync();
+                JingDu form = new JingDu(this.backgroundWorker1, "提交中");// 显示进度条窗体
+                form.ShowDialog(this);
+                form.Close();
+                DataTable dt = dataGridView1.DataSource as DataTable;
+                if (dt == null)
                 {
-                    if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("Id"))
+                    dt = new DataTable();
+                    dt.Columns.Add("Id", typeof(int));
+                    for (int i = 0; i < dataGridView1.Columns.Count; i++)
                     {
-                        dt.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
+                        if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("Id"))
+                        {
+                            dt.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
+                        }
+                    }
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        if (dataGridView1.Rows[i].Cells[1].Value != null)
+                        {
+                            dt.Rows.Add(dataGridView1.Rows[i].Cells[0].Value, dataGridView1.Rows[i].Cells[1].Value, dataGridView1.Rows[i].Cells[2].Value, dataGridView1.Rows[i].Cells[3].Value, dataGridView1.Rows[i].Cells[4].Value, dataGridView1.Rows[i].Cells[5].Value, dataGridView1.Rows[i].Cells[6].Value);
+                        }
                     }
                 }
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                {
-                    if (dataGridView1.Rows[i].Cells[1].Value != null)
-                    {
-                        dt.Rows.Add(dataGridView1.Rows[i].Cells[0].Value, dataGridView1.Rows[i].Cells[1].Value, dataGridView1.Rows[i].Cells[2].Value, dataGridView1.Rows[i].Cells[3].Value, dataGridView1.Rows[i].Cells[4].Value, dataGridView1.Rows[i].Cells[5].Value, dataGridView1.Rows[i].Cells[6].Value);
-                    }
-                }
+                cal.insertKucun(dt);
+                MessageBox.Show("提交成功");
+                bindDatagridview();
             }
-            cal.insertKucun(dt);
-            MessageBox.Show("提交成功");
-            bindDatagridview();
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -109,45 +135,65 @@ namespace PurchasingProcedures
         }
         private void toolStripLabel3_Click(object sender, EventArgs e)
         {
-            this.backgroundWorker1.RunWorkerAsync();
-            JingDu form = new JingDu(this.backgroundWorker1, "读取中");// 显示进度条窗体
-            form.ShowDialog(this);
-            form.Close();
-             DialogResult queren = MessageBox.Show("读取的'EXCEL文件'后缀必须为.Xlsx，否则读取失败！","系统提示！",MessageBoxButtons.YesNo);
-             if (queren == DialogResult.Yes)
-             {
-                 if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
-                 {
-                     string path = openFileDialog1.FileName;
-                     if (!path.Equals(string.Empty))
-                     {
-                         if (path.Trim().Contains("xlsx"))
-                         {
-                             List<KuCun> list = cal.readerKucunExcel(path);
-                             DataTable dt = new DataTable();
-                             dt.Columns.Add("Id", typeof(int));
-                             for (int i = 0; i < dataGridView1.Columns.Count; i++)
-                             {
-                                 if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("Id"))
-                                 {
-                                     dt.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
-                                 }
-                             }
-                             foreach (KuCun s in list)
-                             {
-                                 dt.Rows.Add(s.Id, s.PingMing, s.HuoHao, s.SeHao, s.ShuLiang, s.GongHuoFang, s.CunFangDI);
-                             }
-                             dataGridView1.DataSource = dt;
-                         }
-                         else 
-                         {
-                             MessageBox.Show("读取失败！原因:读取文件后缀非'xlsx'");
-                         }
-                     }
-                 }
-             }
-             MessageBox.Show("读取完成！");
-            
+            try
+            {
+                
+                DialogResult queren = MessageBox.Show("读取的'EXCEL文件'后缀必须为.Xlsx，否则读取失败！", "系统提示！", MessageBoxButtons.YesNo);
+                if (queren == DialogResult.Yes)
+                {
+                    this.backgroundWorker1.RunWorkerAsync();
+                    JingDu form = new JingDu(this.backgroundWorker1, "读取中");// 显示进度条窗体
+                    form.ShowDialog(this);
+                    form.Close();
+                    if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        string path = openFileDialog1.FileName;
+                        if (!path.Equals(string.Empty))
+                        {
+                            if (!File.Exists(path))
+                            {
+                                MessageBox.Show("文件不存在！");
+                                return;
+                            }
+                            IntPtr vHandle = _lopen(path, OF_READWRITE | OF_SHARE_DENY_NONE);
+                            if (vHandle == HFILE_ERROR)
+                            {
+                                MessageBox.Show("文件被占用！");
+                                return;
+                            }
+                            CloseHandle(vHandle);
+                            if (path.Trim().Contains("xlsx"))
+                            {
+                                List<KuCun> list = cal.readerKucunExcel(path);
+                                DataTable dt = new DataTable();
+                                dt.Columns.Add("Id", typeof(int));
+                                for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                                {
+                                    if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("Id"))
+                                    {
+                                        dt.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
+                                    }
+                                }
+                                foreach (KuCun s in list)
+                                {
+                                    dt.Rows.Add(s.Id, s.PingMing, s.HuoHao, s.SeHao, s.ShuLiang, s.GongHuoFang, s.CunFangDI);
+                                }
+                                dataGridView1.DataSource = dt;
+                                MessageBox.Show("读取完成！");
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("读取失败！原因:读取文件后缀非'xlsx'");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -184,7 +230,8 @@ namespace PurchasingProcedures
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message);
+
             }
         }
 

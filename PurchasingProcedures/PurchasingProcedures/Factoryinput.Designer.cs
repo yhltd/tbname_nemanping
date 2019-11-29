@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Factoryinput));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -200,6 +201,7 @@
             this.ClientSize = new System.Drawing.Size(970, 525);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Factoryinput";
             this.Text = "加工厂数据录入";
             this.Load += new System.EventHandler(this.Factoryinput_Load);

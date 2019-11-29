@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using logic;
 using clsBuiness;
 using System.Threading;
+using System.Runtime.InteropServices;
+using System.IO;
 namespace PurchasingProcedures
 {
     public partial class GongHuoFang : Form
@@ -17,6 +19,13 @@ namespace PurchasingProcedures
         protected DataTable dt;
         protected List<clsBuiness.GongHuoFang> list2;
         protected Define1 cal1;
+        [DllImport("kernel32.dll")]
+        public static extern IntPtr _lopen(string lpPathName, int iReadWrite);
+        public const int OF_READWRITE = 2;
+        public const int OF_SHARE_DENY_NONE = 0x40;
+        public readonly IntPtr HFILE_ERROR = new IntPtr(-1);
+        [DllImport("kernel32.dll")]
+        public static extern bool CloseHandle(IntPtr hObject);
         public GongHuoFang()
         {
             InitializeComponent();
@@ -62,7 +71,8 @@ namespace PurchasingProcedures
             }
             catch (Exception ex)
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -106,7 +116,9 @@ namespace PurchasingProcedures
             }
             catch (Exception ex)
             {
-                throw ex;
+                //throw ex;
+                MessageBox.Show(ex.Message);
+
             }
 
 
@@ -124,41 +136,69 @@ namespace PurchasingProcedures
             {
                 try
                 {
-                    this.backgroundWorker11.RunWorkerAsync(); // 运行 backgroundWorker 组件
-
-                    JingDu form = new JingDu(this.backgroundWorker11, "提交中");// 显示进度条窗体
-                    form.ShowDialog(this);
-                    form.Close();
-                    if (this.openFileDialog2.ShowDialog() == DialogResult.OK)
+                    DialogResult queren = MessageBox.Show("读取的'EXCEL文件'后缀必须为.Xlsx，否则读取失败！", "系统提示！", MessageBoxButtons.YesNo);
+                    if (queren == DialogResult.Yes)
                     {
-                        string path = openFileDialog2.FileName;
-                        if (!path.Equals(string.Empty))
-                        {
-                            list2 = cal1.readerGongHuoFangExcel(path);
-                            DataTable dt = new DataTable();
-                            dt.Columns.Add("Id22", typeof(int));
-                            dt.Columns.Add("PingMing11", typeof(String));
-                            dt.Columns.Add("HuoHao11", typeof(String));
-                            dt.Columns.Add("Guige11", typeof(String));
-                            dt.Columns.Add("SeHao12", typeof(String));
-                            dt.Columns.Add("Yanse11", typeof(String));
-                            dt.Columns.Add("DanJia11", typeof(String));
-                            dt.Columns.Add("GongHuoFangA11", typeof(String));
-                            dt.Columns.Add("GongHuoFangB11", typeof(String));
-                            dt.Columns.Add("BeiZhu11", typeof(String));
-                            foreach (clsBuiness.GongHuoFang s in list2)
-                            {
-                                dt.Rows.Add(s.Id, s.PingMing, s.HuoHao, s.Guige, s.SeHao, s.Yanse, s.DanJia, s.GongHuoFangA, s.GongHuoFangB, s.BeiZhu);
-                            }
-                            dataGridView2.DataSource = dt;
-                        }
-                        MessageBox.Show("读取成功！");
 
+                        this.backgroundWorker11.RunWorkerAsync(); // 运行 backgroundWorker 组件
+
+                        JingDu form = new JingDu(this.backgroundWorker11, "提交中");// 显示进度条窗体
+                        form.ShowDialog(this);
+                        form.Close();
+                        if (this.openFileDialog2.ShowDialog() == DialogResult.OK)
+                        {
+                            string path = openFileDialog2.FileName;
+                            if (!path.Equals(string.Empty))
+                            {
+                                if (!File.Exists(path))
+                                {
+                                    MessageBox.Show("文件不存在！");
+                                    return;
+                                }
+                                IntPtr vHandle = _lopen(path, OF_READWRITE | OF_SHARE_DENY_NONE);
+                                if (vHandle == HFILE_ERROR)
+                                {
+                                    MessageBox.Show("文件被占用！");
+                                    return;
+                                }
+                                CloseHandle(vHandle);
+                                if (path.Trim().Contains("xlsx"))
+                                {
+
+                                    list2 = cal1.readerGongHuoFangExcel(path);
+                                    DataTable dt = new DataTable();
+                                    dt.Columns.Add("Id22", typeof(int));
+                                    dt.Columns.Add("PingMing11", typeof(String));
+                                    dt.Columns.Add("HuoHao11", typeof(String));
+                                    dt.Columns.Add("Guige11", typeof(String));
+                                    dt.Columns.Add("SeHao12", typeof(String));
+                                    dt.Columns.Add("Yanse11", typeof(String));
+                                    dt.Columns.Add("DanJia11", typeof(String));
+                                    dt.Columns.Add("GongHuoFangA11", typeof(String));
+                                    dt.Columns.Add("GongHuoFangB11", typeof(String));
+                                    dt.Columns.Add("BeiZhu11", typeof(String));
+                                    foreach (clsBuiness.GongHuoFang s in list2)
+                                    {
+                                        dt.Rows.Add(s.Id, s.PingMing, s.HuoHao, s.Guige, s.SeHao, s.Yanse, s.DanJia, s.GongHuoFangA, s.GongHuoFangB, s.BeiZhu);
+                                    }
+                                    dataGridView2.DataSource = dt;
+                                    MessageBox.Show("读取成功！");
+
+                                }
+                                else 
+                                {
+                                    MessageBox.Show("读取失败！原因:读取文件后缀非'xlsx'");
+
+                                }
+                            }
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-                    throw ex;
+                    //throw ex;
+                    MessageBox.Show(ex.Message);
+
                 }
 
             }
@@ -233,7 +273,8 @@ namespace PurchasingProcedures
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message);
+
             }
         }
     }

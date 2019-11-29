@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InputCaiDanNo));
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.txt_caidan = new System.Windows.Forms.ComboBox();
@@ -70,6 +71,7 @@
             this.Controls.Add(this.txt_caidan);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InputCaiDanNo";
             this.Text = "请输入裁单号";
             this.Load += new System.EventHandler(this.InputCaiDanNo_Load);
