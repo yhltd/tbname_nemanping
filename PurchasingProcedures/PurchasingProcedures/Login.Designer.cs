@@ -130,6 +130,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_Login);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Text = "登录";
             this.Load += new System.EventHandler(this.Login_Load);
