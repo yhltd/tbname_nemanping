@@ -92,6 +92,12 @@
     <Compile Include="Factoryinput.Designer.cs">
       <DependentUpon>Factoryinput.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAlterinfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlterinfo.Designer.cs">
+      <DependentUpon>frmAlterinfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Factoryinput.resx">
       <DependentUpon>Factoryinput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlterinfo.resx">
+      <DependentUpon>frmAlterinfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

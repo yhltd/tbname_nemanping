@@ -38,3 +38,19 @@ D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\logic\obj\Deb
 D:\yho110\nemanping\tbname_nemanping - 副本\PurchasingProcedures\logic\obj\Debug\logic.pdb
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\NPOI.dll
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\NPOI.OOXML.dll
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\logic.dll.config
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\logic.dll
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\logic.pdb
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\clsBuiness.dll
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\DocumentFormat.OpenXml.dll
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\EntityFramework.dll
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\EntityFramework.SqlServer.dll
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\NPOI.dll
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\NPOI.OOXML.dll
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\clsBuiness.pdb
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\EntityFramework.xml
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\EntityFramework.SqlServer.xml
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\obj\Debug\logic.csprojResolveAssemblyReference.cache
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\obj\Debug\logic.dll
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\obj\Debug\logic.pdb
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\MySql.Data.dll

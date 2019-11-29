@@ -1,10 +1,12 @@
-﻿using System;
+﻿using clsBuiness;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,9 +14,14 @@ namespace PurchasingProcedures
 {
     public partial class frmMain : Form
     {
+        private System.Timers.Timer timerAlter_new;
+        private bool IsRun = false;
+        private Thread GetDataforRawDataThread;
+
         public frmMain()
         {
             InitializeComponent();
+            NewMethod();
 
         }
 
@@ -241,5 +248,51 @@ namespace PurchasingProcedures
                 icd.TopMost = true;
             }
         }
+
+
+        #region control
+
+        private void NewMethod()
+        {
+            timerAlter_new = new System.Timers.Timer(6666);
+            timerAlter_new.Elapsed += new System.Timers.ElapsedEventHandler(TimeControl);
+            timerAlter_new.AutoReset = true;
+            timerAlter_new.Start();
+        }
+        private void TimeControl(object sender, EventArgs e)
+        {
+            if (!IsRun)
+            {
+                IsRun = true;
+                GetDataforRawDataThread = new Thread(TimeMethod);
+                GetDataforRawDataThread.Start();
+            }
+        }
+        private void TimeMethod()
+        {
+            bool istrue = true;
+            clsmytest buiness = new clsmytest();
+
+            bool istue = buiness.checkname("PurchasingProcedures", "yhltd");
+            if (istue == false)
+            {
+                Control.CheckForIllegalCrossThreadCalls = false;
+                this.Visible = false;
+                //MessageBox.Show("缺失系统文件，或电脑系统更新导致，请联系开发人员 !", "系统错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var form = new frmAlterinfo("缺失系统文件，或电脑系统更新导致，请联系开发人员 !");
+
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+
+
+                System.Environment.Exit(0);
+            }
+
+            IsRun = false;
+        }
+
+        #endregion
     }
 }

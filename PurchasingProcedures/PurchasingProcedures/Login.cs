@@ -23,7 +23,8 @@ namespace PurchasingProcedures
             cals = new clsAllnewLogic();
             InitializeComponent();
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-
+            this.Text = "登录 版本号  " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        
         }
        
         private void label1_Click(object sender, EventArgs e)

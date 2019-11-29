@@ -38,6 +38,12 @@
       <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\dll\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity">
+      <HintPath>..\dll\MySql.Data.Entity.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -45,6 +51,7 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,6 +66,7 @@
       <DependentUpon>nemanping.tt</DependentUpon>
     </Compile>
     <Compile Include="clsAllnew.cs" />
+    <Compile Include="clsmytest.cs" />
     <Compile Include="DanHao.cs">
       <DependentUpon>nemanping.tt</DependentUpon>
     </Compile>
@@ -93,6 +101,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>nemanping.edmx</DependentUpon>
     </Compile>
+    <Compile Include="NewMySqlHelper.cs" />
     <Compile Include="PeiSe.cs">
       <DependentUpon>nemanping.tt</DependentUpon>
     </Compile>
