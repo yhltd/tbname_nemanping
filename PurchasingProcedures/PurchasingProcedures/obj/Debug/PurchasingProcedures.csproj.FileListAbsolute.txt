@@ -137,3 +137,4 @@ C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\MySql.Data.dll
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.frmAlterinfo.resources
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.HeaderUnitView.resources
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.HeaderUnitView.resources
