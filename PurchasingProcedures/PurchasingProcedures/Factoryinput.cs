@@ -32,7 +32,7 @@ namespace PurchasingProcedures
         {
             InitializeComponent();
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            //this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             cal1 = new Definefactoryinput();
             list1 = new List<JiaGongChang>();
         }

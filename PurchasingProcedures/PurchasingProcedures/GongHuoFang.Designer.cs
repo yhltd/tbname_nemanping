@@ -128,7 +128,7 @@
             // 
             this.toolStripLabel4.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(105, 26);
+            this.toolStripLabel4.Size = new System.Drawing.Size(107, 26);
             this.toolStripLabel4.Text = "读取数据表";
             this.toolStripLabel4.Click += new System.EventHandler(this.toolStripLabel4_Click);
             // 
@@ -136,26 +136,25 @@
             // 
             this.toolStripLabel1.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(105, 24);
+            this.toolStripLabel1.Size = new System.Drawing.Size(48, 26);
             this.toolStripLabel1.Text = "提交";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click_1);
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(105, 0);
+            this.toolStripLabel2.Size = new System.Drawing.Size(0, 26);
             // 
             // toolStripLabel5
             // 
             this.toolStripLabel5.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(105, 26);
+            this.toolStripLabel5.Size = new System.Drawing.Size(50, 26);
             this.toolStripLabel5.Text = "刷新";
             this.toolStripLabel5.Click += new System.EventHandler(this.toolStripLabel5_Click);
             // 
             // toolStrip1
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel5,
             this.toolStripLabel2,
@@ -164,7 +163,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(108, 617);
+            this.toolStrip1.Size = new System.Drawing.Size(1129, 29);
             this.toolStrip1.TabIndex = 12;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -252,10 +251,10 @@
             this.GongHuoFangB11,
             this.BeiZhu11});
             this.dataGridView2.ContextMenuStrip = this.contextMenuStrip1;
-            this.dataGridView2.Location = new System.Drawing.Point(111, 0);
+            this.dataGridView2.Location = new System.Drawing.Point(0, 32);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1094, 617);
+            this.dataGridView2.Size = new System.Drawing.Size(1129, 370);
             this.dataGridView2.TabIndex = 13;
             // 
             // contextMenuStrip1
@@ -276,7 +275,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1216, 617);
+            this.ClientSize = new System.Drawing.Size(1129, 409);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dataGridView2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

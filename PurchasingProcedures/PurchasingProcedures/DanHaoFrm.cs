@@ -28,7 +28,7 @@ namespace PurchasingProcedures
         public DanHaoFrm()
         {
             InitializeComponent();
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            //this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
@@ -251,7 +251,7 @@ namespace PurchasingProcedures
                                 }
                                 dataGridView1.DataSource = dt1;
                                 dataGridView2.DataSource = dt2;
-                                //Jisuan();
+                                Jisuan();
                             }
                             else
                             {
@@ -385,14 +385,7 @@ namespace PurchasingProcedures
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                Jisuan();
-            }
-            catch (Exception ex) 
-            {
-                MessageBox.Show(ex.Message);
-            }
+            Jisuan();
         }
 
         private void Jisuan()
@@ -408,7 +401,8 @@ namespace PurchasingProcedures
 
             for (int i = 0; i < dataGridView2.Rows.Count; i++)
             {
-                if (dataGridView2.Rows[i].Cells[6].Value != null)
+
+                if (dataGridView2.Rows[i].Cells[6].Value != null && cal.IsNumber(dataGridView2.Rows[i].Cells[12].Value.ToString()))
                 {
                     flSum = flSum + Convert.ToDouble(dataGridView2.Rows[i].Cells[12].Value);
                 }

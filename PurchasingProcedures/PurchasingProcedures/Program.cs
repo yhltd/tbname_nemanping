@@ -14,15 +14,17 @@ namespace PurchasingProcedures
         [STAThread]
         static void Main()
         {
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //var hu = new HeaderUnitView();
             var form = new Login();
             if (form.ShowDialog() != DialogResult.OK)
             {
                 Application.Exit();
 
             }
-            else 
+            else
             {
                 Application.Run(new frmMain());
                 //Application.Run(new Form1());

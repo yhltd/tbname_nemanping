@@ -62,6 +62,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoundGirdView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CaiDan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +83,7 @@
     <Compile Include="DanHaoFrm.Designer.cs">
       <DependentUpon>DanHaoFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataGridViewHelper.cs" />
     <Compile Include="ETD-ETA-LDP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +113,12 @@
     </Compile>
     <Compile Include="GongHuoFang.Designer.cs">
       <DependentUpon>GongHuoFang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeaderUnitView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HeaderUnitView.Designer.cs">
+      <DependentUpon>HeaderUnitView.cs</DependentUpon>
     </Compile>
     <Compile Include="InputCaiDanHao.cs">
       <SubType>Form</SubType>
@@ -225,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GongHuoFang.resx">
       <DependentUpon>GongHuoFang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeaderUnitView.resx">
+      <DependentUpon>HeaderUnitView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InputCaiDanHao.resx">
       <DependentUpon>InputCaiDanHao.cs</DependentUpon>

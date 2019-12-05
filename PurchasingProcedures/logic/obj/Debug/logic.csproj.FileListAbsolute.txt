@@ -54,3 +54,4 @@ C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\obj\Debug\logic
 C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\obj\Debug\logic.dll
 C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\obj\Debug\logic.pdb
 C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\MySql.Data.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\MySql.Data.dll

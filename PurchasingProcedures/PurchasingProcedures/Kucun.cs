@@ -30,7 +30,7 @@ namespace PurchasingProcedures
         {
             InitializeComponent();
             cal = new clsAllnewLogic();
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            //this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
         public void bindDatagridview() 
         {

@@ -25,8 +25,10 @@ namespace clsBuiness
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<C_PANT> C_PANT { get; set; }
         public DbSet<CaiDan> CaiDan { get; set; }
         public DbSet<ChiMa_Dapeibiao> ChiMa_Dapeibiao { get; set; }
+        public DbSet<D_PANT> D_PANT { get; set; }
         public DbSet<DanHao> DanHao { get; set; }
         public DbSet<GongHuoFang> GongHuoFang { get; set; }
         public DbSet<JiaGongChang> JiaGongChang { get; set; }
@@ -34,7 +36,10 @@ namespace clsBuiness
         public DbSet<KuCun> KuCun { get; set; }
         public DbSet<MianFuLiaoDingGouDan> MianFuLiaoDingGouDan { get; set; }
         public DbSet<PeiSe> PeiSe { get; set; }
+        public DbSet<RGL2> RGL2 { get; set; }
+        public DbSet<RGLJ> RGLJ { get; set; }
         public DbSet<Sehao> Sehao { get; set; }
+        public DbSet<SLIM> SLIM { get; set; }
         public DbSet<UserTable> UserTable { get; set; }
     }
 }

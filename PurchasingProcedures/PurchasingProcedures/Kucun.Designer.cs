@@ -54,7 +54,6 @@
             // 
             // toolStrip1
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripLabel2,
@@ -62,7 +61,7 @@
             this.toolStripLabel4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(108, 459);
+            this.toolStrip1.Size = new System.Drawing.Size(816, 29);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -70,7 +69,7 @@
             // 
             this.toolStripLabel1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(105, 26);
+            this.toolStripLabel1.Size = new System.Drawing.Size(50, 26);
             this.toolStripLabel1.Text = "刷新";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
@@ -78,7 +77,7 @@
             // 
             this.toolStripLabel2.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(105, 26);
+            this.toolStripLabel2.Size = new System.Drawing.Size(88, 26);
             this.toolStripLabel2.Text = "提交数据";
             this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click);
             // 
@@ -86,17 +85,18 @@
             // 
             this.toolStripLabel3.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(105, 26);
+            this.toolStripLabel3.Size = new System.Drawing.Size(107, 26);
             this.toolStripLabel3.Text = "读取数据表";
             this.toolStripLabel3.Click += new System.EventHandler(this.toolStripLabel3_Click);
             // 
             // toolStripLabel4
             // 
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(105, 0);
+            this.toolStripLabel4.Size = new System.Drawing.Size(0, 26);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -109,10 +109,10 @@
             this.Column6});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(108, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 29);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(708, 459);
+            this.dataGridView1.Size = new System.Drawing.Size(816, 430);
             this.dataGridView1.TabIndex = 2;
             // 
             // Id
@@ -127,42 +127,36 @@
             this.Column1.DataPropertyName = "品名";
             this.Column1.HeaderText = "品名";
             this.Column1.Name = "Column1";
-            this.Column1.Width = 111;
             // 
             // Column2
             // 
             this.Column2.DataPropertyName = "货号";
             this.Column2.HeaderText = "货号";
             this.Column2.Name = "Column2";
-            this.Column2.Width = 111;
             // 
             // Column3
             // 
             this.Column3.DataPropertyName = "色号";
             this.Column3.HeaderText = "色号";
             this.Column3.Name = "Column3";
-            this.Column3.Width = 111;
             // 
             // Column4
             // 
             this.Column4.DataPropertyName = "数量";
             this.Column4.HeaderText = "数量";
             this.Column4.Name = "Column4";
-            this.Column4.Width = 110;
             // 
             // Column5
             // 
             this.Column5.DataPropertyName = "供货方";
             this.Column5.HeaderText = "供货方";
             this.Column5.Name = "Column5";
-            this.Column5.Width = 111;
             // 
             // Column6
             // 
             this.Column6.DataPropertyName = "存放地";
             this.Column6.HeaderText = "存放地";
             this.Column6.Name = "Column6";
-            this.Column6.Width = 111;
             // 
             // contextMenuStrip1
             // 

@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="nemanpingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="nemanpingModelStoreContainer">
+    <EntitySet Name="C_PANT" EntityType="nemanpingModel.Store.C_PANT" store:Type="Tables" Schema="dbo" Table="C.PANT" />
     <EntitySet Name="CaiDan" EntityType="nemanpingModel.Store.CaiDan" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ChiMa_Dapeibiao" EntityType="nemanpingModel.Store.ChiMa_Dapeibiao" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="D_PANT" EntityType="nemanpingModel.Store.D_PANT" store:Type="Tables" Schema="dbo" Table="D.PANT" />
     <EntitySet Name="DanHao" EntityType="nemanpingModel.Store.DanHao" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="GongHuoFang" EntityType="nemanpingModel.Store.GongHuoFang" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="JiaGongChang" EntityType="nemanpingModel.Store.JiaGongChang" store:Type="Tables" Schema="dbo" />
@@ -10,9 +12,60 @@
     <EntitySet Name="KuCun" EntityType="nemanpingModel.Store.KuCun" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="MianFuLiaoDingGouDan" EntityType="nemanpingModel.Store.MianFuLiaoDingGouDan" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="PeiSe" EntityType="nemanpingModel.Store.PeiSe" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RGL2" EntityType="nemanpingModel.Store.RGL2" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RGLJ" EntityType="nemanpingModel.Store.RGLJ" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Sehao" EntityType="nemanpingModel.Store.Sehao" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SLIM" EntityType="nemanpingModel.Store.SLIM" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UserTable" EntityType="nemanpingModel.Store.UserTable" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
+  <EntityType Name="C_PANT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LOT#" Type="varchar" MaxLength="255" />
+    <Property Name="STYLE " Type="varchar" MaxLength="255" />
+    <Property Name="ART" Type="varchar" MaxLength="255" />
+    <Property Name="COLOR" Type="varchar" MaxLength="255" />
+    <Property Name="COLORName" Type="varchar" MaxLength="255" />
+    <Property Name="yaowei" Type="varchar" MaxLength="255" />
+    <Property Name="30W_29L" Type="varchar" MaxLength="255" />
+    <Property Name="30W_30L" Type="varchar" MaxLength="255" />
+    <Property Name="30W_32L" Type="varchar" MaxLength="255" />
+    <Property Name="31W_30L" Type="varchar" MaxLength="255" />
+    <Property Name="31W_32L" Type="varchar" MaxLength="255" />
+    <Property Name="32W_28L" Type="varchar" MaxLength="255" />
+    <Property Name="32W_30L" Type="varchar" MaxLength="255" />
+    <Property Name="32W_32L" Type="varchar" MaxLength="255" />
+    <Property Name="33W_29L" Type="varchar" MaxLength="255" />
+    <Property Name="33W_30L" Type="varchar" MaxLength="255" />
+    <Property Name="33W_32L" Type="varchar" MaxLength="255" />
+    <Property Name="33W_34L" Type="varchar" MaxLength="255" />
+    <Property Name="34W_29L" Type="varchar" MaxLength="255" />
+    <Property Name="34W_30L" Type="varchar" MaxLength="255" />
+    <Property Name="34W_31L" Type="varchar" MaxLength="255" />
+    <Property Name="34W_32L" Type="varchar" MaxLength="255" />
+    <Property Name="34W_34L" Type="varchar" MaxLength="255" />
+    <Property Name="36W_29L" Type="varchar" MaxLength="255" />
+    <Property Name="36W_30L" Type="varchar" MaxLength="255" />
+    <Property Name="36W_32L" Type="varchar" MaxLength="255" />
+    <Property Name="36W_34L" Type="varchar" MaxLength="255" />
+    <Property Name="38W_29L" Type="varchar" MaxLength="255" />
+    <Property Name="38W_30L" Type="varchar" MaxLength="255" />
+    <Property Name="38W_32L" Type="varchar" MaxLength="255" />
+    <Property Name="38W_34L" Type="varchar" MaxLength="255" />
+    <Property Name="40W_28L" Type="varchar" MaxLength="255" />
+    <Property Name="40W_30L" Type="varchar" MaxLength="255" />
+    <Property Name="40W_32L" Type="varchar" MaxLength="255" />
+    <Property Name="40W_34L" Type="varchar" MaxLength="255" />
+    <Property Name="42W_30L" Type="varchar" MaxLength="255" />
+    <Property Name="42W_32L" Type="varchar" MaxLength="255" />
+    <Property Name="42W_34L" Type="varchar" MaxLength="255" />
+    <Property Name="44W_29L" Type="varchar" MaxLength="255" />
+    <Property Name="44W_30L" Type="varchar" MaxLength="255" />
+    <Property Name="44W_32L" Type="varchar" MaxLength="255" />
+    <Property Name="Sub_Total" Type="varchar" MaxLength="255" />
+  </EntityType>
   <EntityType Name="CaiDan">
     <Key>
       <PropertyRef Name="Id" />
@@ -124,6 +177,54 @@
     <Property Name="46S-40" Type="varchar" MaxLength="255" />
     <Property Name="DingdanHeji" Type="varchar" MaxLength="255" />
     <Property Name="BiaoName" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="D_PANT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LOT#" Type="varchar" MaxLength="255" />
+    <Property Name="STYLE " Type="varchar" MaxLength="255" />
+    <Property Name="ART" Type="varchar" MaxLength="255" />
+    <Property Name="COLOR" Type="varchar" MaxLength="255" />
+    <Property Name="COLORName" Type="varchar" MaxLength="255" />
+    <Property Name="yaowei" Type="varchar" MaxLength="255" />
+    <Property Name="30W_R_30L" Type="varchar" MaxLength="255" />
+    <Property Name="30W_L_32L" Type="varchar" MaxLength="255" />
+    <Property Name="32W_R_30L" Type="varchar" MaxLength="255" />
+    <Property Name="32W_L_32L" Type="varchar" MaxLength="255" />
+    <Property Name="34W_S_38L" Type="varchar" MaxLength="255" />
+    <Property Name="34W_S_39L" Type="varchar" MaxLength="255" />
+    <Property Name="34W_R_30L" Type="varchar" MaxLength="255" />
+    <Property Name="34W_L_32L" Type="varchar" MaxLength="255" />
+    <Property Name="34W_L_34L" Type="varchar" MaxLength="255" />
+    <Property Name="36W_S_28L" Type="varchar" MaxLength="255" />
+    <Property Name="36W_S_29L" Type="varchar" MaxLength="255" />
+    <Property Name="36W_R_30L" Type="varchar" MaxLength="255" />
+    <Property Name="36W_R_31L" Type="varchar" MaxLength="255" />
+    <Property Name="38W_S_28L" Type="varchar" MaxLength="255" />
+    <Property Name="38W_R_30L" Type="varchar" MaxLength="255" />
+    <Property Name="38W_R_31L" Type="varchar" MaxLength="255" />
+    <Property Name="38W_L_32L" Type="varchar" MaxLength="255" />
+    <Property Name="38W_L_34L" Type="varchar" MaxLength="255" />
+    <Property Name="40W_S_28L" Type="varchar" MaxLength="255" />
+    <Property Name="40W_S_29L" Type="varchar" MaxLength="255" />
+    <Property Name="40W_R_30L" Type="varchar" MaxLength="255" />
+    <Property Name="40W_R_31L" Type="varchar" MaxLength="255" />
+    <Property Name="40W_L_32L" Type="varchar" MaxLength="255" />
+    <Property Name="40W_L_34L" Type="varchar" MaxLength="255" />
+    <Property Name="42W_R_30L" Type="varchar" MaxLength="255" />
+    <Property Name="42W_L_32L" Type="varchar" MaxLength="255" />
+    <Property Name="42W_L_34L" Type="varchar" MaxLength="255" />
+    <Property Name="44W_R_30L" Type="varchar" MaxLength="255" />
+    <Property Name="44W_L_32L" Type="varchar" MaxLength="255" />
+    <Property Name="44W_L_34L" Type="varchar" MaxLength="255" />
+    <Property Name="46W_R_30L" Type="varchar" MaxLength="255" />
+    <Property Name="46W_L_32L" Type="varchar" MaxLength="255" />
+    <Property Name="48W_R_30L" Type="varchar" MaxLength="255" />
+    <Property Name="48W_L_32L" Type="varchar" MaxLength="255" />
+    <Property Name="50W_L_32L" Type="varchar" MaxLength="255" />
+    <Property Name="Sub_Total" Type="varchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="DanHao">
     <Key>
@@ -250,6 +351,104 @@
     <Property Name="MianLiaoYanSe" Type="varchar" MaxLength="255" />
     <Property Name="Date" Type="varchar" MaxLength="255" />
   </EntityType>
+  <EntityType Name="RGL2">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LOT#" Type="varchar" MaxLength="255" />
+    <Property Name="STYLE " Type="varchar" MaxLength="255" />
+    <Property Name="ART" Type="varchar" MaxLength="255" />
+    <Property Name="COLOR" Type="varchar" MaxLength="255" />
+    <Property Name="COLORName" Type="varchar" MaxLength="255" />
+    <Property Name="shangyi_kuzi" Type="varchar" MaxLength="255" />
+    <Property Name="34R" Type="varchar" MaxLength="255" />
+    <Property Name="36R" Type="varchar" MaxLength="255" />
+    <Property Name="38R" Type="varchar" MaxLength="255" />
+    <Property Name="40R" Type="varchar" MaxLength="255" />
+    <Property Name="42R" Type="varchar" MaxLength="255" />
+    <Property Name="44R" Type="varchar" MaxLength="255" />
+    <Property Name="46R" Type="varchar" MaxLength="255" />
+    <Property Name="48R" Type="varchar" MaxLength="255" />
+    <Property Name="50R" Type="varchar" MaxLength="255" />
+    <Property Name="52R" Type="varchar" MaxLength="255" />
+    <Property Name="54R" Type="varchar" MaxLength="255" />
+    <Property Name="56R" Type="varchar" MaxLength="255" />
+    <Property Name="58R" Type="varchar" MaxLength="255" />
+    <Property Name="60R" Type="varchar" MaxLength="255" />
+    <Property Name="62R" Type="varchar" MaxLength="255" />
+    <Property Name="36L" Type="varchar" MaxLength="255" />
+    <Property Name="38L" Type="varchar" MaxLength="255" />
+    <Property Name="40L" Type="varchar" MaxLength="255" />
+    <Property Name="42L" Type="varchar" MaxLength="255" />
+    <Property Name="44L" Type="varchar" MaxLength="255" />
+    <Property Name="46L" Type="varchar" MaxLength="255" />
+    <Property Name="48L" Type="varchar" MaxLength="255" />
+    <Property Name="50L" Type="varchar" MaxLength="255" />
+    <Property Name="52L" Type="varchar" MaxLength="255" />
+    <Property Name="54L" Type="varchar" MaxLength="255" />
+    <Property Name="56L" Type="varchar" MaxLength="255" />
+    <Property Name="58L" Type="varchar" MaxLength="255" />
+    <Property Name="60L" Type="varchar" MaxLength="255" />
+    <Property Name="62L" Type="varchar" MaxLength="255" />
+    <Property Name="34S" Type="varchar" MaxLength="255" />
+    <Property Name="36S" Type="varchar" MaxLength="255" />
+    <Property Name="38S" Type="varchar" MaxLength="255" />
+    <Property Name="40S" Type="varchar" MaxLength="255" />
+    <Property Name="42S" Type="varchar" MaxLength="255" />
+    <Property Name="44S" Type="varchar" MaxLength="255" />
+    <Property Name="46S" Type="varchar" MaxLength="255" />
+    <Property Name="Sub_Total" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="RGLJ">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LOT#" Type="varchar" MaxLength="255" />
+    <Property Name="STYLE " Type="varchar" MaxLength="255" />
+    <Property Name="ART" Type="varchar" MaxLength="255" />
+    <Property Name="COLOR" Type="varchar" MaxLength="255" />
+    <Property Name="COLOR#" Type="varchar" MaxLength="255" />
+    <Property Name="shangyi" Type="varchar" MaxLength="255" />
+    <Property Name="34R" Type="varchar" MaxLength="255" />
+    <Property Name="36R" Type="varchar" MaxLength="255" />
+    <Property Name="38R" Type="varchar" MaxLength="255" />
+    <Property Name="40R" Type="varchar" MaxLength="255" />
+    <Property Name="42R" Type="varchar" MaxLength="255" />
+    <Property Name="44R" Type="varchar" MaxLength="255" />
+    <Property Name="46R" Type="varchar" MaxLength="255" />
+    <Property Name="48R" Type="varchar" MaxLength="255" />
+    <Property Name="50R" Type="varchar" MaxLength="255" />
+    <Property Name="52R" Type="varchar" MaxLength="255" />
+    <Property Name="54R" Type="varchar" MaxLength="255" />
+    <Property Name="56R" Type="varchar" MaxLength="255" />
+    <Property Name="58R" Type="varchar" MaxLength="255" />
+    <Property Name="60R" Type="varchar" MaxLength="255" />
+    <Property Name="62R" Type="varchar" MaxLength="255" />
+    <Property Name="36L" Type="varchar" MaxLength="255" />
+    <Property Name="38L" Type="varchar" MaxLength="255" />
+    <Property Name="40L" Type="varchar" MaxLength="255" />
+    <Property Name="42L" Type="varchar" MaxLength="255" />
+    <Property Name="44L" Type="varchar" MaxLength="255" />
+    <Property Name="46L" Type="varchar" MaxLength="255" />
+    <Property Name="48L" Type="varchar" MaxLength="255" />
+    <Property Name="50L" Type="varchar" MaxLength="255" />
+    <Property Name="52L" Type="varchar" MaxLength="255" />
+    <Property Name="54L" Type="varchar" MaxLength="255" />
+    <Property Name="56L" Type="varchar" MaxLength="255" />
+    <Property Name="58L" Type="varchar" MaxLength="255" />
+    <Property Name="60L" Type="varchar" MaxLength="255" />
+    <Property Name="62L" Type="varchar" MaxLength="255" />
+    <Property Name="34S" Type="varchar" MaxLength="255" />
+    <Property Name="36S" Type="varchar" MaxLength="255" />
+    <Property Name="38S" Type="varchar" MaxLength="255" />
+    <Property Name="40S" Type="varchar" MaxLength="255" />
+    <Property Name="42S" Type="varchar" MaxLength="255" />
+    <Property Name="44S" Type="varchar" MaxLength="255" />
+    <Property Name="46S" Type="varchar" MaxLength="255" />
+    <Property Name="Sub_Total" Type="varchar" MaxLength="255" />
+  </EntityType>
   <EntityType Name="Sehao">
     <Key>
       <PropertyRef Name="Id" />
@@ -257,6 +456,41 @@
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="varchar" Nullable="false" MaxLength="255" />
     <Property Name="SeHao" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="SLIM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LOT#" Type="varchar" MaxLength="255" />
+    <Property Name="STYLE " Type="varchar" MaxLength="255" />
+    <Property Name="ART" Type="varchar" MaxLength="255" />
+    <Property Name="COLOR" Type="varchar" MaxLength="255" />
+    <Property Name="COLOR#" Type="varchar" MaxLength="255" />
+    <Property Name="shangyi_kuzi" Type="varchar" MaxLength="255" />
+    <Property Name="34R" Type="varchar" MaxLength="255" />
+    <Property Name="36R" Type="varchar" MaxLength="255" />
+    <Property Name="38R" Type="varchar" MaxLength="255" />
+    <Property Name="40R" Type="varchar" MaxLength="255" />
+    <Property Name="42R" Type="varchar" MaxLength="255" />
+    <Property Name="44R" Type="varchar" MaxLength="255" />
+    <Property Name="46R" Type="varchar" MaxLength="255" />
+    <Property Name="48R" Type="varchar" MaxLength="255" />
+    <Property Name="36L" Type="varchar" MaxLength="255" />
+    <Property Name="38L" Type="varchar" MaxLength="255" />
+    <Property Name="40L" Type="varchar" MaxLength="255" />
+    <Property Name="42L" Type="varchar" MaxLength="255" />
+    <Property Name="44L" Type="varchar" MaxLength="255" />
+    <Property Name="46L" Type="varchar" MaxLength="255" />
+    <Property Name="48L" Type="varchar" MaxLength="255" />
+    <Property Name="34S" Type="varchar" MaxLength="255" />
+    <Property Name="36S" Type="varchar" MaxLength="255" />
+    <Property Name="38S" Type="varchar" MaxLength="255" />
+    <Property Name="40S" Type="varchar" MaxLength="255" />
+    <Property Name="42S" Type="varchar" MaxLength="255" />
+    <Property Name="44S" Type="varchar" MaxLength="255" />
+    <Property Name="46S" Type="varchar" MaxLength="255" />
+    <Property Name="Sub_Total" Type="varchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="UserTable">
     <Key>

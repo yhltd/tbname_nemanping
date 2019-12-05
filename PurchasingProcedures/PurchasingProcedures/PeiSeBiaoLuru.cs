@@ -28,7 +28,7 @@ namespace PurchasingProcedures
         public PeiSeBiaoLuru()
         {
             InitializeComponent();
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            //this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

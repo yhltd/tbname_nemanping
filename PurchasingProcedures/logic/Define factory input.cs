@@ -105,47 +105,47 @@ namespace logic
                 JiaGongChang s = new JiaGongChang();
                 foreach (Row row in worksheetPart.Worksheet.Descendants<Row>())
                 {
-                    //if (rowindex < 1)
-                    //{
-                    //    rowindex++;
-                    //    continue;
-                    //}
+                    if (rowindex < 1)
+                    {
+                        rowindex++;
+                        continue;
+                    }
                     
                     foreach (Cell cell in row)
                     {
                         string rev = cell.CellReference.Value;
-                        if (rev.StartsWith("B"))
-                        {
-                            if (rev.EndsWith("1")) 
+                        //if (rev.StartsWith("B"))
+                        //{
+                            if (rev.StartsWith("A")) 
                             {
                                 s.Name = GetCellValue(wbPart, cell);
                             }
-                            if (rev.EndsWith("2"))
+                            if (rev.StartsWith("B"))
                             {
                                 s.Address = GetCellValue(wbPart, cell);
                             }
-                            if (rev.EndsWith("3"))
+                            if (rev.StartsWith("C"))
                             {
                                 s.Lianxiren = GetCellValue(wbPart, cell);
                             }
-                            if (rev.EndsWith("4"))
+                            if (rev.StartsWith("D"))
                             {
                                 s.Phone = GetCellValue(wbPart, cell);
                             }
-                            if (rev.EndsWith("5"))
+                            if (rev.StartsWith("G"))
                             {
                                 s.ZengZhiShui = GetCellValue(wbPart, cell);
                             }
-                            if (rev.EndsWith("6"))
+                            if (rev.StartsWith("E"))
                             {
                                 s.Kaihuhang = GetCellValue(wbPart, cell);
                             }
-                            if (rev.EndsWith("7"))
+                            if (rev.StartsWith("F"))
                             {
                                 s.Zhanghao = GetCellValue(wbPart, cell);
                                 insertpd = 1;
                             }
-                        }
+                        //}
                         
 
                     }

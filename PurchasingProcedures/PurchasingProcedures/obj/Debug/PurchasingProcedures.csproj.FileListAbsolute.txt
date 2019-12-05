@@ -134,3 +134,6 @@ C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\
 C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.csproj.GenerateResource.Cache
 C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\MySql.Data.dll
 C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.frmAlterinfo.resources
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\MySql.Data.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.frmAlterinfo.resources
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.HeaderUnitView.resources

@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.菜单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.首页ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.关于我们ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,49 +44,12 @@
             this.供货方录入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.裁单输入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
-            this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Teal;
-            this.menuStrip1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.菜单ToolStripMenuItem,
-            this.首页ToolStripMenuItem,
-            this.关于我们ToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(94, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(790, 25);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // 菜单ToolStripMenuItem
-            // 
-            this.菜单ToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.菜单ToolStripMenuItem.Name = "菜单ToolStripMenuItem";
-            this.菜单ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.菜单ToolStripMenuItem.Text = "菜单";
-            // 
-            // 首页ToolStripMenuItem
-            // 
-            this.首页ToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.首页ToolStripMenuItem.Name = "首页ToolStripMenuItem";
-            this.首页ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.首页ToolStripMenuItem.Text = "帮助";
-            // 
-            // 关于我们ToolStripMenuItem
-            // 
-            this.关于我们ToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.关于我们ToolStripMenuItem.Name = "关于我们ToolStripMenuItem";
-            this.关于我们ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.关于我们ToolStripMenuItem.Text = "关于我们";
             // 
             // menuStrip2
             // 
             this.menuStrip2.BackColor = System.Drawing.Color.Teal;
-            this.menuStrip2.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
@@ -100,7 +59,7 @@
             this.裁单输入ToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(94, 506);
+            this.menuStrip2.Size = new System.Drawing.Size(884, 30);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -108,21 +67,21 @@
             // 
             this.toolStripMenuItem1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(87, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(27, 26);
             this.toolStripMenuItem1.Text = " ";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(87, 26);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(27, 26);
             this.toolStripMenuItem3.Text = " ";
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(87, 26);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(27, 26);
             this.toolStripMenuItem4.Text = " ";
             // 
             // 数据录入ToolStripMenuItem
@@ -139,7 +98,7 @@
             this.数据录入ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.数据录入ToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.数据录入ToolStripMenuItem.Name = "数据录入ToolStripMenuItem";
-            this.数据录入ToolStripMenuItem.Size = new System.Drawing.Size(87, 26);
+            this.数据录入ToolStripMenuItem.Size = new System.Drawing.Size(91, 26);
             this.数据录入ToolStripMenuItem.Text = " 数据录入";
             // 
             // 色号录入ToolStripMenuItem
@@ -203,7 +162,7 @@
             this.裁单输入ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.裁单输入ToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.裁单输入ToolStripMenuItem.Name = "裁单输入ToolStripMenuItem";
-            this.裁单输入ToolStripMenuItem.Size = new System.Drawing.Size(87, 26);
+            this.裁单输入ToolStripMenuItem.Size = new System.Drawing.Size(70, 26);
             this.裁单输入ToolStripMenuItem.Text = "裁单表";
             this.裁单输入ToolStripMenuItem.Click += new System.EventHandler(this.裁单输入ToolStripMenuItem_Click);
             // 
@@ -213,7 +172,7 @@
             this.label2.BackColor = System.Drawing.Color.Teal;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(5, 25);
+            this.label2.Location = new System.Drawing.Point(12, -1);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 31);
             this.label2.TabIndex = 4;
@@ -226,17 +185,13 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(884, 506);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
             this.Text = "主菜单";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
@@ -246,10 +201,6 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem 菜单ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 首页ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 关于我们ToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;

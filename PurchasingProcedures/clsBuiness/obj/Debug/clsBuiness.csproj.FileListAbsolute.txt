@@ -30,3 +30,5 @@ C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\clsBuiness\obj\Debug\
 C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\clsBuiness\obj\Debug\clsBuiness.pdb
 C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\MySql.Data.dll
 C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\MySql.Data.Entity.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\MySql.Data.dll
+D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\MySql.Data.Entity.dll

@@ -78,7 +78,10 @@ namespace PurchasingProcedures
                 txt_CaidanNo.DataSource = caidan;
                 txt_CaidanNo.DisplayMember = "CaiDanHao";
                 txt_CaidanNo.ValueMember = "id";
-                txt_CaidanNo.SelectedIndex = txt_CaidanNo.FindString(" ");
+                if (txt_CaidanNo.FindString(" ") >= 0)
+                {
+                    txt_CaidanNo.SelectedIndex = txt_CaidanNo.FindString(" ");
+                }
                 dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             }
             catch (Exception ex) 

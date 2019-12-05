@@ -28,7 +28,7 @@ namespace PurchasingProcedures
         public KuanShibiao()
         {
             InitializeComponent();
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            //this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
         private void 刷新ToolStripMenuItem_Click(object sender, EventArgs e)
