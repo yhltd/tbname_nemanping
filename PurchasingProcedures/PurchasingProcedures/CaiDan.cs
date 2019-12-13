@@ -56,14 +56,110 @@ namespace PurchasingProcedures
         {
             try
             {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Id", typeof(int));
+                
+                dt.Columns.Add("面料", typeof(string));
+                dt.Columns.Add("款式", typeof(string));
+                dt.Columns["款式"].ReadOnly = true;
+                dt.Columns.Add("货号", typeof(string));
+                dt.Columns.Add("颜色", typeof(string));
+                dt.Columns.Add("颜色编号", typeof(string));
+                dt.Columns.Add("裤子", typeof(string));
+                dt.Columns.Add("34R", typeof(string));
+                dt.Columns.Add("36R", typeof(string));
+                dt.Columns.Add("38R", typeof(string));
+                dt.Columns.Add("40R", typeof(string));
+                dt.Columns.Add("42R", typeof(string));
+                dt.Columns.Add("44R", typeof(string));
+                dt.Columns.Add("46R", typeof(string));
+                dt.Columns.Add("48R", typeof(string));
+                dt.Columns.Add("50R", typeof(string));
+                dt.Columns.Add("52R", typeof(string));
+                dt.Columns.Add("54R", typeof(string));
+                dt.Columns.Add("56R", typeof(string));
+                dt.Columns.Add("58R", typeof(string));
+                dt.Columns.Add("60R", typeof(string));
+                dt.Columns.Add("62R", typeof(string));
+                dt.Columns.Add("36L", typeof(string));
+                dt.Columns.Add("38L", typeof(string));
+                dt.Columns.Add("40L", typeof(string));
+                dt.Columns.Add("42L", typeof(string));
+                dt.Columns.Add("44L", typeof(string));
+                dt.Columns.Add("46L", typeof(string));
+                dt.Columns.Add("48L", typeof(string));
+                dt.Columns.Add("50L", typeof(string));
+                dt.Columns.Add("52L", typeof(string));
+                dt.Columns.Add("54L", typeof(string));
+                dt.Columns.Add("56L", typeof(string));
+                dt.Columns.Add("58L", typeof(string));
+                dt.Columns.Add("60L", typeof(string));
+                dt.Columns.Add("62L", typeof(string));
+                dt.Columns.Add("34S", typeof(string));
+                dt.Columns.Add("36S", typeof(string));
+                dt.Columns.Add("38S", typeof(string));
+                dt.Columns.Add("40S", typeof(string));
+                dt.Columns.Add("42S", typeof(string));
+                dt.Columns.Add("44S", typeof(string));
+                dt.Columns.Add("46S", typeof(string));
+                dt.Columns.Add("Sub Total: ", typeof(string));
+                dataGridView1.DataSource = dt;
+                dataGridView1.Columns["Id"].Visible = false;
+                DataGridViewHelper rowMergeView = new DataGridViewHelper(dataGridView1);
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(1, 1, "LOT#"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(2, 1, "STYLE"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(3, 1, "ART"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(4, 1, "COLOR"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(5, 1, "COLOR#"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(6, 1, "上衣"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(7, 1, "28"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(8, 1, "30"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(9, 1, "32"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(10, 1, "34"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(11, 1, "36"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(12, 1, "39"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(13, 1, "41"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(14, 1, "43"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(15, 1, "46"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(16, 1, "48"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(17, 1, "50"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(18, 1, "52"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(19, 1, "54"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(20, 1, "56"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(21, 1, "58"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(22, 1, "30"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(23, 1, "32"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(24, 1, "34"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(25, 1, "36"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(26, 1, "39"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(27, 1, "41"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(28, 1, "43"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(29, 1, "46"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(30, 1, "48"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(31, 1, "50"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(32, 1, "52"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(33, 1, "54"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(34, 1, "56"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(35, 1, "58"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(36, 1, "28"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(37, 1, "30"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(38, 1, "32"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(39, 1, "34"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(40, 1, "36"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(41, 1, "39"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(42, 1, "41"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(43, 1, "订单合计"));
+     
                 dataGridView1.CellValueChanged -= dataGridView1_CellValueChanged;
                 txt_Style.Text = StyleId;
                 txt_Label.Text = chima;
+                txt_CaidanNo.SelectedIndexChanged -= txt_CaidanNo_SelectedIndexChanged;
                 this.txt_desc.Text = cd[0].DESC.ToString();
                 this.txt_fabric.Text = cd[0].FABRIC.ToString();
                 this.txt_jacket.Text = cd[0].Jacket.ToString();
                 this.txt_pant.Text = cd[0].Pant.ToString();
                 this.txt_shuoming.Text = cd[0].shuoming.ToString();
+                txt_CaidanNo.SelectedIndexChanged += txt_CaidanNo_SelectedIndexChanged;
                 cb_jgc.DataSource = jgc;
                 cb_jgc.DisplayMember = "Name";
                 cb_jgc.ValueMember = "id";
@@ -95,7 +191,7 @@ namespace PurchasingProcedures
         private void dataGridView1_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
             // 设定单元格的默认值
-            e.Row.Cells["STYLE"].Value = StyleId;
+            e.Row.Cells["款式"].Value = StyleId;
         }
 
         private void 裁单输入ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -135,17 +231,17 @@ namespace PurchasingProcedures
             cd.ZhiDanRiqi = this.txt_zhidan.Text;
             cd.JiaoHuoRiqi = this.txt_jiaohuo.Text;
             cd.RN_NO = this.txt_RN.Text;
-            dt.Columns.Add("id", typeof(int));
+            //dt.Columns.Add("id", typeof(int));
             for (int i = 0; i < dataGridView1.Columns.Count; i++)
             {
-                if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("id"))
-                {
+                //if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("id"))
+                //{
                     dt.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
-                }
+                //}
             }
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                if (dataGridView1.Rows[i].Cells[6].Value != null)
+                if (dataGridView1.Rows[i].Cells[1].Value != null)
                 {
                     dt.Rows.Add(dataGridView1.Rows[i].Cells[0].Value, dataGridView1.Rows[i].Cells[1].Value, dataGridView1.Rows[i].Cells[2].Value, dataGridView1.Rows[i].Cells[3].Value, dataGridView1.Rows[i].Cells[4].Value, dataGridView1.Rows[i].Cells[5].Value, dataGridView1.Rows[i].Cells[6].Value, dataGridView1.Rows[i].Cells[7].Value, dataGridView1.Rows[i].Cells[8].Value, dataGridView1.Rows[i].Cells[9].Value, dataGridView1.Rows[i].Cells[10].Value, dataGridView1.Rows[i].Cells[11].Value, dataGridView1.Rows[i].Cells[12].Value, dataGridView1.Rows[i].Cells[13].Value, dataGridView1.Rows[i].Cells[14].Value, dataGridView1.Rows[i].Cells[15].Value, dataGridView1.Rows[i].Cells[16].Value, dataGridView1.Rows[i].Cells[17].Value, dataGridView1.Rows[i].Cells[18].Value, dataGridView1.Rows[i].Cells[19].Value, dataGridView1.Rows[i].Cells[20].Value, dataGridView1.Rows[i].Cells[21].Value, dataGridView1.Rows[i].Cells[22].Value, dataGridView1.Rows[i].Cells[23].Value, dataGridView1.Rows[i].Cells[24].Value, dataGridView1.Rows[i].Cells[25].Value, dataGridView1.Rows[i].Cells[26].Value, dataGridView1.Rows[i].Cells[27].Value, dataGridView1.Rows[i].Cells[28].Value, dataGridView1.Rows[i].Cells[29].Value, dataGridView1.Rows[i].Cells[30].Value, dataGridView1.Rows[i].Cells[31].Value, dataGridView1.Rows[i].Cells[32].Value, dataGridView1.Rows[i].Cells[33].Value, dataGridView1.Rows[i].Cells[34].Value, dataGridView1.Rows[i].Cells[35].Value, dataGridView1.Rows[i].Cells[36].Value, dataGridView1.Rows[i].Cells[37].Value, dataGridView1.Rows[i].Cells[38].Value, dataGridView1.Rows[i].Cells[39].Value, dataGridView1.Rows[i].Cells[40].Value, dataGridView1.Rows[i].Cells[41].Value, dataGridView1.Rows[i].Cells[42].Value, dataGridView1.Rows[i].Cells[43].Value);
                 }
@@ -213,6 +309,20 @@ namespace PurchasingProcedures
             #endregion
         }
 
+
+        private bool IsNumberic(string oText)
+        {
+            try
+            {
+                int var1 = Convert.ToInt32(oText);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -223,17 +333,18 @@ namespace PurchasingProcedures
                     double sum = 0;
                     for (int i = 7; i <= 42; i++)
                     {
-                        if (dataGridView1.Rows[e.RowIndex].Cells["Column" + i].Value != null && !dataGridView1.Rows[e.RowIndex].Cells["Column" + i].Value.ToString().Equals(string.Empty))
+                        if (dataGridView1.Rows[e.RowIndex].Cells[i].Value != null && !dataGridView1.Rows[e.RowIndex].Cells[i].Value.ToString().Equals(string.Empty) && IsNumberic(dataGridView1.Rows[e.RowIndex].Cells[i].Value.ToString()))
                         {
-                            sum = sum + Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells["Column7"].Value);
+                            sum = sum + Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[i].Value);
                         }
                         //dataGridView1.Rows[e.RowIndex].Cells["Column43"].Value = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column7"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column8"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column9"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column10"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column11"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column12"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column13"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column14"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column15"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column16"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column17"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column18"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column19"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column20"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column21"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column22"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column23"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column24"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column25"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column26"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column27"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column28"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column29"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column30"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column31"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column32"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column33"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column34"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column35"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column36"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column37"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column38"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column39"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column40"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column41"].Value) + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column42"].Value);
                     }
 
-                    dataGridView1.Rows[e.RowIndex].Cells["Column43"].Value = sum;
+                    dataGridView1.Rows[e.RowIndex].Cells[43].Value = sum;
                     //dataGridView1.CellFormatting += dataGridView1_CellFormatting;
                 }
             }
+
 
 
             //if (e.RowIndex >= 0)
@@ -289,13 +400,21 @@ namespace PurchasingProcedures
         {
             try
             {
-                FolderBrowserDialog dialog = new FolderBrowserDialog();
-                dialog.Description = "请选择文件路径";
-                if (dialog.ShowDialog() == DialogResult.OK)
+                if (txt_CaidanNo.Text != null && !txt_CaidanNo.Text.Equals(string.Empty))
                 {
-                    foldPath = dialog.SelectedPath;
-                    CreateExcel(foldPath);
-                    MessageBox.Show("生成成功！");
+                    FolderBrowserDialog dialog = new FolderBrowserDialog();
+                    dialog.Description = "请选择文件路径";
+                    if (dialog.ShowDialog() == DialogResult.OK)
+                    {
+                        foldPath = dialog.SelectedPath;
+                        CreateExcel(foldPath);
+                        MessageBox.Show("生成成功！");
+                    }
+                    CaiDan_Load(sender,e);
+                }
+                else 
+                {
+                    MessageBox.Show("裁单号不能为空!");
                 }
             }
             catch (Exception ex)
@@ -378,27 +497,37 @@ namespace PurchasingProcedures
         {
             try 
             {
-                dataGridView1.CellValueChanged -= dataGridView1_CellValueChanged;
+
 
                 DataTable dt = new DataTable();
-                List<clsBuiness.CaiDan> cdlist  = gn2.selectCaiDan(txt_CaidanNo.Text);
+                List<clsBuiness.CaiDan> cdlist = new List<clsBuiness.CaiDan>();
+                if (!txt_CaidanNo.Text.Equals(string.Empty))
+                {
+                    cdlist = gn2.selectCaiDan(txt_CaidanNo.Text);
+                }
+               
                 for (int i = 0; i < dataGridView1.Columns.Count; i++)
                 {
-                    //if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("id"))
-                    //{
+                    if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("id"))
+                    {
                         dt.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
-                    //}
+                    }
                 }
-                foreach(clsBuiness.CaiDan s in cdlist)
+                foreach (clsBuiness.CaiDan s in cdlist)
                 {
-                //for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                //{
-                    //if (dataGridView1.Rows[i].Cells[6].Value != null)
-                    //{
-                                    dt.Rows.Add(s.Id, s.LOT, s.STYLE, s.ART, s.COLOR, s.COLORID, s.JACKET_PANT, s.C34R, s.C36R, s.C38R, s.C40R,s.C42R, s.C44R, s.C46R, s.C48R, s.C50R, s.C52R, s.C54R, s.C56R, s.C58R, s.C60R, s.C62R, s.C36L, s.C38L, s.C40L, s.C42L, s.C44L, s.C46L, s.C48L, s.C50L, s.C52L, s.C54L, s.C56L, s.C58L, s.C60L, s.C62L, s.C34S, s.C36S, s.C38S, s.C40S, s.C42S, s.C44S, s.C46S, s.Sub_Total);
-
-                    //}
+                    dt.Rows.Add(s.Id,s.LOT, s.STYLE, s.ART, s.COLOR, s.COLORID, s.JACKET_PANT, s.C34R, s.C36R, s.C38R, s.C40R, s.C42R, s.C44R, s.C46R, s.C48R, s.C50R, s.C52R, s.C54R, s.C56R, s.C58R, s.C60R, s.C62R, s.C36L, s.C38L, s.C40L, s.C42L, s.C44L, s.C46L, s.C48L, s.C50L, s.C52L, s.C54L, s.C56L, s.C58L, s.C60L, s.C62L, s.C34S, s.C36S, s.C38S, s.C40S, s.C42S, s.C44S, s.C46S,s.Sub_Total);
                 }
+
+                //foreach (clsBuiness.CaiDan s in cdlist)
+                //{
+                ////for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                ////{
+                //    //if (dataGridView1.Rows[i].Cells[6].Value != null)
+                //    //{
+                //                    dt.Rows.Add(s.Id, s.LOT, s.STYLE, s.ART, s.COLOR, s.COLORID, s.JACKET_PANT, s.C34R, s.C36R, s.C38R, s.C40R,s.C42R, s.C44R, s.C46R, s.C48R, s.C50R, s.C52R, s.C54R, s.C56R, s.C58R, s.C60R, s.C62R, s.C36L, s.C38L, s.C40L, s.C42L, s.C44L, s.C46L, s.C48L, s.C50L, s.C52L, s.C54L, s.C56L, s.C58L, s.C60L, s.C62L, s.C34S, s.C36S, s.C38S, s.C40S, s.C42S, s.C44S, s.C46S, s.Sub_Total);
+
+                //    //}
+                //}
                 if (cdlist != null && cdlist.Count > 0)
                 {
                     txt_Style.Text = cdlist[0].STYLE;
@@ -414,10 +543,20 @@ namespace PurchasingProcedures
                     txt_mianlioa.Text = cdlist[0].MianLiao.ToString();
                 }
                 dataGridView1.DataSource = dt;
-                dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
+                //dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
 
             }
             catch (Exception EX) { MessageBox.Show(EX.Message); }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

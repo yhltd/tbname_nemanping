@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="nemanpingModelStoreContainer" CdmEntityContainer="nemanpingEntities4">
+  <EntityContainerMapping StorageEntityContainer="nemanpingModelStoreContainer" CdmEntityContainer="nemanpingEntities9">
     <EntitySetMapping Name="C_PANT">
       <EntityTypeMapping TypeName="nemanpingModel.C_PANT">
         <MappingFragment StoreEntitySet="C_PANT">
@@ -109,6 +109,305 @@
           <ScalarProperty Name="C42S" ColumnName="C42S" />
           <ScalarProperty Name="C44S" ColumnName="C44S" />
           <ScalarProperty Name="C46S" ColumnName="C46S" />
+          <ScalarProperty Name="Sub_Total" ColumnName="Sub_Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CaiDan_C_PANT">
+      <EntityTypeMapping TypeName="nemanpingModel.CaiDan_C_PANT">
+        <MappingFragment StoreEntitySet="CaiDan_C_PANT">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="DESC" ColumnName="DESC" />
+          <ScalarProperty Name="FABRIC" ColumnName="FABRIC" />
+          <ScalarProperty Name="STYLE" ColumnName="STYLE" />
+          <ScalarProperty Name="shuoming" ColumnName="shuoming" />
+          <ScalarProperty Name="Jacket" ColumnName="Jacket" />
+          <ScalarProperty Name="Pant" ColumnName="Pant" />
+          <ScalarProperty Name="LABEL" ColumnName="LABEL" />
+          <ScalarProperty Name="JiaGongchang" ColumnName="JiaGongchang" />
+          <ScalarProperty Name="CaiDanHao" ColumnName="CaiDanHao" />
+          <ScalarProperty Name="ZhiDanRiqi" ColumnName="ZhiDanRiqi" />
+          <ScalarProperty Name="JiaoHuoRiqi" ColumnName="JiaoHuoRiqi" />
+          <ScalarProperty Name="RN_NO" ColumnName="RN_NO" />
+          <ScalarProperty Name="MianLiao" ColumnName="MianLiao" />
+          <ScalarProperty Name="LOT" ColumnName="LOT" />
+          <ScalarProperty Name="ChimaSTYLE" ColumnName="ChimaSTYLE" />
+          <ScalarProperty Name="ART" ColumnName="ART" />
+          <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+          <ScalarProperty Name="COLORID" ColumnName="COLORID" />
+          <ScalarProperty Name="JACKET_PANT" ColumnName="JACKET_PANT" />
+          <ScalarProperty Name="C30W_29L" ColumnName="30W_29L" />
+          <ScalarProperty Name="C30W_30L" ColumnName="30W_30L" />
+          <ScalarProperty Name="C30W_32L" ColumnName="30W_32L" />
+          <ScalarProperty Name="C31W_30L" ColumnName="31W_30L" />
+          <ScalarProperty Name="C31W_32L" ColumnName="31W_32L" />
+          <ScalarProperty Name="C32W_28L" ColumnName="32W_28L" />
+          <ScalarProperty Name="C32W_30L" ColumnName="32W_30L" />
+          <ScalarProperty Name="C32W_32L" ColumnName="32W_32L" />
+          <ScalarProperty Name="C33W_29L" ColumnName="33W_29L" />
+          <ScalarProperty Name="C33W_30L" ColumnName="33W_30L" />
+          <ScalarProperty Name="C33W_32L" ColumnName="33W_32L" />
+          <ScalarProperty Name="C33W_34L" ColumnName="33W_34L" />
+          <ScalarProperty Name="C34W_29L" ColumnName="34W_29L" />
+          <ScalarProperty Name="C34W_30L" ColumnName="34W_30L" />
+          <ScalarProperty Name="C34W_31L" ColumnName="34W_31L" />
+          <ScalarProperty Name="C34W_32L" ColumnName="34W_32L" />
+          <ScalarProperty Name="C34W_34L" ColumnName="34W_34L" />
+          <ScalarProperty Name="C36W_29L" ColumnName="36W_29L" />
+          <ScalarProperty Name="C36W_30L" ColumnName="36W_30L" />
+          <ScalarProperty Name="C36W_32L" ColumnName="36W_32L" />
+          <ScalarProperty Name="C36W_34L" ColumnName="36W_34L" />
+          <ScalarProperty Name="C38W_29L" ColumnName="38W_29L" />
+          <ScalarProperty Name="C38W_30L" ColumnName="38W_30L" />
+          <ScalarProperty Name="C38W_32L" ColumnName="38W_32L" />
+          <ScalarProperty Name="C38W_34L" ColumnName="38W_34L" />
+          <ScalarProperty Name="C40W_28L" ColumnName="40W_28L" />
+          <ScalarProperty Name="C40W_30L" ColumnName="40W_30L" />
+          <ScalarProperty Name="C40W_32L" ColumnName="40W_32L" />
+          <ScalarProperty Name="C40W_34L" ColumnName="40W_34L" />
+          <ScalarProperty Name="C42W_30L" ColumnName="42W_30L" />
+          <ScalarProperty Name="C42W_32L" ColumnName="42W_32L" />
+          <ScalarProperty Name="C42W_34L" ColumnName="42W_34L" />
+          <ScalarProperty Name="C44W_29L" ColumnName="44W_29L" />
+          <ScalarProperty Name="C44W_30L" ColumnName="44W_30L" />
+          <ScalarProperty Name="C44W_32L" ColumnName="44W_32L" />
+          <ScalarProperty Name="Sub_Total" ColumnName="Sub_Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CaiDan_D_PANT">
+      <EntityTypeMapping TypeName="nemanpingModel.CaiDan_D_PANT">
+        <MappingFragment StoreEntitySet="CaiDan_D_PANT">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="DESC" ColumnName="DESC" />
+          <ScalarProperty Name="FABRIC" ColumnName="FABRIC" />
+          <ScalarProperty Name="STYLE" ColumnName="STYLE" />
+          <ScalarProperty Name="shuoming" ColumnName="shuoming" />
+          <ScalarProperty Name="Jacket" ColumnName="Jacket" />
+          <ScalarProperty Name="Pant" ColumnName="Pant" />
+          <ScalarProperty Name="LABEL" ColumnName="LABEL" />
+          <ScalarProperty Name="JiaGongchang" ColumnName="JiaGongchang" />
+          <ScalarProperty Name="CaiDanHao" ColumnName="CaiDanHao" />
+          <ScalarProperty Name="ZhiDanRiqi" ColumnName="ZhiDanRiqi" />
+          <ScalarProperty Name="JiaoHuoRiqi" ColumnName="JiaoHuoRiqi" />
+          <ScalarProperty Name="RN_NO" ColumnName="RN_NO" />
+          <ScalarProperty Name="MianLiao" ColumnName="MianLiao" />
+          <ScalarProperty Name="LOT" ColumnName="LOT" />
+          <ScalarProperty Name="ChimaSTYLE" ColumnName="ChimaSTYLE" />
+          <ScalarProperty Name="ART" ColumnName="ART" />
+          <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+          <ScalarProperty Name="COLORID" ColumnName="COLORID" />
+          <ScalarProperty Name="JACKET_PANT" ColumnName="JACKET_PANT" />
+          <ScalarProperty Name="C30W_R_30L" ColumnName="30W_R_30L" />
+          <ScalarProperty Name="C30W_L_32L" ColumnName="30W_L_32L" />
+          <ScalarProperty Name="C32W_R_30L" ColumnName="32W_R_30L" />
+          <ScalarProperty Name="C32W_L_32L" ColumnName="32W_L_32L" />
+          <ScalarProperty Name="C34W_S_28L" ColumnName="34W_S_28L" />
+          <ScalarProperty Name="C34W_S_29L" ColumnName="34W_S_29L" />
+          <ScalarProperty Name="C34W_R_30L" ColumnName="34W_R_30L" />
+          <ScalarProperty Name="C34W_L_32L" ColumnName="34W_L_32L" />
+          <ScalarProperty Name="C34W_L_34L" ColumnName="34W_L_34L" />
+          <ScalarProperty Name="C36W_S_28L" ColumnName="36W_S_28L" />
+          <ScalarProperty Name="C36W_S_29L" ColumnName="36W_S_29L" />
+          <ScalarProperty Name="C36W_R_30L" ColumnName="36W_R_30L" />
+          <ScalarProperty Name="C36W_R_31L" ColumnName="36W_R_31L" />
+          <ScalarProperty Name="C38W_S_28L" ColumnName="38W_S_28L" />
+          <ScalarProperty Name="C38W_R_30L" ColumnName="38W_R_30L" />
+          <ScalarProperty Name="C38W_R_31L" ColumnName="38W_R_31L" />
+          <ScalarProperty Name="C38W_L_32L" ColumnName="38W_L_32L" />
+          <ScalarProperty Name="C38W_L_34L" ColumnName="38W_L_34L" />
+          <ScalarProperty Name="C40W_S_28L" ColumnName="40W_S_28L" />
+          <ScalarProperty Name="C40W_S_29L" ColumnName="40W_S_29L" />
+          <ScalarProperty Name="C40W_R_30L" ColumnName="40W_R_30L" />
+          <ScalarProperty Name="C40W_R_31L" ColumnName="40W_R_31L" />
+          <ScalarProperty Name="C40W_L_32L" ColumnName="40W_L_32L" />
+          <ScalarProperty Name="C40W_L_34L" ColumnName="40W_L_34L" />
+          <ScalarProperty Name="C42W_R_30L" ColumnName="42W_R_30L" />
+          <ScalarProperty Name="C42W_L_32L" ColumnName="42W_L_32L" />
+          <ScalarProperty Name="C42W_L_34L" ColumnName="42W_L_34L" />
+          <ScalarProperty Name="C44W_R_30L" ColumnName="44W_R_30L" />
+          <ScalarProperty Name="C44W_L_32L" ColumnName="44W_L_32L" />
+          <ScalarProperty Name="C44W_L_34L" ColumnName="44W_L_34L" />
+          <ScalarProperty Name="C46W_R_30L" ColumnName="46W_R_30L" />
+          <ScalarProperty Name="C46W_L_32L" ColumnName="46W_L_32L" />
+          <ScalarProperty Name="C48W_R_30L" ColumnName="48W_R_30L" />
+          <ScalarProperty Name="C48W_L_32L" ColumnName="48W_L_32L" />
+          <ScalarProperty Name="C50W_L_32L" ColumnName="50W_L_32L" />
+          <ScalarProperty Name="Sub_Total" ColumnName="Sub_Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CaiDan_RGL2">
+      <EntityTypeMapping TypeName="nemanpingModel.CaiDan_RGL2">
+        <MappingFragment StoreEntitySet="CaiDan_RGL2">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DESC" ColumnName="DESC" />
+          <ScalarProperty Name="FABRIC" ColumnName="FABRIC" />
+          <ScalarProperty Name="STYLE" ColumnName="STYLE" />
+          <ScalarProperty Name="shuoming" ColumnName="shuoming" />
+          <ScalarProperty Name="Jacket" ColumnName="Jacket" />
+          <ScalarProperty Name="Pant" ColumnName="Pant" />
+          <ScalarProperty Name="LABEL" ColumnName="LABEL" />
+          <ScalarProperty Name="JiaGongchang" ColumnName="JiaGongchang" />
+          <ScalarProperty Name="CaiDanHao" ColumnName="CaiDanHao" />
+          <ScalarProperty Name="ZhiDanRiqi" ColumnName="ZhiDanRiqi" />
+          <ScalarProperty Name="JiaoHuoRiqi" ColumnName="JiaoHuoRiqi" />
+          <ScalarProperty Name="RN_NO" ColumnName="RN_NO" />
+          <ScalarProperty Name="MianLiao" ColumnName="MianLiao" />
+          <ScalarProperty Name="C34R" ColumnName="34R" />
+          <ScalarProperty Name="C36R" ColumnName="36R" />
+          <ScalarProperty Name="C38R" ColumnName="38R" />
+          <ScalarProperty Name="C40R" ColumnName="40R" />
+          <ScalarProperty Name="C42R" ColumnName="42R" />
+          <ScalarProperty Name="C44R" ColumnName="44R" />
+          <ScalarProperty Name="C46R" ColumnName="46R" />
+          <ScalarProperty Name="C48R" ColumnName="48R" />
+          <ScalarProperty Name="C50R" ColumnName="50R" />
+          <ScalarProperty Name="C52R" ColumnName="52R" />
+          <ScalarProperty Name="C54R" ColumnName="54R" />
+          <ScalarProperty Name="C56R" ColumnName="56R" />
+          <ScalarProperty Name="C58R" ColumnName="58R" />
+          <ScalarProperty Name="C60R" ColumnName="60R" />
+          <ScalarProperty Name="C62R" ColumnName="62R" />
+          <ScalarProperty Name="C36L" ColumnName="36L" />
+          <ScalarProperty Name="C38L" ColumnName="38L" />
+          <ScalarProperty Name="C40L" ColumnName="40L" />
+          <ScalarProperty Name="C42L" ColumnName="42L" />
+          <ScalarProperty Name="C44L" ColumnName="44L" />
+          <ScalarProperty Name="C46L" ColumnName="46L" />
+          <ScalarProperty Name="C48L" ColumnName="48L" />
+          <ScalarProperty Name="C50L" ColumnName="50L" />
+          <ScalarProperty Name="C52L" ColumnName="52L" />
+          <ScalarProperty Name="C54L" ColumnName="54L" />
+          <ScalarProperty Name="C56L" ColumnName="56L" />
+          <ScalarProperty Name="C58L" ColumnName="58L" />
+          <ScalarProperty Name="C60L" ColumnName="60L" />
+          <ScalarProperty Name="C62L" ColumnName="62L" />
+          <ScalarProperty Name="C34S" ColumnName="34S" />
+          <ScalarProperty Name="C36S" ColumnName="36S" />
+          <ScalarProperty Name="C38S" ColumnName="38S" />
+          <ScalarProperty Name="C40S" ColumnName="40S" />
+          <ScalarProperty Name="C42S" ColumnName="42S" />
+          <ScalarProperty Name="C44S" ColumnName="44S" />
+          <ScalarProperty Name="C46S" ColumnName="46S" />
+          <ScalarProperty Name="Sub_Total" ColumnName="Sub_Total" />
+          <ScalarProperty Name="LOT" ColumnName="LOT" />
+          <ScalarProperty Name="ChimaSTYLE" ColumnName="ChimaSTYLE" />
+          <ScalarProperty Name="ART" ColumnName="ART" />
+          <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+          <ScalarProperty Name="COLORID" ColumnName="COLORID" />
+          <ScalarProperty Name="JACKET_PANT" ColumnName="JACKET_PANT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CaiDan_RGLJ">
+      <EntityTypeMapping TypeName="nemanpingModel.CaiDan_RGLJ">
+        <MappingFragment StoreEntitySet="CaiDan_RGLJ">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="DESC" ColumnName="DESC" />
+          <ScalarProperty Name="FABRIC" ColumnName="FABRIC" />
+          <ScalarProperty Name="STYLE" ColumnName="STYLE" />
+          <ScalarProperty Name="shuoming" ColumnName="shuoming" />
+          <ScalarProperty Name="Jacket" ColumnName="Jacket" />
+          <ScalarProperty Name="Pant" ColumnName="Pant" />
+          <ScalarProperty Name="LABEL" ColumnName="LABEL" />
+          <ScalarProperty Name="JiaGongchang" ColumnName="JiaGongchang" />
+          <ScalarProperty Name="CaiDanHao" ColumnName="CaiDanHao" />
+          <ScalarProperty Name="ZhiDanRiqi" ColumnName="ZhiDanRiqi" />
+          <ScalarProperty Name="JiaoHuoRiqi" ColumnName="JiaoHuoRiqi" />
+          <ScalarProperty Name="RN_NO" ColumnName="RN_NO" />
+          <ScalarProperty Name="MianLiao" ColumnName="MianLiao" />
+          <ScalarProperty Name="LOT" ColumnName="LOT" />
+          <ScalarProperty Name="ChimaSTYLE" ColumnName="ChimaSTYLE" />
+          <ScalarProperty Name="ART" ColumnName="ART" />
+          <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+          <ScalarProperty Name="COLORID" ColumnName="COLORID" />
+          <ScalarProperty Name="JACKET_PANT" ColumnName="JACKET_PANT" />
+          <ScalarProperty Name="C34R" ColumnName="34R" />
+          <ScalarProperty Name="C36R" ColumnName="36R" />
+          <ScalarProperty Name="C38R" ColumnName="38R" />
+          <ScalarProperty Name="C40R" ColumnName="40R" />
+          <ScalarProperty Name="C42R" ColumnName="42R" />
+          <ScalarProperty Name="C44R" ColumnName="44R" />
+          <ScalarProperty Name="C46R" ColumnName="46R" />
+          <ScalarProperty Name="C48R" ColumnName="48R" />
+          <ScalarProperty Name="C50R" ColumnName="50R" />
+          <ScalarProperty Name="C52R" ColumnName="52R" />
+          <ScalarProperty Name="C54R" ColumnName="54R" />
+          <ScalarProperty Name="C56R" ColumnName="56R" />
+          <ScalarProperty Name="C58R" ColumnName="58R" />
+          <ScalarProperty Name="C60R" ColumnName="60R" />
+          <ScalarProperty Name="C62R" ColumnName="62R" />
+          <ScalarProperty Name="C36L" ColumnName="36L" />
+          <ScalarProperty Name="C38L" ColumnName="38L" />
+          <ScalarProperty Name="C40L" ColumnName="40L" />
+          <ScalarProperty Name="C42L" ColumnName="42L" />
+          <ScalarProperty Name="C44L" ColumnName="44L" />
+          <ScalarProperty Name="C46L" ColumnName="46L" />
+          <ScalarProperty Name="C48L" ColumnName="48L" />
+          <ScalarProperty Name="C50L" ColumnName="50L" />
+          <ScalarProperty Name="C52L" ColumnName="52L" />
+          <ScalarProperty Name="C54L" ColumnName="54L" />
+          <ScalarProperty Name="C56L" ColumnName="56L" />
+          <ScalarProperty Name="C58L" ColumnName="58L" />
+          <ScalarProperty Name="C60L" ColumnName="60L" />
+          <ScalarProperty Name="C62L" ColumnName="62L" />
+          <ScalarProperty Name="C34S" ColumnName="34S" />
+          <ScalarProperty Name="C36S" ColumnName="36S" />
+          <ScalarProperty Name="C38S" ColumnName="38S" />
+          <ScalarProperty Name="C40S" ColumnName="40S" />
+          <ScalarProperty Name="C42S" ColumnName="42S" />
+          <ScalarProperty Name="C44S" ColumnName="44S" />
+          <ScalarProperty Name="C46S" ColumnName="46S" />
+          <ScalarProperty Name="Sub_Total" ColumnName="Sub_Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CaiDan_SLIM">
+      <EntityTypeMapping TypeName="nemanpingModel.CaiDan_SLIM">
+        <MappingFragment StoreEntitySet="CaiDan_SLIM">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="DESC" ColumnName="DESC" />
+          <ScalarProperty Name="FABRIC" ColumnName="FABRIC" />
+          <ScalarProperty Name="STYLE" ColumnName="STYLE" />
+          <ScalarProperty Name="shuoming" ColumnName="shuoming" />
+          <ScalarProperty Name="Jacket" ColumnName="Jacket" />
+          <ScalarProperty Name="Pant" ColumnName="Pant" />
+          <ScalarProperty Name="LABEL" ColumnName="LABEL" />
+          <ScalarProperty Name="JiaGongchang" ColumnName="JiaGongchang" />
+          <ScalarProperty Name="CaiDanHao" ColumnName="CaiDanHao" />
+          <ScalarProperty Name="ZhiDanRiqi" ColumnName="ZhiDanRiqi" />
+          <ScalarProperty Name="JiaoHuoRiqi" ColumnName="JiaoHuoRiqi" />
+          <ScalarProperty Name="RN_NO" ColumnName="RN_NO" />
+          <ScalarProperty Name="MianLiao" ColumnName="MianLiao" />
+          <ScalarProperty Name="LOT" ColumnName="LOT" />
+          <ScalarProperty Name="ChimaSTYLE" ColumnName="ChimaSTYLE" />
+          <ScalarProperty Name="ART" ColumnName="ART" />
+          <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+          <ScalarProperty Name="COLORID" ColumnName="COLORID" />
+          <ScalarProperty Name="JACKET_PANT" ColumnName="JACKET_PANT" />
+          <ScalarProperty Name="C34R" ColumnName="34R" />
+          <ScalarProperty Name="C36R" ColumnName="36R" />
+          <ScalarProperty Name="C38R" ColumnName="38R" />
+          <ScalarProperty Name="C40R" ColumnName="40R" />
+          <ScalarProperty Name="C42R" ColumnName="42R" />
+          <ScalarProperty Name="C44R" ColumnName="44R" />
+          <ScalarProperty Name="C46R" ColumnName="46R" />
+          <ScalarProperty Name="C48R" ColumnName="48R" />
+          <ScalarProperty Name="C36L" ColumnName="36L" />
+          <ScalarProperty Name="C38L" ColumnName="38L" />
+          <ScalarProperty Name="C40L" ColumnName="40L" />
+          <ScalarProperty Name="C42L" ColumnName="42L" />
+          <ScalarProperty Name="C44L" ColumnName="44L" />
+          <ScalarProperty Name="C46L" ColumnName="46L" />
+          <ScalarProperty Name="C48L" ColumnName="48L" />
+          <ScalarProperty Name="C34S" ColumnName="34S" />
+          <ScalarProperty Name="C36S" ColumnName="36S" />
+          <ScalarProperty Name="C38S" ColumnName="38S" />
+          <ScalarProperty Name="C40S" ColumnName="40S" />
+          <ScalarProperty Name="C42S" ColumnName="42S" />
+          <ScalarProperty Name="C44S" ColumnName="44S" />
+          <ScalarProperty Name="C46S" ColumnName="46S" />
           <ScalarProperty Name="Sub_Total" ColumnName="Sub_Total" />
         </MappingFragment>
       </EntityTypeMapping>

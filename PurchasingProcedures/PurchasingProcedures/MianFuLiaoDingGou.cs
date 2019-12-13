@@ -150,7 +150,390 @@ namespace PurchasingProcedures
         {
 
             List<HeSuan> endlist = new List<HeSuan>();
+            List<clsBuiness.CaiDanALL> cball = new List<clsBuiness.CaiDanALL>();
+
             List<clsBuiness.CaiDan> caidanlist = gn.selectCaiDan(cdhao);
+            List<clsBuiness.CaiDan_RGL2> caidanRGL2 = gn.selectCaiDanRGL2(cdhao);
+            List<clsBuiness.CaiDan_SLIM> caidanSLIM = gn.selectCaiDanSLIM(cdhao);
+            List<clsBuiness.CaiDan_RGLJ> caidanRGLJ = gn.selectCaiDanRGLJ(cdhao);
+            List<clsBuiness.CaiDan_D_PANT> caidanD_PANT = gn.selectCaiDanD_PANT(cdhao);
+            List<clsBuiness.CaiDan_C_PANT> caidanC_PANT = gn.selectCaiDanC_PANT(cdhao);
+            foreach (clsBuiness.CaiDan cd in caidanlist)
+            {
+                clsBuiness.CaiDanALL cda = new CaiDanALL();
+                cda.Id = cd.Id;
+                cda.DESC = cd.DESC;
+                cda.FABRIC = cd.FABRIC;
+                cda.STYLE = cd.STYLE;
+                cda.shuoming = cd.shuoming;
+                cda.Jacket = cd.Jacket;
+                cda.Pant = cd.Pant;
+                cda.LABEL = cd.LABEL;
+                cda.JiaGongchang = cd.JiaGongchang;
+                cda.CaiDanHao = cd.CaiDanHao;
+                cda.ZhiDanRiqi = cd.ZhiDanRiqi;
+                cda.JiaoHuoRiqi = cd.JiaoHuoRiqi;
+                cda.RN_NO = cd.RN_NO;
+                cda.MianLiao = cd.MianLiao;
+                cda.LOT = cd.LOT;
+                cda.ChimaSTYLE = cd.ChimaSTYLE;
+                cda.ART = cd.ART;
+                cda.COLOR = cd.COLOR;
+                cda.COLORID = cd.COLORID;
+                cda.JACKET_PANT = cd.JACKET_PANT;
+                cda.C34R = cd.C34R;
+                cda.C36R = cd.C36R;
+                cda.C38R = cd.C38R;
+                cda.C40R = cd.C40R;
+                cda.C42R = cd.C42R;
+                cda.C44R = cd.C44R;
+                cda.C46R = cd.C46R;
+                cda.C48R = cd.C48R;
+                cda.C50R = cd.C50R;
+                cda.C52R = cd.C52R;
+                cda.C54R = cd.C54R;
+                cda.C56R = cd.C56R;
+                cda.C58R = cd.C58R;
+                cda.C60R = cd.C60R;
+                cda.C62R = cd.C62R;
+                cda.C36L = cd.C36L;
+                cda.C38L = cd.C38L;
+                cda.C40L = cd.C40L;
+                cda.C42L = cd.C42L;
+                cda.C44L = cd.C44L;
+                cda.C46L = cd.C46L;
+                cda.C48L = cd.C48L;
+                cda.C50L = cd.C50L;
+                cda.C52L = cd.C52L;
+                cda.C54L = cd.C54L;
+                cda.C56L = cd.C56L;
+                cda.C58L = cd.C58L;
+                cda.C60L = cd.C60L;
+                cda.C62L = cd.C62L;
+                cda.C34S = cd.C34S;
+                cda.C36S = cd.C36S;
+                cda.C38S = cd.C38S;
+                cda.C40S = cd.C40S;
+                cda.C42S = cd.C42S;
+                cda.C44S = cd.C44S;
+                cda.C46S = cd.C46S;
+                cda.Sub_Total = cd.Sub_Total;
+                cball.Add(cda);
+            }
+
+            foreach (clsBuiness.CaiDan_RGL2 cd in caidanRGL2)
+            {
+                clsBuiness.CaiDanALL cda = new CaiDanALL();
+                cda.Id = cd.Id;
+                cda.DESC = cd.DESC;
+                cda.FABRIC = cd.FABRIC;
+                cda.STYLE = cd.STYLE;
+                cda.shuoming = cd.shuoming;
+                cda.Jacket = cd.Jacket;
+                cda.Pant = cd.Pant;
+                cda.LABEL = cd.LABEL;
+                cda.JiaGongchang = cd.JiaGongchang;
+                cda.CaiDanHao = cd.CaiDanHao;
+                cda.ZhiDanRiqi = cd.ZhiDanRiqi;
+                cda.JiaoHuoRiqi = cd.JiaoHuoRiqi;
+                cda.RN_NO = cd.RN_NO;
+                cda.MianLiao = cd.MianLiao;
+                cda.LOT = cd.LOT;
+                cda.ChimaSTYLE = cd.ChimaSTYLE;
+                cda.ART = cd.ART;
+                cda.COLOR = cd.COLOR;
+                cda.COLORID = cd.COLORID;
+                cda.JACKET_PANT = cd.JACKET_PANT;
+                cda.C34R = cd.C34R;
+                cda.C36R = cd.C36R;
+                cda.C38R = cd.C38R;
+                cda.C40R = cd.C40R;
+                cda.C42R = cd.C42R;
+                cda.C44R = cd.C44R;
+                cda.C46R = cd.C46R;
+                cda.C48R = cd.C48R;
+                cda.C50R = cd.C50R;
+                cda.C52R = cd.C52R;
+                cda.C54R = cd.C54R;
+                cda.C56R = cd.C56R;
+                cda.C58R = cd.C58R;
+                cda.C60R = cd.C60R;
+                cda.C62R = cd.C62R;
+                cda.C36L = cd.C36L;
+                cda.C38L = cd.C38L;
+                cda.C40L = cd.C40L;
+                cda.C42L = cd.C42L;
+                cda.C44L = cd.C44L;
+                cda.C46L = cd.C46L;
+                cda.C48L = cd.C48L;
+                cda.C50L = cd.C50L;
+                cda.C52L = cd.C52L;
+                cda.C54L = cd.C54L;
+                cda.C56L = cd.C56L;
+                cda.C58L = cd.C58L;
+                cda.C60L = cd.C60L;
+                cda.C62L = cd.C62L;
+                cda.C34S = cd.C34S;
+                cda.C36S = cd.C36S;
+                cda.C38S = cd.C38S;
+                cda.C40S = cd.C40S;
+                cda.C42S = cd.C42S;
+                cda.C44S = cd.C44S;
+                cda.C46S = cd.C46S;
+                cda.Sub_Total = cd.Sub_Total;
+                cball.Add(cda);
+            }
+
+            foreach (clsBuiness.CaiDan_SLIM cd in caidanSLIM)
+            {
+                clsBuiness.CaiDanALL cda = new CaiDanALL();
+                cda.Id = cd.id;
+                cda.DESC = cd.DESC;
+                cda.FABRIC = cd.FABRIC;
+                cda.STYLE = cd.STYLE;
+                cda.shuoming = cd.shuoming;
+                cda.Jacket = cd.Jacket;
+                cda.Pant = cd.Pant;
+                cda.LABEL = cd.LABEL;
+                cda.JiaGongchang = cd.JiaGongchang;
+                cda.CaiDanHao = cd.CaiDanHao;
+                cda.ZhiDanRiqi = cd.ZhiDanRiqi;
+                cda.JiaoHuoRiqi = cd.JiaoHuoRiqi;
+                cda.RN_NO = cd.RN_NO;
+                cda.MianLiao = cd.MianLiao;
+                cda.LOT = cd.LOT;
+                cda.ChimaSTYLE = cd.ChimaSTYLE;
+                cda.ART = cd.ART;
+                cda.COLOR = cd.COLOR;
+                cda.COLORID = cd.COLORID;
+                cda.JACKET_PANT = cd.JACKET_PANT;
+                cda.C34R = cd.C34R;
+                cda.C36R = cd.C36R;
+                cda.C38R = cd.C38R;
+                cda.C40R = cd.C40R;
+                cda.C42R = cd.C42R;
+                cda.C44R = cd.C44R;
+                cda.C46R = cd.C46R;
+                cda.C48R = cd.C48R;
+                cda.C36L = cd.C36L;
+                cda.C38L = cd.C38L;
+                cda.C40L = cd.C40L;
+                cda.C42L = cd.C42L;
+                cda.C44L = cd.C44L;
+                cda.C46L = cd.C46L;
+                cda.C48L = cd.C48L;
+                cda.C34S = cd.C34S;
+                cda.C36S = cd.C36S;
+                cda.C38S = cd.C38S;
+                cda.C40S = cd.C40S;
+                cda.C42S = cd.C42S;
+                cda.C44S = cd.C44S;
+                cda.C46S = cd.C46S;
+                cda.Sub_Total = cd.Sub_Total;
+                cball.Add(cda);
+            }
+
+            foreach (clsBuiness.CaiDan_RGLJ cd in caidanRGLJ)
+            {
+                clsBuiness.CaiDanALL cda = new CaiDanALL();
+                cda.Id = cd.id;
+                cda.DESC = cd.DESC;
+                cda.FABRIC = cd.FABRIC;
+                cda.STYLE = cd.STYLE;
+                cda.shuoming = cd.shuoming;
+                cda.Jacket = cd.Jacket;
+                cda.Pant = cd.Pant;
+                cda.LABEL = cd.LABEL;
+                cda.JiaGongchang = cd.JiaGongchang;
+                cda.CaiDanHao = cd.CaiDanHao;
+                cda.ZhiDanRiqi = cd.ZhiDanRiqi;
+                cda.JiaoHuoRiqi = cd.JiaoHuoRiqi;
+                cda.RN_NO = cd.RN_NO;
+                cda.MianLiao = cd.MianLiao;
+                cda.LOT = cd.LOT;
+                cda.ChimaSTYLE = cd.ChimaSTYLE;
+                cda.ART = cd.ART;
+                cda.COLOR = cd.COLOR;
+                cda.COLORID = cd.COLORID;
+                cda.JACKET_PANT = cd.JACKET_PANT;
+                cda.C34R = cd.C34R;
+                cda.C36R = cd.C36R;
+                cda.C38R = cd.C38R;
+                cda.C40R = cd.C40R;
+                cda.C42R = cd.C42R;
+                cda.C44R = cd.C44R;
+                cda.C46R = cd.C46R;
+                cda.C48R = cd.C48R;
+                cda.C50R = cd.C50R;
+                cda.C52R = cd.C52R;
+                cda.C54R = cd.C54R;
+                cda.C56R = cd.C56R;
+                cda.C58R = cd.C58R;
+                cda.C60R = cd.C60R;
+                cda.C62R = cd.C62R;
+                cda.C36L = cd.C36L;
+                cda.C38L = cd.C38L;
+                cda.C40L = cd.C40L;
+                cda.C42L = cd.C42L;
+                cda.C44L = cd.C44L;
+                cda.C46L = cd.C46L;
+                cda.C48L = cd.C48L;
+                cda.C50L = cd.C50L;
+                cda.C52L = cd.C52L;
+                cda.C54L = cd.C54L;
+                cda.C56L = cd.C56L;
+                cda.C58L = cd.C58L;
+                cda.C60L = cd.C60L;
+                cda.C62L = cd.C62L;
+                cda.C34S = cd.C34S;
+                cda.C36S = cd.C36S;
+                cda.C38S = cd.C38S;
+                cda.C40S = cd.C40S;
+                cda.C42S = cd.C42S;
+                cda.C44S = cd.C44S;
+                cda.C46S = cd.C46S;
+                cda.Sub_Total = cd.Sub_Total;
+                cball.Add(cda);
+            }
+
+            foreach (clsBuiness.CaiDan_D_PANT cd in caidanD_PANT)
+            {
+                clsBuiness.CaiDanALL cda = new CaiDanALL();
+                cda.Id = cd.id;
+                cda.DESC = cd.DESC;
+                cda.FABRIC = cd.FABRIC;
+                cda.STYLE = cd.STYLE;
+                cda.shuoming = cd.shuoming;
+                cda.Jacket = cd.Jacket;
+                cda.Pant = cd.Pant;
+                cda.LABEL = cd.LABEL;
+                cda.JiaGongchang = cd.JiaGongchang;
+                cda.CaiDanHao = cd.CaiDanHao;
+                cda.ZhiDanRiqi = cd.ZhiDanRiqi;
+                cda.JiaoHuoRiqi = cd.JiaoHuoRiqi;
+                cda.RN_NO = cd.RN_NO;
+                cda.MianLiao = cd.MianLiao;
+                cda.LOT = cd.LOT;
+                cda.ChimaSTYLE = cd.ChimaSTYLE;
+                cda.ART = cd.ART;
+                cda.COLOR = cd.COLOR;
+                cda.COLORID = cd.COLORID;
+                cda.JACKET_PANT = cd.JACKET_PANT;
+                cda.C30W_R_30L = cd.C30W_R_30L;
+                cda.C30W_L_32L = cd.C30W_L_32L;
+                cda.C32W_R_30L = cd.C32W_R_30L;
+                cda.C32W_L_32L = cd.C32W_L_32L;
+                cda.C34W_S_38L = cd.C34W_S_28L;
+                cda.C34W_S_39L = cd.C34W_S_29L;
+                cda.C34W_R_30L = cd.C34W_R_30L;
+                cda.C34W_L_32L = cd.C34W_L_32L;
+                cda.C34W_L_34L = cd.C34W_L_34L;
+                cda.C36W_S_28L = cd.C36W_S_28L;
+                cda.C36W_S_29L = cd.C36W_S_29L;
+                cda.C36W_R_30L = cd.C36W_R_30L;
+                cda.C36W_R_31L = cd.C36W_R_31L;
+                cda.C38W_S_28L = cd.C38W_S_28L;
+                cda.C38W_R_30L = cd.C38W_R_30L;
+                cda.C38W_R_31L = cd.C38W_R_31L;
+                cda.C38W_L_32L = cd.C38W_L_32L;
+                cda.C38W_L_34L = cd.C38W_L_34L;
+                cda.C40W_S_28L = cd.C40W_S_28L;
+                cda.C40W_S_29L = cd.C40W_S_29L;
+                cda.C40W_R_30L = cd.C40W_R_30L;
+                cda.C40W_R_31L = cd.C40W_R_31L;
+                cda.C40W_L_32L = cd.C40W_L_32L;
+                cda.C40W_L_34L = cd.C40W_L_34L;
+                cda.C42W_R_30L = cd.C42W_R_30L;
+                cda.C42W_L_32L = cd.C42W_L_32L;
+                cda.C42W_L_34L = cd.C42W_L_34L;
+                cda.C44W_R_30L = cd.C44W_R_30L;
+                cda.C44W_L_32L = cd.C44W_L_32L;
+                cda.C44W_L_34L = cd.C44W_L_34L;
+                cda.C46W_R_30L = cd.C46W_R_30L;
+                cda.C46W_L_32L = cd.C46W_L_32L;
+                cda.C48W_R_30L = cd.C48W_R_30L;
+                cda.C48W_L_32L = cd.C48W_L_32L;
+                cda.C50W_L_32L = cd.C50W_L_32L;
+                cda.Sub_Total = cd.Sub_Total;
+                cball.Add(cda);
+            }
+
+            foreach (clsBuiness.CaiDan_C_PANT cd in caidanC_PANT)
+            {
+                clsBuiness.CaiDanALL cda = new CaiDanALL();
+                cda.Id = cd.id;
+                cda.DESC = cd.DESC;
+                cda.FABRIC = cd.FABRIC;
+                cda.STYLE = cd.STYLE;
+                cda.shuoming = cd.shuoming;
+                cda.Jacket = cd.Jacket;
+                cda.Pant = cd.Pant;
+                cda.LABEL = cd.LABEL;
+                cda.JiaGongchang = cd.JiaGongchang;
+                cda.CaiDanHao = cd.CaiDanHao;
+                cda.ZhiDanRiqi = cd.ZhiDanRiqi;
+                cda.JiaoHuoRiqi = cd.JiaoHuoRiqi;
+                cda.RN_NO = cd.RN_NO;
+                cda.MianLiao = cd.MianLiao;
+                cda.LOT = cd.LOT;
+                cda.ChimaSTYLE = cd.ChimaSTYLE;
+                cda.ART = cd.ART;
+                cda.COLOR = cd.COLOR;
+                cda.COLORID = cd.COLORID;
+                cda.JACKET_PANT = cd.JACKET_PANT;
+                cda.C30W_29L = cd.C30W_29L;
+                cda.C30W_30L = cd.C30W_30L;
+                cda.C30W_32L = cd.C30W_32L;
+                cda.C31W_30L = cd.C31W_30L;
+                cda.C31W_32L = cd.C31W_32L;
+                cda.C32W_28L = cd.C32W_28L;
+                cda.C32W_30L = cd.C32W_30L;
+                cda.C32W_32L = cd.C32W_32L;
+                cda.C33W_29L = cd.C33W_29L;
+                cda.C33W_30L = cd.C33W_30L;
+                cda.C33W_32L = cd.C33W_32L;
+                cda.C33W_34L = cd.C33W_34L;
+                cda.C34W_29L = cd.C34W_29L;
+                cda.C34W_30L = cd.C34W_30L;
+                cda.C34W_31L = cd.C34W_31L;
+                cda.C34W_32L = cd.C34W_32L;
+                cda.C34W_34L = cd.C34W_34L;
+                cda.C36W_29L = cd.C36W_29L;
+                cda.C36W_30L = cd.C36W_30L;
+                cda.C36W_32L = cd.C36W_32L;
+                cda.C36W_34L = cd.C36W_34L;
+                cda.C38W_29L = cd.C38W_29L;
+                cda.C38W_30L = cd.C38W_30L;
+                cda.C38W_32L = cd.C38W_32L;
+                cda.C38W_34L = cd.C38W_34L;
+                cda.C40W_28L = cd.C40W_28L;
+                cda.C40W_30L = cd.C40W_30L;
+                cda.C40W_32L = cd.C40W_32L;
+                cda.C40W_34L = cd.C40W_34L;
+                cda.C42W_30L = cd.C42W_30L;
+                cda.C42W_32L = cd.C42W_32L;
+                cda.C42W_34L = cd.C42W_34L;
+                cda.C44W_29L = cd.C44W_29L;
+                cda.C44W_30L = cd.C44W_30L;
+                cda.C44W_32L = cd.C44W_32L;
+                cda.Sub_Total = cd.Sub_Total;
+                cball.Add(cda);
+            }
+
+            //List<clsBuiness.CaiDan> caidanlist = gn.selectCaiDan(cdhao);
+
+            //List<clsBuiness.CaiDan> caidanlist = gn.selectCaiDan(cdhao);
+
+            //List<clsBuiness.CaiDan> caidanlist = gn.selectCaiDan(cdhao);
+            //List<clsBuiness.CaiDan> caidanlist = gn.selectCaiDan(cdhao);
+
+
+            if (cball.Count == 0) 
+            {
+            
+
+
+            }
             List<HeSuan> hs = new List<HeSuan>();
             List<DanHao> dh = cblist.FindAll(dc => dc.Type.Equals("辅料"));
             Dictionary<string, string> dic = new Dictionary<string, string>();
@@ -179,15 +562,25 @@ namespace PurchasingProcedures
                 foreach (PeiSe ps in peiselist)
                 {
                     name = ps.PingMing;
-                    if (caidanlist.FindAll(f => f.ART.Equals(ps.HuoHao)).Count > 0)
+                    if (cball.FindAll(f => f.ART.Equals(ps.HuoHao)).Count > 0)
                     {
-                        foreach (clsBuiness.CaiDan cd in caidanlist)
+                        foreach (clsBuiness.CaiDanALL cd in cball)
                         {
                             if (cd.ART.Equals(ps.HuoHao))
                             {
                                 if (dic.ContainsKey(ps.PingMing + "=" + ps.HuoHao))
                                 {
-                                    dic[ps.PingMing + "=" + ps.HuoHao] = (Convert.ToInt32(dic[ps.PingMing + "=" + ps.HuoHao].Split('=')[0]) + Convert.ToInt32(cd.Sub_Total)).ToString();
+                                    int dicJia = 0;
+                                    int jia2 = 0;
+                                    if (!dic[ps.PingMing + "=" + ps.HuoHao].Split('=')[0].Equals(string.Empty)) 
+                                    {
+                                        dicJia = Convert.ToInt32(dic[ps.PingMing + "=" + ps.HuoHao].Split('=')[0]);
+                                    }
+                                    if (!cd.Sub_Total.Equals(string.Empty)) 
+                                    {
+                                        jia2 = Convert.ToInt32(cd.Sub_Total);
+                                    }
+                                    dic[ps.PingMing + "=" + ps.HuoHao] = (dicJia + jia2).ToString();
                                     if (dic[ps.PingMing + "=" + ps.HuoHao].Split('=').Length < 2)
                                     {
                                         dic[ps.PingMing + "=" + ps.HuoHao] = dic[ps.PingMing + "=" + ps.HuoHao] + "=" + cd.COLORID.Trim() + " " + cd.COLOR.Trim(); //色号&颜色
@@ -431,17 +824,37 @@ namespace PurchasingProcedures
             }
             return dt;
         }
-
+        private bool IsNumberic(string oText)
+        {
+            try
+            {
+                int var1 = Convert.ToInt32(oText);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         private List<HeSuan> GetHeSuanList(string name, string type)
         {
             List<clsBuiness.CaiDan> caidanlist = gn.selectCaiDan(cdhao);
+            List<clsBuiness.CaiDan_RGL2> caidanlistRGL2 = gn.selectCaiDanRGL2(cdhao);
+            List<clsBuiness.CaiDan_SLIM> caidanlistSLIM = gn.selectCaiDanSLIM(cdhao);
+            List<clsBuiness.CaiDan_RGLJ> caidanlistRGLJ = gn.selectCaiDanRGLJ(cdhao);
+            List<clsBuiness.CaiDan_D_PANT> caidanlistD_PANT = gn.selectCaiDanD_PANT(cdhao);
             List<HeSuan> hs = new List<HeSuan>();
             Dictionary<string, string> dic = new Dictionary<string, string>();
             foreach (clsBuiness.CaiDan c in caidanlist)//成衣数量
             {
                 if (dic.ContainsKey(c.LOT))
                 {
-                    dic[c.LOT] = (Convert.ToInt32(dic[c.LOT]) + Convert.ToInt32(c.Sub_Total)).ToString();
+                    if (c.Sub_Total != null && c.Sub_Total != "" && !IsNumberic(c.Sub_Total) && dic[c.LOT] != null && dic[c.LOT] != "" && !IsNumberic(dic[c.LOT]))
+                    {
+
+
+                        dic[c.LOT] = (Convert.ToInt32(dic[c.LOT]) + Convert.ToInt32(c.Sub_Total)).ToString();
+                    }
                 }
                 else
                 {
@@ -453,9 +866,113 @@ namespace PurchasingProcedures
             {
                 if (dic[c.LOT].Split('=').Length < 2)
                 {
+
                     dic[c.LOT] = dic[c.LOT] + "=" + c.COLORID.Trim() + c.COLOR.Trim(); //色号&颜色
                 }
             }
+            //YAO
+            foreach (clsBuiness.CaiDan_RGL2 c in caidanlistRGL2)//成衣数量
+            {
+                if (dic.ContainsKey(c.LOT))
+                {
+                    if (c.Sub_Total != null && c.Sub_Total != "" && !IsNumberic(c.Sub_Total) && dic[c.LOT] != null && dic[c.LOT] != "" && !IsNumberic(dic[c.LOT]))
+                    {
+                        dic[c.LOT] = (Convert.ToInt32(dic[c.LOT]) + Convert.ToInt32(c.Sub_Total)).ToString();
+                    }
+                }
+                else
+                {
+                    dic.Add(c.LOT, c.Sub_Total);
+                }
+
+            }
+            foreach (clsBuiness.CaiDan_RGL2 c in caidanlistRGL2)
+            {
+                if (dic[c.LOT].Split('=').Length < 2)
+                {
+                   
+                    dic[c.LOT] = dic[c.LOT] + "=" + c.COLORID.Trim() + c.COLOR.Trim(); //色号&颜色
+                }
+            }
+
+
+
+            foreach (clsBuiness.CaiDan_SLIM c in caidanlistSLIM)//成衣数量
+            {
+                if (dic.ContainsKey(c.LOT))
+                {
+                    if (c.Sub_Total != null && c.Sub_Total != "" && !IsNumberic(c.Sub_Total) && dic[c.LOT] != null && dic[c.LOT] != "" && !IsNumberic(dic[c.LOT]))
+                    {
+                        dic[c.LOT] = (Convert.ToInt32(dic[c.LOT]) + Convert.ToInt32(c.Sub_Total)).ToString();
+                    }
+                }
+                else
+                {
+                    dic.Add(c.LOT, c.Sub_Total);
+                }
+
+            }
+            foreach (clsBuiness.CaiDan_SLIM c in caidanlistSLIM)
+            {
+                if (dic[c.LOT].Split('=').Length < 2)
+                {
+                    dic[c.LOT] = dic[c.LOT] + "=" + c.COLORID.Trim() + c.COLOR.Trim(); //色号&颜色
+                }
+            }
+
+
+            foreach (clsBuiness.CaiDan_RGLJ c in caidanlistRGLJ)//成衣数量
+            {
+
+                if (dic.ContainsKey(c.LOT))
+                {
+                    if (c.Sub_Total != null && c.Sub_Total != "" && !IsNumberic(c.Sub_Total) && dic[c.LOT] != null && dic[c.LOT] != "" && !IsNumberic(dic[c.LOT]))
+                    {
+                        dic[c.LOT] = (Convert.ToInt32(dic[c.LOT]) + Convert.ToInt32(c.Sub_Total)).ToString();
+                    }
+                }
+                else
+                {
+                    dic.Add(c.LOT, c.Sub_Total);
+                }
+
+            }
+            foreach (clsBuiness.CaiDan_RGLJ c in caidanlistRGLJ)
+            {
+                if (dic[c.LOT].Split('=').Length < 2)
+                {
+                    dic[c.LOT] = dic[c.LOT] + "=" + c.COLORID.Trim() + c.COLOR.Trim(); //色号&颜色
+                }
+            }
+
+
+
+
+            foreach (clsBuiness.CaiDan_D_PANT c in caidanlistD_PANT)//成衣数量
+            {
+                if (dic.ContainsKey(c.LOT))
+                {
+                    if (c.Sub_Total != null && c.Sub_Total != "" && !IsNumberic(c.Sub_Total) && dic[c.LOT] != null && dic[c.LOT] != "" && !IsNumberic(dic[c.LOT]))
+                    {
+                        dic[c.LOT] = (Convert.ToInt32(dic[c.LOT]) + Convert.ToInt32(c.Sub_Total)).ToString();
+                    }
+                }
+                else
+                {
+                    dic.Add(c.LOT, c.Sub_Total);
+                }
+
+            }
+            foreach (clsBuiness.CaiDan_D_PANT c in caidanlistD_PANT)
+            {
+                if (dic[c.LOT].Split('=').Length < 2)
+                {
+                    dic[c.LOT] = dic[c.LOT] + "=" + c.COLORID.Trim() + c.COLOR.Trim(); //色号&颜色
+                }
+            }
+
+
+
             List<clsBuiness.GongHuoFang> ghflist = df.selectGongHuoFang();
             // foreach (KeyValuePair<string,string>kvp in dic)
             //{               

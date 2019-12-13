@@ -74,6 +74,30 @@
     <Compile Include="CaiDan.Designer.cs">
       <DependentUpon>CaiDan.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCaiDanC.PANT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCaiDanC.PANT.Designer.cs">
+      <DependentUpon>frmCaiDanC.PANT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCaiDanD_PANT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCaiDanD_PANT.Designer.cs">
+      <DependentUpon>frmCaiDanD_PANT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CaiDanRGLJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CaiDanRGLJ.Designer.cs">
+      <DependentUpon>CaiDanRGLJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CaidanSLIM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CaidanSLIM.Designer.cs">
+      <DependentUpon>CaidanSLIM.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChiMaDaPei.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +122,12 @@
     </Compile>
     <Compile Include="Factoryinput.Designer.cs">
       <DependentUpon>Factoryinput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CaiDanRGL2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CaiDanRGL2.Designer.cs">
+      <DependentUpon>CaiDanRGL2.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAlterinfo.cs">
       <SubType>Form</SubType>
@@ -218,6 +248,18 @@
     <EmbeddedResource Include="CaiDan.resx">
       <DependentUpon>CaiDan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCaiDanC.PANT.resx">
+      <DependentUpon>frmCaiDanC.PANT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCaiDanD_PANT.resx">
+      <DependentUpon>frmCaiDanD_PANT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CaiDanRGLJ.resx">
+      <DependentUpon>CaiDanRGLJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CaidanSLIM.resx">
+      <DependentUpon>CaidanSLIM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChiMaDaPei.resx">
       <DependentUpon>ChiMaDaPei.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Factoryinput.resx">
       <DependentUpon>Factoryinput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CaiDanRGL2.resx">
+      <DependentUpon>CaiDanRGL2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAlterinfo.resx">
       <DependentUpon>frmAlterinfo.cs</DependentUpon>

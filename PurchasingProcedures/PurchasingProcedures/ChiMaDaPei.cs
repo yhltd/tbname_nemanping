@@ -530,7 +530,7 @@ namespace PurchasingProcedures
                 dt.Columns.Add("货号", typeof(string));
                 dt.Columns.Add("颜色", typeof(string));
                 dt.Columns.Add("颜色编号", typeof(string));
-                dt.Columns.Add("裤子", typeof(string));
+                dt.Columns.Add("上衣", typeof(string));
                 dt.Columns.Add("34R", typeof(string));
                 dt.Columns.Add("36R", typeof(string));
                 dt.Columns.Add("38R", typeof(string));
@@ -575,7 +575,7 @@ namespace PurchasingProcedures
                 rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(2, 1, "ART"));
                 rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(3, 1, "COLOR"));
                 rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(4, 1, "COLOR#"));
-                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(5, 1, "上衣"));
+                rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(5, 1, "裤子"));
                 rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(6, 1, "28"));
                 rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(7, 1, "30"));
                 rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(8, 1, "32"));
@@ -623,7 +623,7 @@ namespace PurchasingProcedures
             dt1.Columns.Add("货号", typeof(string));
             dt1.Columns.Add("颜色", typeof(string));
             dt1.Columns.Add("颜色编号", typeof(string));
-            dt1.Columns.Add("裤子", typeof(string));
+            dt1.Columns.Add("上衣", typeof(string));
             dt1.Columns.Add("34R", typeof(string));
             dt1.Columns.Add("36R", typeof(string));
             dt1.Columns.Add("38R", typeof(string));
@@ -669,7 +669,7 @@ namespace PurchasingProcedures
             rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(2, 1, "ART"));
             rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(3, 1, "COLOR"));
             rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(4, 1, "COLOR#"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(5, 1, "上衣"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(5, 1, "裤子"));
             rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(6, 1, "28"));
             rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(7, 1, "30"));
             rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(8, 1, "32"));
@@ -717,7 +717,7 @@ namespace PurchasingProcedures
             dt3.Columns.Add("货号", typeof(string));
             dt3.Columns.Add("颜色", typeof(string));
             dt3.Columns.Add("颜色编号", typeof(string));
-            dt3.Columns.Add("裤子", typeof(string));
+            dt3.Columns.Add("上衣", typeof(string));
             dt3.Columns.Add("34R", typeof(string));
             dt3.Columns.Add("36R", typeof(string));
             dt3.Columns.Add("38R", typeof(string));
@@ -749,7 +749,7 @@ namespace PurchasingProcedures
             rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(2, 1, "ART"));
             rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(3, 1, "COLOR"));
             rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(4, 1, "COLOR#"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(5, 1, "上衣"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(5, 1, "裤子"));
             rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(6, 1, "28"));
             rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(7, 1, "30"));
             rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(8, 1, "32"));
@@ -824,13 +824,13 @@ namespace PurchasingProcedures
             RGLJ.DataSource = dt4;
             //rowMergeView = new DataGridViewHelper(RGLJ);
 
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(0, 1, "LOT#"));
-            //rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(0, 1, "LOT1#"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(1, 1, "STYLE"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(2, 1, "ART"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(3, 1, "COLOR"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(4, 1, "COLOR#"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(43, 1, "订单合计"));
+            //rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(0, 1, "LOT#"));
+            ////rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(0, 1, "LOT1#"));
+            //rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(1, 1, "STYLE"));
+            //rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(2, 1, "ART"));
+            //rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(3, 1, "COLOR"));
+            //rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(4, 1, "COLOR#"));
+            //rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(43, 1, "订单合计"));
 
             #endregion
 

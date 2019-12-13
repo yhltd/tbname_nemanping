@@ -402,7 +402,7 @@ namespace PurchasingProcedures
             for (int i = 0; i < dataGridView2.Rows.Count; i++)
             {
 
-                if (dataGridView2.Rows[i].Cells[6].Value != null && cal.IsNumber(dataGridView2.Rows[i].Cells[12].Value.ToString()))
+                if (dataGridView2.Rows[i].Cells[6].Value != null && dataGridView2.Rows[i].Cells[12].Value!=null &&  cal.IsNumber(dataGridView2.Rows[i].Cells[12].Value.ToString()))
                 {
                     flSum = flSum + Convert.ToDouble(dataGridView2.Rows[i].Cells[12].Value);
                 }

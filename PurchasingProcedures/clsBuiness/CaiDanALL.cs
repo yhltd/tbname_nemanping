@@ -1,0 +1,141 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace clsBuiness
+{
+   public class CaiDanALL
+    {
+        public int Id { get; set; }
+        public string DESC { get; set; }
+        public string FABRIC { get; set; }
+        public string STYLE { get; set; }
+        public string shuoming { get; set; }
+        public string Jacket { get; set; }
+        public string Pant { get; set; }
+        public string LABEL { get; set; }
+        public string JiaGongchang { get; set; }
+        public string CaiDanHao { get; set; }
+        public string ZhiDanRiqi { get; set; }
+        public string JiaoHuoRiqi { get; set; }
+        public string RN_NO { get; set; }
+        public string MianLiao { get; set; }
+        public string LOT { get; set; }
+        public string ChimaSTYLE { get; set; }
+        public string ART { get; set; }
+        public string COLOR { get; set; }
+        public string COLORID { get; set; }
+        public string JACKET_PANT { get; set; }
+        public string C34R { get; set; }
+        public string C36R { get; set; }
+        public string C38R { get; set; }
+        public string C40R { get; set; }
+        public string C42R { get; set; }
+        public string C44R { get; set; }
+        public string C46R { get; set; }
+        public string C48R { get; set; }
+        public string C50R { get; set; }
+        public string C52R { get; set; }
+        public string C54R { get; set; }
+        public string C56R { get; set; }
+        public string C58R { get; set; }
+        public string C60R { get; set; }
+        public string C62R { get; set; }
+        public string C36L { get; set; }
+        public string C38L { get; set; }
+        public string C40L { get; set; }
+        public string C42L { get; set; }
+        public string C44L { get; set; }
+        public string C46L { get; set; }
+        public string C48L { get; set; }
+        public string C50L { get; set; }
+        public string C52L { get; set; }
+        public string C54L { get; set; }
+        public string C56L { get; set; }
+        public string C58L { get; set; }
+        public string C60L { get; set; }
+        public string C62L { get; set; }
+        public string C34S { get; set; }
+        public string C36S { get; set; }
+        public string C38S { get; set; }
+        public string C40S { get; set; }
+        public string C42S { get; set; }
+        public string C44S { get; set; }
+        public string C46S { get; set; }
+        public string Sub_Total { get; set; }
+        public string C30W_R_30L { get; set; }
+        public string C30W_L_32L { get; set; }
+        public string C32W_R_30L { get; set; }
+        public string C32W_L_32L { get; set; }
+        public string C34W_S_38L { get; set; }
+        public string C34W_S_39L { get; set; }
+        public string C34W_R_30L { get; set; }
+        public string C34W_L_32L { get; set; }
+        public string C34W_L_34L { get; set; }
+        public string C36W_S_28L { get; set; }
+        public string C36W_S_29L { get; set; }
+        public string C36W_R_30L { get; set; }
+        public string C36W_R_31L { get; set; }
+        public string C38W_S_28L { get; set; }
+        public string C38W_R_30L { get; set; }
+        public string C38W_R_31L { get; set; }
+        public string C38W_L_32L { get; set; }
+        public string C38W_L_34L { get; set; }
+        public string C40W_S_28L { get; set; }
+        public string C40W_S_29L { get; set; }
+        public string C40W_R_30L { get; set; }
+        public string C40W_R_31L { get; set; }
+        public string C40W_L_32L { get; set; }
+        public string C40W_L_34L { get; set; }
+        public string C42W_R_30L { get; set; }
+        public string C42W_L_32L { get; set; }
+        public string C42W_L_34L { get; set; }
+        public string C44W_R_30L { get; set; }
+        public string C44W_L_32L { get; set; }
+        public string C44W_L_34L { get; set; }
+        public string C46W_R_30L { get; set; }
+        public string C46W_L_32L { get; set; }
+        public string C48W_R_30L { get; set; }
+        public string C48W_L_32L { get; set; }
+        public string C50W_L_32L { get; set; }
+        public string yaowei { get; set; }
+        public string C30W_29L { get; set; }
+        public string C30W_30L { get; set; }
+        public string C30W_32L { get; set; }
+        public string C31W_30L { get; set; }
+        public string C31W_32L { get; set; }
+        public string C32W_28L { get; set; }
+        public string C32W_30L { get; set; }
+        public string C32W_32L { get; set; }
+        public string C33W_29L { get; set; }
+        public string C33W_30L { get; set; }
+        public string C33W_32L { get; set; }
+        public string C33W_34L { get; set; }
+        public string C34W_29L { get; set; }
+        public string C34W_30L { get; set; }
+        public string C34W_31L { get; set; }
+        public string C34W_32L { get; set; }
+        public string C34W_34L { get; set; }
+        public string C36W_29L { get; set; }
+        public string C36W_30L { get; set; }
+        public string C36W_32L { get; set; }
+        public string C36W_34L { get; set; }
+        public string C38W_29L { get; set; }
+        public string C38W_30L { get; set; }
+        public string C38W_32L { get; set; }
+        public string C38W_34L { get; set; }
+        public string C40W_28L { get; set; }
+        public string C40W_30L { get; set; }
+        public string C40W_32L { get; set; }
+        public string C40W_34L { get; set; }
+        public string C42W_30L { get; set; }
+        public string C42W_32L { get; set; }
+        public string C42W_34L { get; set; }
+        public string C44W_29L { get; set; }
+        public string C44W_30L { get; set; }
+        public string C44W_32L { get; set; }
+
+    }
+}

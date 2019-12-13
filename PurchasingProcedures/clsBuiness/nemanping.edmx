@@ -8,6 +8,11 @@
         <EntityContainer Name="nemanpingModelStoreContainer">
           <EntitySet Name="C_PANT" EntityType="nemanpingModel.Store.C_PANT" store:Type="Tables" Schema="dbo" Table="C.PANT" />
           <EntitySet Name="CaiDan" EntityType="nemanpingModel.Store.CaiDan" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CaiDan_C_PANT" EntityType="nemanpingModel.Store.CaiDan_C_PANT" store:Type="Tables" Schema="dbo" Table="CaiDan_C.PANT" />
+          <EntitySet Name="CaiDan_D_PANT" EntityType="nemanpingModel.Store.CaiDan_D_PANT" store:Type="Tables" Schema="dbo" Table="CaiDan_D.PANT" />
+          <EntitySet Name="CaiDan_RGL2" EntityType="nemanpingModel.Store.CaiDan_RGL2" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CaiDan_RGLJ" EntityType="nemanpingModel.Store.CaiDan_RGLJ" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CaiDan_SLIM" EntityType="nemanpingModel.Store.CaiDan_SLIM" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ChiMa_Dapeibiao" EntityType="nemanpingModel.Store.ChiMa_Dapeibiao" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="D_PANT" EntityType="nemanpingModel.Store.D_PANT" store:Type="Tables" Schema="dbo" Table="D.PANT" />
           <EntitySet Name="DanHao" EntityType="nemanpingModel.Store.DanHao" store:Type="Tables" Schema="dbo" />
@@ -131,6 +136,300 @@
           <Property Name="C42S" Type="varchar" MaxLength="255" />
           <Property Name="C44S" Type="varchar" MaxLength="255" />
           <Property Name="C46S" Type="varchar" MaxLength="255" />
+          <Property Name="Sub_Total" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="CaiDan_C_PANT">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DESC" Type="varchar" MaxLength="255" />
+          <Property Name="FABRIC" Type="varchar" MaxLength="255" />
+          <Property Name="STYLE" Type="varchar" MaxLength="255" />
+          <Property Name="shuoming" Type="varchar" MaxLength="255" />
+          <Property Name="Jacket" Type="varchar" MaxLength="255" />
+          <Property Name="Pant" Type="varchar" MaxLength="255" />
+          <Property Name="LABEL" Type="varchar" MaxLength="255" />
+          <Property Name="JiaGongchang" Type="varchar" MaxLength="255" />
+          <Property Name="CaiDanHao" Type="varchar" MaxLength="255" />
+          <Property Name="ZhiDanRiqi" Type="varchar" MaxLength="255" />
+          <Property Name="JiaoHuoRiqi" Type="varchar" MaxLength="255" />
+          <Property Name="RN_NO" Type="varchar" MaxLength="255" />
+          <Property Name="MianLiao" Type="varchar" MaxLength="255" />
+          <Property Name="LOT" Type="varchar" MaxLength="255" />
+          <Property Name="ChimaSTYLE" Type="varchar" MaxLength="255" />
+          <Property Name="ART" Type="varchar" MaxLength="255" />
+          <Property Name="COLOR" Type="varchar" MaxLength="255" />
+          <Property Name="COLORID" Type="varchar" MaxLength="255" />
+          <Property Name="JACKET_PANT" Type="varchar" MaxLength="255" />
+          <Property Name="30W_29L" Type="varchar" MaxLength="255" />
+          <Property Name="30W_30L" Type="varchar" MaxLength="255" />
+          <Property Name="30W_32L" Type="varchar" MaxLength="255" />
+          <Property Name="31W_30L" Type="varchar" MaxLength="255" />
+          <Property Name="31W_32L" Type="varchar" MaxLength="255" />
+          <Property Name="32W_28L" Type="varchar" MaxLength="255" />
+          <Property Name="32W_30L" Type="varchar" MaxLength="255" />
+          <Property Name="32W_32L" Type="varchar" MaxLength="255" />
+          <Property Name="33W_29L" Type="varchar" MaxLength="255" />
+          <Property Name="33W_30L" Type="varchar" MaxLength="255" />
+          <Property Name="33W_32L" Type="varchar" MaxLength="255" />
+          <Property Name="33W_34L" Type="varchar" MaxLength="255" />
+          <Property Name="34W_29L" Type="varchar" MaxLength="255" />
+          <Property Name="34W_30L" Type="varchar" MaxLength="255" />
+          <Property Name="34W_31L" Type="varchar" MaxLength="255" />
+          <Property Name="34W_32L" Type="varchar" MaxLength="255" />
+          <Property Name="34W_34L" Type="varchar" MaxLength="255" />
+          <Property Name="36W_29L" Type="varchar" MaxLength="255" />
+          <Property Name="36W_30L" Type="varchar" MaxLength="255" />
+          <Property Name="36W_32L" Type="varchar" MaxLength="255" />
+          <Property Name="36W_34L" Type="varchar" MaxLength="255" />
+          <Property Name="38W_29L" Type="varchar" MaxLength="255" />
+          <Property Name="38W_30L" Type="varchar" MaxLength="255" />
+          <Property Name="38W_32L" Type="varchar" MaxLength="255" />
+          <Property Name="38W_34L" Type="varchar" MaxLength="255" />
+          <Property Name="40W_28L" Type="varchar" MaxLength="255" />
+          <Property Name="40W_30L" Type="varchar" MaxLength="255" />
+          <Property Name="40W_32L" Type="varchar" MaxLength="255" />
+          <Property Name="40W_34L" Type="varchar" MaxLength="255" />
+          <Property Name="42W_30L" Type="varchar" MaxLength="255" />
+          <Property Name="42W_32L" Type="varchar" MaxLength="255" />
+          <Property Name="42W_34L" Type="varchar" MaxLength="255" />
+          <Property Name="44W_29L" Type="varchar" MaxLength="255" />
+          <Property Name="44W_30L" Type="varchar" MaxLength="255" />
+          <Property Name="44W_32L" Type="varchar" MaxLength="255" />
+          <Property Name="Sub_Total" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="CaiDan_D_PANT">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DESC" Type="varchar" MaxLength="255" />
+          <Property Name="FABRIC" Type="varchar" MaxLength="255" />
+          <Property Name="STYLE" Type="varchar" MaxLength="255" />
+          <Property Name="shuoming" Type="varchar" MaxLength="255" />
+          <Property Name="Jacket" Type="varchar" MaxLength="255" />
+          <Property Name="Pant" Type="varchar" MaxLength="255" />
+          <Property Name="LABEL" Type="varchar" MaxLength="255" />
+          <Property Name="JiaGongchang" Type="varchar" MaxLength="255" />
+          <Property Name="CaiDanHao" Type="varchar" MaxLength="255" />
+          <Property Name="ZhiDanRiqi" Type="varchar" MaxLength="255" />
+          <Property Name="JiaoHuoRiqi" Type="varchar" MaxLength="255" />
+          <Property Name="RN_NO" Type="varchar" MaxLength="255" />
+          <Property Name="MianLiao" Type="varchar" MaxLength="255" />
+          <Property Name="LOT" Type="varchar" MaxLength="255" />
+          <Property Name="ChimaSTYLE" Type="varchar" MaxLength="255" />
+          <Property Name="ART" Type="varchar" MaxLength="255" />
+          <Property Name="COLOR" Type="varchar" MaxLength="255" />
+          <Property Name="COLORID" Type="varchar" MaxLength="255" />
+          <Property Name="JACKET_PANT" Type="varchar" MaxLength="255" />
+          <Property Name="30W_R_30L" Type="varchar" MaxLength="255" />
+          <Property Name="30W_L_32L" Type="varchar" MaxLength="255" />
+          <Property Name="32W_R_30L" Type="varchar" MaxLength="255" />
+          <Property Name="32W_L_32L" Type="varchar" MaxLength="255" />
+          <Property Name="34W_S_28L" Type="varchar" MaxLength="255" />
+          <Property Name="34W_S_29L" Type="varchar" MaxLength="255" />
+          <Property Name="34W_R_30L" Type="varchar" MaxLength="255" />
+          <Property Name="34W_L_32L" Type="varchar" MaxLength="255" />
+          <Property Name="34W_L_34L" Type="varchar" MaxLength="255" />
+          <Property Name="36W_S_28L" Type="varchar" MaxLength="255" />
+          <Property Name="36W_S_29L" Type="varchar" MaxLength="255" />
+          <Property Name="36W_R_30L" Type="varchar" MaxLength="255" />
+          <Property Name="36W_R_31L" Type="varchar" MaxLength="255" />
+          <Property Name="38W_S_28L" Type="varchar" MaxLength="255" />
+          <Property Name="38W_R_30L" Type="varchar" MaxLength="255" />
+          <Property Name="38W_R_31L" Type="varchar" MaxLength="255" />
+          <Property Name="38W_L_32L" Type="varchar" MaxLength="255" />
+          <Property Name="38W_L_34L" Type="varchar" MaxLength="255" />
+          <Property Name="40W_S_28L" Type="varchar" MaxLength="255" />
+          <Property Name="40W_S_29L" Type="varchar" MaxLength="255" />
+          <Property Name="40W_R_30L" Type="varchar" MaxLength="255" />
+          <Property Name="40W_R_31L" Type="varchar" MaxLength="255" />
+          <Property Name="40W_L_32L" Type="varchar" MaxLength="255" />
+          <Property Name="40W_L_34L" Type="varchar" MaxLength="255" />
+          <Property Name="42W_R_30L" Type="varchar" MaxLength="255" />
+          <Property Name="42W_L_32L" Type="varchar" MaxLength="255" />
+          <Property Name="42W_L_34L" Type="varchar" MaxLength="255" />
+          <Property Name="44W_R_30L" Type="varchar" MaxLength="255" />
+          <Property Name="44W_L_32L" Type="varchar" MaxLength="255" />
+          <Property Name="44W_L_34L" Type="varchar" MaxLength="255" />
+          <Property Name="46W_R_30L" Type="varchar" MaxLength="255" />
+          <Property Name="46W_L_32L" Type="varchar" MaxLength="255" />
+          <Property Name="48W_R_30L" Type="varchar" MaxLength="255" />
+          <Property Name="48W_L_32L" Type="varchar" MaxLength="255" />
+          <Property Name="50W_L_32L" Type="varchar" MaxLength="255" />
+          <Property Name="Sub_Total" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="CaiDan_RGL2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DESC" Type="varchar" MaxLength="255" />
+          <Property Name="FABRIC" Type="varchar" MaxLength="255" />
+          <Property Name="STYLE" Type="varchar" MaxLength="255" />
+          <Property Name="shuoming" Type="varchar" MaxLength="255" />
+          <Property Name="Jacket" Type="varchar" MaxLength="255" />
+          <Property Name="Pant" Type="varchar" MaxLength="255" />
+          <Property Name="LABEL" Type="varchar" MaxLength="255" />
+          <Property Name="JiaGongchang" Type="varchar" MaxLength="255" />
+          <Property Name="CaiDanHao" Type="varchar" MaxLength="255" />
+          <Property Name="ZhiDanRiqi" Type="varchar" MaxLength="255" />
+          <Property Name="JiaoHuoRiqi" Type="varchar" MaxLength="255" />
+          <Property Name="RN_NO" Type="varchar" MaxLength="255" />
+          <Property Name="MianLiao" Type="varchar" MaxLength="255" />
+          <Property Name="34R" Type="varchar" MaxLength="255" />
+          <Property Name="36R" Type="varchar" MaxLength="255" />
+          <Property Name="38R" Type="varchar" MaxLength="255" />
+          <Property Name="40R" Type="varchar" MaxLength="255" />
+          <Property Name="42R" Type="varchar" MaxLength="255" />
+          <Property Name="44R" Type="varchar" MaxLength="255" />
+          <Property Name="46R" Type="varchar" MaxLength="255" />
+          <Property Name="48R" Type="varchar" MaxLength="255" />
+          <Property Name="50R" Type="varchar" MaxLength="255" />
+          <Property Name="52R" Type="varchar" MaxLength="255" />
+          <Property Name="54R" Type="varchar" MaxLength="255" />
+          <Property Name="56R" Type="varchar" MaxLength="255" />
+          <Property Name="58R" Type="varchar" MaxLength="255" />
+          <Property Name="60R" Type="varchar" MaxLength="255" />
+          <Property Name="62R" Type="varchar" MaxLength="255" />
+          <Property Name="36L" Type="varchar" MaxLength="255" />
+          <Property Name="38L" Type="varchar" MaxLength="255" />
+          <Property Name="40L" Type="varchar" MaxLength="255" />
+          <Property Name="42L" Type="varchar" MaxLength="255" />
+          <Property Name="44L" Type="varchar" MaxLength="255" />
+          <Property Name="46L" Type="varchar" MaxLength="255" />
+          <Property Name="48L" Type="varchar" MaxLength="255" />
+          <Property Name="50L" Type="varchar" MaxLength="255" />
+          <Property Name="52L" Type="varchar" MaxLength="255" />
+          <Property Name="54L" Type="varchar" MaxLength="255" />
+          <Property Name="56L" Type="varchar" MaxLength="255" />
+          <Property Name="58L" Type="varchar" MaxLength="255" />
+          <Property Name="60L" Type="varchar" MaxLength="255" />
+          <Property Name="62L" Type="varchar" MaxLength="255" />
+          <Property Name="34S" Type="varchar" MaxLength="255" />
+          <Property Name="36S" Type="varchar" MaxLength="255" />
+          <Property Name="38S" Type="varchar" MaxLength="255" />
+          <Property Name="40S" Type="varchar" MaxLength="255" />
+          <Property Name="42S" Type="varchar" MaxLength="255" />
+          <Property Name="44S" Type="varchar" MaxLength="255" />
+          <Property Name="46S" Type="varchar" MaxLength="255" />
+          <Property Name="Sub_Total" Type="varchar" MaxLength="255" />
+          <Property Name="LOT" Type="varchar" MaxLength="255" />
+          <Property Name="ChimaSTYLE" Type="varchar" MaxLength="255" />
+          <Property Name="ART" Type="varchar" MaxLength="255" />
+          <Property Name="COLOR" Type="varchar" MaxLength="255" />
+          <Property Name="COLORID" Type="varchar" MaxLength="255" />
+          <Property Name="JACKET_PANT" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="CaiDan_RGLJ">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DESC" Type="varchar" MaxLength="255" />
+          <Property Name="FABRIC" Type="varchar" MaxLength="255" />
+          <Property Name="STYLE" Type="varchar" MaxLength="255" />
+          <Property Name="shuoming" Type="varchar" MaxLength="255" />
+          <Property Name="Jacket" Type="varchar" MaxLength="255" />
+          <Property Name="Pant" Type="varchar" MaxLength="255" />
+          <Property Name="LABEL" Type="varchar" MaxLength="255" />
+          <Property Name="JiaGongchang" Type="varchar" MaxLength="255" />
+          <Property Name="CaiDanHao" Type="varchar" MaxLength="255" />
+          <Property Name="ZhiDanRiqi" Type="varchar" MaxLength="255" />
+          <Property Name="JiaoHuoRiqi" Type="varchar" MaxLength="255" />
+          <Property Name="RN_NO" Type="varchar" MaxLength="255" />
+          <Property Name="MianLiao" Type="varchar" MaxLength="255" />
+          <Property Name="LOT" Type="varchar" MaxLength="255" />
+          <Property Name="ChimaSTYLE" Type="varchar" MaxLength="255" />
+          <Property Name="ART" Type="varchar" MaxLength="255" />
+          <Property Name="COLOR" Type="varchar" MaxLength="255" />
+          <Property Name="COLORID" Type="varchar" MaxLength="255" />
+          <Property Name="JACKET_PANT" Type="varchar" MaxLength="255" />
+          <Property Name="34R" Type="varchar" MaxLength="255" />
+          <Property Name="36R" Type="varchar" MaxLength="255" />
+          <Property Name="38R" Type="varchar" MaxLength="255" />
+          <Property Name="40R" Type="varchar" MaxLength="255" />
+          <Property Name="42R" Type="varchar" MaxLength="255" />
+          <Property Name="44R" Type="varchar" MaxLength="255" />
+          <Property Name="46R" Type="varchar" MaxLength="255" />
+          <Property Name="48R" Type="varchar" MaxLength="255" />
+          <Property Name="50R" Type="varchar" MaxLength="255" />
+          <Property Name="52R" Type="varchar" MaxLength="255" />
+          <Property Name="54R" Type="varchar" MaxLength="255" />
+          <Property Name="56R" Type="varchar" MaxLength="255" />
+          <Property Name="58R" Type="varchar" MaxLength="255" />
+          <Property Name="60R" Type="varchar" MaxLength="255" />
+          <Property Name="62R" Type="varchar" MaxLength="255" />
+          <Property Name="36L" Type="varchar" MaxLength="255" />
+          <Property Name="38L" Type="varchar" MaxLength="255" />
+          <Property Name="40L" Type="varchar" MaxLength="255" />
+          <Property Name="42L" Type="varchar" MaxLength="255" />
+          <Property Name="44L" Type="varchar" MaxLength="255" />
+          <Property Name="46L" Type="varchar" MaxLength="255" />
+          <Property Name="48L" Type="varchar" MaxLength="255" />
+          <Property Name="50L" Type="varchar" MaxLength="255" />
+          <Property Name="52L" Type="varchar" MaxLength="255" />
+          <Property Name="54L" Type="varchar" MaxLength="255" />
+          <Property Name="56L" Type="varchar" MaxLength="255" />
+          <Property Name="58L" Type="varchar" MaxLength="255" />
+          <Property Name="60L" Type="varchar" MaxLength="255" />
+          <Property Name="62L" Type="varchar" MaxLength="255" />
+          <Property Name="34S" Type="varchar" MaxLength="255" />
+          <Property Name="36S" Type="varchar" MaxLength="255" />
+          <Property Name="38S" Type="varchar" MaxLength="255" />
+          <Property Name="40S" Type="varchar" MaxLength="255" />
+          <Property Name="42S" Type="varchar" MaxLength="255" />
+          <Property Name="44S" Type="varchar" MaxLength="255" />
+          <Property Name="46S" Type="varchar" MaxLength="255" />
+          <Property Name="Sub_Total" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="CaiDan_SLIM">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DESC" Type="varchar" MaxLength="255" />
+          <Property Name="FABRIC" Type="varchar" MaxLength="255" />
+          <Property Name="STYLE" Type="varchar" MaxLength="255" />
+          <Property Name="shuoming" Type="varchar" MaxLength="255" />
+          <Property Name="Jacket" Type="varchar" MaxLength="255" />
+          <Property Name="Pant" Type="varchar" MaxLength="255" />
+          <Property Name="LABEL" Type="varchar" MaxLength="255" />
+          <Property Name="JiaGongchang" Type="varchar" MaxLength="255" />
+          <Property Name="CaiDanHao" Type="varchar" MaxLength="255" />
+          <Property Name="ZhiDanRiqi" Type="varchar" MaxLength="255" />
+          <Property Name="JiaoHuoRiqi" Type="varchar" MaxLength="255" />
+          <Property Name="RN_NO" Type="varchar" MaxLength="255" />
+          <Property Name="MianLiao" Type="varchar" MaxLength="255" />
+          <Property Name="LOT" Type="varchar" MaxLength="255" />
+          <Property Name="ChimaSTYLE" Type="varchar" MaxLength="255" />
+          <Property Name="ART" Type="varchar" MaxLength="255" />
+          <Property Name="COLOR" Type="varchar" MaxLength="255" />
+          <Property Name="COLORID" Type="varchar" MaxLength="255" />
+          <Property Name="JACKET_PANT" Type="varchar" MaxLength="255" />
+          <Property Name="34R" Type="varchar" MaxLength="255" />
+          <Property Name="36R" Type="varchar" MaxLength="255" />
+          <Property Name="38R" Type="varchar" MaxLength="255" />
+          <Property Name="40R" Type="varchar" MaxLength="255" />
+          <Property Name="42R" Type="varchar" MaxLength="255" />
+          <Property Name="44R" Type="varchar" MaxLength="255" />
+          <Property Name="46R" Type="varchar" MaxLength="255" />
+          <Property Name="48R" Type="varchar" MaxLength="255" />
+          <Property Name="36L" Type="varchar" MaxLength="255" />
+          <Property Name="38L" Type="varchar" MaxLength="255" />
+          <Property Name="40L" Type="varchar" MaxLength="255" />
+          <Property Name="42L" Type="varchar" MaxLength="255" />
+          <Property Name="44L" Type="varchar" MaxLength="255" />
+          <Property Name="46L" Type="varchar" MaxLength="255" />
+          <Property Name="48L" Type="varchar" MaxLength="255" />
+          <Property Name="34S" Type="varchar" MaxLength="255" />
+          <Property Name="36S" Type="varchar" MaxLength="255" />
+          <Property Name="38S" Type="varchar" MaxLength="255" />
+          <Property Name="40S" Type="varchar" MaxLength="255" />
+          <Property Name="42S" Type="varchar" MaxLength="255" />
+          <Property Name="44S" Type="varchar" MaxLength="255" />
+          <Property Name="46S" Type="varchar" MaxLength="255" />
           <Property Name="Sub_Total" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="ChiMa_Dapeibiao">
@@ -510,9 +809,14 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="nemanpingModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="nemanpingEntities4" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="nemanpingEntities9" p1:LazyLoadingEnabled="true">
           <EntitySet Name="C_PANT" EntityType="nemanpingModel.C_PANT" />
           <EntitySet Name="CaiDan" EntityType="nemanpingModel.CaiDan" />
+          <EntitySet Name="CaiDan_C_PANT" EntityType="nemanpingModel.CaiDan_C_PANT" />
+          <EntitySet Name="CaiDan_D_PANT" EntityType="nemanpingModel.CaiDan_D_PANT" />
+          <EntitySet Name="CaiDan_RGL2" EntityType="nemanpingModel.CaiDan_RGL2" />
+          <EntitySet Name="CaiDan_RGLJ" EntityType="nemanpingModel.CaiDan_RGLJ" />
+          <EntitySet Name="CaiDan_SLIM" EntityType="nemanpingModel.CaiDan_SLIM" />
           <EntitySet Name="ChiMa_Dapeibiao" EntityType="nemanpingModel.ChiMa_Dapeibiao" />
           <EntitySet Name="D_PANT" EntityType="nemanpingModel.D_PANT" />
           <EntitySet Name="DanHao" EntityType="nemanpingModel.DanHao" />
@@ -629,6 +933,300 @@
           <Property Name="C58L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="C60L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="C62L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C34S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C46S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Sub_Total" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CaiDan_C_PANT">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DESC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="FABRIC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="STYLE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="shuoming" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Jacket" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Pant" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="LABEL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JiaGongchang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="CaiDanHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ZhiDanRiqi" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JiaoHuoRiqi" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="RN_NO" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="MianLiao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="LOT" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ChimaSTYLE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ART" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="COLOR" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="COLORID" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JACKET_PANT" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C30W_29L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C30W_30L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C30W_32L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C31W_30L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C31W_32L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C32W_28L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C32W_30L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C32W_32L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C33W_29L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C33W_30L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C33W_32L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C33W_34L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C34W_29L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C34W_30L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C34W_31L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C34W_32L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C34W_34L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36W_29L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36W_30L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36W_32L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36W_34L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38W_29L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38W_30L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38W_32L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38W_34L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40W_28L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40W_30L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40W_32L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40W_34L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42W_30L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42W_32L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42W_34L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44W_29L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44W_30L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44W_32L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Sub_Total" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CaiDan_D_PANT">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DESC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="FABRIC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="STYLE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="shuoming" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Jacket" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Pant" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="LABEL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JiaGongchang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="CaiDanHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ZhiDanRiqi" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JiaoHuoRiqi" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="RN_NO" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="MianLiao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="LOT" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ChimaSTYLE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ART" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="COLOR" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="COLORID" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JACKET_PANT" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C30W_R_30L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C30W_L_32L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C32W_R_30L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C32W_L_32L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C34W_S_28L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C34W_S_29L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C34W_R_30L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C34W_L_32L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C34W_L_34L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36W_S_28L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36W_S_29L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36W_R_30L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36W_R_31L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38W_S_28L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38W_R_30L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38W_R_31L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38W_L_32L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38W_L_34L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40W_S_28L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40W_S_29L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40W_R_30L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40W_R_31L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40W_L_32L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40W_L_34L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42W_R_30L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42W_L_32L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42W_L_34L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44W_R_30L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44W_L_32L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44W_L_34L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C46W_R_30L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C46W_L_32L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C48W_R_30L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C48W_L_32L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C50W_L_32L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Sub_Total" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CaiDan_RGL2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DESC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="FABRIC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="STYLE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="shuoming" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Jacket" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Pant" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="LABEL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JiaGongchang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="CaiDanHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ZhiDanRiqi" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JiaoHuoRiqi" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="RN_NO" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="MianLiao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C34R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C46R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C48R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C50R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C52R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C54R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C56R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C58R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C60R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C62R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C46L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C48L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C50L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C52L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C54L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C56L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C58L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C60L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C62L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C34S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C46S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Sub_Total" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="LOT" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ChimaSTYLE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ART" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="COLOR" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="COLORID" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JACKET_PANT" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CaiDan_RGLJ">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DESC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="FABRIC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="STYLE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="shuoming" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Jacket" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Pant" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="LABEL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JiaGongchang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="CaiDanHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ZhiDanRiqi" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JiaoHuoRiqi" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="RN_NO" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="MianLiao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="LOT" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ChimaSTYLE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ART" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="COLOR" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="COLORID" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JACKET_PANT" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C34R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C46R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C48R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C50R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C52R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C54R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C56R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C58R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C60R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C62R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C46L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C48L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C50L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C52L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C54L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C56L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C58L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C60L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C62L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C34S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C46S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Sub_Total" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CaiDan_SLIM">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DESC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="FABRIC" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="STYLE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="shuoming" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Jacket" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Pant" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="LABEL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JiaGongchang" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="CaiDanHao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ZhiDanRiqi" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JiaoHuoRiqi" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="RN_NO" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="MianLiao" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="LOT" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ChimaSTYLE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ART" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="COLOR" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="COLORID" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="JACKET_PANT" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C34R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C46R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C48R" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C36L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C38L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C40L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C42L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C44L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C46L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="C48L" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="C34S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="C36S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="C38S" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
@@ -1015,7 +1613,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="nemanpingModelStoreContainer" CdmEntityContainer="nemanpingEntities4">
+        <EntityContainerMapping StorageEntityContainer="nemanpingModelStoreContainer" CdmEntityContainer="nemanpingEntities9">
           <EntitySetMapping Name="C_PANT">
             <EntityTypeMapping TypeName="nemanpingModel.C_PANT">
               <MappingFragment StoreEntitySet="C_PANT">
@@ -1124,6 +1722,305 @@
                 <ScalarProperty Name="C42S" ColumnName="C42S" />
                 <ScalarProperty Name="C44S" ColumnName="C44S" />
                 <ScalarProperty Name="C46S" ColumnName="C46S" />
+                <ScalarProperty Name="Sub_Total" ColumnName="Sub_Total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CaiDan_C_PANT">
+            <EntityTypeMapping TypeName="nemanpingModel.CaiDan_C_PANT">
+              <MappingFragment StoreEntitySet="CaiDan_C_PANT">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="FABRIC" ColumnName="FABRIC" />
+                <ScalarProperty Name="STYLE" ColumnName="STYLE" />
+                <ScalarProperty Name="shuoming" ColumnName="shuoming" />
+                <ScalarProperty Name="Jacket" ColumnName="Jacket" />
+                <ScalarProperty Name="Pant" ColumnName="Pant" />
+                <ScalarProperty Name="LABEL" ColumnName="LABEL" />
+                <ScalarProperty Name="JiaGongchang" ColumnName="JiaGongchang" />
+                <ScalarProperty Name="CaiDanHao" ColumnName="CaiDanHao" />
+                <ScalarProperty Name="ZhiDanRiqi" ColumnName="ZhiDanRiqi" />
+                <ScalarProperty Name="JiaoHuoRiqi" ColumnName="JiaoHuoRiqi" />
+                <ScalarProperty Name="RN_NO" ColumnName="RN_NO" />
+                <ScalarProperty Name="MianLiao" ColumnName="MianLiao" />
+                <ScalarProperty Name="LOT" ColumnName="LOT" />
+                <ScalarProperty Name="ChimaSTYLE" ColumnName="ChimaSTYLE" />
+                <ScalarProperty Name="ART" ColumnName="ART" />
+                <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+                <ScalarProperty Name="COLORID" ColumnName="COLORID" />
+                <ScalarProperty Name="JACKET_PANT" ColumnName="JACKET_PANT" />
+                <ScalarProperty Name="C30W_29L" ColumnName="30W_29L" />
+                <ScalarProperty Name="C30W_30L" ColumnName="30W_30L" />
+                <ScalarProperty Name="C30W_32L" ColumnName="30W_32L" />
+                <ScalarProperty Name="C31W_30L" ColumnName="31W_30L" />
+                <ScalarProperty Name="C31W_32L" ColumnName="31W_32L" />
+                <ScalarProperty Name="C32W_28L" ColumnName="32W_28L" />
+                <ScalarProperty Name="C32W_30L" ColumnName="32W_30L" />
+                <ScalarProperty Name="C32W_32L" ColumnName="32W_32L" />
+                <ScalarProperty Name="C33W_29L" ColumnName="33W_29L" />
+                <ScalarProperty Name="C33W_30L" ColumnName="33W_30L" />
+                <ScalarProperty Name="C33W_32L" ColumnName="33W_32L" />
+                <ScalarProperty Name="C33W_34L" ColumnName="33W_34L" />
+                <ScalarProperty Name="C34W_29L" ColumnName="34W_29L" />
+                <ScalarProperty Name="C34W_30L" ColumnName="34W_30L" />
+                <ScalarProperty Name="C34W_31L" ColumnName="34W_31L" />
+                <ScalarProperty Name="C34W_32L" ColumnName="34W_32L" />
+                <ScalarProperty Name="C34W_34L" ColumnName="34W_34L" />
+                <ScalarProperty Name="C36W_29L" ColumnName="36W_29L" />
+                <ScalarProperty Name="C36W_30L" ColumnName="36W_30L" />
+                <ScalarProperty Name="C36W_32L" ColumnName="36W_32L" />
+                <ScalarProperty Name="C36W_34L" ColumnName="36W_34L" />
+                <ScalarProperty Name="C38W_29L" ColumnName="38W_29L" />
+                <ScalarProperty Name="C38W_30L" ColumnName="38W_30L" />
+                <ScalarProperty Name="C38W_32L" ColumnName="38W_32L" />
+                <ScalarProperty Name="C38W_34L" ColumnName="38W_34L" />
+                <ScalarProperty Name="C40W_28L" ColumnName="40W_28L" />
+                <ScalarProperty Name="C40W_30L" ColumnName="40W_30L" />
+                <ScalarProperty Name="C40W_32L" ColumnName="40W_32L" />
+                <ScalarProperty Name="C40W_34L" ColumnName="40W_34L" />
+                <ScalarProperty Name="C42W_30L" ColumnName="42W_30L" />
+                <ScalarProperty Name="C42W_32L" ColumnName="42W_32L" />
+                <ScalarProperty Name="C42W_34L" ColumnName="42W_34L" />
+                <ScalarProperty Name="C44W_29L" ColumnName="44W_29L" />
+                <ScalarProperty Name="C44W_30L" ColumnName="44W_30L" />
+                <ScalarProperty Name="C44W_32L" ColumnName="44W_32L" />
+                <ScalarProperty Name="Sub_Total" ColumnName="Sub_Total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CaiDan_D_PANT">
+            <EntityTypeMapping TypeName="nemanpingModel.CaiDan_D_PANT">
+              <MappingFragment StoreEntitySet="CaiDan_D_PANT">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="FABRIC" ColumnName="FABRIC" />
+                <ScalarProperty Name="STYLE" ColumnName="STYLE" />
+                <ScalarProperty Name="shuoming" ColumnName="shuoming" />
+                <ScalarProperty Name="Jacket" ColumnName="Jacket" />
+                <ScalarProperty Name="Pant" ColumnName="Pant" />
+                <ScalarProperty Name="LABEL" ColumnName="LABEL" />
+                <ScalarProperty Name="JiaGongchang" ColumnName="JiaGongchang" />
+                <ScalarProperty Name="CaiDanHao" ColumnName="CaiDanHao" />
+                <ScalarProperty Name="ZhiDanRiqi" ColumnName="ZhiDanRiqi" />
+                <ScalarProperty Name="JiaoHuoRiqi" ColumnName="JiaoHuoRiqi" />
+                <ScalarProperty Name="RN_NO" ColumnName="RN_NO" />
+                <ScalarProperty Name="MianLiao" ColumnName="MianLiao" />
+                <ScalarProperty Name="LOT" ColumnName="LOT" />
+                <ScalarProperty Name="ChimaSTYLE" ColumnName="ChimaSTYLE" />
+                <ScalarProperty Name="ART" ColumnName="ART" />
+                <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+                <ScalarProperty Name="COLORID" ColumnName="COLORID" />
+                <ScalarProperty Name="JACKET_PANT" ColumnName="JACKET_PANT" />
+                <ScalarProperty Name="C30W_R_30L" ColumnName="30W_R_30L" />
+                <ScalarProperty Name="C30W_L_32L" ColumnName="30W_L_32L" />
+                <ScalarProperty Name="C32W_R_30L" ColumnName="32W_R_30L" />
+                <ScalarProperty Name="C32W_L_32L" ColumnName="32W_L_32L" />
+                <ScalarProperty Name="C34W_S_28L" ColumnName="34W_S_28L" />
+                <ScalarProperty Name="C34W_S_29L" ColumnName="34W_S_29L" />
+                <ScalarProperty Name="C34W_R_30L" ColumnName="34W_R_30L" />
+                <ScalarProperty Name="C34W_L_32L" ColumnName="34W_L_32L" />
+                <ScalarProperty Name="C34W_L_34L" ColumnName="34W_L_34L" />
+                <ScalarProperty Name="C36W_S_28L" ColumnName="36W_S_28L" />
+                <ScalarProperty Name="C36W_S_29L" ColumnName="36W_S_29L" />
+                <ScalarProperty Name="C36W_R_30L" ColumnName="36W_R_30L" />
+                <ScalarProperty Name="C36W_R_31L" ColumnName="36W_R_31L" />
+                <ScalarProperty Name="C38W_S_28L" ColumnName="38W_S_28L" />
+                <ScalarProperty Name="C38W_R_30L" ColumnName="38W_R_30L" />
+                <ScalarProperty Name="C38W_R_31L" ColumnName="38W_R_31L" />
+                <ScalarProperty Name="C38W_L_32L" ColumnName="38W_L_32L" />
+                <ScalarProperty Name="C38W_L_34L" ColumnName="38W_L_34L" />
+                <ScalarProperty Name="C40W_S_28L" ColumnName="40W_S_28L" />
+                <ScalarProperty Name="C40W_S_29L" ColumnName="40W_S_29L" />
+                <ScalarProperty Name="C40W_R_30L" ColumnName="40W_R_30L" />
+                <ScalarProperty Name="C40W_R_31L" ColumnName="40W_R_31L" />
+                <ScalarProperty Name="C40W_L_32L" ColumnName="40W_L_32L" />
+                <ScalarProperty Name="C40W_L_34L" ColumnName="40W_L_34L" />
+                <ScalarProperty Name="C42W_R_30L" ColumnName="42W_R_30L" />
+                <ScalarProperty Name="C42W_L_32L" ColumnName="42W_L_32L" />
+                <ScalarProperty Name="C42W_L_34L" ColumnName="42W_L_34L" />
+                <ScalarProperty Name="C44W_R_30L" ColumnName="44W_R_30L" />
+                <ScalarProperty Name="C44W_L_32L" ColumnName="44W_L_32L" />
+                <ScalarProperty Name="C44W_L_34L" ColumnName="44W_L_34L" />
+                <ScalarProperty Name="C46W_R_30L" ColumnName="46W_R_30L" />
+                <ScalarProperty Name="C46W_L_32L" ColumnName="46W_L_32L" />
+                <ScalarProperty Name="C48W_R_30L" ColumnName="48W_R_30L" />
+                <ScalarProperty Name="C48W_L_32L" ColumnName="48W_L_32L" />
+                <ScalarProperty Name="C50W_L_32L" ColumnName="50W_L_32L" />
+                <ScalarProperty Name="Sub_Total" ColumnName="Sub_Total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CaiDan_RGL2">
+            <EntityTypeMapping TypeName="nemanpingModel.CaiDan_RGL2">
+              <MappingFragment StoreEntitySet="CaiDan_RGL2">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="FABRIC" ColumnName="FABRIC" />
+                <ScalarProperty Name="STYLE" ColumnName="STYLE" />
+                <ScalarProperty Name="shuoming" ColumnName="shuoming" />
+                <ScalarProperty Name="Jacket" ColumnName="Jacket" />
+                <ScalarProperty Name="Pant" ColumnName="Pant" />
+                <ScalarProperty Name="LABEL" ColumnName="LABEL" />
+                <ScalarProperty Name="JiaGongchang" ColumnName="JiaGongchang" />
+                <ScalarProperty Name="CaiDanHao" ColumnName="CaiDanHao" />
+                <ScalarProperty Name="ZhiDanRiqi" ColumnName="ZhiDanRiqi" />
+                <ScalarProperty Name="JiaoHuoRiqi" ColumnName="JiaoHuoRiqi" />
+                <ScalarProperty Name="RN_NO" ColumnName="RN_NO" />
+                <ScalarProperty Name="MianLiao" ColumnName="MianLiao" />
+                <ScalarProperty Name="C34R" ColumnName="34R" />
+                <ScalarProperty Name="C36R" ColumnName="36R" />
+                <ScalarProperty Name="C38R" ColumnName="38R" />
+                <ScalarProperty Name="C40R" ColumnName="40R" />
+                <ScalarProperty Name="C42R" ColumnName="42R" />
+                <ScalarProperty Name="C44R" ColumnName="44R" />
+                <ScalarProperty Name="C46R" ColumnName="46R" />
+                <ScalarProperty Name="C48R" ColumnName="48R" />
+                <ScalarProperty Name="C50R" ColumnName="50R" />
+                <ScalarProperty Name="C52R" ColumnName="52R" />
+                <ScalarProperty Name="C54R" ColumnName="54R" />
+                <ScalarProperty Name="C56R" ColumnName="56R" />
+                <ScalarProperty Name="C58R" ColumnName="58R" />
+                <ScalarProperty Name="C60R" ColumnName="60R" />
+                <ScalarProperty Name="C62R" ColumnName="62R" />
+                <ScalarProperty Name="C36L" ColumnName="36L" />
+                <ScalarProperty Name="C38L" ColumnName="38L" />
+                <ScalarProperty Name="C40L" ColumnName="40L" />
+                <ScalarProperty Name="C42L" ColumnName="42L" />
+                <ScalarProperty Name="C44L" ColumnName="44L" />
+                <ScalarProperty Name="C46L" ColumnName="46L" />
+                <ScalarProperty Name="C48L" ColumnName="48L" />
+                <ScalarProperty Name="C50L" ColumnName="50L" />
+                <ScalarProperty Name="C52L" ColumnName="52L" />
+                <ScalarProperty Name="C54L" ColumnName="54L" />
+                <ScalarProperty Name="C56L" ColumnName="56L" />
+                <ScalarProperty Name="C58L" ColumnName="58L" />
+                <ScalarProperty Name="C60L" ColumnName="60L" />
+                <ScalarProperty Name="C62L" ColumnName="62L" />
+                <ScalarProperty Name="C34S" ColumnName="34S" />
+                <ScalarProperty Name="C36S" ColumnName="36S" />
+                <ScalarProperty Name="C38S" ColumnName="38S" />
+                <ScalarProperty Name="C40S" ColumnName="40S" />
+                <ScalarProperty Name="C42S" ColumnName="42S" />
+                <ScalarProperty Name="C44S" ColumnName="44S" />
+                <ScalarProperty Name="C46S" ColumnName="46S" />
+                <ScalarProperty Name="Sub_Total" ColumnName="Sub_Total" />
+                <ScalarProperty Name="LOT" ColumnName="LOT" />
+                <ScalarProperty Name="ChimaSTYLE" ColumnName="ChimaSTYLE" />
+                <ScalarProperty Name="ART" ColumnName="ART" />
+                <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+                <ScalarProperty Name="COLORID" ColumnName="COLORID" />
+                <ScalarProperty Name="JACKET_PANT" ColumnName="JACKET_PANT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CaiDan_RGLJ">
+            <EntityTypeMapping TypeName="nemanpingModel.CaiDan_RGLJ">
+              <MappingFragment StoreEntitySet="CaiDan_RGLJ">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="FABRIC" ColumnName="FABRIC" />
+                <ScalarProperty Name="STYLE" ColumnName="STYLE" />
+                <ScalarProperty Name="shuoming" ColumnName="shuoming" />
+                <ScalarProperty Name="Jacket" ColumnName="Jacket" />
+                <ScalarProperty Name="Pant" ColumnName="Pant" />
+                <ScalarProperty Name="LABEL" ColumnName="LABEL" />
+                <ScalarProperty Name="JiaGongchang" ColumnName="JiaGongchang" />
+                <ScalarProperty Name="CaiDanHao" ColumnName="CaiDanHao" />
+                <ScalarProperty Name="ZhiDanRiqi" ColumnName="ZhiDanRiqi" />
+                <ScalarProperty Name="JiaoHuoRiqi" ColumnName="JiaoHuoRiqi" />
+                <ScalarProperty Name="RN_NO" ColumnName="RN_NO" />
+                <ScalarProperty Name="MianLiao" ColumnName="MianLiao" />
+                <ScalarProperty Name="LOT" ColumnName="LOT" />
+                <ScalarProperty Name="ChimaSTYLE" ColumnName="ChimaSTYLE" />
+                <ScalarProperty Name="ART" ColumnName="ART" />
+                <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+                <ScalarProperty Name="COLORID" ColumnName="COLORID" />
+                <ScalarProperty Name="JACKET_PANT" ColumnName="JACKET_PANT" />
+                <ScalarProperty Name="C34R" ColumnName="34R" />
+                <ScalarProperty Name="C36R" ColumnName="36R" />
+                <ScalarProperty Name="C38R" ColumnName="38R" />
+                <ScalarProperty Name="C40R" ColumnName="40R" />
+                <ScalarProperty Name="C42R" ColumnName="42R" />
+                <ScalarProperty Name="C44R" ColumnName="44R" />
+                <ScalarProperty Name="C46R" ColumnName="46R" />
+                <ScalarProperty Name="C48R" ColumnName="48R" />
+                <ScalarProperty Name="C50R" ColumnName="50R" />
+                <ScalarProperty Name="C52R" ColumnName="52R" />
+                <ScalarProperty Name="C54R" ColumnName="54R" />
+                <ScalarProperty Name="C56R" ColumnName="56R" />
+                <ScalarProperty Name="C58R" ColumnName="58R" />
+                <ScalarProperty Name="C60R" ColumnName="60R" />
+                <ScalarProperty Name="C62R" ColumnName="62R" />
+                <ScalarProperty Name="C36L" ColumnName="36L" />
+                <ScalarProperty Name="C38L" ColumnName="38L" />
+                <ScalarProperty Name="C40L" ColumnName="40L" />
+                <ScalarProperty Name="C42L" ColumnName="42L" />
+                <ScalarProperty Name="C44L" ColumnName="44L" />
+                <ScalarProperty Name="C46L" ColumnName="46L" />
+                <ScalarProperty Name="C48L" ColumnName="48L" />
+                <ScalarProperty Name="C50L" ColumnName="50L" />
+                <ScalarProperty Name="C52L" ColumnName="52L" />
+                <ScalarProperty Name="C54L" ColumnName="54L" />
+                <ScalarProperty Name="C56L" ColumnName="56L" />
+                <ScalarProperty Name="C58L" ColumnName="58L" />
+                <ScalarProperty Name="C60L" ColumnName="60L" />
+                <ScalarProperty Name="C62L" ColumnName="62L" />
+                <ScalarProperty Name="C34S" ColumnName="34S" />
+                <ScalarProperty Name="C36S" ColumnName="36S" />
+                <ScalarProperty Name="C38S" ColumnName="38S" />
+                <ScalarProperty Name="C40S" ColumnName="40S" />
+                <ScalarProperty Name="C42S" ColumnName="42S" />
+                <ScalarProperty Name="C44S" ColumnName="44S" />
+                <ScalarProperty Name="C46S" ColumnName="46S" />
+                <ScalarProperty Name="Sub_Total" ColumnName="Sub_Total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CaiDan_SLIM">
+            <EntityTypeMapping TypeName="nemanpingModel.CaiDan_SLIM">
+              <MappingFragment StoreEntitySet="CaiDan_SLIM">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="FABRIC" ColumnName="FABRIC" />
+                <ScalarProperty Name="STYLE" ColumnName="STYLE" />
+                <ScalarProperty Name="shuoming" ColumnName="shuoming" />
+                <ScalarProperty Name="Jacket" ColumnName="Jacket" />
+                <ScalarProperty Name="Pant" ColumnName="Pant" />
+                <ScalarProperty Name="LABEL" ColumnName="LABEL" />
+                <ScalarProperty Name="JiaGongchang" ColumnName="JiaGongchang" />
+                <ScalarProperty Name="CaiDanHao" ColumnName="CaiDanHao" />
+                <ScalarProperty Name="ZhiDanRiqi" ColumnName="ZhiDanRiqi" />
+                <ScalarProperty Name="JiaoHuoRiqi" ColumnName="JiaoHuoRiqi" />
+                <ScalarProperty Name="RN_NO" ColumnName="RN_NO" />
+                <ScalarProperty Name="MianLiao" ColumnName="MianLiao" />
+                <ScalarProperty Name="LOT" ColumnName="LOT" />
+                <ScalarProperty Name="ChimaSTYLE" ColumnName="ChimaSTYLE" />
+                <ScalarProperty Name="ART" ColumnName="ART" />
+                <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+                <ScalarProperty Name="COLORID" ColumnName="COLORID" />
+                <ScalarProperty Name="JACKET_PANT" ColumnName="JACKET_PANT" />
+                <ScalarProperty Name="C34R" ColumnName="34R" />
+                <ScalarProperty Name="C36R" ColumnName="36R" />
+                <ScalarProperty Name="C38R" ColumnName="38R" />
+                <ScalarProperty Name="C40R" ColumnName="40R" />
+                <ScalarProperty Name="C42R" ColumnName="42R" />
+                <ScalarProperty Name="C44R" ColumnName="44R" />
+                <ScalarProperty Name="C46R" ColumnName="46R" />
+                <ScalarProperty Name="C48R" ColumnName="48R" />
+                <ScalarProperty Name="C36L" ColumnName="36L" />
+                <ScalarProperty Name="C38L" ColumnName="38L" />
+                <ScalarProperty Name="C40L" ColumnName="40L" />
+                <ScalarProperty Name="C42L" ColumnName="42L" />
+                <ScalarProperty Name="C44L" ColumnName="44L" />
+                <ScalarProperty Name="C46L" ColumnName="46L" />
+                <ScalarProperty Name="C48L" ColumnName="48L" />
+                <ScalarProperty Name="C34S" ColumnName="34S" />
+                <ScalarProperty Name="C36S" ColumnName="36S" />
+                <ScalarProperty Name="C38S" ColumnName="38S" />
+                <ScalarProperty Name="C40S" ColumnName="40S" />
+                <ScalarProperty Name="C42S" ColumnName="42S" />
+                <ScalarProperty Name="C44S" ColumnName="44S" />
+                <ScalarProperty Name="C46S" ColumnName="46S" />
                 <ScalarProperty Name="Sub_Total" ColumnName="Sub_Total" />
               </MappingFragment>
             </EntityTypeMapping>

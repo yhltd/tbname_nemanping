@@ -62,6 +62,22 @@
     <Compile Include="CaiDan.cs">
       <DependentUpon>nemanping.tt</DependentUpon>
     </Compile>
+    <Compile Include="CaiDanALL.cs" />
+    <Compile Include="CaiDan_C_PANT.cs">
+      <DependentUpon>nemanping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CaiDan_D_PANT.cs">
+      <DependentUpon>nemanping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CaiDan_RGL2.cs">
+      <DependentUpon>nemanping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CaiDan_RGLJ.cs">
+      <DependentUpon>nemanping.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CaiDan_SLIM.cs">
+      <DependentUpon>nemanping.tt</DependentUpon>
+    </Compile>
     <Compile Include="ChiMa_Dapeibiao.cs">
       <DependentUpon>nemanping.tt</DependentUpon>
     </Compile>
@@ -150,7 +166,9 @@
       <DependentUpon>nemanping.edmx</DependentUpon>
       <LastGenOutput>nemanping.cs</LastGenOutput>
     </None>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

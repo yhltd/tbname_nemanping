@@ -27,6 +27,11 @@ namespace clsBuiness
     
         public DbSet<C_PANT> C_PANT { get; set; }
         public DbSet<CaiDan> CaiDan { get; set; }
+        public DbSet<CaiDan_C_PANT> CaiDan_C_PANT { get; set; }
+        public DbSet<CaiDan_D_PANT> CaiDan_D_PANT { get; set; }
+        public DbSet<CaiDan_RGL2> CaiDan_RGL2 { get; set; }
+        public DbSet<CaiDan_RGLJ> CaiDan_RGLJ { get; set; }
+        public DbSet<CaiDan_SLIM> CaiDan_SLIM { get; set; }
         public DbSet<ChiMa_Dapeibiao> ChiMa_Dapeibiao { get; set; }
         public DbSet<D_PANT> D_PANT { get; set; }
         public DbSet<DanHao> DanHao { get; set; }

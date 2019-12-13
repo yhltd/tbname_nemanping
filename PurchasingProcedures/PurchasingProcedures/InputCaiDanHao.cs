@@ -35,13 +35,76 @@ namespace PurchasingProcedures
             frm.Close();
             if(insertType.Equals("裁单"))
             {
-                CaiDan C = new CaiDan(textBox1.Text,comboBox1.Text,f);
-                
-                if (!C.IsDisposed)
+                if (comboBox1.Text.Equals("RGL1"))
                 {
-                    C.TopLevel = true;
-                    C.MdiParent = f;
-                    C.Show();
+                    CaiDan C = new CaiDan(textBox1.Text, comboBox1.Text, f);
+                
+                    if (!C.IsDisposed)
+                    {
+                        C.TopLevel = true;
+                        C.MdiParent = f;
+                        C.Show();
+                    }
+                }
+                else if (comboBox1.Text.Equals("RGL2")) 
+                {
+                    CaiDanRGL2 C = new CaiDanRGL2(textBox1.Text, comboBox1.Text, f);
+
+                    if (!C.IsDisposed)
+                    {
+                        C.TopLevel = true;
+                        C.MdiParent = f;
+                        C.Show();
+                    }
+
+                }
+                else if (comboBox1.Text.Equals("SLIM"))
+                {
+                    CaidanSLIM C = new CaidanSLIM(textBox1.Text, comboBox1.Text, f);
+
+                    if (!C.IsDisposed)
+                    {
+                        C.TopLevel = true;
+                        C.MdiParent = f;
+                        C.Show();
+                    }
+
+                }
+                else if (comboBox1.Text.Equals("RGLJ"))
+                {
+                    CaiDanRGLJ C = new CaiDanRGLJ(textBox1.Text, comboBox1.Text, f);
+
+                    if (!C.IsDisposed)
+                    {
+                        C.TopLevel = true;
+                        C.MdiParent = f;
+                        C.Show();
+                    }
+
+                }
+                else if (comboBox1.Text.Equals("D.PANT"))
+                {
+                    frmCaiDanD_PANT C = new frmCaiDanD_PANT(textBox1.Text, comboBox1.Text, f);
+
+                    if (!C.IsDisposed)
+                    {
+                        C.TopLevel = true;
+                        C.MdiParent = f;
+                        C.Show();
+                    }
+
+                }
+                else if (comboBox1.Text.Equals("C.PANT"))
+                {
+                    frmCaiDanC C = new frmCaiDanC(textBox1.Text, comboBox1.Text, f);
+
+                    if (!C.IsDisposed)
+                    {
+                        C.TopLevel = true;
+                        C.MdiParent = f;
+                        C.Show();
+                    }
+
                 }
                 this.Close();
             }
@@ -50,7 +113,46 @@ namespace PurchasingProcedures
         private void InputCaiDanHao_Load(object sender, EventArgs e)
         {
             label1.Text = frmLabel;
-            List<ChiMa_Dapeibiao> list = cal.SelectChiMaDapei("").GroupBy(p => p.BiaoName).Select(pc => pc.First()).ToList<ChiMa_Dapeibiao>();
+            //List<ChiMa_Dapeibiao> list = cal.SelectChiMaDapei("").GroupBy(p => p.BiaoName).Select(pc => pc.First()).ToList<ChiMa_Dapeibiao>();
+            comboBox1.DisplayMember = "BiaoName";
+            comboBox1.ValueMember = "id";
+            List<ChiMa_Dapeibiao> list = new List<ChiMa_Dapeibiao>();
+            ChiMa_Dapeibiao cd = new ChiMa_Dapeibiao() 
+            {
+                BiaoName ="RGL1",
+                id=1
+            };
+            ChiMa_Dapeibiao cd1 = new ChiMa_Dapeibiao()
+            {
+                BiaoName = "RGL2",
+                id = 2
+            };
+            ChiMa_Dapeibiao cd2 = new ChiMa_Dapeibiao()
+            {
+                BiaoName = "SLIM",
+                id = 3
+            };
+            ChiMa_Dapeibiao cd3 = new ChiMa_Dapeibiao()
+            {
+                BiaoName = "RGLJ",
+                id = 4
+            };
+            ChiMa_Dapeibiao cd4 = new ChiMa_Dapeibiao()
+            {
+                BiaoName = "D.PANT",
+                id = 5
+            };
+            ChiMa_Dapeibiao cd5 = new ChiMa_Dapeibiao()
+            {
+                BiaoName = "C.PANT",
+                id = 6
+            };
+            list.Add(cd);
+            list.Add(cd1);
+            list.Add(cd2);
+            list.Add(cd3);
+            list.Add(cd4);
+            list.Add(cd5);
             comboBox1.DisplayMember = "BiaoName";
             comboBox1.ValueMember = "id";
             comboBox1.DataSource = list;

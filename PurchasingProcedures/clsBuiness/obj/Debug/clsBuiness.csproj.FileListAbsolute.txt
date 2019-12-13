@@ -32,3 +32,15 @@ C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\
 C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\MySql.Data.Entity.dll
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\MySql.Data.dll
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\MySql.Data.Entity.dll
+E:\yho111\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\clsBuiness.dll.config
+E:\yho111\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\clsBuiness.dll
+E:\yho111\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\clsBuiness.pdb
+E:\yho111\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\EntityFramework.dll
+E:\yho111\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\EntityFramework.SqlServer.dll
+E:\yho111\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\MySql.Data.dll
+E:\yho111\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\MySql.Data.Entity.dll
+E:\yho111\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\EntityFramework.xml
+E:\yho111\tbname_nemanping\PurchasingProcedures\clsBuiness\bin\Debug\EntityFramework.SqlServer.xml
+E:\yho111\tbname_nemanping\PurchasingProcedures\clsBuiness\obj\Debug\clsBuiness.csprojResolveAssemblyReference.cache
+E:\yho111\tbname_nemanping\PurchasingProcedures\clsBuiness\obj\Debug\clsBuiness.dll
+E:\yho111\tbname_nemanping\PurchasingProcedures\clsBuiness\obj\Debug\clsBuiness.pdb
