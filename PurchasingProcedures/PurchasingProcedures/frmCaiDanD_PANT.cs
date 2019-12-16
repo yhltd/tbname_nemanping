@@ -225,7 +225,10 @@ namespace PurchasingProcedures
                     //}
                 }
                 int foreachi = 0;
-
+                for (int i = 0; i < headerUnitView1.Rows.Count; i++)
+                {
+                    headerUnitView1.Rows.Clear();
+                }
                 foreach (CaiDan_D_PANT s in cdlist)
                 {
                     headerUnitView1.Rows.Add();

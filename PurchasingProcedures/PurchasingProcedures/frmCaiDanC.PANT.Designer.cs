@@ -825,6 +825,7 @@
             // 
             // treeView1
             // 
+            this.treeView1.LineColor = System.Drawing.Color.Empty;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
             treeNode1.Name = "节点14";
@@ -1026,6 +1027,7 @@
             this.headerUnitView1.RowTemplate.Height = 23;
             this.headerUnitView1.Size = new System.Drawing.Size(1104, 319);
             this.headerUnitView1.TabIndex = 26;
+            this.headerUnitView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.headerUnitView1_CellContentClick);
             this.headerUnitView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.headerUnitView1_CellValueChanged_1);
             this.headerUnitView1.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.headerUnitView1_DefaultValuesNeeded);
             // 

@@ -85,8 +85,11 @@ namespace PurchasingProcedures
                 headerUnitView1.CellValueChanged -= headerUnitView1_CellValueChanged;
 
                 DataTable dt = new DataTable();
-                List<clsBuiness.CaiDan_C_PANT> cdlist = gn2.selectCaiDanC_PANT(txt_CaidanNo.Text);
-
+                List<clsBuiness.CaiDan_C_PANT> cdlist = new List<CaiDan_C_PANT>();
+                if (txt_CaidanNo.Text != "") 
+                {
+                    cdlist = gn2.selectCaiDanC_PANT(txt_CaidanNo.Text);
+                }
                 for (int i = 0; i < 43; i++)
                 {
                     //if (!headerUnitView1.Columns[i].HeaderCell.Value.ToString().Equals("id"))
@@ -292,7 +295,10 @@ namespace PurchasingProcedures
                     //}
                 }
                 int foreachi = 0;
-
+                for (int i = 0; i < headerUnitView1.Rows.Count; i++)
+                {
+                    headerUnitView1.Rows.Clear();
+                }
                 foreach (CaiDan_C_PANT s in cdlist)
                 {
                     headerUnitView1.Rows.Add();
@@ -489,6 +495,11 @@ namespace PurchasingProcedures
         private void headerUnitView1_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
             e.Row.Cells["C_STYLE"].Value = StyleId;
+        }
+
+        private void headerUnitView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

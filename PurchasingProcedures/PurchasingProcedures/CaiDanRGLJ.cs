@@ -231,10 +231,12 @@ namespace PurchasingProcedures
         {
             try
             {
-                dataGridView1.CellValueChanged -= dataGridView1_CellValueChanged;
-
-                DataTable dt = new DataTable();
-                List<clsBuiness.CaiDan_RGLJ> cdlist = gn2.selectCaiDanRGLJ(txt_CaidanNo.Text);
+                 DataTable dt = new DataTable();
+                 List<clsBuiness.CaiDan_RGLJ> cdlist = new List<clsBuiness.CaiDan_RGLJ>();
+                if (!txt_CaidanNo.Text.Equals(string.Empty))
+                {
+                    cdlist = gn2.selectCaiDanRGLJ(txt_CaidanNo.Text);
+                }
                 for (int i = 0; i < dataGridView1.Columns.Count; i++)
                 {
                     //if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("id"))
