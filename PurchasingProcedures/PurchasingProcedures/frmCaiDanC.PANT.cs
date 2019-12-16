@@ -242,14 +242,14 @@ namespace PurchasingProcedures
             { 
                 if (txt_CaidanNo.Text != null && !txt_CaidanNo.Text.Equals(string.Empty))
                 {
-                FolderBrowserDialog dialog = new FolderBrowserDialog();
-                dialog.Description = "请选择文件路径";
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    foldPath = dialog.SelectedPath;
-                    CreateExcel(foldPath);
-                    MessageBox.Show("生成成功！");
-                }
+                    FolderBrowserDialog dialog = new FolderBrowserDialog();
+                    dialog.Description = "请选择文件路径";
+                    if (dialog.ShowDialog() == DialogResult.OK)
+                    {
+                        foldPath = dialog.SelectedPath;
+                        CreateExcel(foldPath);
+                        MessageBox.Show("生成成功！");
+                    }
                 }
                 else
                 {
@@ -272,7 +272,11 @@ namespace PurchasingProcedures
                 headerUnitView1.CellValueChanged -= headerUnitView1_CellValueChanged;
 
                 DataTable dt = new DataTable();
-                List<clsBuiness.CaiDan_C_PANT> cdlist = gn2.selectCaiDanC_PANT(txt_CaidanNo.Text);
+                List<clsBuiness.CaiDan_C_PANT> cdlist = new List<CaiDan_C_PANT>();
+                if (!txt_CaidanNo.Text.Equals(string.Empty))
+                {
+                   cdlist = gn2.selectCaiDanC_PANT(txt_CaidanNo.Text);
+                }
 
                 for (int i = 0; i < 43; i++)
                 {

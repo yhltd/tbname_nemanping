@@ -51,13 +51,20 @@ namespace PurchasingProcedures
         {
             try
             {
-                FolderBrowserDialog dialog = new FolderBrowserDialog();
-                dialog.Description = "请选择文件路径";
-                if (dialog.ShowDialog() == DialogResult.OK)
+                if (txt_CaidanNo.Text != null && !txt_CaidanNo.Text.Equals(string.Empty))
                 {
-                    foldPath = dialog.SelectedPath;
-                    CreateExcel(foldPath);
-                    MessageBox.Show("生成成功！");
+                    FolderBrowserDialog dialog = new FolderBrowserDialog();
+                    dialog.Description = "请选择文件路径";
+                    if (dialog.ShowDialog() == DialogResult.OK)
+                    {
+                        foldPath = dialog.SelectedPath;
+                        CreateExcel(foldPath);
+                        MessageBox.Show("生成成功！");
+                    }
+                }
+                else 
+                {
+                    MessageBox.Show("裁单号不能为空!");
                 }
             }
             catch (Exception ex)
@@ -107,7 +114,10 @@ namespace PurchasingProcedures
             }
             for (int i = 0; i < headerUnitView1.Rows.Count; i++)
             {
-                dt.Rows.Add(headerUnitView1.Rows[i].Cells[0].Value, headerUnitView1.Rows[i].Cells[1].Value, headerUnitView1.Rows[i].Cells[2].Value, headerUnitView1.Rows[i].Cells[3].Value, headerUnitView1.Rows[i].Cells[4].Value, headerUnitView1.Rows[i].Cells[5].Value, headerUnitView1.Rows[i].Cells[6].Value, headerUnitView1.Rows[i].Cells[7].Value, headerUnitView1.Rows[i].Cells[8].Value, headerUnitView1.Rows[i].Cells[9].Value, headerUnitView1.Rows[i].Cells[10].Value, headerUnitView1.Rows[i].Cells[11].Value, headerUnitView1.Rows[i].Cells[12].Value, headerUnitView1.Rows[i].Cells[13].Value, headerUnitView1.Rows[i].Cells[14].Value, headerUnitView1.Rows[i].Cells[15].Value, headerUnitView1.Rows[i].Cells[16].Value, headerUnitView1.Rows[i].Cells[17].Value, headerUnitView1.Rows[i].Cells[18].Value, headerUnitView1.Rows[i].Cells[19].Value, headerUnitView1.Rows[i].Cells[20].Value, headerUnitView1.Rows[i].Cells[21].Value, headerUnitView1.Rows[i].Cells[22].Value, headerUnitView1.Rows[i].Cells[23].Value, headerUnitView1.Rows[i].Cells[24].Value, headerUnitView1.Rows[i].Cells[25].Value, headerUnitView1.Rows[i].Cells[26].Value, headerUnitView1.Rows[i].Cells[27].Value, headerUnitView1.Rows[i].Cells[28].Value, headerUnitView1.Rows[i].Cells[29].Value, headerUnitView1.Rows[i].Cells[30].Value, headerUnitView1.Rows[i].Cells[31].Value, headerUnitView1.Rows[i].Cells[32].Value, headerUnitView1.Rows[i].Cells[33].Value, headerUnitView1.Rows[i].Cells[34].Value, headerUnitView1.Rows[i].Cells[35].Value, headerUnitView1.Rows[i].Cells[36].Value, headerUnitView1.Rows[i].Cells[37].Value, headerUnitView1.Rows[i].Cells[38].Value, headerUnitView1.Rows[i].Cells[39].Value, headerUnitView1.Rows[i].Cells[40].Value, headerUnitView1.Rows[i].Cells[41].Value, headerUnitView1.Rows[i].Cells[42].Value);
+                if (headerUnitView1.Rows[i].Cells[0].Value != null && headerUnitView1.Rows[i].Cells[0].Value.ToString() != "")
+                {
+                    dt.Rows.Add(headerUnitView1.Rows[i].Cells[0].Value, headerUnitView1.Rows[i].Cells[1].Value, headerUnitView1.Rows[i].Cells[2].Value, headerUnitView1.Rows[i].Cells[3].Value, headerUnitView1.Rows[i].Cells[4].Value, headerUnitView1.Rows[i].Cells[5].Value, headerUnitView1.Rows[i].Cells[6].Value, headerUnitView1.Rows[i].Cells[7].Value, headerUnitView1.Rows[i].Cells[8].Value, headerUnitView1.Rows[i].Cells[9].Value, headerUnitView1.Rows[i].Cells[10].Value, headerUnitView1.Rows[i].Cells[11].Value, headerUnitView1.Rows[i].Cells[12].Value, headerUnitView1.Rows[i].Cells[13].Value, headerUnitView1.Rows[i].Cells[14].Value, headerUnitView1.Rows[i].Cells[15].Value, headerUnitView1.Rows[i].Cells[16].Value, headerUnitView1.Rows[i].Cells[17].Value, headerUnitView1.Rows[i].Cells[18].Value, headerUnitView1.Rows[i].Cells[19].Value, headerUnitView1.Rows[i].Cells[20].Value, headerUnitView1.Rows[i].Cells[21].Value, headerUnitView1.Rows[i].Cells[22].Value, headerUnitView1.Rows[i].Cells[23].Value, headerUnitView1.Rows[i].Cells[24].Value, headerUnitView1.Rows[i].Cells[25].Value, headerUnitView1.Rows[i].Cells[26].Value, headerUnitView1.Rows[i].Cells[27].Value, headerUnitView1.Rows[i].Cells[28].Value, headerUnitView1.Rows[i].Cells[29].Value, headerUnitView1.Rows[i].Cells[30].Value, headerUnitView1.Rows[i].Cells[31].Value, headerUnitView1.Rows[i].Cells[32].Value, headerUnitView1.Rows[i].Cells[33].Value, headerUnitView1.Rows[i].Cells[34].Value, headerUnitView1.Rows[i].Cells[35].Value, headerUnitView1.Rows[i].Cells[36].Value, headerUnitView1.Rows[i].Cells[37].Value, headerUnitView1.Rows[i].Cells[38].Value, headerUnitView1.Rows[i].Cells[39].Value, headerUnitView1.Rows[i].Cells[40].Value, headerUnitView1.Rows[i].Cells[41].Value, headerUnitView1.Rows[i].Cells[42].Value);
+                }
             }
             //cal.InsertChima5(dt, "D.PANT");
             gn2.CDEXCELD_PANT(dt, cd, path);
@@ -152,6 +162,19 @@ namespace PurchasingProcedures
             headerUnitView1.CellValueChanged += headerUnitView1_CellValueChanged;
         }
 
+        private bool IsNumberic(string oText)
+        {
+            try
+            {
+                int var1 = Convert.ToInt32(oText);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private void headerUnitView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -162,7 +185,7 @@ namespace PurchasingProcedures
                     double sum = 0;
                     for (int i = 6; i <= 40; i++)
                     {
-                        if (headerUnitView1.Rows[e.RowIndex].Cells[i].Value != null && !headerUnitView1.Rows[e.RowIndex].Cells[i].Value.ToString().Equals(string.Empty))
+                        if (headerUnitView1.Rows[e.RowIndex].Cells[i].Value != null && !headerUnitView1.Rows[e.RowIndex].Cells[i].Value.ToString().Equals(string.Empty) && IsNumberic(headerUnitView1.Rows[e.RowIndex].Cells[i].Value.ToString()))
                         {
                             sum = sum + Convert.ToDouble(headerUnitView1.Rows[e.RowIndex].Cells[i].Value);
                         }
@@ -183,8 +206,11 @@ namespace PurchasingProcedures
                 headerUnitView1.CellValueChanged -= headerUnitView1_CellValueChanged;
 
                 DataTable dt = new DataTable();
-                List<clsBuiness.CaiDan_D_PANT> cdlist = gn2.selectCaiDanD_PANT(txt_CaidanNo.Text);
-
+                List<clsBuiness.CaiDan_D_PANT> cdlist = new List<CaiDan_D_PANT>();
+                if (!txt_CaidanNo.Text.Equals(string.Empty))
+                {
+                    cdlist = gn2.selectCaiDanD_PANT(txt_CaidanNo.Text);
+                }
                 for (int i = 0; i < 43;  i++)
                 {
                     //if (!headerUnitView1.Columns[i].HeaderCell.Value.ToString().Equals("id"))
@@ -245,6 +271,7 @@ namespace PurchasingProcedures
                     headerUnitView1.Rows[foreachi].Cells["C48W_L_32L"].Value = s.C48W_L_32L;
                     headerUnitView1.Rows[foreachi].Cells["C50W_L_32L"].Value = s.C50W_L_32L;
                     headerUnitView1.Rows[foreachi].Cells["Sub_Total"].Value = s.Sub_Total;
+                    headerUnitView1.Rows[foreachi].Cells["id"].Value = s.id;
                     foreachi++;
                     //headerUnitView1.Rows[0].Cells["ART"].Value = s.ART;
                     //dt.Rows.Add(s.LOT_, s.STYLE_, s.ART, s.COLOR, s.COLORName, s.yaowei, s.C30W_R_30L, s.C30W_L_32L, s.C32W_R_30L, s.C32W_L_32L, s.C34W_S_38L, s.C34W_S_39L, s.C34W_R_30L, s.C34W_L_32L, s.C34W_L_34L, s.C36W_S_28L, s.C36W_S_29L, s.C36W_R_30L, s.C36W_R_31L, s.C38W_S_28L, s.C38W_R_30L, s.C38W_R_31L, s.C38W_L_32L, s.C38W_L_34L, s.C40W_S_28L, s.C40W_S_29L, s.C40W_R_30L, s.C40W_R_31L, s.C40W_L_32L, s.C40W_L_34L, s.C42W_R_30L, s.C42W_L_32L, s.C42W_L_34L, s.C44W_R_30L, s.C44W_L_32L, s.C44W_L_34L, s.C46W_R_30L, s.C46W_L_32L, s.C48W_R_30L, s.C48W_L_32L, s.C50W_L_32L, s.Sub_Total);
@@ -359,6 +386,11 @@ namespace PurchasingProcedures
         private void headerUnitView1_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
             e.Row.Cells["STYLE"].Value = StyleId;
+        }
+
+        private void headerUnitView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

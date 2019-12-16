@@ -106,7 +106,7 @@
             // 
             this.txt_CaidanNo.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold);
             this.txt_CaidanNo.FormattingEnabled = true;
-            this.txt_CaidanNo.Location = new System.Drawing.Point(1034, 45);
+            this.txt_CaidanNo.Location = new System.Drawing.Point(960, 48);
             this.txt_CaidanNo.Name = "txt_CaidanNo";
             this.txt_CaidanNo.Size = new System.Drawing.Size(148, 30);
             this.txt_CaidanNo.TabIndex = 7;
@@ -135,7 +135,7 @@
             this.cb_jgc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_jgc.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cb_jgc.FormattingEnabled = true;
-            this.cb_jgc.Location = new System.Drawing.Point(1034, 10);
+            this.cb_jgc.Location = new System.Drawing.Point(960, 13);
             this.cb_jgc.Name = "cb_jgc";
             this.cb_jgc.Size = new System.Drawing.Size(148, 30);
             this.cb_jgc.TabIndex = 6;
@@ -189,7 +189,7 @@
             // txt_jiaohuo
             // 
             this.txt_jiaohuo.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_jiaohuo.Location = new System.Drawing.Point(1034, 116);
+            this.txt_jiaohuo.Location = new System.Drawing.Point(960, 119);
             this.txt_jiaohuo.Name = "txt_jiaohuo";
             this.txt_jiaohuo.Size = new System.Drawing.Size(148, 29);
             this.txt_jiaohuo.TabIndex = 5;
@@ -207,7 +207,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(622, 17);
+            this.label7.Location = new System.Drawing.Point(548, 20);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 22);
             this.label7.TabIndex = 0;
@@ -226,7 +226,7 @@
             // txt_Label
             // 
             this.txt_Label.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_Label.Location = new System.Drawing.Point(683, 14);
+            this.txt_Label.Location = new System.Drawing.Point(609, 17);
             this.txt_Label.Name = "txt_Label";
             this.txt_Label.Size = new System.Drawing.Size(140, 29);
             this.txt_Label.TabIndex = 5;
@@ -245,7 +245,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(973, 14);
+            this.label8.Location = new System.Drawing.Point(899, 17);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 22);
             this.label8.TabIndex = 0;
@@ -264,7 +264,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(973, 49);
+            this.label9.Location = new System.Drawing.Point(899, 52);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 22);
             this.label9.TabIndex = 0;
@@ -284,7 +284,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(957, 84);
+            this.label10.Location = new System.Drawing.Point(883, 87);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 22);
             this.label10.TabIndex = 0;
@@ -293,7 +293,7 @@
             // txt_RN
             // 
             this.txt_RN.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_RN.Location = new System.Drawing.Point(1034, 151);
+            this.txt_RN.Location = new System.Drawing.Point(960, 154);
             this.txt_RN.Name = "txt_RN";
             this.txt_RN.Size = new System.Drawing.Size(148, 29);
             this.txt_RN.TabIndex = 5;
@@ -302,7 +302,7 @@
             // txt_zhidan
             // 
             this.txt_zhidan.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_zhidan.Location = new System.Drawing.Point(1034, 81);
+            this.txt_zhidan.Location = new System.Drawing.Point(960, 84);
             this.txt_zhidan.Name = "txt_zhidan";
             this.txt_zhidan.Size = new System.Drawing.Size(148, 29);
             this.txt_zhidan.TabIndex = 5;
@@ -312,7 +312,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(957, 119);
+            this.label11.Location = new System.Drawing.Point(883, 122);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(74, 22);
             this.label11.TabIndex = 0;
@@ -321,7 +321,7 @@
             // txt_mianlioa
             // 
             this.txt_mianlioa.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_mianlioa.Location = new System.Drawing.Point(1034, 186);
+            this.txt_mianlioa.Location = new System.Drawing.Point(960, 189);
             this.txt_mianlioa.Name = "txt_mianlioa";
             this.txt_mianlioa.Size = new System.Drawing.Size(148, 29);
             this.txt_mianlioa.TabIndex = 5;
@@ -331,7 +331,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label13.Location = new System.Drawing.Point(986, 189);
+            this.label13.Location = new System.Drawing.Point(912, 192);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(42, 22);
             this.label13.TabIndex = 0;
@@ -341,7 +341,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(961, 154);
+            this.label12.Location = new System.Drawing.Point(887, 157);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(67, 22);
             this.label12.TabIndex = 0;
@@ -355,7 +355,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(156, 236);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1202, 327);
+            this.dataGridView1.Size = new System.Drawing.Size(1108, 327);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
@@ -420,7 +420,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 575);
+            this.ClientSize = new System.Drawing.Size(1276, 575);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
