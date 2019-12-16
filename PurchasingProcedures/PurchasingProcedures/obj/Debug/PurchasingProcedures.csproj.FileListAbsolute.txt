@@ -194,3 +194,8 @@ D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\o
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.CaiDanRGLJ.resources
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.CaidanSLIM.resources
 D:\yho110\nemanping\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.CaiDanRGL2.resources
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.frmCaiDanC.resources
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.frmCaiDanD_PANT.resources
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.CaiDanRGLJ.resources
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.CaidanSLIM.resources
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.CaiDanRGL2.resources
