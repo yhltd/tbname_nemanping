@@ -108,6 +108,7 @@ namespace PurchasingProcedures
 
         private void CaidanSLIM_Load(object sender, EventArgs e)
         {
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;//设置dava宽度
             #region SLIM
             DataTable dt3 = new DataTable();
             dt3.Columns.Add("Id", typeof(int));
@@ -186,11 +187,12 @@ namespace PurchasingProcedures
                 this.txt_jacket.Text = cd[0].Jacket.ToString();
                 this.txt_pant.Text = cd[0].Pant.ToString();
                 this.txt_shuoming.Text = cd[0].shuoming.ToString();
+                dataGridView1.ColumnHeadersHeight = 35;
                 txt_CaidanNo.SelectedIndexChanged += txt_CaidanNo_SelectedIndexChanged;
                 cb_jgc.DataSource = jgc;
                 cb_jgc.DisplayMember = "Name";
                 cb_jgc.ValueMember = "id";
-                txt_zhidan.Text = DateTime.Now.ToString() ;
+                txt_zhidan.Text = DateTime.Now.ToLongDateString().ToString();
                 
                 List<clsBuiness.CaiDan_SLIM> caidan = gn2.selectCaiDanSLIM("").GroupBy(g => g.CaiDanHao).Select(s => s.First()).ToList<clsBuiness.CaiDan_SLIM>();
                 clsBuiness.CaiDan_SLIM c = new clsBuiness.CaiDan_SLIM()
@@ -206,7 +208,21 @@ namespace PurchasingProcedures
                     txt_CaidanNo.SelectedIndex = txt_CaidanNo.FindString(" ");
                 }
                 dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
-            
+                resizedava_cloumn(dataGridView1);//设置Dave 宽度
+        }
+        private void resizedava_cloumn(DataGridView dataGridView)
+        {
+            dataGridView.Columns[1].Width = 60;
+            dataGridView.Columns[2].Width = 60;
+            dataGridView.Columns[3].Width = 90;
+            dataGridView.Columns[4].Width = 60;
+            dataGridView.Columns[5].Width = 60;
+            dataGridView.Columns[6].Width = 60;
+            dataGridView.Columns[29].Width = 60;
+
+
+
+
         }
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -315,7 +331,7 @@ namespace PurchasingProcedures
                     this.txt_pant.Text = cdlist[0].Pant.ToString();
                     this.txt_shuoming.Text = cdlist[0].shuoming.ToString();
                     this.txt_jiaohuo.Text = cdlist[0].JiaoHuoRiqi.ToString();
-                    txt_zhidan.Text = cdlist[0].ZhiDanRiqi.ToString();
+                    txt_zhidan.Text = DateTime.Now.ToLongDateString().ToString();
                     txt_RN.Text = cdlist[0].RN_NO.ToString();
                     txt_mianlioa.Text = cdlist[0].MianLiao.ToString();
                 }

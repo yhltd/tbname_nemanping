@@ -77,6 +77,7 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1110, 326);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged_1);
             this.dataGridView1.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_DefaultValuesNeeded);
             // 
@@ -113,9 +114,9 @@
             // txt_shuoming
             // 
             this.txt_shuoming.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_shuoming.Location = new System.Drawing.Point(67, 178);
+            this.txt_shuoming.Location = new System.Drawing.Point(65, 178);
             this.txt_shuoming.Name = "txt_shuoming";
-            this.txt_shuoming.Size = new System.Drawing.Size(418, 29);
+            this.txt_shuoming.Size = new System.Drawing.Size(467, 29);
             this.txt_shuoming.TabIndex = 5;
             // 
             // txt_pant
@@ -123,7 +124,7 @@
             this.txt_pant.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_pant.Location = new System.Drawing.Point(268, 131);
             this.txt_pant.Name = "txt_pant";
-            this.txt_pant.Size = new System.Drawing.Size(240, 29);
+            this.txt_pant.Size = new System.Drawing.Size(266, 29);
             this.txt_pant.TabIndex = 5;
             // 
             // label5
@@ -151,7 +152,7 @@
             this.txt_jacket.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_jacket.Location = new System.Drawing.Point(268, 96);
             this.txt_jacket.Name = "txt_jacket";
-            this.txt_jacket.Size = new System.Drawing.Size(240, 29);
+            this.txt_jacket.Size = new System.Drawing.Size(266, 29);
             this.txt_jacket.TabIndex = 5;
             // 
             // label3
@@ -203,7 +204,7 @@
             this.txt_fabric.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_fabric.Location = new System.Drawing.Point(179, 61);
             this.txt_fabric.Name = "txt_fabric";
-            this.txt_fabric.Size = new System.Drawing.Size(151, 29);
+            this.txt_fabric.Size = new System.Drawing.Size(355, 29);
             this.txt_fabric.TabIndex = 5;
             // 
             // txt_jiaohuo
@@ -302,16 +303,16 @@
             // txt_Label
             // 
             this.txt_Label.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_Label.Location = new System.Drawing.Point(716, 19);
+            this.txt_Label.Location = new System.Drawing.Point(610, 23);
             this.txt_Label.Name = "txt_Label";
-            this.txt_Label.Size = new System.Drawing.Size(140, 29);
+            this.txt_Label.Size = new System.Drawing.Size(285, 29);
             this.txt_Label.TabIndex = 5;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(655, 22);
+            this.label7.Location = new System.Drawing.Point(549, 26);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 22);
             this.label7.TabIndex = 0;
@@ -322,7 +323,7 @@
             this.txt_desc.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_desc.Location = new System.Drawing.Point(80, 23);
             this.txt_desc.Name = "txt_desc";
-            this.txt_desc.Size = new System.Drawing.Size(170, 29);
+            this.txt_desc.Size = new System.Drawing.Size(454, 29);
             this.txt_desc.TabIndex = 5;
             // 
             // label1

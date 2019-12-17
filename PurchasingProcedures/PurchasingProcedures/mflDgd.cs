@@ -90,7 +90,10 @@ namespace PurchasingProcedures
                     dt.Rows.Add(string.Empty, mf.PingMing, mf.HuoHao, mf.SeHao, mf.YanSe, mf.GuiGe, mf.DanWei, mf.DanJia, mf.ShuLiang, mf.ZongJinE, mf.CaiDanHao);
                 }
                 dataGridView1.DataSource = dt;
-                txt_gongfang.Text = mfldgd[0].GongFang;
+                if (mfldgd != null && mfldgd.Count>1)
+                {
+                    txt_gongfang.Text = mfldgd[0].GongFang;
+                }
                 //label7.Text = pinming;
             }
             else 

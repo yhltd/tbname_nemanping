@@ -343,7 +343,7 @@
             this.txt_shuoming.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_shuoming.Location = new System.Drawing.Point(67, 178);
             this.txt_shuoming.Name = "txt_shuoming";
-            this.txt_shuoming.Size = new System.Drawing.Size(418, 29);
+            this.txt_shuoming.Size = new System.Drawing.Size(517, 29);
             this.txt_shuoming.TabIndex = 5;
             // 
             // txt_pant
@@ -351,7 +351,7 @@
             this.txt_pant.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_pant.Location = new System.Drawing.Point(268, 131);
             this.txt_pant.Name = "txt_pant";
-            this.txt_pant.Size = new System.Drawing.Size(240, 29);
+            this.txt_pant.Size = new System.Drawing.Size(316, 29);
             this.txt_pant.TabIndex = 5;
             // 
             // label5
@@ -379,7 +379,7 @@
             this.txt_jacket.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_jacket.Location = new System.Drawing.Point(268, 96);
             this.txt_jacket.Name = "txt_jacket";
-            this.txt_jacket.Size = new System.Drawing.Size(240, 29);
+            this.txt_jacket.Size = new System.Drawing.Size(316, 29);
             this.txt_jacket.TabIndex = 5;
             // 
             // txt_Style
@@ -405,7 +405,7 @@
             this.txt_fabric.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_fabric.Location = new System.Drawing.Point(179, 61);
             this.txt_fabric.Name = "txt_fabric";
-            this.txt_fabric.Size = new System.Drawing.Size(151, 29);
+            this.txt_fabric.Size = new System.Drawing.Size(405, 29);
             this.txt_fabric.TabIndex = 5;
             // 
             // txt_mianlioa
@@ -519,16 +519,16 @@
             // txt_Label
             // 
             this.txt_Label.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_Label.Location = new System.Drawing.Point(716, 19);
+            this.txt_Label.Location = new System.Drawing.Point(655, 23);
             this.txt_Label.Name = "txt_Label";
-            this.txt_Label.Size = new System.Drawing.Size(140, 29);
+            this.txt_Label.Size = new System.Drawing.Size(240, 29);
             this.txt_Label.TabIndex = 5;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(655, 22);
+            this.label7.Location = new System.Drawing.Point(594, 26);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 22);
             this.label7.TabIndex = 0;
@@ -539,7 +539,7 @@
             this.txt_desc.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_desc.Location = new System.Drawing.Point(80, 23);
             this.txt_desc.Name = "txt_desc";
-            this.txt_desc.Size = new System.Drawing.Size(170, 29);
+            this.txt_desc.Size = new System.Drawing.Size(504, 29);
             this.txt_desc.TabIndex = 5;
             // 
             // label1
@@ -841,6 +841,7 @@
             // 
             // headerUnitView1
             // 
+            this.headerUnitView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.headerUnitView1.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.headerUnitView1.CellHeight = 17;
             this.headerUnitView1.ColumnDeep = 3;
@@ -905,6 +906,7 @@
             // 
             // LOT
             // 
+            this.LOT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.LOT.DataPropertyName = "LOT";
             this.LOT.HeaderText = "Column1";
             this.LOT.Name = "LOT";
@@ -912,6 +914,7 @@
             // 
             // STYLE
             // 
+            this.STYLE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.STYLE.HeaderText = "Column2";
             this.STYLE.Name = "STYLE";
             this.STYLE.ReadOnly = true;
@@ -919,24 +922,28 @@
             // 
             // ART
             // 
+            this.ART.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.ART.HeaderText = "Column3";
             this.ART.Name = "ART";
             this.ART.Width = 70;
             // 
             // COLOR
             // 
+            this.COLOR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.COLOR.HeaderText = "Column4";
             this.COLOR.Name = "COLOR";
             this.COLOR.Width = 70;
             // 
             // COLORName
             // 
+            this.COLORName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.COLORName.HeaderText = "Column5";
             this.COLORName.Name = "COLORName";
             this.COLORName.Width = 70;
             // 
             // yaowei
             // 
+            this.yaowei.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.yaowei.HeaderText = "Column6";
             this.yaowei.Name = "yaowei";
             this.yaowei.Width = 70;
@@ -945,220 +952,222 @@
             // 
             this.C30W_R_30L.HeaderText = "Column7";
             this.C30W_R_30L.Name = "C30W_R_30L";
-            this.C30W_R_30L.Width = 30;
+            this.C30W_R_30L.Width = 21;
             // 
             // C30W_L_32L
             // 
             this.C30W_L_32L.HeaderText = "Column8";
             this.C30W_L_32L.Name = "C30W_L_32L";
-            this.C30W_L_32L.Width = 30;
+            this.C30W_L_32L.Width = 21;
             // 
             // C32W_R_30L
             // 
             this.C32W_R_30L.HeaderText = "Column9";
             this.C32W_R_30L.Name = "C32W_R_30L";
-            this.C32W_R_30L.Width = 30;
+            this.C32W_R_30L.Width = 21;
             // 
             // C32W_L_32L
             // 
             this.C32W_L_32L.HeaderText = "Column10";
             this.C32W_L_32L.Name = "C32W_L_32L";
-            this.C32W_L_32L.Width = 30;
+            this.C32W_L_32L.Width = 21;
             // 
             // C34W_S_38L
             // 
             this.C34W_S_38L.HeaderText = "Column11";
             this.C34W_S_38L.Name = "C34W_S_38L";
-            this.C34W_S_38L.Width = 30;
+            this.C34W_S_38L.Width = 21;
             // 
             // C34W_S_39L
             // 
             this.C34W_S_39L.HeaderText = "Column12";
             this.C34W_S_39L.Name = "C34W_S_39L";
-            this.C34W_S_39L.Width = 30;
+            this.C34W_S_39L.Width = 21;
             // 
             // C34W_R_30L
             // 
             this.C34W_R_30L.HeaderText = "Column13";
             this.C34W_R_30L.Name = "C34W_R_30L";
-            this.C34W_R_30L.Width = 30;
+            this.C34W_R_30L.Width = 21;
             // 
             // C34W_L_32L
             // 
             this.C34W_L_32L.HeaderText = "Column14";
             this.C34W_L_32L.Name = "C34W_L_32L";
-            this.C34W_L_32L.Width = 30;
+            this.C34W_L_32L.Width = 21;
             // 
             // C34W_L_34L
             // 
             this.C34W_L_34L.HeaderText = "Column15";
             this.C34W_L_34L.Name = "C34W_L_34L";
-            this.C34W_L_34L.Width = 30;
+            this.C34W_L_34L.Width = 21;
             // 
             // C36W_S_28L
             // 
             this.C36W_S_28L.HeaderText = "Column16";
             this.C36W_S_28L.Name = "C36W_S_28L";
-            this.C36W_S_28L.Width = 30;
+            this.C36W_S_28L.Width = 21;
             // 
             // C36W_S_29L
             // 
             this.C36W_S_29L.HeaderText = "Column17";
             this.C36W_S_29L.Name = "C36W_S_29L";
-            this.C36W_S_29L.Width = 30;
+            this.C36W_S_29L.Width = 21;
             // 
             // C36W_R_30L
             // 
             this.C36W_R_30L.HeaderText = "Column18";
             this.C36W_R_30L.Name = "C36W_R_30L";
-            this.C36W_R_30L.Width = 30;
+            this.C36W_R_30L.Width = 21;
             // 
             // C36W_R_31L
             // 
             this.C36W_R_31L.HeaderText = "Column19";
             this.C36W_R_31L.Name = "C36W_R_31L";
-            this.C36W_R_31L.Width = 30;
+            this.C36W_R_31L.Width = 21;
             // 
             // C38W_S_28L
             // 
             this.C38W_S_28L.HeaderText = "Column20";
             this.C38W_S_28L.Name = "C38W_S_28L";
-            this.C38W_S_28L.Width = 30;
+            this.C38W_S_28L.Width = 21;
             // 
             // C38W_R_30L
             // 
             this.C38W_R_30L.HeaderText = "Column21";
             this.C38W_R_30L.Name = "C38W_R_30L";
-            this.C38W_R_30L.Width = 30;
+            this.C38W_R_30L.Width = 21;
             // 
             // C38W_R_31L
             // 
             this.C38W_R_31L.HeaderText = "Column22";
             this.C38W_R_31L.Name = "C38W_R_31L";
-            this.C38W_R_31L.Width = 30;
+            this.C38W_R_31L.Width = 21;
             // 
             // C38W_L_32L
             // 
             this.C38W_L_32L.HeaderText = "Column23";
             this.C38W_L_32L.Name = "C38W_L_32L";
-            this.C38W_L_32L.Width = 30;
+            this.C38W_L_32L.Width = 21;
             // 
             // C38W_L_34L
             // 
             this.C38W_L_34L.HeaderText = "Column24";
             this.C38W_L_34L.Name = "C38W_L_34L";
-            this.C38W_L_34L.Width = 30;
+            this.C38W_L_34L.Width = 21;
             // 
             // C40W_S_28L
             // 
             this.C40W_S_28L.HeaderText = "Column25";
             this.C40W_S_28L.Name = "C40W_S_28L";
-            this.C40W_S_28L.Width = 30;
+            this.C40W_S_28L.Width = 21;
             // 
             // C40W_S_29L
             // 
             this.C40W_S_29L.HeaderText = "Column26";
             this.C40W_S_29L.Name = "C40W_S_29L";
-            this.C40W_S_29L.Width = 30;
+            this.C40W_S_29L.Width = 21;
             // 
             // C40W_R_30L
             // 
             this.C40W_R_30L.HeaderText = "Column27";
             this.C40W_R_30L.Name = "C40W_R_30L";
-            this.C40W_R_30L.Width = 30;
+            this.C40W_R_30L.Width = 21;
             // 
             // C40W_R_31L
             // 
             this.C40W_R_31L.HeaderText = "Column28";
             this.C40W_R_31L.Name = "C40W_R_31L";
-            this.C40W_R_31L.Width = 30;
+            this.C40W_R_31L.Width = 21;
             // 
             // C40W_L_32L
             // 
             this.C40W_L_32L.HeaderText = "Column29";
             this.C40W_L_32L.Name = "C40W_L_32L";
-            this.C40W_L_32L.Width = 30;
+            this.C40W_L_32L.Width = 21;
             // 
             // C40W_L_34L
             // 
             this.C40W_L_34L.HeaderText = "Column30";
             this.C40W_L_34L.Name = "C40W_L_34L";
-            this.C40W_L_34L.Width = 30;
+            this.C40W_L_34L.Width = 21;
             // 
             // C42W_R_30L
             // 
             this.C42W_R_30L.HeaderText = "Column31";
             this.C42W_R_30L.Name = "C42W_R_30L";
-            this.C42W_R_30L.Width = 30;
+            this.C42W_R_30L.Width = 21;
             // 
             // C42W_L_32L
             // 
             this.C42W_L_32L.HeaderText = "Column32";
             this.C42W_L_32L.Name = "C42W_L_32L";
-            this.C42W_L_32L.Width = 30;
+            this.C42W_L_32L.Width = 21;
             // 
             // C42W_L_34L
             // 
             this.C42W_L_34L.HeaderText = "Column33";
             this.C42W_L_34L.Name = "C42W_L_34L";
-            this.C42W_L_34L.Width = 30;
+            this.C42W_L_34L.Width = 21;
             // 
             // C44W_R_30L
             // 
             this.C44W_R_30L.HeaderText = "Column34";
             this.C44W_R_30L.Name = "C44W_R_30L";
-            this.C44W_R_30L.Width = 30;
+            this.C44W_R_30L.Width = 21;
             // 
             // C44W_L_32L
             // 
             this.C44W_L_32L.HeaderText = "Column35";
             this.C44W_L_32L.Name = "C44W_L_32L";
-            this.C44W_L_32L.Width = 30;
+            this.C44W_L_32L.Width = 21;
             // 
             // C44W_L_34L
             // 
             this.C44W_L_34L.HeaderText = "Column36";
             this.C44W_L_34L.Name = "C44W_L_34L";
-            this.C44W_L_34L.Width = 30;
+            this.C44W_L_34L.Width = 21;
             // 
             // C46W_R_30L
             // 
             this.C46W_R_30L.HeaderText = "Column37";
             this.C46W_R_30L.Name = "C46W_R_30L";
-            this.C46W_R_30L.Width = 30;
+            this.C46W_R_30L.Width = 21;
             // 
             // C46W_L_32L
             // 
             this.C46W_L_32L.HeaderText = "Column38";
             this.C46W_L_32L.Name = "C46W_L_32L";
-            this.C46W_L_32L.Width = 30;
+            this.C46W_L_32L.Width = 21;
             // 
             // C48W_R_30L
             // 
             this.C48W_R_30L.HeaderText = "Column39";
             this.C48W_R_30L.Name = "C48W_R_30L";
-            this.C48W_R_30L.Width = 30;
+            this.C48W_R_30L.Width = 21;
             // 
             // C48W_L_32L
             // 
             this.C48W_L_32L.HeaderText = "Column40";
             this.C48W_L_32L.Name = "C48W_L_32L";
-            this.C48W_L_32L.Width = 30;
+            this.C48W_L_32L.Width = 21;
             // 
             // C50W_L_32L
             // 
             this.C50W_L_32L.HeaderText = "Column41";
             this.C50W_L_32L.Name = "C50W_L_32L";
-            this.C50W_L_32L.Width = 30;
+            this.C50W_L_32L.Width = 21;
             // 
             // Sub_Total
             // 
+            this.Sub_Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Sub_Total.HeaderText = "Column42";
             this.Sub_Total.Name = "Sub_Total";
             this.Sub_Total.Width = 70;
             // 
             // id
             // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.id.HeaderText = "id";
             this.id.Name = "id";
             // 

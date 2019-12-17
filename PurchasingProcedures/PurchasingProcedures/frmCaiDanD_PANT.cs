@@ -142,7 +142,7 @@ namespace PurchasingProcedures
             cb_jgc.DataSource = jgc;
             cb_jgc.DisplayMember = "Name";
             cb_jgc.ValueMember = "id";
-            txt_zhidan.Text = DateTime.Now.ToString();
+            txt_zhidan.Text = DateTime.Now.ToLongDateString().ToString();
 
             List<clsBuiness.CaiDan_D_PANT> caidan = gn2.selectCaiDanD_PANT("").GroupBy(g => g.CaiDanHao).Select(s => s.First()).ToList<clsBuiness.CaiDan_D_PANT>();
             clsBuiness.CaiDan_D_PANT c = new clsBuiness.CaiDan_D_PANT()
@@ -300,7 +300,7 @@ namespace PurchasingProcedures
                     this.txt_pant.Text = cdlist[0].Pant.ToString();
                     this.txt_shuoming.Text = cdlist[0].shuoming.ToString();
                     this.txt_jiaohuo.Text = cdlist[0].JiaoHuoRiqi.ToString();
-                    txt_zhidan.Text = cdlist[0].ZhiDanRiqi.ToString();
+                    txt_zhidan.Text = DateTime.Now.ToLongDateString().ToString();
                     txt_RN.Text = cdlist[0].RN_NO.ToString();
                     txt_mianlioa.Text = cdlist[0].MianLiao.ToString();
                 }

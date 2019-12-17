@@ -50,6 +50,18 @@ namespace PurchasingProcedures
                 textBox30.Text = (Convert.ToDouble(textBox8.Text) / 1.13 / Convert.ToDouble(textBox1.Text)).ToString();
             }
         }
+        private bool IsNumberic(string oText)
+        {
+            try
+            {
+                int var1 = Convert.ToInt32(oText);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         private void ETD_ETA_LDP_Load(object sender, EventArgs e)
         {
@@ -58,6 +70,7 @@ namespace PurchasingProcedures
             {
                 textBox6.Text = danhao.Average(d => Convert.ToDouble(d.Jine)).ToString();
                 textBox7.Text = danhao.Sum(sc => Convert.ToDouble(sc.Jine)).ToString();
+
                 textBox16.Text = hs.Sum(s => Convert.ToInt32(s.实际出口数量)).ToString();
             }
             else 

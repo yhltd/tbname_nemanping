@@ -54,11 +54,12 @@ namespace PurchasingProcedures
 
         private void CaiDan_Load(object sender, EventArgs e)
         {
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             try
             {
                 DataTable dt = new DataTable();
                 dt.Columns.Add("Id", typeof(int));
-                
+
                 dt.Columns.Add("面料", typeof(string));
                 dt.Columns.Add("款式", typeof(string));
                 dt.Columns["款式"].ReadOnly = true;
@@ -103,8 +104,11 @@ namespace PurchasingProcedures
                 dt.Columns.Add("44S", typeof(string));
                 dt.Columns.Add("46S", typeof(string));
                 dt.Columns.Add("Sub Total: ", typeof(string));
+
                 dataGridView1.DataSource = dt;
                 dataGridView1.Columns["Id"].Visible = false;
+                dataGridView1.Columns["面料"].Width = 3;
+                
                 DataGridViewHelper rowMergeView = new DataGridViewHelper(dataGridView1);
                 rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(1, 1, "LOT#"));
                 rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(2, 1, "STYLE"));
@@ -159,11 +163,22 @@ namespace PurchasingProcedures
                 this.txt_jacket.Text = cd[0].Jacket.ToString();
                 this.txt_pant.Text = cd[0].Pant.ToString();
                 this.txt_shuoming.Text = cd[0].shuoming.ToString();
+                dataGridView1.ColumnHeadersHeight = 35;
+                //this.dataGridView1.Width = 
+                //this.dataGridView1.Columns[0].HeaderCell.Size.Width * 43;
+                //this.dataGridView1.DataSource = dt;
+                //int width = this.dataGridView1.Width;
+                //int avgWidth = width / dt.Columns.Count;//求出每一列的header宽度
+                //for (int i = 0; i < this.dataGridView1.Columns.Count; i++)
+                //{
+                //    this.dataGridView1.Columns[i].Width = avgWidth;//设置每一列的宽度
+                //}
+                
                 txt_CaidanNo.SelectedIndexChanged += txt_CaidanNo_SelectedIndexChanged;
                 cb_jgc.DataSource = jgc;
                 cb_jgc.DisplayMember = "Name";
                 cb_jgc.ValueMember = "id";
-                txt_zhidan.Text = DateTime.Now.ToString() ;
+                txt_zhidan.Text = DateTime.Now.ToLongDateString().ToString();
                 
                 List<clsBuiness.CaiDan> caidan = gn2.selectCaiDan("").GroupBy(g => g.CaiDanHao).Select(s => s.First()).ToList<clsBuiness.CaiDan>();
                 clsBuiness.CaiDan c = new clsBuiness.CaiDan()
@@ -185,9 +200,27 @@ namespace PurchasingProcedures
                 //throw ex;
                 MessageBox.Show(ex.Message);
             }
-            
+              resizedava_cloumn(dataGridView1);//设置Dave 宽度
+              resizedava_row(dataGridView1);
         }
+        private void resizedava_cloumn(DataGridView dataGridView)
+        {
+            dataGridView.Columns[1].Width = 60;
+            dataGridView.Columns[2].Width = 60;
+            dataGridView.Columns[3].Width = 85;
+            dataGridView.Columns[4].Width = 60;
+            dataGridView.Columns[5].Width = 60;
+            dataGridView.Columns[6].Width = 60;
+            dataGridView.Columns[43].Width = 60;
+            
 
+
+
+        }
+        private void resizedava_row(DataGridView dataGridView)
+        {
+            dataGridView.Rows[1].Height = 60;
+        }
         private void dataGridView1_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
             // 设定单元格的默认值
@@ -213,7 +246,7 @@ namespace PurchasingProcedures
             }
          
         }
-
+      
         private void CreateExcel(string path)
         {
             DataTable dt = new DataTable();
@@ -508,10 +541,10 @@ namespace PurchasingProcedures
                
                 for (int i = 0; i < dataGridView1.Columns.Count; i++)
                 {
-                    if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("id"))
-                    {
+                    //if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("id"))
+                    //{
                         dt.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
-                    }
+                    //}
                 }
                 foreach (clsBuiness.CaiDan s in cdlist)
                 {
@@ -538,7 +571,7 @@ namespace PurchasingProcedures
                     this.txt_pant.Text = cdlist[0].Pant.ToString();
                     this.txt_shuoming.Text = cdlist[0].shuoming.ToString();
                     this.txt_jiaohuo.Text = cdlist[0].JiaoHuoRiqi.ToString();
-                    txt_zhidan.Text = cdlist[0].ZhiDanRiqi.ToString();
+                    txt_zhidan.Text = DateTime.Now.ToLongDateString().ToString();
                     txt_RN.Text = cdlist[0].RN_NO.ToString();
                     txt_mianlioa.Text = cdlist[0].MianLiao.ToString();
                 }

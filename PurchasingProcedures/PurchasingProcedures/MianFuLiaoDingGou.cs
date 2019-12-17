@@ -1375,34 +1375,43 @@ namespace PurchasingProcedures
         private void button3_Click(object sender, EventArgs e)
         {
             List<HeSuan> ML = new List<HeSuan>();
+            Boolean pd = false;
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                if (dataGridView1[0, i].Value != null)
+                if (dataGridView1[2, i].Value != null && dataGridView1[2, i].Value.ToString() != "")
                 {
-                    HeSuan h = new HeSuan()
+                    pd = true;
+                    if (dataGridView1[0, i].Value != null)
                     {
-                        LOT = dataGridView1[0, i].Value.ToString(),
-                        订单数量 = dataGridView1[1, i].Value.ToString(),
-                        //Name = "面料", 
-                        实际出口数量 = dataGridView1[2, i].Value.ToString(),
-                        色号颜色 = dataGridView1[3, i].Value.ToString(),
-                        单价 = dataGridView1[4, i].Value.ToString(),
-                        预计单耗 = dataGridView1[5, i].Value.ToString(),
-                        预计成本 = dataGridView1[6, i].Value.ToString(),
-                        预计用量 = dataGridView1[7, i].Value.ToString(),
-                        库存 = dataGridView1[8, i].Value.ToString(),
-                        订量 = dataGridView1[9, i].Value.ToString(),
-                        实际到货量 = dataGridView1[10, i].Value.ToString(),
-                        实际到货金额 = dataGridView1[11, i].Value.ToString(),
-                        剩余数量 = dataGridView1[12, i].Value.ToString(),
-                        平均单耗 = dataGridView1[13, i].Value.ToString(),
-                        结算成本 = dataGridView1[14, i].Value.ToString(),
-                    };
-                    ML.Add(h);
+                        HeSuan h = new HeSuan()
+                        {
+                            LOT = dataGridView1[0, i].Value.ToString(),
+                            订单数量 = dataGridView1[1, i].Value.ToString(),
+                            //Name = "面料", 
+                            实际出口数量 = dataGridView1[2, i].Value.ToString(),
+                            色号颜色 = dataGridView1[3, i].Value.ToString(),
+                            单价 = dataGridView1[4, i].Value.ToString(),
+                            预计单耗 = dataGridView1[5, i].Value.ToString(),
+                            预计成本 = dataGridView1[6, i].Value.ToString(),
+                            预计用量 = dataGridView1[7, i].Value.ToString(),
+                            库存 = dataGridView1[8, i].Value.ToString(),
+                            订量 = dataGridView1[9, i].Value.ToString(),
+                            实际到货量 = dataGridView1[10, i].Value.ToString(),
+                            实际到货金额 = dataGridView1[11, i].Value.ToString(),
+                            剩余数量 = dataGridView1[12, i].Value.ToString(),
+                            平均单耗 = dataGridView1[13, i].Value.ToString(),
+                            结算成本 = dataGridView1[14, i].Value.ToString(),
+                        };
+                        ML.Add(h);
+                    }
                 }
             }
+            if (pd) 
+            {
+                MessageBox.Show("实际出口数量为空 无法生存面辅料订购单");
+            }else{
             InputCreatYjcb icb = new InputCreatYjcb(fm, cdhao, ML);
-            icb.Show();
+            icb.Show();}
         }
     }
 }

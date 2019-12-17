@@ -127,7 +127,7 @@
             this.txt_shuoming.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_shuoming.Location = new System.Drawing.Point(67, 178);
             this.txt_shuoming.Name = "txt_shuoming";
-            this.txt_shuoming.Size = new System.Drawing.Size(418, 29);
+            this.txt_shuoming.Size = new System.Drawing.Size(541, 29);
             this.txt_shuoming.TabIndex = 5;
             // 
             // cb_jgc
@@ -145,7 +145,7 @@
             this.txt_pant.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_pant.Location = new System.Drawing.Point(268, 131);
             this.txt_pant.Name = "txt_pant";
-            this.txt_pant.Size = new System.Drawing.Size(240, 29);
+            this.txt_pant.Size = new System.Drawing.Size(340, 29);
             this.txt_pant.TabIndex = 5;
             // 
             // label5
@@ -173,7 +173,7 @@
             this.txt_jacket.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_jacket.Location = new System.Drawing.Point(268, 96);
             this.txt_jacket.Name = "txt_jacket";
-            this.txt_jacket.Size = new System.Drawing.Size(240, 29);
+            this.txt_jacket.Size = new System.Drawing.Size(340, 29);
             this.txt_jacket.TabIndex = 5;
             // 
             // label3
@@ -207,7 +207,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(548, 20);
+            this.label7.Location = new System.Drawing.Point(447, 20);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 22);
             this.label7.TabIndex = 0;
@@ -226,9 +226,9 @@
             // txt_Label
             // 
             this.txt_Label.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_Label.Location = new System.Drawing.Point(609, 17);
+            this.txt_Label.Location = new System.Drawing.Point(508, 17);
             this.txt_Label.Name = "txt_Label";
-            this.txt_Label.Size = new System.Drawing.Size(140, 29);
+            this.txt_Label.Size = new System.Drawing.Size(335, 29);
             this.txt_Label.TabIndex = 5;
             this.txt_Label.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -237,7 +237,7 @@
             this.txt_fabric.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_fabric.Location = new System.Drawing.Point(179, 61);
             this.txt_fabric.Name = "txt_fabric";
-            this.txt_fabric.Size = new System.Drawing.Size(151, 29);
+            this.txt_fabric.Size = new System.Drawing.Size(429, 29);
             this.txt_fabric.TabIndex = 5;
             this.txt_fabric.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -256,7 +256,7 @@
             this.txt_desc.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_desc.Location = new System.Drawing.Point(80, 23);
             this.txt_desc.Name = "txt_desc";
-            this.txt_desc.Size = new System.Drawing.Size(170, 29);
+            this.txt_desc.Size = new System.Drawing.Size(361, 29);
             this.txt_desc.TabIndex = 5;
             this.txt_desc.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -351,7 +351,7 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Location = new System.Drawing.Point(156, 236);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;

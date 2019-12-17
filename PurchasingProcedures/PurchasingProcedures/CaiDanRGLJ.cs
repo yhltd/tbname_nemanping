@@ -107,6 +107,7 @@ namespace PurchasingProcedures
 
         private void CaiDanRGLJ_Load(object sender, EventArgs e)
         {
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;//设置dava宽度
             #region RGLJ
             DataTable dt4 = new DataTable();
             dt4.Columns.Add("Id", typeof(int));
@@ -178,6 +179,7 @@ namespace PurchasingProcedures
             this.txt_jacket.Text = cd[0].Jacket.ToString();
             this.txt_pant.Text = cd[0].Pant.ToString();
             this.txt_shuoming.Text = cd[0].shuoming.ToString();
+            dataGridView1.ColumnHeadersHeight = 35;
             txt_CaidanNo.SelectedIndexChanged += txt_CaidanNo_SelectedIndexChanged;
             cb_jgc.DataSource = jgc;
             cb_jgc.DisplayMember = "Name";
@@ -202,6 +204,56 @@ namespace PurchasingProcedures
                 txt_CaidanNo.SelectedIndex = txt_CaidanNo.FindString(" ");
             }
             dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
+            resizedava_cloumn(dataGridView1);//设置Dave 宽度
+        }
+        private void resizedava_cloumn(DataGridView dataGridView)
+        {
+            dataGridView.Columns[1].Width = 60;
+            dataGridView.Columns[2].Width = 60;
+            dataGridView.Columns[3].Width = 90;
+            dataGridView.Columns[4].Width = 40;
+            dataGridView.Columns[5].Width = 70;
+            dataGridView.Columns[6].Width = 40;
+            dataGridView.Columns[7].Width = 27;
+            dataGridView.Columns[8].Width = 27;
+            dataGridView.Columns[9].Width = 27;
+            dataGridView.Columns[10].Width = 27;
+            dataGridView.Columns[11].Width = 27;
+            dataGridView.Columns[12].Width = 27;
+            dataGridView.Columns[13].Width = 27;
+            dataGridView.Columns[14].Width = 27;
+            dataGridView.Columns[15].Width = 27;
+            dataGridView.Columns[16].Width = 27;
+            dataGridView.Columns[17].Width = 27;
+            dataGridView.Columns[18].Width = 27;
+            dataGridView.Columns[19].Width = 27;
+            dataGridView.Columns[20].Width = 27;
+            dataGridView.Columns[21].Width = 27;
+            dataGridView.Columns[22].Width = 27;
+            dataGridView.Columns[23].Width = 27;
+            dataGridView.Columns[24].Width = 27;
+            dataGridView.Columns[25].Width = 27;
+            dataGridView.Columns[26].Width = 27;
+            dataGridView.Columns[27].Width = 27;
+            dataGridView.Columns[28].Width = 27;
+            dataGridView.Columns[29].Width = 27;
+            dataGridView.Columns[30].Width = 27;
+            dataGridView.Columns[31].Width = 27;
+            dataGridView.Columns[32].Width = 27;
+            dataGridView.Columns[33].Width = 27;
+            dataGridView.Columns[34].Width = 27;
+            dataGridView.Columns[35].Width = 27;
+            dataGridView.Columns[36].Width = 27;
+            dataGridView.Columns[37].Width = 27;
+            dataGridView.Columns[38].Width = 27;
+            dataGridView.Columns[39].Width = 27;
+            dataGridView.Columns[40].Width = 27;
+            dataGridView.Columns[41].Width = 27;
+            dataGridView.Columns[42].Width = 27;
+            dataGridView.Columns[43].Width = 60;
+
+
+
 
         }
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -269,7 +321,7 @@ namespace PurchasingProcedures
                     this.txt_pant.Text = cdlist[0].Pant.ToString();
                     this.txt_shuoming.Text = cdlist[0].shuoming.ToString();
                     this.txt_jiaohuo.Text = cdlist[0].JiaoHuoRiqi.ToString();
-                    txt_zhidan.Text = cdlist[0].ZhiDanRiqi.ToString();
+                    txt_zhidan.Text = DateTime.Now.ToLongDateString().ToString();
                     txt_RN.Text = cdlist[0].RN_NO.ToString();
                     txt_mianlioa.Text = cdlist[0].MianLiao.ToString();
                 }
@@ -399,6 +451,11 @@ namespace PurchasingProcedures
         {
             // 设定单元格的默认值
             e.Row.Cells["款式"].Value = StyleId;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
     }
