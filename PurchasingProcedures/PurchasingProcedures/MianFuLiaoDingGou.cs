@@ -55,6 +55,7 @@ namespace PurchasingProcedures
             {
 
 
+                cblist = new List<DanHao>();
 
 
                 //this.comboBox1.SelectedIndexChanged -= comboBox1_SelectedIndexChanged;
@@ -102,7 +103,7 @@ namespace PurchasingProcedures
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message+":\r\n"+ex.StackTrace);
             }
         }
 
