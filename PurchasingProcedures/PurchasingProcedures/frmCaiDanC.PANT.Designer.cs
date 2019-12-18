@@ -490,7 +490,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(10, 215);
+            this.button2.Location = new System.Drawing.Point(12, 193);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(144, 51);
             this.button2.TabIndex = 25;
@@ -673,7 +673,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(10, 128);
+            this.button1.Location = new System.Drawing.Point(12, 106);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(144, 51);
             this.button1.TabIndex = 23;
@@ -825,6 +825,7 @@
             // 
             // treeView1
             // 
+            this.treeView1.LineColor = System.Drawing.Color.Empty;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
             treeNode1.Name = "节点14";
@@ -1020,12 +1021,12 @@
             this.C_ID});
             this.headerUnitView1.ColumnTreeView = new System.Windows.Forms.TreeView[] {
         this.treeView1};
-            this.headerUnitView1.Location = new System.Drawing.Point(160, 252);
+            this.headerUnitView1.Location = new System.Drawing.Point(10, 252);
             this.headerUnitView1.MergeColumnNames = ((System.Collections.Generic.List<string>)(resources.GetObject("headerUnitView1.MergeColumnNames")));
             this.headerUnitView1.Name = "headerUnitView1";
             this.headerUnitView1.RefreshAtHscroll = false;
             this.headerUnitView1.RowTemplate.Height = 23;
-            this.headerUnitView1.Size = new System.Drawing.Size(1104, 319);
+            this.headerUnitView1.Size = new System.Drawing.Size(1254, 319);
             this.headerUnitView1.TabIndex = 26;
             this.headerUnitView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.headerUnitView1_CellContentClick);
             this.headerUnitView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.headerUnitView1_CellValueChanged_1);
@@ -1034,28 +1035,31 @@
             // C_LOT
             // 
             this.C_LOT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.C_LOT.Frozen = true;
             this.C_LOT.HeaderText = "Column1";
             this.C_LOT.Name = "C_LOT";
-            this.C_LOT.Width = 70;
+            this.C_LOT.Width = 60;
             // 
             // C_STYLE
             // 
             this.C_STYLE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.C_STYLE.Frozen = true;
             this.C_STYLE.HeaderText = "Column2";
             this.C_STYLE.Name = "C_STYLE";
             this.C_STYLE.ReadOnly = true;
-            this.C_STYLE.Width = 70;
+            this.C_STYLE.Width = 60;
             // 
             // C_ART
             // 
-            this.C_ART.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.C_ART.Frozen = true;
             this.C_ART.HeaderText = "Column3";
             this.C_ART.Name = "C_ART";
-            this.C_ART.Width = 70;
+            this.C_ART.Width = 21;
             // 
             // C_COLOR
             // 
             this.C_COLOR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.C_COLOR.Frozen = true;
             this.C_COLOR.HeaderText = "Column4";
             this.C_COLOR.Name = "C_COLOR";
             this.C_COLOR.Width = 70;
@@ -1063,19 +1067,22 @@
             // C_COLORID
             // 
             this.C_COLORID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.C_COLORID.Frozen = true;
             this.C_COLORID.HeaderText = "Column5";
             this.C_COLORID.Name = "C_COLORID";
-            this.C_COLORID.Width = 70;
+            this.C_COLORID.Width = 60;
             // 
             // C_YAOWEI
             // 
             this.C_YAOWEI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.C_YAOWEI.Frozen = true;
             this.C_YAOWEI.HeaderText = "Column6";
             this.C_YAOWEI.Name = "C_YAOWEI";
-            this.C_YAOWEI.Width = 70;
+            this.C_YAOWEI.Width = 30;
             // 
             // C_30W_29L
             // 
+            this.C_30W_29L.Frozen = true;
             this.C_30W_29L.HeaderText = "Column7";
             this.C_30W_29L.Name = "C_30W_29L";
             this.C_30W_29L.Width = 21;
@@ -1289,7 +1296,7 @@
             this.C_Sub_Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.C_Sub_Total.HeaderText = "Column42";
             this.C_Sub_Total.Name = "C_Sub_Total";
-            this.C_Sub_Total.Width = 70;
+            this.C_Sub_Total.Width = 60;
             // 
             // C_ID
             // 
@@ -1297,7 +1304,7 @@
             this.C_ID.HeaderText = "Column43";
             this.C_ID.Name = "C_ID";
             this.C_ID.Visible = false;
-            this.C_ID.Width = 70;
+            this.C_ID.Width = 60;
             // 
             // frmCaiDanC
             // 

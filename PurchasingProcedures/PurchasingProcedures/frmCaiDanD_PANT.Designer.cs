@@ -343,7 +343,7 @@
             this.txt_shuoming.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_shuoming.Location = new System.Drawing.Point(67, 178);
             this.txt_shuoming.Name = "txt_shuoming";
-            this.txt_shuoming.Size = new System.Drawing.Size(517, 29);
+            this.txt_shuoming.Size = new System.Drawing.Size(418, 29);
             this.txt_shuoming.TabIndex = 5;
             // 
             // txt_pant
@@ -351,7 +351,7 @@
             this.txt_pant.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_pant.Location = new System.Drawing.Point(268, 131);
             this.txt_pant.Name = "txt_pant";
-            this.txt_pant.Size = new System.Drawing.Size(316, 29);
+            this.txt_pant.Size = new System.Drawing.Size(240, 29);
             this.txt_pant.TabIndex = 5;
             // 
             // label5
@@ -379,7 +379,7 @@
             this.txt_jacket.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_jacket.Location = new System.Drawing.Point(268, 96);
             this.txt_jacket.Name = "txt_jacket";
-            this.txt_jacket.Size = new System.Drawing.Size(316, 29);
+            this.txt_jacket.Size = new System.Drawing.Size(240, 29);
             this.txt_jacket.TabIndex = 5;
             // 
             // txt_Style
@@ -405,7 +405,7 @@
             this.txt_fabric.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_fabric.Location = new System.Drawing.Point(179, 61);
             this.txt_fabric.Name = "txt_fabric";
-            this.txt_fabric.Size = new System.Drawing.Size(405, 29);
+            this.txt_fabric.Size = new System.Drawing.Size(151, 29);
             this.txt_fabric.TabIndex = 5;
             // 
             // txt_mianlioa
@@ -427,7 +427,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(4, 199);
+            this.button2.Location = new System.Drawing.Point(4, 164);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(144, 51);
             this.button2.TabIndex = 20;
@@ -519,16 +519,16 @@
             // txt_Label
             // 
             this.txt_Label.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_Label.Location = new System.Drawing.Point(655, 23);
+            this.txt_Label.Location = new System.Drawing.Point(716, 19);
             this.txt_Label.Name = "txt_Label";
-            this.txt_Label.Size = new System.Drawing.Size(240, 29);
+            this.txt_Label.Size = new System.Drawing.Size(140, 29);
             this.txt_Label.TabIndex = 5;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(594, 26);
+            this.label7.Location = new System.Drawing.Point(655, 22);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 22);
             this.label7.TabIndex = 0;
@@ -539,7 +539,7 @@
             this.txt_desc.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_desc.Location = new System.Drawing.Point(80, 23);
             this.txt_desc.Name = "txt_desc";
-            this.txt_desc.Size = new System.Drawing.Size(504, 29);
+            this.txt_desc.Size = new System.Drawing.Size(170, 29);
             this.txt_desc.TabIndex = 5;
             // 
             // label1
@@ -555,7 +555,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(4, 112);
+            this.button1.Location = new System.Drawing.Point(4, 94);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(144, 51);
             this.button1.TabIndex = 18;
@@ -610,7 +610,6 @@
             // 
             // treeView1
             // 
-            this.treeView1.LineColor = System.Drawing.Color.Empty;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
             treeNode1.Name = "节点3";
@@ -893,12 +892,12 @@
             this.id});
             this.headerUnitView1.ColumnTreeView = new System.Windows.Forms.TreeView[] {
         this.treeView1};
-            this.headerUnitView1.Location = new System.Drawing.Point(154, 253);
+            this.headerUnitView1.Location = new System.Drawing.Point(4, 253);
             this.headerUnitView1.MergeColumnNames = ((System.Collections.Generic.List<string>)(resources.GetObject("headerUnitView1.MergeColumnNames")));
             this.headerUnitView1.Name = "headerUnitView1";
             this.headerUnitView1.RefreshAtHscroll = false;
             this.headerUnitView1.RowTemplate.Height = 23;
-            this.headerUnitView1.Size = new System.Drawing.Size(1110, 368);
+            this.headerUnitView1.Size = new System.Drawing.Size(1260, 368);
             this.headerUnitView1.TabIndex = 21;
             this.headerUnitView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.headerUnitView1_CellContentClick);
             this.headerUnitView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.headerUnitView1_CellValueChanged);
@@ -910,7 +909,7 @@
             this.LOT.DataPropertyName = "LOT";
             this.LOT.HeaderText = "Column1";
             this.LOT.Name = "LOT";
-            this.LOT.Width = 70;
+            this.LOT.Width = 60;
             // 
             // STYLE
             // 
@@ -918,14 +917,13 @@
             this.STYLE.HeaderText = "Column2";
             this.STYLE.Name = "STYLE";
             this.STYLE.ReadOnly = true;
-            this.STYLE.Width = 70;
+            this.STYLE.Width = 60;
             // 
             // ART
             // 
-            this.ART.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.ART.HeaderText = "Column3";
             this.ART.Name = "ART";
-            this.ART.Width = 70;
+            this.ART.Width = 21;
             // 
             // COLOR
             // 
@@ -939,14 +937,14 @@
             this.COLORName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.COLORName.HeaderText = "Column5";
             this.COLORName.Name = "COLORName";
-            this.COLORName.Width = 70;
+            this.COLORName.Width = 60;
             // 
             // yaowei
             // 
             this.yaowei.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.yaowei.HeaderText = "Column6";
             this.yaowei.Name = "yaowei";
-            this.yaowei.Width = 70;
+            this.yaowei.Width = 30;
             // 
             // C30W_R_30L
             // 
@@ -1163,13 +1161,14 @@
             this.Sub_Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Sub_Total.HeaderText = "Column42";
             this.Sub_Total.Name = "Sub_Total";
-            this.Sub_Total.Width = 70;
+            this.Sub_Total.Width = 60;
             // 
             // id
             // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.id.HeaderText = "id";
             this.id.Name = "id";
+            this.id.Visible = false;
+            this.id.Width = 21;
             // 
             // frmCaiDanD_PANT
             // 
@@ -1182,7 +1181,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmCaiDanD_PANT";
-            this.Text = "CaiDanC_PANT";
+            this.Text = "CaiDanD_PANT";
             this.Load += new System.EventHandler(this.frmCaiDanD_PANT_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

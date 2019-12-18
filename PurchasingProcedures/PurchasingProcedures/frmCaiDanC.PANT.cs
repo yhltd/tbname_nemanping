@@ -43,6 +43,7 @@ namespace PurchasingProcedures
 
         private void frmCaiDanC_Load(object sender, EventArgs e)
         {
+            //this.headerUnitView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             headerUnitView1.CellValueChanged -= headerUnitView1_CellValueChanged;
             txt_Style.Text = StyleId;
             txt_Label.Text = chima;
@@ -72,6 +73,7 @@ namespace PurchasingProcedures
                 txt_CaidanNo.SelectedIndex = txt_CaidanNo.FindString(" ");
             }
             headerUnitView1.CellValueChanged += headerUnitView1_CellValueChanged;
+            //resizedava_cloumn(headerUnitView1);//设置Dave 宽度
         }
         private void headerUnitView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -496,7 +498,57 @@ namespace PurchasingProcedures
         {
             e.Row.Cells["C_STYLE"].Value = StyleId;
         }
+        //private void resizedava_cloumn(HeaderUnitView headerUnitView)
+        //{
+        //    headerUnitView.Columns[1].Width = 60;
+        //    headerUnitView.Columns[2].Width = 60;
+        //    headerUnitView.Columns[3].Width = 60;
+        //    headerUnitView.Columns[4].Width = 70;
+        //    headerUnitView.Columns[5].Width = 60;
+        //    headerUnitView.Columns[6].Width = 30;
+        //    headerUnitView.Columns[7].Width = 25;
+        //    headerUnitView.Columns[8].Width = 25;
+        //    headerUnitView.Columns[9].Width = 25;
+        //    headerUnitView.Columns[10].Width = 25;
+        //    headerUnitView.Columns[11].Width = 25;
+        //    headerUnitView.Columns[12].Width = 25;
+        //    headerUnitView.Columns[13].Width = 25;
+        //    headerUnitView.Columns[14].Width = 25;
+        //    headerUnitView.Columns[15].Width = 25;
+        //    headerUnitView.Columns[16].Width = 25;
+        //    headerUnitView.Columns[17].Width = 25;
+        //    headerUnitView.Columns[18].Width = 25;
+        //    headerUnitView.Columns[19].Width = 25;
+        //    headerUnitView.Columns[20].Width = 25;
+        //    headerUnitView.Columns[21].Width = 25;
+        //    headerUnitView.Columns[22].Width = 25;
+        //    headerUnitView.Columns[23].Width = 25;
+        //    headerUnitView.Columns[24].Width = 25;
+        //    headerUnitView.Columns[25].Width = 25;
+        //    headerUnitView.Columns[26].Width = 25;
+        //    headerUnitView.Columns[27].Width = 25;
+        //    headerUnitView.Columns[28].Width = 25;
+        //    headerUnitView.Columns[29].Width = 25;
+        //    headerUnitView.Columns[30].Width = 25;
+        //    headerUnitView.Columns[31].Width = 25;
+        //    headerUnitView.Columns[32].Width = 25;
+        //    headerUnitView.Columns[33].Width = 25;
+        //    headerUnitView.Columns[34].Width = 25;
+        //    headerUnitView.Columns[35].Width = 25;
+        //    headerUnitView.Columns[36].Width = 25;
+        //    headerUnitView.Columns[37].Width = 25;
+        //    headerUnitView.Columns[38].Width = 25;
+        //    headerUnitView.Columns[39].Width = 25;
+        //    headerUnitView.Columns[40].Width = 25;
+        //    headerUnitView.Columns[41].Width = 25;
+        
+        //    headerUnitView.Columns[42].Width = 60;
 
+
+
+
+
+        //}
         private void headerUnitView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

@@ -121,9 +121,9 @@ namespace PurchasingProcedures
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;//设置dava宽度
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;//设置dava宽度
 
-
+    
 
             #region RGL2
             DataTable dt1 = new DataTable();
@@ -135,42 +135,42 @@ namespace PurchasingProcedures
             dt1.Columns.Add("颜色", typeof(string));
             dt1.Columns.Add("颜色编号", typeof(string));
             dt1.Columns.Add("裤子", typeof(string));
-            dt1.Columns.Add("34R", typeof(string));
-            dt1.Columns.Add("36R", typeof(string));
-            dt1.Columns.Add("38R", typeof(string));
-            dt1.Columns.Add("40R", typeof(string));
-            dt1.Columns.Add("42R", typeof(string));
-            dt1.Columns.Add("44R", typeof(string));
-            dt1.Columns.Add("46R", typeof(string));
-            dt1.Columns.Add("48R", typeof(string));
-            dt1.Columns.Add("50R", typeof(string));
-            dt1.Columns.Add("52R", typeof(string));
-            dt1.Columns.Add("54R", typeof(string));
-            dt1.Columns.Add("56R", typeof(string));
-            dt1.Columns.Add("58R", typeof(string));
-            dt1.Columns.Add("60R", typeof(string));
-            dt1.Columns.Add("62R", typeof(string));
-            dt1.Columns.Add("36L", typeof(string));
-            dt1.Columns.Add("38L", typeof(string));
-            dt1.Columns.Add("40L", typeof(string));
-            dt1.Columns.Add("42L", typeof(string));
-            dt1.Columns.Add("44L", typeof(string));
-            dt1.Columns.Add("46L", typeof(string));
-            dt1.Columns.Add("48L", typeof(string));
-            dt1.Columns.Add("50L", typeof(string));
-            dt1.Columns.Add("52L", typeof(string));
-            dt1.Columns.Add("54L", typeof(string));
-            dt1.Columns.Add("56L", typeof(string));
-            dt1.Columns.Add("58L", typeof(string));
-            dt1.Columns.Add("60L", typeof(string));
-            dt1.Columns.Add("62L", typeof(string));
-            dt1.Columns.Add("34S", typeof(string));
-            dt1.Columns.Add("36S", typeof(string));
-            dt1.Columns.Add("38S", typeof(string));
-            dt1.Columns.Add("40S", typeof(string));
-            dt1.Columns.Add("42S", typeof(string));
-            dt1.Columns.Add("44S", typeof(string));
-            dt1.Columns.Add("46S", typeof(string));
+            dt1.Columns.Add("28", typeof(string));
+            dt1.Columns.Add("30", typeof(string));
+            dt1.Columns.Add("32", typeof(string));
+            dt1.Columns.Add("34", typeof(string));
+            dt1.Columns.Add("36", typeof(string));
+            dt1.Columns.Add("38", typeof(string));
+            dt1.Columns.Add("40", typeof(string));
+            dt1.Columns.Add("42", typeof(string));
+            dt1.Columns.Add("44", typeof(string));
+            dt1.Columns.Add("46", typeof(string));
+            dt1.Columns.Add("48", typeof(string));
+            dt1.Columns.Add("50", typeof(string));
+            dt1.Columns.Add("52", typeof(string));
+            dt1.Columns.Add("54", typeof(string));
+            dt1.Columns.Add("56", typeof(string));
+            dt1.Columns.Add(" 30", typeof(string));
+            dt1.Columns.Add(" 32", typeof(string));
+            dt1.Columns.Add(" 34", typeof(string));
+            dt1.Columns.Add(" 36", typeof(string));
+            dt1.Columns.Add(" 38", typeof(string));
+            dt1.Columns.Add(" 40", typeof(string));
+            dt1.Columns.Add(" 42", typeof(string));
+            dt1.Columns.Add(" 44", typeof(string));
+            dt1.Columns.Add(" 46", typeof(string));
+            dt1.Columns.Add(" 48", typeof(string));
+            dt1.Columns.Add(" 50", typeof(string));
+            dt1.Columns.Add(" 52", typeof(string));
+            dt1.Columns.Add(" 54", typeof(string));
+            dt1.Columns.Add(" 56", typeof(string));
+            dt1.Columns.Add(" 58", typeof(string));
+            dt1.Columns.Add(" 60", typeof(string));
+            dt1.Columns.Add(" 62", typeof(string));
+            dt1.Columns.Add("34 ", typeof(string));
+            dt1.Columns.Add("36 ", typeof(string));
+            dt1.Columns.Add("38 ", typeof(string));
+            dt1.Columns.Add("40 ", typeof(string));
             dt1.Columns.Add("Sub Total: ", typeof(string));
             dataGridView1.DataSource = dt1;
             DataGridViewHelper rowMergeView = new DataGridViewHelper(dataGridView1);
@@ -181,48 +181,48 @@ namespace PurchasingProcedures
             rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(4, 1, "COLOR"));
             rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(5, 1, "COLOR#"));
             rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(6, 1, "上衣"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(7, 1, "28"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(8, 1, "30"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(9, 1, "32"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(10, 1, "34"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(11, 1, "36"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(12, 1, "38"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(13, 1, "40"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(14, 1, "42"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(15, 1, "44"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(16, 1, "46"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(17, 1, "48"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(18, 1, "50"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(19, 1, "52"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(20, 1, "54"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(21, 1, "56"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(22, 1, "30"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(23, 1, "32"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(24, 1, "34"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(25, 1, "36"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(26, 1, "38"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(27, 1, "40"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(28, 1, "42"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(29, 1, "44"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(30, 1, "46"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(31, 1, "48"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(32, 1, "50"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(33, 1, "52"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(34, 1, "54"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(35, 1, "56"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(36, 1, "28"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(37, 1, "30"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(38, 1, "32"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(39, 1, "34"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(40, 1, "36"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(41, 1, "38"));
-            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(42, 1, "40"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(7, 1, "34R"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(8, 1, "36R"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(9, 1, "38R"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(10, 1, "40R"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(11, 1, "42R"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(12, 1, "44R"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(13, 1, "46R"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(14, 1, "48R"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(15, 1, "50R"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(16, 1, "52R"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(17, 1, "54R"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(18, 1, "56R"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(19, 1, "58R"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(20, 1, "60R"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(21, 1, "62R"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(22, 1, "36L"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(23, 1, "38L"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(24, 1, "40L"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(25, 1, "42L"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(26, 1, "44L"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(27, 1, "46L"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(28, 1, "48L"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(29, 1, "50L"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(30, 1, "52L"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(31, 1, "54L"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(32, 1, "56L"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(33, 1, "58L"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(34, 1, "60L"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(35, 1, "62L"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(36, 1, "64L"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(37, 1, "36S"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(38, 1, "38S"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(39, 1, "40S"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(40, 1, "42S"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(41, 1, "44S"));
+            rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(42, 1, "46S"));
             rowMergeView.Headers.Add(new DataGridViewHelper.TopHeader(43, 1, "订单合计"));
 
             #endregion
 
 
-
+       
 
 
 
@@ -278,10 +278,46 @@ namespace PurchasingProcedures
         {
             dataGridView.Columns[1].Width = 60;
             dataGridView.Columns[2].Width = 60;
-            dataGridView.Columns[3].Width = 90;
-            dataGridView.Columns[4].Width = 60;
+            dataGridView.Columns[3].Width = 60;
+            dataGridView.Columns[4].Width = 70;
             dataGridView.Columns[5].Width = 60;
-            dataGridView.Columns[6].Width = 60;
+            dataGridView.Columns[6].Width = 30;
+            dataGridView.Columns[7].Width = 25;
+            dataGridView.Columns[8].Width = 25;
+            dataGridView.Columns[9].Width = 25;
+            dataGridView.Columns[10].Width = 25;
+            dataGridView.Columns[11].Width = 25;
+            dataGridView.Columns[12].Width = 25;
+            dataGridView.Columns[13].Width = 25;
+            dataGridView.Columns[14].Width = 25;
+            dataGridView.Columns[15].Width = 25;
+            dataGridView.Columns[16].Width = 25;
+            dataGridView.Columns[17].Width = 25;
+            dataGridView.Columns[18].Width = 25;
+            dataGridView.Columns[19].Width = 25;
+            dataGridView.Columns[20].Width = 25;
+            dataGridView.Columns[21].Width = 25;
+            dataGridView.Columns[22].Width = 25;
+            dataGridView.Columns[23].Width = 25;
+            dataGridView.Columns[24].Width = 25;
+            dataGridView.Columns[25].Width = 25;
+            dataGridView.Columns[26].Width = 25;
+            dataGridView.Columns[27].Width = 25;
+            dataGridView.Columns[28].Width = 25;
+            dataGridView.Columns[29].Width = 25;
+            dataGridView.Columns[30].Width = 25;
+            dataGridView.Columns[31].Width = 25;
+            dataGridView.Columns[32].Width = 25;
+            dataGridView.Columns[33].Width = 25;
+            dataGridView.Columns[34].Width = 25;
+            dataGridView.Columns[35].Width = 25;
+            dataGridView.Columns[36].Width = 25;
+            dataGridView.Columns[37].Width = 25;
+            dataGridView.Columns[38].Width = 25;
+            dataGridView.Columns[39].Width = 25;
+            dataGridView.Columns[40].Width = 25;
+            dataGridView.Columns[41].Width = 25;
+            dataGridView.Columns[42].Width = 25;
             dataGridView.Columns[43].Width = 60;
 
 

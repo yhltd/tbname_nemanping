@@ -72,10 +72,10 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(154, 227);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 227);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1110, 326);
+            this.dataGridView1.Size = new System.Drawing.Size(1260, 326);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged_1);
@@ -173,7 +173,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(4, 103);
+            this.button1.Location = new System.Drawing.Point(4, 88);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(144, 51);
             this.button1.TabIndex = 9;
@@ -339,7 +339,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(4, 190);
+            this.button2.Location = new System.Drawing.Point(4, 158);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(144, 51);
             this.button2.TabIndex = 11;
