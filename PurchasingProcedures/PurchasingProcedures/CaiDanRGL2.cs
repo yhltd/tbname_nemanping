@@ -36,7 +36,7 @@ namespace PurchasingProcedures
             FM = f;
             cd = gn2.CreateCaiDan(style, cmdp);
             dfi = new Definefactoryinput();
-            if (cd.Count == 0)
+            if (cd != null && cd.Count == 0)
             {
                 MessageBox.Show("生成失败！ 原因:没有该Style的数据");
                 this.Close();
@@ -123,7 +123,7 @@ namespace PurchasingProcedures
         {
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;//设置dava宽度
 
-    
+
 
             #region RGL2
             DataTable dt1 = new DataTable();
@@ -222,7 +222,7 @@ namespace PurchasingProcedures
             #endregion
 
 
-       
+
 
 
 

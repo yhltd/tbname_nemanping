@@ -18,13 +18,13 @@ namespace PurchasingProcedures
         public string insertType;
         public string frmLabel;
         public Form f;
-        public InputCaiDanHao(string type,string label,Form fm)
+        public InputCaiDanHao(string type, string label, Form fm)
         {
             InitializeComponent();
             insertType = type;
             f = fm;
             frmLabel = label;
-             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,12 +33,12 @@ namespace PurchasingProcedures
             JingDu frm = new JingDu(this.backgroundWorker1, "生成裁单表中....");
             frm.ShowDialog();
             frm.Close();
-            if(insertType.Equals("裁单"))
+            if (insertType.Equals("裁单"))
             {
                 if (comboBox1.Text.Equals("RGL1"))
                 {
                     CaiDan C = new CaiDan(textBox1.Text, comboBox1.Text, f);
-                
+
                     if (!C.IsDisposed)
                     {
                         C.TopLevel = true;
@@ -46,63 +46,114 @@ namespace PurchasingProcedures
                         C.Show();
                     }
                 }
-                else if (comboBox1.Text.Equals("RGL2")) 
+                else if (comboBox1.Text.Equals("RGL2"))
                 {
-                    CaiDanRGL2 C = new CaiDanRGL2(textBox1.Text, comboBox1.Text, f);
-
-                    if (!C.IsDisposed)
+                    try
                     {
-                        C.TopLevel = true;
-                        C.MdiParent = f;
-                        C.Show();
+                        CaiDanRGL2 C = new CaiDanRGL2(textBox1.Text, comboBox1.Text, f);
+
+                        if (!C.IsDisposed)
+                        {
+                            C.TopLevel = true;
+                            C.MdiParent = f;
+                            C.Show();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("异常：3207023 " + ex);
+
+                        return;
+                        throw;
                     }
 
                 }
                 else if (comboBox1.Text.Equals("SLIM"))
                 {
-                    CaidanSLIM C = new CaidanSLIM(textBox1.Text, comboBox1.Text, f);
-
-                    if (!C.IsDisposed)
+                    try
                     {
-                        C.TopLevel = true;
-                        C.MdiParent = f;
-                        C.Show();
+                        CaidanSLIM C = new CaidanSLIM(textBox1.Text, comboBox1.Text, f);
+
+                        if (!C.IsDisposed)
+                        {
+                            C.TopLevel = true;
+                            C.MdiParent = f;
+                            C.Show();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("异常：3260023 " + ex);
+
+                        return;
+                        throw;
                     }
 
                 }
                 else if (comboBox1.Text.Equals("RGLJ"))
                 {
-                    CaiDanRGLJ C = new CaiDanRGLJ(textBox1.Text, comboBox1.Text, f);
-
-                    if (!C.IsDisposed)
+                    try
                     {
-                        C.TopLevel = true;
-                        C.MdiParent = f;
-                        C.Show();
+                        CaiDanRGLJ C = new CaiDanRGLJ(textBox1.Text, comboBox1.Text, f);
+
+                        if (!C.IsDisposed)
+                        {
+                            C.TopLevel = true;
+                            C.MdiParent = f;
+                            C.Show();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("异常：3206023 " + ex);
+
+                        return;
+                        throw;
                     }
 
                 }
                 else if (comboBox1.Text.Equals("D.PANT"))
                 {
-                    frmCaiDanD_PANT C = new frmCaiDanD_PANT(textBox1.Text, comboBox1.Text, f);
-
-                    if (!C.IsDisposed)
+                    try
                     {
-                        C.TopLevel = true;
-                        C.MdiParent = f;
-                        C.Show();
-                    }
+                        frmCaiDanD_PANT C = new frmCaiDanD_PANT(textBox1.Text, comboBox1.Text, f);
 
+                        if (!C.IsDisposed)
+                        {
+                            C.TopLevel = true;
+                            C.MdiParent = f;
+                            C.Show();
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("异常：3200623 " + ex);
+
+                        return;
+                        throw;
+                    }
                 }
                 else if (comboBox1.Text.Equals("C.PANT"))
                 {
-                    frmCaiDanC C = new frmCaiDanC(textBox1.Text, comboBox1.Text, f);
-
-                    if (!C.IsDisposed)
+                    try
                     {
-                        C.TopLevel = true;
-                        C.MdiParent = f;
-                        C.Show();
+                        frmCaiDanC C = new frmCaiDanC(textBox1.Text, comboBox1.Text, f);
+
+                        if (!C.IsDisposed)
+                        {
+                            C.TopLevel = true;
+                            C.MdiParent = f;
+                            C.Show();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("异常：3250023 " + ex);
+
+                        return;
+
+                        throw;
                     }
 
                 }
@@ -117,10 +168,10 @@ namespace PurchasingProcedures
             comboBox1.DisplayMember = "BiaoName";
             comboBox1.ValueMember = "id";
             List<ChiMa_Dapeibiao> list = new List<ChiMa_Dapeibiao>();
-            ChiMa_Dapeibiao cd = new ChiMa_Dapeibiao() 
+            ChiMa_Dapeibiao cd = new ChiMa_Dapeibiao()
             {
-                BiaoName ="RGL1",
-                id=1
+                BiaoName = "RGL1",
+                id = 1
             };
             ChiMa_Dapeibiao cd1 = new ChiMa_Dapeibiao()
             {
@@ -156,7 +207,7 @@ namespace PurchasingProcedures
             comboBox1.DisplayMember = "BiaoName";
             comboBox1.ValueMember = "id";
             comboBox1.DataSource = list;
-            List<clsBuiness.KuanShiBiao> cdlist = cal.SelectKuanshi().GroupBy(g => g.STYLE).Select(pc=>pc.First()).ToList<clsBuiness.KuanShiBiao>();
+            List<clsBuiness.KuanShiBiao> cdlist = cal.SelectKuanshi().GroupBy(g => g.STYLE).Select(pc => pc.First()).ToList<clsBuiness.KuanShiBiao>();
             textBox1.DataSource = cdlist;
             textBox1.DisplayMember = "STYLE";
             textBox1.ValueMember = "Id";

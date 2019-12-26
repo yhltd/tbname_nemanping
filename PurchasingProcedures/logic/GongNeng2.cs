@@ -11,6 +11,7 @@ using clsBuiness;
 using System.Data;
 using System.IO;
 using NPOI.SS.Util;
+using System.Windows.Forms;
 namespace logic
 {
     public class GongNeng2
@@ -20,24 +21,37 @@ namespace logic
         public List<CaiDan> CreateCaiDan(string style, string chima)
         {
             List<CaiDan> list = new List<CaiDan>();
-            using (nemanpingEntities3 npe = new nemanpingEntities3())
-            {
-                var selectKuanshi = from kuanshi in npe.KuanShiBiao
-                                    where kuanshi.STYLE.Equals(style)
-                                    select kuanshi;
-                CaiDan cd = new CaiDan();
-                foreach (var item in selectKuanshi)
-                {
-                    cd.DESC = item.DESC;
-                    cd.FABRIC = item.FABRIC;
-                    cd.STYLE = item.STYLE;
-                    cd.Jacket = item.JACKET;
-                    cd.Pant = item.PANT;
-                    cd.shuoming = item.ShuoMing;
-                    list.Add(cd);
-                }
 
+            try
+            {
+                using (nemanpingEntities3 npe = new nemanpingEntities3())
+                {
+                    var selectKuanshi = from kuanshi in npe.KuanShiBiao
+                                        where kuanshi.STYLE.Equals(style)
+                                        select kuanshi;
+                    CaiDan cd = new CaiDan();
+                    foreach (var item in selectKuanshi)
+                    {
+                        cd.DESC = item.DESC;
+                        cd.FABRIC = item.FABRIC;
+                        cd.STYLE = item.STYLE;
+                        cd.Jacket = item.JACKET;
+                        cd.Pant = item.PANT;
+                        cd.shuoming = item.ShuoMing;
+                        list.Add(cd);
+                    }
+
+                }
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("异常：30023 " + ex);
+                return null;
+
+                throw;
+            }
+
             return list;
         }
         #endregion
@@ -413,7 +427,7 @@ namespace logic
                 wb.Write(patha);//向打开的这个xls文件中写入并保存。  
                 patha.Close();
             }
-            InsertCaidanC_PANT(dt, cd.DESC, cd.FABRIC, cd.STYLE, cd.Jacket, cd.Pant, cd.shuoming, cd.JiaGongchang, cd.CaiDanHao, cd.ZhiDanRiqi, cd.JiaoHuoRiqi, cd.RN_NO, cd.MianLiao, cd.LABEL);
+            InsertCaidanD_PANT(dt, cd.DESC, cd.FABRIC, cd.STYLE, cd.Jacket, cd.Pant, cd.shuoming, cd.JiaGongchang, cd.CaiDanHao, cd.ZhiDanRiqi, cd.JiaoHuoRiqi, cd.RN_NO, cd.MianLiao, cd.LABEL);
 
         }
 
@@ -558,24 +572,38 @@ namespace logic
         }
         public List<CaiDan_RGL2> selectCaiDanRGL2(string cdhao)
         {
-            List<CaiDan_RGL2> list = new List<CaiDan_RGL2>();
-            using (nemanpingEntities3 nep = new nemanpingEntities3())
+           // if (cdhao == null || cdhao.Length <= 0)
+              //  return null;
+
+            try
             {
-                if (!cdhao.Equals(string.Empty))
+                List<CaiDan_RGL2> list = new List<CaiDan_RGL2>();
+                using (nemanpingEntities3 nep = new nemanpingEntities3())
                 {
-                    var select = from n in nep.CaiDan_RGL2
-                                 where n.CaiDanHao.Equals(cdhao)
-                                 select n;
-                    list = select.ToList();
+                    if (!cdhao.Equals(string.Empty))
+                    {
+                        var select = from n in nep.CaiDan_RGL2
+                                     where n.CaiDanHao.Equals(cdhao)
+                                     select n;
+                        list = select.ToList();
+                    }
+                    else
+                    {
+                        var select = from n in nep.CaiDan_RGL2
+                                     select n;
+                        list = select.ToList();
+                    }
                 }
-                else
-                {
-                    var select = from n in nep.CaiDan_RGL2
-                                 select n;
-                    list = select.ToList();
-                }
+                return list;
             }
-            return list;
+            catch (Exception ex)
+            {
+                MessageBox.Show("异常：32070223 " + ex);
+
+                return null;
+
+                throw;
+            }
         }
         public List<CaiDan_SLIM> selectCaiDanSLIM(string cdhao)
         {
@@ -949,7 +977,7 @@ namespace logic
                     }
                     else
                     {
-                        int id = Convert.ToInt32(dr[43]);
+                        int id = Convert.ToInt32(dr[42]);
                         var select = from sc in can.CaiDan_C_PANT where sc.id == id select sc;
                         var target = select.FirstOrDefault<CaiDan_C_PANT>();
                         target.DESC = desc;
@@ -1085,7 +1113,7 @@ namespace logic
                     }
                     else
                     {
-                        int id = Convert.ToInt32(dr[43]);
+                        int id = Convert.ToInt32(dr[42]);
                         var select = from sc in can.CaiDan_D_PANT where sc.id == id select sc;
                         var target = select.FirstOrDefault<CaiDan_D_PANT>();
                         target.DESC = desc;
