@@ -235,7 +235,7 @@ namespace PurchasingProcedures
                                 }
                                 foreach (ChiMa_Dapeibiao s in list)
                                 {
-                                    dt.Rows.Add(s.id, s.LOT__面料, s.STYLE_款式, s.ART_货号, s.COLOR_颜色, s.COLOR__颜色编号, s.JACKET_上衣_PANT_裤子, s.C34R_28, s.C36R_30, s.C38R_32, s.C40R___34, s.C42R_36, s.C44R_38, s.C46R_40, s.C48R_42, s.C50R_44, s.C52R_46, s.C54R_48, s.C56R_50, s.C58R_52, s.C60R_54, s.C62R_56, s.C36L_30, s.C38L_32, s.C40L_34, s.C42L_36, s.C44L_38, s.C46L_40, s.C48L_42, s.C50L_44, s.C52L_46, s.C54L_48, s.C56L_50, s.C58L_52, s.C60L_54, s.C62L_56, s.C34S_28, s.C36S_30, s.C38S_32, s.C40S_34, s.C42S_36, s.C44S_38, s.C46S_40, s.DingdanHeji);
+                                    dt.Rows.Add( s.LOT__面料, s.STYLE_款式, s.ART_货号, s.COLOR_颜色, s.COLOR__颜色编号, s.JACKET_上衣_PANT_裤子, s.C34R_28, s.C36R_30, s.C38R_32, s.C40R___34, s.C42R_36, s.C44R_38, s.C46R_40, s.C48R_42, s.C50R_44, s.C52R_46, s.C54R_48, s.C56R_50, s.C58R_52, s.C60R_54, s.C62R_56, s.C36L_30, s.C38L_32, s.C40L_34, s.C42L_36, s.C44L_38, s.C46L_40, s.C48L_42, s.C50L_44, s.C52L_46, s.C54L_48, s.C56L_50, s.C58L_52, s.C60L_54, s.C62L_56, s.C34S_28, s.C36S_30, s.C38S_32, s.C40S_34, s.C42S_36, s.C44S_38, s.C46S_40, s.DingdanHeji);
                                 }
                                 dataGridView1.DataSource = dt; 
                                 #endregion

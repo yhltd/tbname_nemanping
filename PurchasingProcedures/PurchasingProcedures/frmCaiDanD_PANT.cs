@@ -54,13 +54,13 @@ namespace PurchasingProcedures
                 if (txt_CaidanNo.Text != null && !txt_CaidanNo.Text.Equals(string.Empty))
                 {
                     FolderBrowserDialog dialog = new FolderBrowserDialog();
-                    dialog.Description = "请选择文件路径";
-                    if (dialog.ShowDialog() == DialogResult.OK)
-                    {
-                        foldPath = dialog.SelectedPath;
+                    //dialog.Description = "请选择文件路径";
+                    //if (dialog.ShowDialog() == DialogResult.OK)
+                    //{
+                        foldPath =Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Result");
                         CreateExcel(foldPath);
                         MessageBox.Show("生成成功！");
-                    }
+                    //}
                 }
                 else 
                 {
@@ -72,6 +72,9 @@ namespace PurchasingProcedures
                 MessageBox.Show(ex.Message);
 
             }
+            string foldPath1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Result");
+            //string ZFCEPath = Path.Combine(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "System"), "");
+            System.Diagnostics.Process.Start("explorer.exe", foldPath1);
         }
         private void CreateExcel(string path)
         {

@@ -200,3 +200,4 @@ C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\
 C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.CaidanSLIM.resources
 C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\obj\Debug\PurchasingProcedures.CaiDanRGL2.resources
 C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\App.config
+E:\yho111\tbname_nemanping\PurchasingProcedures\PurchasingProcedures\bin\Debug\App.config
