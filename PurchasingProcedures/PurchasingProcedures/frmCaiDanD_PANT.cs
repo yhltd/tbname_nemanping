@@ -93,27 +93,11 @@ namespace PurchasingProcedures
             cd.ZhiDanRiqi = this.txt_zhidan.Text;
             cd.JiaoHuoRiqi = this.txt_jiaohuo.Text;
             cd.RN_NO = this.txt_RN.Text;
-            //dt.Columns.Add("id", typeof(int));
-            //for (int i = 0; i < dataGridView1.Columns.Count; i++)
-            //{
-            //    //if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("id"))
-            //    //{
-            //    dt.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
-            //    //}
-            //}
-            //for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            //{
-            //    //if (dataGridView1.Rows[i].Cells[6].Value != null)
-            //    //{
-            //    dt.Rows.Add(dataGridView1.Rows[i].Cells[0].Value, dataGridView1.Rows[i].Cells[1].Value, dataGridView1.Rows[i].Cells[2].Value, dataGridView1.Rows[i].Cells[3].Value, dataGridView1.Rows[i].Cells[4].Value, dataGridView1.Rows[i].Cells[5].Value, dataGridView1.Rows[i].Cells[6].Value, dataGridView1.Rows[i].Cells[7].Value, dataGridView1.Rows[i].Cells[8].Value, dataGridView1.Rows[i].Cells[9].Value, dataGridView1.Rows[i].Cells[10].Value, dataGridView1.Rows[i].Cells[11].Value, dataGridView1.Rows[i].Cells[12].Value, dataGridView1.Rows[i].Cells[13].Value, dataGridView1.Rows[i].Cells[14].Value, dataGridView1.Rows[i].Cells[15].Value, dataGridView1.Rows[i].Cells[16].Value, dataGridView1.Rows[i].Cells[17].Value, dataGridView1.Rows[i].Cells[18].Value, dataGridView1.Rows[i].Cells[19].Value, dataGridView1.Rows[i].Cells[20].Value, dataGridView1.Rows[i].Cells[21].Value, dataGridView1.Rows[i].Cells[22].Value, dataGridView1.Rows[i].Cells[23].Value, dataGridView1.Rows[i].Cells[24].Value, dataGridView1.Rows[i].Cells[25].Value, dataGridView1.Rows[i].Cells[26].Value, dataGridView1.Rows[i].Cells[27].Value, dataGridView1.Rows[i].Cells[28].Value, dataGridView1.Rows[i].Cells[29].Value, dataGridView1.Rows[i].Cells[30].Value, dataGridView1.Rows[i].Cells[31].Value, dataGridView1.Rows[i].Cells[32].Value, dataGridView1.Rows[i].Cells[33].Value, dataGridView1.Rows[i].Cells[34].Value, dataGridView1.Rows[i].Cells[35].Value, dataGridView1.Rows[i].Cells[36].Value, dataGridView1.Rows[i].Cells[37].Value, dataGridView1.Rows[i].Cells[38].Value, dataGridView1.Rows[i].Cells[39].Value, dataGridView1.Rows[i].Cells[40].Value, dataGridView1.Rows[i].Cells[41].Value, dataGridView1.Rows[i].Cells[42].Value);
-            //    //}
-            //}
+        
             for (int i = 0; i < headerUnitView1.Columns.Count; i++)
             {
-                //if (!headerUnitView1.Columns[i].HeaderCell.Value.ToString().Equals("id"))
-                //{
                     dt.Columns.Add(headerUnitView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
-                //}
+            
             }
             for (int i = 0; i < headerUnitView1.Rows.Count; i++)
             {

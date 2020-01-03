@@ -152,7 +152,7 @@
             this.txt_jacket.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_jacket.Location = new System.Drawing.Point(268, 96);
             this.txt_jacket.Name = "txt_jacket";
-            this.txt_jacket.Size = new System.Drawing.Size(316, 29);
+            this.txt_jacket.Size = new System.Drawing.Size(592, 29);
             this.txt_jacket.TabIndex = 5;
             // 
             // label3
@@ -215,7 +215,7 @@
             this.txt_fabric.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_fabric.Location = new System.Drawing.Point(179, 61);
             this.txt_fabric.Name = "txt_fabric";
-            this.txt_fabric.Size = new System.Drawing.Size(405, 29);
+            this.txt_fabric.Size = new System.Drawing.Size(681, 29);
             this.txt_fabric.TabIndex = 5;
             // 
             // txt_jiaohuo

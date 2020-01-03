@@ -137,6 +137,7 @@ namespace logic
                         target.STYLE = style;
                         target.Jacket = jacket;
                         target.Pant = pant;
+                        target.LABEL = label;
                         target.shuoming = shuoming;
                         target.JiaGongchang = jiagongchang;
                         target.CaiDanHao = caidan;
@@ -208,7 +209,7 @@ namespace logic
                 Row r = st1.GetRow(1);
                 Cell descvalue = r.CreateCell(1);
                 descvalue.SetCellValue(cd.DESC);
-                Cell Lablevalue = r.CreateCell(14);
+                Cell Lablevalue = r.CreateCell(13);
                 Lablevalue.SetCellValue(cd.LABEL);
                 st1.AddMergedRegion(new CellRangeAddress(1, 1, 14, 18));
                 Cell JiaGongChangValue = r.CreateCell(38);
@@ -268,7 +269,7 @@ namespace logic
                 Row r = st1.GetRow(1);
                 Cell descvalue = r.CreateCell(1);
                 descvalue.SetCellValue(cd.DESC);
-                Cell Lablevalue = r.CreateCell(14);
+                Cell Lablevalue = r.CreateCell(13);
                 Lablevalue.SetCellValue(cd.LABEL);
                 st1.AddMergedRegion(new CellRangeAddress(1, 1, 14, 18));
                 Cell JiaGongChangValue = r.CreateCell(38);
@@ -326,7 +327,7 @@ namespace logic
                 Row r = st1.GetRow(1);
                 Cell descvalue = r.CreateCell(1);
                 descvalue.SetCellValue(cd.DESC);
-                Cell Lablevalue = r.CreateCell(14);
+                Cell Lablevalue = r.CreateCell(13);
                 Lablevalue.SetCellValue(cd.LABEL);
                 st1.AddMergedRegion(new CellRangeAddress(1, 1, 14, 18));
                 Cell JiaGongChangValue = r.CreateCell(38);
@@ -384,7 +385,7 @@ namespace logic
                 Row r = st1.GetRow(1);
                 Cell descvalue = r.CreateCell(1);
                 descvalue.SetCellValue(cd.DESC);
-                Cell Lablevalue = r.CreateCell(14);
+                Cell Lablevalue = r.CreateCell(13);
                 Lablevalue.SetCellValue(cd.LABEL);
                 st1.AddMergedRegion(new CellRangeAddress(1, 1, 14, 18));
                 Cell JiaGongChangValue = r.CreateCell(38);
@@ -444,7 +445,7 @@ namespace logic
                 Row r = st1.GetRow(1);
                 Cell descvalue = r.CreateCell(1);
                 descvalue.SetCellValue(cd.DESC);
-                Cell Lablevalue = r.CreateCell(14);
+                Cell Lablevalue = r.CreateCell(13);
                 Lablevalue.SetCellValue(cd.LABEL);
                 st1.AddMergedRegion(new CellRangeAddress(1, 1, 14, 18));
                 Cell JiaGongChangValue = r.CreateCell(38);
@@ -503,7 +504,7 @@ namespace logic
                 Row r = st1.GetRow(1);
                 Cell descvalue = r.CreateCell(1);
                 descvalue.SetCellValue(cd.DESC);
-                Cell Lablevalue = r.CreateCell(14);
+                Cell Lablevalue = r.CreateCell(13);
                 Lablevalue.SetCellValue(cd.LABEL);
                 st1.AddMergedRegion(new CellRangeAddress(1, 1, 14, 18));
                 Cell JiaGongChangValue = r.CreateCell(38);
@@ -861,6 +862,7 @@ namespace logic
                         target.STYLE = style;
                         target.Jacket = jacket;
                         target.Pant = pant;
+                        target.LABEL = label;
                         target.shuoming = shuoming;
                         target.JiaGongchang = jiagongchang;
                         target.CaiDanHao = caidan;
@@ -985,6 +987,7 @@ namespace logic
                         target.STYLE = style;
                         target.Jacket = jacket;
                         target.Pant = pant;
+                        target.LABEL = label;
                         target.shuoming = shuoming;
                         target.JiaGongchang = jiagongchang;
                         target.CaiDanHao = caidan;
@@ -1121,6 +1124,7 @@ namespace logic
                         target.STYLE = style;
                         target.Jacket = jacket;
                         target.Pant = pant;
+                        target.LABEL = label;
                         target.shuoming = shuoming;
                         target.JiaGongchang = jiagongchang;
                         target.CaiDanHao = caidan;
@@ -1258,6 +1262,7 @@ namespace logic
                         target.STYLE = style;
                         target.Jacket = jacket;
                         target.Pant = pant;
+                        target.LABEL = label;
                         target.shuoming = shuoming;
                         target.JiaGongchang = jiagongchang;
                         target.CaiDanHao = caidan;
@@ -1398,6 +1403,7 @@ namespace logic
                         target.STYLE = style;
                         target.Jacket = jacket;
                         target.Pant = pant;
+                        target.LABEL = label;
                         target.shuoming = shuoming;
                         target.JiaGongchang = jiagongchang;
                         target.CaiDanHao = caidan;

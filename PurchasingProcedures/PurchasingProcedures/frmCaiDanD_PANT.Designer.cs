@@ -343,7 +343,7 @@
             this.txt_shuoming.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_shuoming.Location = new System.Drawing.Point(67, 178);
             this.txt_shuoming.Name = "txt_shuoming";
-            this.txt_shuoming.Size = new System.Drawing.Size(418, 29);
+            this.txt_shuoming.Size = new System.Drawing.Size(582, 29);
             this.txt_shuoming.TabIndex = 5;
             // 
             // txt_pant
@@ -351,7 +351,7 @@
             this.txt_pant.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_pant.Location = new System.Drawing.Point(268, 131);
             this.txt_pant.Name = "txt_pant";
-            this.txt_pant.Size = new System.Drawing.Size(240, 29);
+            this.txt_pant.Size = new System.Drawing.Size(381, 29);
             this.txt_pant.TabIndex = 5;
             // 
             // label5
@@ -379,7 +379,7 @@
             this.txt_jacket.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_jacket.Location = new System.Drawing.Point(268, 96);
             this.txt_jacket.Name = "txt_jacket";
-            this.txt_jacket.Size = new System.Drawing.Size(240, 29);
+            this.txt_jacket.Size = new System.Drawing.Size(588, 29);
             this.txt_jacket.TabIndex = 5;
             // 
             // txt_Style
@@ -405,7 +405,7 @@
             this.txt_fabric.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_fabric.Location = new System.Drawing.Point(179, 61);
             this.txt_fabric.Name = "txt_fabric";
-            this.txt_fabric.Size = new System.Drawing.Size(151, 29);
+            this.txt_fabric.Size = new System.Drawing.Size(677, 29);
             this.txt_fabric.TabIndex = 5;
             // 
             // txt_mianlioa
@@ -521,7 +521,7 @@
             this.txt_Label.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_Label.Location = new System.Drawing.Point(716, 19);
             this.txt_Label.Name = "txt_Label";
-            this.txt_Label.Size = new System.Drawing.Size(140, 29);
+            this.txt_Label.Size = new System.Drawing.Size(179, 29);
             this.txt_Label.TabIndex = 5;
             // 
             // label7
@@ -539,7 +539,7 @@
             this.txt_desc.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_desc.Location = new System.Drawing.Point(80, 23);
             this.txt_desc.Name = "txt_desc";
-            this.txt_desc.Size = new System.Drawing.Size(170, 29);
+            this.txt_desc.Size = new System.Drawing.Size(569, 29);
             this.txt_desc.TabIndex = 5;
             // 
             // label1
@@ -610,6 +610,7 @@
             // 
             // treeView1
             // 
+            this.treeView1.LineColor = System.Drawing.Color.Empty;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
             treeNode1.Name = "节点3";
@@ -1168,7 +1169,7 @@
             this.id.HeaderText = "id";
             this.id.Name = "id";
             this.id.Visible = false;
-            this.id.Width = 21;
+            this.id.Width = 5;
             // 
             // frmCaiDanD_PANT
             // 

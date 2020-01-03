@@ -295,6 +295,7 @@ namespace PurchasingProcedures
             cd.FABRIC = this.txt_fabric.Text;
             cd.Jacket = this.txt_jacket.Text;
             cd.Pant = this.txt_pant.Text;
+            cd.LABEL = this.txt_Label.Text;
             cd.shuoming = this.txt_shuoming.Text;
             cd.JiaGongchang = this.cb_jgc.Text;
             cd.MianLiao = this.txt_mianlioa.Text;
@@ -305,10 +306,7 @@ namespace PurchasingProcedures
             //dt.Columns.Add("id", typeof(int));
             for (int i = 0; i < dataGridView1.Columns.Count; i++)
             {
-                //if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("id"))
-                //{
                     dt.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
-                //}
             }
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
