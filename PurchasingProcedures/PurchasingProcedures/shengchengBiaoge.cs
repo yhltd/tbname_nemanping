@@ -993,7 +993,7 @@ namespace PurchasingProcedures
                         string str = "";
                         if (!dataGridView1.Rows[i].Cells[1].Value.ToString().Equals(string.Empty) && !dataGridView1.Rows[i].Cells[2].Value.Equals(string.Empty))
                         {
-                            str = dataGridView1.Rows[i].Cells[0].Value + "=" + dataGridView1.Rows[i].Cells[1].Value + "=" + dataGridView1.Rows[i].Cells[2].Value + "=" + (Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value));
+                            str = dataGridView1.Rows[i].Cells[0].Value + "=" + dataGridView1.Rows[i].Cells[1].Value + "=" + dataGridView1.Rows[i].Cells[2].Value + "=" + (Convert.ToDouble(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value));
                         }
                         else
                         {

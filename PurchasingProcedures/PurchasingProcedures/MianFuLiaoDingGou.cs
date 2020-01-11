@@ -1523,14 +1523,15 @@ namespace PurchasingProcedures
                 double chushu = 0;
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
-                    if (dataGridView1.Rows[i].Cells[2].Value != null)
+                    if (dataGridView1.Rows[i].Cells[2].Value != null && dataGridView1.Rows[i].Cells[2].Value.ToString().Length > 0)
                     {
                         chushu = chushu + Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value.ToString());
                     }
                 }
                 foreach (string k in key)
                 {
-                    dataGridView2.Rows[Convert.ToInt32(dic[k].Split('=')[1])].Cells[15].Value = Convert.ToDouble(dic[k].Split('=')[0]) / chushu;
+                    if (chushu > 0)
+                        dataGridView2.Rows[Convert.ToInt32(dic[k].Split('=')[1])].Cells[15].Value = Convert.ToDouble(dic[k].Split('=')[0]) / chushu;
                 }
             }
         }
@@ -1591,7 +1592,7 @@ namespace PurchasingProcedures
                         string keys = "面料";
                         if (dic.ContainsKey(keys))
                         {
-                            dic[keys] = (Convert.ToInt32(dic[keys].Split('=')[0]) + Convert.ToInt32(dataGridView1.Rows[i].Cells[11].Value.ToString())).ToString() + "=" + dic[keys].Split('=')[1];
+                            dic[keys] = (Convert.ToDouble(dic[keys].Split('=')[0]) + Convert.ToDouble(dataGridView1.Rows[i].Cells[11].Value.ToString())).ToString() + "=" + dic[keys].Split('=')[1];
                         }
                         else
                         {
@@ -1603,7 +1604,7 @@ namespace PurchasingProcedures
                 double chushu = 0;
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
-                    if (dataGridView1.Rows[i].Cells[2].Value != null)
+                    if (dataGridView1.Rows[i].Cells[2].Value != null && dataGridView1.Rows[i].Cells[2].Value.ToString().Length > 0)
                     {
                         chushu = chushu + Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value.ToString());
                     }
