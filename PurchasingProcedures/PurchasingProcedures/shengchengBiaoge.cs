@@ -663,7 +663,7 @@ namespace PurchasingProcedures
 
                     for (int ii = 0; ii < quchongnashuidanwei1.Count; ii++)
                     {
-                        HeSuan stockstate1 = mllist.Find(o => o.色号颜色 == quchongnashuidanwei1[i] && o.LOT == quchongnashuidanwei[i]);
+                        HeSuan stockstate1 = mllist.Find(o => o.色号颜色 == quchongnashuidanwei1[ii] && o.LOT == quchongnashuidanwei[i]);
 
 
                         qtyTable.Rows[jk][cloumnindex] = quchongnashuidanwei[i];//面料
