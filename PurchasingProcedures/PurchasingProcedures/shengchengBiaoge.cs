@@ -607,6 +607,7 @@ namespace PurchasingProcedures
                 qtyTable.Rows[jk + 1][0] = "实际出口数量";
 
                 double zongshu = 0;
+                double shijichukoushujliangzongshu = 0;
                 for (int i = 0; i < quchongnashuidanwei.Count; i++)
                 {
 
@@ -619,18 +620,28 @@ namespace PurchasingProcedures
                         HeSuan stockstate1 = stockstate.Find(o => o.色号颜色 == quchongnashuidanwei1[ii]);
                         List<clsBuiness.CaiDanALL> stockstate2 = cball.FindAll(o => o.LOT == quchongnashuidanwei[i] && quchongnashuidanwei1[ii].Contains(o.COLORID));
                         double allSub_Total = 0;
+                        double allshjichukoushuliang = 0;
                         foreach (clsBuiness.CaiDanALL iyen in stockstate2)
                             if (iyen.Sub_Total.Length > 0)
+                            {
                                 allSub_Total = Convert.ToDouble(iyen.Sub_Total) + allSub_Total;
-
+                                if (stockstate1.实际出口数量 != null && stockstate1.实际出口数量.Length > 0)
+                                    allshjichukoushuliang = Convert.ToDouble(stockstate1.实际出口数量) + allshjichukoushuliang;
+                            }
                         zongshu = zongshu + allSub_Total;
                         qtyTable.Rows[jk][cloumnindex] = allSub_Total;//订单数量
+
+
+                        shijichukoushujliangzongshu = shijichukoushujliangzongshu + allshjichukoushuliang;
+                        qtyTable.Rows[jk + 1][cloumnindex] = allshjichukoushuliang;//订单数量
+
 
                         cloumnindex++;
                     }
                 }
                 //总数
                 qtyTable.Rows[jk][cloumnindex] = zongshu;
+                qtyTable.Rows[jk + 1][cloumnindex] = shijichukoushujliangzongshu;
 
 
                 for (int j = 0; j < 200; j++)
@@ -1073,7 +1084,7 @@ namespace PurchasingProcedures
                 double sjcksl_实际出口数量 = 0;
                 int lastcloumn = dataGridView2.Columns.Count - 1;
 
-                if (dataGridView2.Rows[2].Cells[dataGridView2.Columns.Count - 1].Value != null && dataGridView2.Rows[1].Cells["总数"].EditedFormattedValue != null && dataGridView2.Rows[1].Cells["总数"].EditedFormattedValue.ToString().Length>0)
+                if (dataGridView2.Rows[2].Cells[dataGridView2.Columns.Count - 1].Value != null && dataGridView2.Rows[1].Cells["总数"].EditedFormattedValue != null && dataGridView2.Rows[1].Cells["总数"].EditedFormattedValue.ToString().Length > 0)
                     sjcksl_实际出口数量 = Convert.ToDouble(dataGridView2.Rows[1].Cells["总数"].EditedFormattedValue.ToString());
 
 
@@ -1088,7 +1099,7 @@ namespace PurchasingProcedures
                     {
                         string ax = dataGridView2.Rows[i].Cells[0].Value.ToString();
 
-                   
+
                         if (ax.Contains("库存"))
                         {
                             if (dataGridView2.Rows[i].Cells[lastcloumn].Value != null && dataGridView2.Rows[i].Cells[lastcloumn].Value.ToString().Length > 0)
@@ -1103,7 +1114,7 @@ namespace PurchasingProcedures
                         }
                         else if (ax.Contains("实际到货金额"))
                         {
-                            if (dataGridView2.Rows[i].Cells[lastcloumn].Value != null && dataGridView2.Rows[i].Cells[lastcloumn].Value.ToString().Length>0)
+                            if (dataGridView2.Rows[i].Cells[lastcloumn].Value != null && dataGridView2.Rows[i].Cells[lastcloumn].Value.ToString().Length > 0)
                                 shijidaohuojine = Convert.ToDouble(dataGridView2.Rows[i].Cells[lastcloumn].Value.ToString());
 
                         }
@@ -1115,9 +1126,9 @@ namespace PurchasingProcedures
                         }
                         else if (ax.Contains("平均单耗"))
                         {
-                          //  if (dataGridView2.Rows[i].Cells[lastcloumn].Value != null && dataGridView2.Rows[i].Cells[lastcloumn].Value.ToString().Length > 0)
-                            dataGridView2.Rows[i].Cells[lastcloumn].Value =   String.Format("{0:N2}",(Convert.ToDouble(kucun + shijidaohuoliang - shengyushuliang) / sjcksl_实际出口数量));
-                           
+                            //  if (dataGridView2.Rows[i].Cells[lastcloumn].Value != null && dataGridView2.Rows[i].Cells[lastcloumn].Value.ToString().Length > 0)
+                            dataGridView2.Rows[i].Cells[lastcloumn].Value = String.Format("{0:N2}", (Convert.ToDouble(kucun + shijidaohuoliang - shengyushuliang) / sjcksl_实际出口数量));
+
                         }
                         else if (ax.Contains("结算成本"))
                         {
@@ -1155,12 +1166,12 @@ namespace PurchasingProcedures
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int i= this.tabControl1.SelectedIndex;
+            int i = this.tabControl1.SelectedIndex;
             if (i == 3)
             {
 
                 label1.Text = "注意：" + "此界面内容需求部分按照实际手动填写(1.结算成本=实际到货金额/实际出口数量 2.平均单耗=(库存+实际到货量-剩余数量)/实际出口数量)";
- 
+
             }
             else
                 label1.Text = "";

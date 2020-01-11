@@ -1399,6 +1399,7 @@ namespace PurchasingProcedures
                         {
                             LOT = dataGridView1[0, i].Value.ToString(),
                             订单数量 = dataGridView1[1, i].Value.ToString(),
+                            实际出口数量 = dataGridView1[2, i].Value.ToString(),
                             //Name = "面料", 
                             色号颜色 = dataGridView1[3, i].Value.ToString(),
                             单价 = dataGridView1[4, i].Value.ToString(),
@@ -1429,7 +1430,7 @@ namespace PurchasingProcedures
                             Name = dataGridView2[0, i].Value.ToString(),
                             LOT = dataGridView2[1, i].Value.ToString(),
                             订单数量 = dataGridView2[2, i].Value.ToString(),
-
+                            //实际出口数量 = dataGridView2[1, 2].Value.ToString(),
                             色号颜色 = dataGridView2[4, i].Value.ToString(),
                             单价 = dataGridView2[5, i].Value.ToString(),
                             预计单耗 = dataGridView2[6, i].Value.ToString(),
