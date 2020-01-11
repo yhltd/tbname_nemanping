@@ -1073,7 +1073,7 @@ namespace PurchasingProcedures
                 double sjcksl_实际出口数量 = 0;
                 int lastcloumn = dataGridView2.Columns.Count - 1;
 
-                if (dataGridView2.Rows[2].Cells[dataGridView2.Columns.Count - 1].Value != null)
+                if (dataGridView2.Rows[2].Cells[dataGridView2.Columns.Count - 1].Value != null && dataGridView2.Rows[1].Cells["总数"].EditedFormattedValue != null && dataGridView2.Rows[1].Cells["总数"].EditedFormattedValue.ToString().Length>0)
                     sjcksl_实际出口数量 = Convert.ToDouble(dataGridView2.Rows[1].Cells["总数"].EditedFormattedValue.ToString());
 
 
