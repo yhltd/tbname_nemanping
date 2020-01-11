@@ -689,7 +689,7 @@ namespace PurchasingProcedures
                         qtyTable.Rows[jk + 9][cloumnindex] = stockstate1.实际到货金额;//单价
                         qtyTable.Rows[jk + 10][cloumnindex] = stockstate1.剩余数量;//单价
                         qtyTable.Rows[jk + 11][cloumnindex] = stockstate1.平均单耗;//单价
-                        qtyTable.Rows[jk + 12][cloumnindex] = stockstate1.结算成本;//单价
+                        //qtyTable.Rows[jk + 12][cloumnindex] = stockstate1.结算成本;//单价
 
 
                         if (stockstate1.预计成本.Length > 0)
@@ -713,20 +713,24 @@ namespace PurchasingProcedures
 
                         cloumnindex++;
                     }
-                    qtyTable.Rows[jk + 4][cloumnindex] = sum预计成本 / 3;
-                    qtyTable.Rows[jk + 5][cloumnindex] = sum预计用量;//单价
-                    qtyTable.Rows[jk + 6][cloumnindex] = sum库存;//单价
-                    qtyTable.Rows[jk + 7][cloumnindex] = sum订量;//单价
-                    qtyTable.Rows[jk + 8][cloumnindex] = sum实际到货量;//单价
-                    qtyTable.Rows[jk + 10][cloumnindex] = sum剩余数量;//单价
-                    if (sum实际出口数量 != 0)
-                    {
-                        qtyTable.Rows[jk + 11][cloumnindex] = Convert.ToString((sum库存 + sum实际到货量 - sum剩余数量) / sum实际出口数量);//单价
 
-                        qtyTable.Rows[jk + 12][cloumnindex] = sum实际到货金额 / sum实际出口数量;//单价
-                    }
 
                 }
+                qtyTable.Rows[jk + 4][cloumnindex] = sum预计成本 / 3;
+                qtyTable.Rows[jk + 5][cloumnindex] = sum预计用量;//单价
+                qtyTable.Rows[jk + 6][cloumnindex] = sum库存;//单价
+                qtyTable.Rows[jk + 7][cloumnindex] = sum订量;//单价
+                qtyTable.Rows[jk + 8][cloumnindex] = sum实际到货量;//单价
+                qtyTable.Rows[jk + 9][cloumnindex] = sum实际到货金额;//单价
+                qtyTable.Rows[jk + 10][cloumnindex] = sum剩余数量;//单价
+                if (shijichukoushujliangzongshu != 0)
+                {
+                    qtyTable.Rows[jk + 11][cloumnindex] = Convert.ToString( String.Format("{0:N2}", ((sum库存 + sum实际到货量 - sum剩余数量) / shijichukoushujliangzongshu)));//sum实际出口数量
+
+                    qtyTable.Rows[jk + 12][cloumnindex] =  String.Format("{0:N2}", (sum实际到货金额 / shijichukoushujliangzongshu));//sum实际出口数量
+                }
+
+
                 jk = jk + 14;
                 #endregion
                 cloumnindex = 0;
@@ -771,7 +775,7 @@ namespace PurchasingProcedures
                             qtyTable.Rows[jk + 9][cloumnindex] = stockstate1.实际到货金额;//单价
                             qtyTable.Rows[jk + 10][cloumnindex] = stockstate1.剩余数量;//单价
                             qtyTable.Rows[jk + 11][cloumnindex] = stockstate1.平均单耗;//单价
-                            qtyTable.Rows[jk + 12][cloumnindex] = stockstate1.结算成本;//单价
+                            //qtyTable.Rows[jk + 12][cloumnindex] = stockstate1.结算成本;//单价
 
 
 
@@ -797,20 +801,24 @@ namespace PurchasingProcedures
                             cloumnindex++;
 
                         }
-                        qtyTable.Rows[jk][cloumnindex] = "小计";
-                        qtyTable.Rows[jk + 4][cloumnindex] = sum预计成本 / 3;
-                        qtyTable.Rows[jk + 5][cloumnindex] = sum预计用量;//单价
-                        qtyTable.Rows[jk + 6][cloumnindex] = sum库存;//单价
-                        qtyTable.Rows[jk + 7][cloumnindex] = sum订量;//单价
-                        qtyTable.Rows[jk + 8][cloumnindex] = sum实际到货量;//单价
-                        qtyTable.Rows[jk + 10][cloumnindex] = sum剩余数量;//单价
-                        if (sum实际出口数量 != 0)
-                        {
-                            qtyTable.Rows[jk + 11][cloumnindex] = Convert.ToString((sum库存 + sum实际到货量 - sum剩余数量) / sum实际出口数量);//单价
+                       
+                    }
+                    qtyTable.Rows[jk][cloumnindex] = "小计";
+                    qtyTable.Rows[jk + 4][cloumnindex] = sum预计成本 / 3;
+                    qtyTable.Rows[jk + 5][cloumnindex] = sum预计用量;//单价
+                    qtyTable.Rows[jk + 6][cloumnindex] = sum库存;//单价
+                    qtyTable.Rows[jk + 7][cloumnindex] = sum订量;//单价
+                    qtyTable.Rows[jk + 8][cloumnindex] = sum实际到货量;//单价
+                    qtyTable.Rows[jk + 10][cloumnindex] = sum剩余数量;//单价
 
-                            qtyTable.Rows[jk + 12][cloumnindex] = sum实际到货金额 / sum实际出口数量;//单价
-                        }
+                    qtyTable.Rows[jk + 9][cloumnindex] = sum实际到货金额;//单价
 
+
+                    if (shijichukoushujliangzongshu != 0)
+                    {
+                        qtyTable.Rows[jk + 11][cloumnindex] = Convert.ToString( String.Format("{0:N2}", ((sum库存 + sum实际到货量 - sum剩余数量) / shijichukoushujliangzongshu)));//sum实际出口数量
+
+                        qtyTable.Rows[jk + 12][cloumnindex] =  String.Format("{0:N2}", (sum实际到货金额 / shijichukoushujliangzongshu));//单价
                     }
 
                     jk = jk + 14;
@@ -1127,13 +1135,14 @@ namespace PurchasingProcedures
                         else if (ax.Contains("平均单耗"))
                         {
                             //  if (dataGridView2.Rows[i].Cells[lastcloumn].Value != null && dataGridView2.Rows[i].Cells[lastcloumn].Value.ToString().Length > 0)
-                            dataGridView2.Rows[i].Cells[lastcloumn].Value = String.Format("{0:N2}", (Convert.ToDouble(kucun + shijidaohuoliang - shengyushuliang) / sjcksl_实际出口数量));
+                            if (sjcksl_实际出口数量 != 0)
+                                dataGridView2.Rows[i].Cells[lastcloumn].Value = String.Format("{0:N2}", (Convert.ToDouble(kucun + shijidaohuoliang - shengyushuliang) / sjcksl_实际出口数量));
 
                         }
                         else if (ax.Contains("结算成本"))
                         {
-
-                            dataGridView2.Rows[i].Cells[lastcloumn].Value = String.Format("{0:N2}", Convert.ToDouble(shijidaohuojine) / sjcksl_实际出口数量);
+                            if (sjcksl_实际出口数量 != 0)
+                                dataGridView2.Rows[i].Cells[lastcloumn].Value = String.Format("{0:N2}", Convert.ToDouble(shijidaohuojine) / sjcksl_实际出口数量);
                             kucun = 0;
                             shijidaohuoliang = 0;
                             shijidaohuojine = 0;
