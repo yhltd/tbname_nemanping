@@ -27,9 +27,19 @@ namespace PurchasingProcedures
         private string insertStr;
         private List<HeSuan> mllist;
         private List<HeSuan> Fuliao;
-        public shengchengBiaoge(string caidanNo, List<HeSuan> ml, List<HeSuan> fuliao)
+        List<clsBuiness.CaiDanALL> cball;
+        private int rowindex;
+        private int cloumnindex;
+
+
+        double sum实际出口数量 = 0;
+
+        public shengchengBiaoge(string caidanNo, List<HeSuan> ml, List<HeSuan> fuliao, List<clsBuiness.CaiDanALL> cball1)
         {
             InitializeComponent();
+            cball = new List<CaiDanALL>();
+            cball = cball1;
+
             cdNo = caidanNo;
             mllist = ml;
             Fuliao = fuliao.GroupBy(g => g.Name.Trim()).Select(s => s.First()).ToList<HeSuan>();
@@ -49,6 +59,11 @@ namespace PurchasingProcedures
             CreateDanHao();
             //核定
             CreateHeding();
+
+            //核算表
+
+            create_hesuanbiao();
+
         }
 
         private void CreateDanHao()
@@ -564,11 +579,268 @@ namespace PurchasingProcedures
 
         }
 
+        private void create_hesuanbiao()
+        {
+            try
+            {
+                // cball
+                var qtyTable = new DataTable();
+                int jk = 0;
+                int cloumnindex = 1;
+
+                #region 面料
+                List<string> quchongnashuidanwei = (from v in mllist select v.LOT).Distinct().ToList();
+
+
+                qtyTable.Columns.Add("LOT", System.Type.GetType("System.String"));//0
+                for (int i = 0; i < quchongnashuidanwei.Count; i++)
+                {
+                    qtyTable.Columns.Add(quchongnashuidanwei[i], System.Type.GetType("System.String"));//0
+
+                }
+                qtyTable.Columns.Add("总数", System.Type.GetType("System.String"));//0
+
+
+                qtyTable.Rows.Add(qtyTable.NewRow());
+                qtyTable.Rows.Add(qtyTable.NewRow());
+                qtyTable.Rows[jk][0] = "订单数量";
+                qtyTable.Rows[jk + 1][0] = "实际出口数量";
+
+                double zongshu = 0;
+                for (int i = 0; i < quchongnashuidanwei.Count; i++)
+                {
+
+                    //
+                    List<HeSuan> stockstate = mllist.FindAll(o => o.LOT == quchongnashuidanwei[i]);
+                    List<string> quchongnashuidanwei1 = (from v in stockstate select v.色号颜色).Distinct().ToList();
+
+                    for (int ii = 0; ii < quchongnashuidanwei1.Count; ii++)
+                    {
+                        HeSuan stockstate1 = stockstate.Find(o => o.色号颜色 == quchongnashuidanwei1[ii]);
+                        List<clsBuiness.CaiDanALL> stockstate2 = cball.FindAll(o => o.LOT == quchongnashuidanwei[i] && quchongnashuidanwei1[ii].Contains(o.COLORID));
+                        double allSub_Total = 0;
+                        foreach (clsBuiness.CaiDanALL iyen in stockstate2)
+                            if (iyen.Sub_Total.Length > 0)
+                                allSub_Total = Convert.ToDouble(iyen.Sub_Total) + allSub_Total;
+
+                        zongshu = zongshu + allSub_Total;
+                        qtyTable.Rows[jk][cloumnindex] = allSub_Total;//订单数量
+
+                        cloumnindex++;
+                    }
+                }
+                //总数
+                qtyTable.Rows[jk][cloumnindex] = zongshu;
+
+
+                for (int j = 0; j < 200; j++)
+                    qtyTable.Rows.Add(qtyTable.NewRow());
+
+
+                jk = jk + 2;
+                cloumnindex = 1;
+                //面料
+                string cloumn1 = "面料";
+                //第一列
+                hesuanbiao_cloumn1(qtyTable, jk, cloumn1);
+
+                double sum预计成本 = 0;
+                double sum预计用量 = 0;
+                double sum库存 = 0;
+                double sum订量 = 0;
+                double sum实际到货量 = 0;
+                double sum实际到货金额 = 0;
+                double sum剩余数量 = 0;
+                double sum平均单耗 = 0;
+                double sum结算成本 = 0;
+
+
+                for (int i = 0; i < quchongnashuidanwei.Count; i++)
+                {
+
+                    List<HeSuan> stockstate = mllist.FindAll(o => o.LOT == quchongnashuidanwei[i]);
+                    List<string> quchongnashuidanwei1 = (from v in stockstate select v.色号颜色).Distinct().ToList();
+
+                    for (int ii = 0; ii < quchongnashuidanwei1.Count; ii++)
+                    {
+                        HeSuan stockstate1 = mllist.Find(o => o.色号颜色 == quchongnashuidanwei1[i] && o.LOT == quchongnashuidanwei[i]);
+
+
+                        qtyTable.Rows[jk][cloumnindex] = quchongnashuidanwei[i];//面料
+                        qtyTable.Rows[jk + 1][cloumnindex] = quchongnashuidanwei1[ii];//色号&颜色
+                        qtyTable.Rows[jk + 2][cloumnindex] = stockstate1.单价;//单价
+                        qtyTable.Rows[jk + 3][cloumnindex] = stockstate1.预计单耗;//单价
+                        qtyTable.Rows[jk + 4][cloumnindex] = stockstate1.预计成本;//单价
+                        qtyTable.Rows[jk + 5][cloumnindex] = stockstate1.预计用量;//单价
+                        qtyTable.Rows[jk + 6][cloumnindex] = stockstate1.库存;//单价
+                        qtyTable.Rows[jk + 7][cloumnindex] = stockstate1.订量;//单价
+                        qtyTable.Rows[jk + 8][cloumnindex] = stockstate1.实际到货量;//单价
+                        qtyTable.Rows[jk + 9][cloumnindex] = stockstate1.实际到货金额;//单价
+                        qtyTable.Rows[jk + 10][cloumnindex] = stockstate1.剩余数量;//单价
+                        qtyTable.Rows[jk + 11][cloumnindex] = stockstate1.平均单耗;//单价
+                        qtyTable.Rows[jk + 12][cloumnindex] = stockstate1.结算成本;//单价
+
+
+                        if (stockstate1.预计成本.Length > 0)
+                            sum预计成本 = Convert.ToDouble(stockstate1.预计成本) + sum预计成本;
+                        if (stockstate1.预计用量.Length > 0)
+                            sum预计用量 = Convert.ToDouble(stockstate1.预计用量) + sum预计用量;
+                        if (stockstate1.库存.Length > 0)
+                            sum库存 = Convert.ToDouble(stockstate1.库存) + sum库存;
+                        if (stockstate1.订量.Length > 0)
+                            sum订量 = Convert.ToDouble(stockstate1.订量) + sum订量;
+                        if (stockstate1.实际到货量.Length > 0 && stockstate1.实际到货量 != " ")
+                            sum实际到货量 = Convert.ToDouble(stockstate1.实际到货量) + sum实际到货量;
+                        if (stockstate1.实际到货金额.Length > 0)
+                            sum实际到货金额 = Convert.ToDouble(stockstate1.实际到货金额) + sum实际到货金额;
+                        if (stockstate1.剩余数量.Length > 0)
+                            sum剩余数量 = Convert.ToDouble(stockstate1.剩余数量) + sum剩余数量;
+                        if (stockstate1.平均单耗.Length > 0)
+                            sum平均单耗 = Convert.ToDouble(stockstate1.平均单耗) + sum平均单耗;
+                        if (stockstate1.结算成本.Length > 0)
+                            sum结算成本 = Convert.ToDouble(stockstate1.结算成本) + sum结算成本;
+
+                        cloumnindex++;
+                    }
+                    qtyTable.Rows[jk + 4][cloumnindex] = sum预计成本 / 3;
+                    qtyTable.Rows[jk + 5][cloumnindex] = sum预计用量;//单价
+                    qtyTable.Rows[jk + 6][cloumnindex] = sum库存;//单价
+                    qtyTable.Rows[jk + 7][cloumnindex] = sum订量;//单价
+                    qtyTable.Rows[jk + 8][cloumnindex] = sum实际到货量;//单价
+                    qtyTable.Rows[jk + 10][cloumnindex] = sum剩余数量;//单价
+                    if (sum实际出口数量 != 0)
+                    {
+                        qtyTable.Rows[jk + 11][cloumnindex] = Convert.ToString((sum库存 + sum实际到货量 - sum剩余数量) / sum实际出口数量);//单价
+
+                        qtyTable.Rows[jk + 12][cloumnindex] = sum实际到货金额 / sum实际出口数量;//单价
+                    }
+
+                }
+                jk = jk + 14;
+                #endregion
+                cloumnindex = 0;
+
+
+                //辅料
+
+                List<string> fuliao_lotlist = (from v in Fuliao select v.Name).Distinct().ToList();
+                for (int i = 0; i < fuliao_lotlist.Count; i++)
+                {
+                    cloumnindex = 0;
+
+                    cloumn1 = fuliao_lotlist[i];
+                    //第一列
+                    hesuanbiao_cloumn1(qtyTable, jk, cloumn1);
+
+                    cloumnindex++;
+
+                    List<HeSuan> stockstate = Fuliao.FindAll(o => o.Name == fuliao_lotlist[i]);//查找辅料名称
+
+                    List<string> fuliao_lotlist1 = (from v in stockstate select v.LOT).Distinct().ToList();//此lot即配色表的货号
+
+                    for (int i1 = 0; i1 < fuliao_lotlist1.Count; i1++)
+                    {
+                        List<HeSuan> stockstat1e = Fuliao.FindAll(o => o.LOT == fuliao_lotlist1[i1]);//查找辅料名称
+
+                        List<string> quchongnashuidanwei1 = (from v in stockstat1e select v.色号颜色).Distinct().ToList();//根据这个货号下的颜色去重
+
+                        for (int ii = 0; ii < quchongnashuidanwei1.Count; ii++)
+                        {
+                            HeSuan stockstate1 = Fuliao.Find(o => o.色号颜色 == quchongnashuidanwei1[ii] && o.LOT == fuliao_lotlist1[i1]);
+
+                            qtyTable.Rows[jk][cloumnindex] = fuliao_lotlist1[i1];//辅料名称
+                            qtyTable.Rows[jk + 1][cloumnindex] = quchongnashuidanwei1[ii];//色号&颜色
+                            qtyTable.Rows[jk + 2][cloumnindex] = stockstate1.单价;//单价
+                            qtyTable.Rows[jk + 3][cloumnindex] = stockstate1.预计单耗;//单价
+                            qtyTable.Rows[jk + 4][cloumnindex] = stockstate1.预计成本;//单价
+                            qtyTable.Rows[jk + 5][cloumnindex] = stockstate1.预计用量;//单价
+                            qtyTable.Rows[jk + 6][cloumnindex] = stockstate1.库存;//单价
+                            qtyTable.Rows[jk + 7][cloumnindex] = stockstate1.订量;//单价
+                            qtyTable.Rows[jk + 8][cloumnindex] = stockstate1.实际到货量;//单价
+                            qtyTable.Rows[jk + 9][cloumnindex] = stockstate1.实际到货金额;//单价
+                            qtyTable.Rows[jk + 10][cloumnindex] = stockstate1.剩余数量;//单价
+                            qtyTable.Rows[jk + 11][cloumnindex] = stockstate1.平均单耗;//单价
+                            qtyTable.Rows[jk + 12][cloumnindex] = stockstate1.结算成本;//单价
+
+
+
+                            if (stockstate1.预计成本.Length > 0)
+                                sum预计成本 = Convert.ToDouble(stockstate1.预计成本) + sum预计成本;
+                            if (stockstate1.预计用量.Length > 0)
+                                sum预计用量 = Convert.ToDouble(stockstate1.预计用量) + sum预计用量;
+                            if (stockstate1.库存.Length > 0)
+                                sum库存 = Convert.ToDouble(stockstate1.库存) + sum库存;
+                            if (stockstate1.订量.Length > 0)
+                                sum订量 = Convert.ToDouble(stockstate1.订量) + sum订量;
+                            if (stockstate1.实际到货量.Length > 0 && stockstate1.实际到货量 != " ")
+                                sum实际到货量 = Convert.ToDouble(stockstate1.实际到货量) + sum实际到货量;
+                            if (stockstate1.实际到货金额.Length > 0)
+                                sum实际到货金额 = Convert.ToDouble(stockstate1.实际到货金额) + sum实际到货金额;
+                            if (stockstate1.剩余数量.Length > 0)
+                                sum剩余数量 = Convert.ToDouble(stockstate1.剩余数量) + sum剩余数量;
+                            if (stockstate1.平均单耗.Length > 0)
+                                sum平均单耗 = Convert.ToDouble(stockstate1.平均单耗) + sum平均单耗;
+                            if (stockstate1.结算成本.Length > 0)
+                                sum结算成本 = Convert.ToDouble(stockstate1.结算成本) + sum结算成本;
+
+                            cloumnindex++;
+
+                        }
+                        qtyTable.Rows[jk][cloumnindex] = "小计";
+                        qtyTable.Rows[jk + 4][cloumnindex] = sum预计成本 / 3;
+                        qtyTable.Rows[jk + 5][cloumnindex] = sum预计用量;//单价
+                        qtyTable.Rows[jk + 6][cloumnindex] = sum库存;//单价
+                        qtyTable.Rows[jk + 7][cloumnindex] = sum订量;//单价
+                        qtyTable.Rows[jk + 8][cloumnindex] = sum实际到货量;//单价
+                        qtyTable.Rows[jk + 10][cloumnindex] = sum剩余数量;//单价
+                        if (sum实际出口数量 != 0)
+                        {
+                            qtyTable.Rows[jk + 11][cloumnindex] = Convert.ToString((sum库存 + sum实际到货量 - sum剩余数量) / sum实际出口数量);//单价
+
+                            qtyTable.Rows[jk + 12][cloumnindex] = sum实际到货金额 / sum实际出口数量;//单价
+                        }
+
+                    }
+
+                    jk = jk + 14;
+                }
+
+                this.bindingSource1.DataSource = qtyTable;
+                this.dataGridView2.DataSource = this.bindingSource1;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("数据异常：" + ex);
+
+                throw ex;
+            }
+
+        }
+
+        private static void hesuanbiao_cloumn1(DataTable qtyTable, int jk, string cloumn1)
+        {
+            qtyTable.Rows[jk][0] = cloumn1;
+            qtyTable.Rows[jk + 1][0] = "色号&颜色";
+            qtyTable.Rows[jk + 2][0] = "单价";
+            qtyTable.Rows[jk + 3][0] = cloumn1 + "预计单耗";
+            qtyTable.Rows[jk + 4][0] = cloumn1 + "预计成本";
+            qtyTable.Rows[jk + 5][0] = cloumn1 + "预计用量";
+            qtyTable.Rows[jk + 6][0] = cloumn1 + "库存";
+            qtyTable.Rows[jk + 7][0] = cloumn1 + "订量";
+            qtyTable.Rows[jk + 8][0] = cloumn1 + "实际到货量";
+            qtyTable.Rows[jk + 9][0] = cloumn1 + "实际到货金额";
+            qtyTable.Rows[jk + 10][0] = cloumn1 + "剩余数量";
+            qtyTable.Rows[jk + 11][0] = cloumn1 + "平均单耗";
+            qtyTable.Rows[jk + 12][0] = cloumn1 + "结算成本";
+        }
+
+
         private void button3_Click(object sender, EventArgs e)
         {
             try
             {
-                ShengChengBiaoGeXuanZe scbgz = new ShengChengBiaoGeXuanZe("打印", dgv_ps, dgv_dh, dataGridView1, color, lie, STYLE, cdNo);
+                ShengChengBiaoGeXuanZe scbgz = new ShengChengBiaoGeXuanZe("打印", dgv_ps, dgv_dh, dataGridView1, color, lie, STYLE, cdNo, dataGridView2);
                 scbgz.ShowDialog();
 
             }
@@ -592,7 +864,7 @@ namespace PurchasingProcedures
             //dt.Columns.Add("总计", typeof(string));
 
 
-            dt.Rows.Add("面辅料结算成本", mllist.Sum(s =>Convert.ToInt32(s.订单数量)), mllist[0].结算成本);//
+            dt.Rows.Add("面辅料结算成本", mllist.Sum(s => Convert.ToInt32(s.订单数量)), mllist[0].结算成本);//
             foreach (HeSuan hs in Fuliao)
             {
                 dt.Rows.Add(hs.Name, hs.订单数量, hs.结算成本);
@@ -602,7 +874,7 @@ namespace PurchasingProcedures
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("确认要保存‘单耗’‘配色’ ‘核定成本’三份表格吗？", "系统提示", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("确认要保存‘单耗’‘配色’ ‘核定成本’‘核算单’三份表格吗？", "系统提示", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
                 try
@@ -623,7 +895,7 @@ namespace PurchasingProcedures
             }
             else
             {
-                ShengChengBiaoGeXuanZe scbgz = new ShengChengBiaoGeXuanZe("保存", dgv_ps, dgv_dh, dataGridView1, color, lie, STYLE, cdNo);
+                ShengChengBiaoGeXuanZe scbgz = new ShengChengBiaoGeXuanZe("保存", dgv_ps, dgv_dh, dataGridView1, color, lie, STYLE, cdNo, dataGridView2);
                 scbgz.ShowDialog();
 
             }
@@ -633,106 +905,267 @@ namespace PurchasingProcedures
 
         private void CreateExcel(string path)
         {
-            DataTable dt = new DataTable();
-
-            for (int i = 0; i < dgv_ps.Columns.Count; i++)
+            try
             {
-                if (!dgv_ps.Columns[i].HeaderCell.Value.ToString().Equals("id"))
+                DataTable dt = new DataTable();
+
+                for (int i = 0; i < dgv_ps.Columns.Count; i++)
                 {
-                    dt.Columns.Add(dgv_ps.Columns[i].HeaderCell.Value.ToString(), typeof(String));
-                }
-            }
-
-
-
-
-            string C1str = "品名=货号=规格/幅宽";
-            for (int i = 3; i < dgv_ps.ColumnCount; i++)
-            {
-
-                C1str = C1str + "=" + dgv_ps.Columns[i].HeaderCell.Value.ToString();
-            }
-            dt.Rows.Add(C1str.Split('='));
-            string C2str = "面料颜色= = ";
-            for (int i = 0; i < color.Count; i++)
-            {
-                if (!C2str.Contains(color[i]))
-                {
-                    C2str = C2str + "=" + color[i];
-                }
-            }
-            dt.Rows.Add(C2str.Split('='));
-
-
-            for (int i = 0; i < dgv_ps.Rows.Count; i++)
-            {
-                string str = "";
-                //if (dgv_ps.Rows[i].Cells[6].Value != null)
-                //{
-                str = dgv_ps.Rows[i].Cells[0].Value + "=" + dgv_ps.Rows[i].Cells[1].Value + "=" + dgv_ps.Rows[i].Cells[2].Value;
-
-                for (int j = 3; j < lie + 3; j++)
-                {
-
-                    if (dgv_ps.Rows[i].Cells[j].Value != null)
+                    if (!dgv_ps.Columns[i].HeaderCell.Value.ToString().Equals("id"))
                     {
-                        str = str + "=" + dgv_ps.Rows[i].Cells[j].Value;
+                        dt.Columns.Add(dgv_ps.Columns[i].HeaderCell.Value.ToString(), typeof(String));
                     }
-
                 }
-                dt.Rows.Add(str.Split('='));
-                //}
-            }
 
 
 
-            DataTable dt2 = new DataTable();
 
-            for (int i = 0; i < dgv_dh.Columns.Count; i++)
-            {
-                if (!dgv_dh.Columns[i].HeaderCell.Value.ToString().Equals("id"))
+                string C1str = "品名=货号=规格/幅宽";
+                for (int i = 3; i < dgv_ps.ColumnCount; i++)
                 {
-                    dt2.Columns.Add(dgv_dh.Columns[i].HeaderCell.Value.ToString(), typeof(String));
+
+                    C1str = C1str + "=" + dgv_ps.Columns[i].HeaderCell.Value.ToString();
                 }
-            }
-            for (int i = 0; i < dgv_dh.Rows.Count; i++)
-            {
-                if (dgv_dh.Rows[i].Cells[6].Value != null)
+                dt.Rows.Add(C1str.Split('='));
+                string C2str = "面料颜色= = ";
+                for (int i = 0; i < color.Count; i++)
+                {
+                    if (!C2str.Contains(color[i]))
+                    {
+                        C2str = C2str + "=" + color[i];
+                    }
+                }
+                dt.Rows.Add(C2str.Split('='));
+
+
+                for (int i = 0; i < dgv_ps.Rows.Count; i++)
                 {
                     string str = "";
-                    str = dgv_dh.Rows[i].Cells[0].Value + "=" + dgv_dh.Rows[i].Cells[1].Value + "=" + dgv_dh.Rows[i].Cells[2].Value + "=" + dgv_dh.Rows[i].Cells[3].Value + "=" + dgv_dh.Rows[i].Cells[4].Value + "=" + dgv_dh.Rows[i].Cells[5].Value + "=" + dgv_dh.Rows[i].Cells[6].Value;
-                    dt2.Rows.Add(str.Split('='));
-                }
-            }
+                    //if (dgv_ps.Rows[i].Cells[6].Value != null)
+                    //{
+                    str = dgv_ps.Rows[i].Cells[0].Value + "=" + dgv_ps.Rows[i].Cells[1].Value + "=" + dgv_ps.Rows[i].Cells[2].Value;
 
-            DataTable dt3 = new DataTable();
-            for (int i = 0; i < dataGridView1.Columns.Count; i++)
-            {
-                if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("id"))
-                {
-                    dt3.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
-                }
-            }
-            dt3.Columns.Add("合计", typeof(string));
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                if (dataGridView1.Rows[i].Cells[0].Value != null)
-                {
-                    string str = "";
-                    if (!dataGridView1.Rows[i].Cells[1].Value.ToString().Equals(string.Empty) && !dataGridView1.Rows[i].Cells[2].Value.Equals(string.Empty))
+                    for (int j = 3; j < lie + 3; j++)
                     {
-                        str = dataGridView1.Rows[i].Cells[0].Value + "=" + dataGridView1.Rows[i].Cells[1].Value + "=" + dataGridView1.Rows[i].Cells[2].Value + "=" + (Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value));
+
+                        if (dgv_ps.Rows[i].Cells[j].Value != null)
+                        {
+                            str = str + "=" + dgv_ps.Rows[i].Cells[j].Value;//品名=货号=规格/幅宽=61605C1=61607C1=61609C1=61601C1=61627C1=61634C1
+                        }
+
                     }
+                    dt.Rows.Add(str.Split('='));
+                    //}
+                }
+
+                DataTable dt2 = new DataTable();
+
+                for (int i = 0; i < dgv_dh.Columns.Count; i++)
+                {
+                    if (!dgv_dh.Columns[i].HeaderCell.Value.ToString().Equals("id"))
+                    {
+                        dt2.Columns.Add(dgv_dh.Columns[i].HeaderCell.Value.ToString(), typeof(String));
+                    }
+                }
+                for (int i = 0; i < dgv_dh.Rows.Count; i++)
+                {
+                    if (dgv_dh.Rows[i].Cells[6].Value != null)
+                    {
+                        string str = "";
+                        str = dgv_dh.Rows[i].Cells[0].Value + "=" + dgv_dh.Rows[i].Cells[1].Value + "=" + dgv_dh.Rows[i].Cells[2].Value + "=" + dgv_dh.Rows[i].Cells[3].Value + "=" + dgv_dh.Rows[i].Cells[4].Value + "=" + dgv_dh.Rows[i].Cells[5].Value + "=" + dgv_dh.Rows[i].Cells[6].Value;
+                        dt2.Rows.Add(str.Split('='));
+                    }
+                }
+
+                DataTable dt3 = new DataTable();
+                for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                {
+                    if (!dataGridView1.Columns[i].HeaderCell.Value.ToString().Equals("id"))
+                    {
+                        dt3.Columns.Add(dataGridView1.Columns[i].HeaderCell.Value.ToString(), typeof(String));
+                    }
+                }
+                dt3.Columns.Add("合计", typeof(string));
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    if (dataGridView1.Rows[i].Cells[0].Value != null)
+                    {
+                        string str = "";
+                        if (!dataGridView1.Rows[i].Cells[1].Value.ToString().Equals(string.Empty) && !dataGridView1.Rows[i].Cells[2].Value.Equals(string.Empty))
+                        {
+                            str = dataGridView1.Rows[i].Cells[0].Value + "=" + dataGridView1.Rows[i].Cells[1].Value + "=" + dataGridView1.Rows[i].Cells[2].Value + "=" + (Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value));
+                        }
+                        else
+                        {
+                            str = dataGridView1.Rows[i].Cells[0].Value + "=" + dataGridView1.Rows[i].Cells[1].Value + "=" + dataGridView1.Rows[i].Cells[2].Value + "=" + 0;
+                        }
+                        dt3.Rows.Add(str.Split('='));
+                    }
+                }
+
+                //核算表
+
+                DataTable dt4 = new DataTable();
+                for (int i = 0; i < dataGridView2.Columns.Count; i++)
+                {
+                    if (!dataGridView2.Columns[i].HeaderCell.Value.ToString().Equals("id"))
+                    {
+                        dt4.Columns.Add(dataGridView2.Columns[i].HeaderCell.Value.ToString(), typeof(String));
+                    }
+                }
+                string row1 = "";
+                for (int i = 0; i < dataGridView2.ColumnCount; i++)
+                {
+                    if (row1 != "")
+                        row1 = row1 + "=" + dataGridView2.Columns[i].HeaderCell.Value.ToString();
                     else
+                        row1 = dataGridView2.Columns[i].HeaderCell.Value.ToString();
+
+                }
+                dt4.Rows.Add(row1.Split('='));
+
+                for (int i = 0; i < dataGridView2.Rows.Count; i++)
+                {
+                    if (dataGridView2.Rows[i].Cells[0].Value != null)
                     {
-                        str = dataGridView1.Rows[i].Cells[0].Value + "=" + dataGridView1.Rows[i].Cells[1].Value + "=" + dataGridView1.Rows[i].Cells[2].Value + "=" + 0;
+                        string str = "";
+                        //if (!dataGridView2.Rows[i].Cells[1].Value.ToString().Equals(string.Empty) && !dataGridView2.Rows[i].Cells[2].Value.Equals(string.Empty))
+                        //{
+                        //    str = dataGridView2.Rows[i].Cells[0].Value + "=" + dataGridView2.Rows[i].Cells[1].Value + "=" + dataGridView2.Rows[i].Cells[2].Value + "=" + (Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView2.Rows[i].Cells[2].Value));
+                        //}
+                        //else
+                        //{
+                        //    str = dataGridView2.Rows[i].Cells[0].Value + "=" + dataGridView2.Rows[i].Cells[1].Value + "=" + dataGridView2.Rows[i].Cells[2].Value + "=" + 0;
+                        //}
+
+                        for (int j = 0; j < dataGridView2.Columns.Count; j++)
+                        {
+                            if (dataGridView2.Rows[i].Cells[j].Value != null)
+                            {
+                                if (str != "")
+                                    str = str + "=" + dataGridView2.Rows[i].Cells[j].Value;//品名=货号=规格/幅宽=61605C1=61607C1=61609C1=61601C1=61627C1=61634C1
+                                else
+                                    str = dataGridView2.Rows[i].Cells[j].Value.ToString();//品名=货号=规格/幅宽=61605C1=61607C1=61609C1=61601C1=61627C1=61634C1
+                            }
+                        }
+                        dt4.Rows.Add(str.Split('='));
                     }
-                    dt3.Rows.Add(str.Split('='));
+                }
+                //old4
+                //gn.SavePeiSeToExcel(dt, dt2, dt3, path, STYLE, cdNo);
+                //new
+                gn.SavePeiSeToExcel(dt, dt2, dt3, path, STYLE, cdNo, dt4);
+                foldPath = path + "\\配色表-" + STYLE + "-" + cdNo + ".xls";
+                //foldPath2 = path + "\\单耗-" + STYLE + "-" + cdNo + ".xls";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("数据异常：" + ex);
+
+                throw;
+            }
+        }
+
+        private void dataGridView2_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                double sjcksl_实际出口数量 = 0;
+                int lastcloumn = dataGridView2.Columns.Count - 1;
+
+                if (dataGridView2.Rows[2].Cells[dataGridView2.Columns.Count - 1].Value != null)
+                    sjcksl_实际出口数量 = Convert.ToDouble(dataGridView2.Rows[1].Cells["总数"].EditedFormattedValue.ToString());
+
+
+                double kucun = 0;
+                double shijidaohuoliang = 0;
+                double shijidaohuojine = 0;
+                double shengyushuliang = 0;
+                for (int i = 0; i < dataGridView2.Rows.Count; i++)
+                {
+
+                    if (dataGridView2.Rows[i].Cells[0].Value != null)
+                    {
+                        string ax = dataGridView2.Rows[i].Cells[0].Value.ToString();
+
+                   
+                        if (ax.Contains("库存"))
+                        {
+                            if (dataGridView2.Rows[i].Cells[lastcloumn].Value != null && dataGridView2.Rows[i].Cells[lastcloumn].Value.ToString().Length > 0)
+                                kucun = Convert.ToDouble(dataGridView2.Rows[i].Cells[lastcloumn].Value.ToString());
+
+                        }
+                        else if (ax.Contains("实际到货量"))
+                        {
+                            if (dataGridView2.Rows[i].Cells[lastcloumn].Value != null && dataGridView2.Rows[i].Cells[lastcloumn].Value.ToString().Length > 0)
+                                shijidaohuoliang = Convert.ToDouble(dataGridView2.Rows[i].Cells[lastcloumn].Value.ToString());
+
+                        }
+                        else if (ax.Contains("实际到货金额"))
+                        {
+                            if (dataGridView2.Rows[i].Cells[lastcloumn].Value != null && dataGridView2.Rows[i].Cells[lastcloumn].Value.ToString().Length>0)
+                                shijidaohuojine = Convert.ToDouble(dataGridView2.Rows[i].Cells[lastcloumn].Value.ToString());
+
+                        }
+                        else if (ax.Contains("剩余数量"))
+                        {
+                            if (dataGridView2.Rows[i].Cells[lastcloumn].Value != null && dataGridView2.Rows[i].Cells[lastcloumn].Value.ToString().Length > 0)
+                                shengyushuliang = Convert.ToDouble(dataGridView2.Rows[i].Cells[lastcloumn].Value.ToString());
+
+                        }
+                        else if (ax.Contains("平均单耗"))
+                        {
+                          //  if (dataGridView2.Rows[i].Cells[lastcloumn].Value != null && dataGridView2.Rows[i].Cells[lastcloumn].Value.ToString().Length > 0)
+                            dataGridView2.Rows[i].Cells[lastcloumn].Value =   String.Format("{0:N2}",(Convert.ToDouble(kucun + shijidaohuoliang - shengyushuliang) / sjcksl_实际出口数量));
+                           
+                        }
+                        else if (ax.Contains("结算成本"))
+                        {
+
+                            dataGridView2.Rows[i].Cells[lastcloumn].Value = String.Format("{0:N2}", Convert.ToDouble(shijidaohuojine) / sjcksl_实际出口数量);
+                            kucun = 0;
+                            shijidaohuoliang = 0;
+                            shijidaohuojine = 0;
+                            shengyushuliang = 0;
+                        }
+                    }
+
                 }
             }
-            gn.SavePeiSeToExcel(dt, dt2, dt3, path, STYLE, cdNo);
-            foldPath = path + "\\配色表-" + STYLE + "-" + cdNo + ".xls";
-            //foldPath2 = path + "\\单耗-" + STYLE + "-" + cdNo + ".xls";
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("数据异常：" + ex);
+                return;
+
+
+                throw;
+            }
+
+
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            rowindex = e.RowIndex;
+            cloumnindex = e.ColumnIndex;
+
+
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int i= this.tabControl1.SelectedIndex;
+            if (i == 3)
+            {
+
+                label1.Text = "注意：" + "此界面内容需求部分按照实际手动填写(1.结算成本=实际到货金额/实际出口数量 2.平均单耗=(库存+实际到货量-剩余数量)/实际出口数量)";
+ 
+            }
+            else
+                label1.Text = "";
+
+
         }
 
 

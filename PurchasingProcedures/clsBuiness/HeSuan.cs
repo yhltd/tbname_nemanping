@@ -25,6 +25,11 @@ namespace clsBuiness
         public string 平均单耗 { get; set; }
         public string 结算成本 { get; set; }
         public string 小计 { get; set; }
+       //new  面料号
+        public string 面料号 { get; set; }
+       
+
+
     }
     public class softTime_info
     {

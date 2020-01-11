@@ -46,7 +46,6 @@ C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\Docum
 C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\EntityFramework.dll
 C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\EntityFramework.SqlServer.dll
 C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\NPOI.dll
-C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\NPOI.OOXML.dll
 C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\clsBuiness.pdb
 C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\EntityFramework.xml
 C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\EntityFramework.SqlServer.xml
@@ -71,3 +70,4 @@ E:\yho111\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\EntityFramework.
 E:\yho111\tbname_nemanping\PurchasingProcedures\logic\obj\Debug\logic.csprojResolveAssemblyReference.cache
 E:\yho111\tbname_nemanping\PurchasingProcedures\logic\obj\Debug\logic.dll
 E:\yho111\tbname_nemanping\PurchasingProcedures\logic\obj\Debug\logic.pdb
+C:\bake40mypc\Devlop\tbname_nemanping\PurchasingProcedures\logic\bin\Debug\NPOI.OOXML.dll

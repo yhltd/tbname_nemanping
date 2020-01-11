@@ -571,10 +571,31 @@ namespace logic
             }
             return list;
         }
+        public List<CaiDan> selectCaiDan_all(string cdhao)
+        {
+            List<CaiDan> list = new List<CaiDan>();
+            using (nemanpingEntities3 nep = new nemanpingEntities3())
+            {
+                if (!cdhao.Equals(string.Empty))
+                {
+                    var select = from n in nep.CaiDan
+                                 where n.CaiDanHao.Length > 0
+                                 select n;
+                    list = select.ToList();
+                }
+                else
+                {
+                    var select = from n in nep.CaiDan
+                                 select n;
+                    list = select.ToList();
+                }
+            }
+            return list;
+        }
         public List<CaiDan_RGL2> selectCaiDanRGL2(string cdhao)
         {
-           // if (cdhao == null || cdhao.Length <= 0)
-              //  return null;
+            // if (cdhao == null || cdhao.Length <= 0)
+            //  return null;
 
             try
             {
@@ -585,6 +606,41 @@ namespace logic
                     {
                         var select = from n in nep.CaiDan_RGL2
                                      where n.CaiDanHao.Equals(cdhao)
+                                     select n;
+                        list = select.ToList();
+                    }
+                    else
+                    {
+                        var select = from n in nep.CaiDan_RGL2
+                                     select n;
+                        list = select.ToList();
+                    }
+                }
+                return list;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("异常：32070223 " + ex);
+
+                return null;
+
+                throw;
+            }
+        }
+        public List<CaiDan_RGL2> selectCaiDanRGL2_all(string cdhao)
+        {
+            // if (cdhao == null || cdhao.Length <= 0)
+            //  return null;
+
+            try
+            {
+                List<CaiDan_RGL2> list = new List<CaiDan_RGL2>();
+                using (nemanpingEntities3 nep = new nemanpingEntities3())
+                {
+                    if (!cdhao.Equals(string.Empty))
+                    {
+                        var select = from n in nep.CaiDan_RGL2
+                                     where n.CaiDanHao.Length > 0
                                      select n;
                         list = select.ToList();
                     }
@@ -627,6 +683,27 @@ namespace logic
             }
             return list;
         }
+        public List<CaiDan_SLIM> selectCaiDanSLIM_all(string cdhao)
+        {
+            List<CaiDan_SLIM> list = new List<CaiDan_SLIM>();
+            using (nemanpingEntities3 nep = new nemanpingEntities3())
+            {
+                if (!cdhao.Equals(string.Empty))
+                {
+                    var select = from n in nep.CaiDan_SLIM
+                                 where n.CaiDanHao.Length > 0
+                                 select n;
+                    list = select.ToList();
+                }
+                else
+                {
+                    var select = from n in nep.CaiDan_SLIM
+                                 select n;
+                    list = select.ToList();
+                }
+            }
+            return list;
+        }
         public List<CaiDan_RGLJ> selectCaiDanRGLJ(string cdhao)
         {
             List<CaiDan_RGLJ> list = new List<CaiDan_RGLJ>();
@@ -636,6 +713,27 @@ namespace logic
                 {
                     var select = from n in nep.CaiDan_RGLJ
                                  where n.CaiDanHao.Equals(cdhao)
+                                 select n;
+                    list = select.ToList();
+                }
+                else
+                {
+                    var select = from n in nep.CaiDan_RGLJ
+                                 select n;
+                    list = select.ToList();
+                }
+            }
+            return list;
+        }
+        public List<CaiDan_RGLJ> selectCaiDanRGLJ_all(string cdhao)
+        {
+            List<CaiDan_RGLJ> list = new List<CaiDan_RGLJ>();
+            using (nemanpingEntities3 nep = new nemanpingEntities3())
+            {
+                if (!cdhao.Equals(string.Empty))
+                {
+                    var select = from n in nep.CaiDan_RGLJ
+                                 where n.CaiDanHao.Length > 0
                                  select n;
                     list = select.ToList();
                 }
@@ -669,6 +767,27 @@ namespace logic
             }
             return list;
         }
+        public List<CaiDan_D_PANT> selectCaiDanD_PANT_all(string cdhao)
+        {
+            List<CaiDan_D_PANT> list = new List<CaiDan_D_PANT>();
+            using (nemanpingEntities3 nep = new nemanpingEntities3())
+            {
+                if (!cdhao.Equals(string.Empty))
+                {
+                    var select = from n in nep.CaiDan_D_PANT
+                                 where n.CaiDanHao.Length > 0
+                                 select n;
+                    list = select.ToList();
+                }
+                else
+                {
+                    var select = from n in nep.CaiDan_D_PANT
+                                 select n;
+                    list = select.ToList();
+                }
+            }
+            return list;
+        }
         public List<CaiDan_C_PANT> selectCaiDanC_PANT(string cdhao)
         {
             List<CaiDan_C_PANT> list = new List<CaiDan_C_PANT>();
@@ -690,7 +809,27 @@ namespace logic
             }
             return list;
         }
-
+        public List<CaiDan_C_PANT> selectCaiDanC_PANT_all(string cdhao)
+        {
+            List<CaiDan_C_PANT> list = new List<CaiDan_C_PANT>();
+            using (nemanpingEntities3 nep = new nemanpingEntities3())
+            {
+                if (!cdhao.Equals(string.Empty))
+                {
+                    var select = from n in nep.CaiDan_C_PANT
+                                 where n.CaiDanHao.Length > 0
+                                 select n;
+                    list = select.ToList();
+                }
+                else
+                {
+                    var select = from n in nep.CaiDan_C_PANT
+                                 select n;
+                    list = select.ToList();
+                }
+            }
+            return list;
+        }
         public List<CaiDan_RGL2> selectCaiDanRGLall(string cdhao)
         {
             List<CaiDan_RGL2> list = new List<CaiDan_RGL2>();
@@ -715,81 +854,175 @@ namespace logic
         #endregion
 
         #region 保存配色表为EXCEL
-        public void SavePeiSeToExcel(DataTable dt, DataTable dt2, DataTable dt3, string filePath, string style, string cdno)
+        public void SavePeiSeToExcel(DataTable dt, DataTable dt2, DataTable dt3, string filePath, string style, string cdno, DataTable dt_hesuan)
         {
-            string path = Directory.GetCurrentDirectory();
-            if (dt != null && dt.Rows.Count > 0)
+            try
             {
-                using (FileStream fs = File.Open(path + "\\Muban\\PeiSeBiao.xls", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                string path = Directory.GetCurrentDirectory();
+                if (dt != null && dt.Rows.Count > 0)
                 {
-                    FileStream patha = File.OpenWrite(filePath + "\\配色表-" + style + "-" + cdno + ".xls");
-                    HSSFWorkbook wb = new HSSFWorkbook(fs);
-                    fs.Close();
-                    Sheet st1 = wb.GetSheet("Sheet1");
-                    Row r1 = st1.GetRow(1);
-                    Cell cdNo = r1.CreateCell(1);
-                    cdNo.SetCellValue(cdno);//裁单号
-                    Row r2 = st1.GetRow(2);
-                    Cell STYLE = r2.CreateCell(1);
-                    STYLE.SetCellValue(style);//裁单号
-                    //表内数据
-                    for (int i = 0; i < dt.Rows.Count; i++)
+                    using (FileStream fs = File.Open(path + "\\Muban\\PeiSeBiao.xls", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     {
-                        Row row = st1.CreateRow(i + 5);
-                        for (int j = 0; j < dt.Columns.Count; j++)
+                        FileStream patha = File.OpenWrite(filePath + "\\配色表-" + style + "-" + cdno + ".xls");
+                        HSSFWorkbook wb = new HSSFWorkbook(fs);
+                        fs.Close();
+                        Sheet st1 = wb.GetSheet("Sheet1");
+                        Row r1 = st1.GetRow(1);
+                        Cell cdNo = r1.CreateCell(1);
+                        cdNo.SetCellValue(cdno);//裁单号
+                        Row r2 = st1.GetRow(2);
+                        Cell STYLE = r2.CreateCell(1);
+                        STYLE.SetCellValue(style);//裁单号
+                        //表内数据
+                        for (int i = 0; i < dt.Rows.Count; i++)
                         {
-                            Cell cell = row.CreateCell(j);
-                            cell.SetCellValue(dt.Rows[i][j].ToString());
+                            Row row = st1.CreateRow(i + 5);
+                            for (int j = 0; j < dt.Columns.Count; j++)
+                            {
+                                Cell cell = row.CreateCell(j);
+                                cell.SetCellValue(dt.Rows[i][j].ToString());
+                            }
                         }
+                        wb.Write(patha);//向打开的这个xls文件中写入并保存。  
+                        patha.Close();
                     }
-                    wb.Write(patha);//向打开的这个xls文件中写入并保存。  
-                    patha.Close();
                 }
-            }
-            if (dt2 != null && dt2.Rows.Count > 0)
-            {
-                using (FileStream fs = File.Open(path + "\\Muban\\DanHao.xls", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                if (dt2 != null && dt2.Rows.Count > 0)
                 {
-                    FileStream patha = File.OpenWrite(filePath + "\\单耗-" + style + "-" + cdno + ".xls");
-                    HSSFWorkbook wb = new HSSFWorkbook(fs);
-                    fs.Close();
-                    Sheet st1 = wb.GetSheet("Sheet1");
-                    //表内数据
-                    for (int i = 0; i < dt2.Rows.Count; i++)
+                    using (FileStream fs = File.Open(path + "\\Muban\\DanHao.xls", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     {
-                        Row row = st1.CreateRow(i + 5);
-                        for (int j = 0; j < dt2.Columns.Count; j++)
+                        FileStream patha = File.OpenWrite(filePath + "\\单耗-" + style + "-" + cdno + ".xls");
+                        HSSFWorkbook wb = new HSSFWorkbook(fs);
+                        fs.Close();
+                        Sheet st1 = wb.GetSheet("Sheet1");
+                        //表内数据
+                        for (int i = 0; i < dt2.Rows.Count; i++)
                         {
-                            Cell cell = row.CreateCell(j);
-                            cell.SetCellValue(dt2.Rows[i][j].ToString());
+                            Row row = st1.CreateRow(i + 5);
+                            for (int j = 0; j < dt2.Columns.Count; j++)
+                            {
+                                Cell cell = row.CreateCell(j);
+                                cell.SetCellValue(dt2.Rows[i][j].ToString());
+                            }
                         }
+                        wb.Write(patha);//向打开的这个xls文件中写入并保存。  
+                        patha.Close();
                     }
-                    wb.Write(patha);//向打开的这个xls文件中写入并保存。  
-                    patha.Close();
                 }
-            }
-            if (dt3 != null && dt3.Rows.Count > 0)
-            {
-                using (FileStream fs = File.Open(path + "\\Muban\\HeDingChengBen.xls", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                if (dt3 != null && dt3.Rows.Count > 0)
                 {
-                    FileStream patha = File.OpenWrite(filePath + "\\核定成本-" + style + "-" + cdno + ".xls");
-                    HSSFWorkbook wb = new HSSFWorkbook(fs);
-                    fs.Close();
-                    Sheet st1 = wb.GetSheet("Sheet1");
-                    //表内数据
-                    for (int i = 0; i < dt3.Rows.Count; i++)
+                    using (FileStream fs = File.Open(path + "\\Muban\\HeDingChengBen.xls", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     {
-                        Row row = st1.CreateRow(i + 4);
-                        for (int j = 0; j < dt3.Columns.Count; j++)
+                        FileStream patha = File.OpenWrite(filePath + "\\核定成本-" + style + "-" + cdno + ".xls");
+                        HSSFWorkbook wb = new HSSFWorkbook(fs);
+                        fs.Close();
+                        Sheet st1 = wb.GetSheet("Sheet1");
+                        //表内数据
+                        for (int i = 0; i < dt3.Rows.Count; i++)
                         {
+                            Row row = st1.CreateRow(i + 4);
+                            for (int j = 0; j < dt3.Columns.Count; j++)
+                            {
 
-                            Cell cell = row.CreateCell(j);
-                            cell.SetCellValue(dt3.Rows[i][j].ToString());
+                                Cell cell = row.CreateCell(j);
+                                cell.SetCellValue(dt3.Rows[i][j].ToString());
+                            }
                         }
+                        wb.Write(patha);//向打开的这个xls文件中写入并保存。  
+                        patha.Close();
                     }
-                    wb.Write(patha);//向打开的这个xls文件中写入并保存。  
-                    patha.Close();
                 }
+                if (dt_hesuan != null && dt_hesuan.Rows.Count > 0)
+                {
+                    using (FileStream fs = File.Open(path + "\\Muban\\HeSuanBiao.xls", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    {
+                        FileStream patha = File.OpenWrite(filePath + "\\核算表-" + style + "-" + cdno + ".xls");
+                        HSSFWorkbook wb = new HSSFWorkbook(fs);
+
+
+
+                        fs.Close();
+                        Sheet st1 = wb.GetSheet("Sheet1");
+                        bool isfont = false;
+
+                        //表内数据
+                        for (int i = 0; i < dt_hesuan.Rows.Count; i++)
+                        {
+                            Row row = st1.CreateRow(i);
+
+
+
+                            for (int j = 0; j < dt_hesuan.Columns.Count; j++)
+                            {
+                                Cell cell = row.CreateCell(j);
+
+                                cell.CellStyle.BorderTop = NPOI.SS.UserModel.CellBorderType.THIN;
+
+                                //cell.CellStyle.FillBackgroundColor = NPOI.SS.UserModel.IndexedColors.YELLOW.Index;
+
+                                cell.SetCellValue(dt_hesuan.Rows[i][j].ToString());
+                                if ((isfont == true && dt_hesuan.Rows[i][0].ToString().Length > 0) || i == 0)
+                                {
+                                    NPOI.SS.UserModel.Font sheetStyleFont = (wb.CreateFont());
+                                    sheetStyleFont.Boldweight = (short)FontBoldWeight.BOLD;
+                                    //cell.CellStyle.SetFont(NPOI.SS.UserModel.FontBoldWeight.BOLD)  ;
+                                    //cell.CellStyle.SetFont(sheetStyleFont);
+
+
+                                    NPOI.SS.UserModel.CellStyle sheetStyleall = wb.CreateCellStyle();
+
+                                    sheetStyleall.SetFont(sheetStyleFont);
+                                    sheetStyleall.Alignment = NPOI.SS.UserModel.HorizontalAlignment.CENTER;
+                                    //cell.CellStyle.Alignment = NPOI.SS.UserModel.HorizontalAlignment.CENTER;
+
+
+
+                                    cell.CellStyle = sheetStyleall;
+
+                                }
+                                else if (dt_hesuan.Rows[i][0] != null && dt_hesuan.Rows[i][0].ToString().Length > 0 && dt_hesuan.Rows[i][0].ToString().Contains("结算成本"))
+                                {
+
+                                    {
+                                        NPOI.SS.UserModel.CellStyle sheetStyleall = wb.CreateCellStyle();
+
+                                        sheetStyleall.FillBackgroundColor = NPOI.HSSF.Util.HSSFColor.BLACK.index;
+
+                                        cell.CellStyle = sheetStyleall;
+
+                                    }
+
+                                }
+
+                            }
+                            if (dt_hesuan.Rows[i][0].ToString().Length <= 0)
+                                continue;
+
+                            if (dt_hesuan.Rows[i][0] != null && dt_hesuan.Rows[i][0].ToString().Length > 0 && dt_hesuan.Rows[i][0].ToString().Contains("结算成本"))
+                            {
+                                isfont = true;
+
+                                //NPOI.SS.UserModel.CellStyle sheetStyleall = wb.CreateCellStyle();
+
+                                //sheetStyleall.FillBackgroundColor = (short)(NPOI.HSSF.Util.HSSFColor.YELLOW.index);
+
+                                //row.RowStyle = sheetStyleall;
+                            }
+                            else
+                                isfont = false;
+
+                        }
+                        wb.Write(patha);//向打开的这个xls文件中写入并保存。  
+                        patha.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("数据异常：" + ex);
+
+
+                throw ex;
             }
         }
         #endregion
