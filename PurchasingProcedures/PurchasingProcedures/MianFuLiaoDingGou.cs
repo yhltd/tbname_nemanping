@@ -1622,12 +1622,12 @@ namespace PurchasingProcedures
         private void button3_Click(object sender, EventArgs e)
         {
             List<HeSuan> ML = new List<HeSuan>();
-            Boolean pd = false;
+            Boolean pd = true;
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 if (dataGridView1[2, i].Value != null && dataGridView1[2, i].Value.ToString() != "")
                 {
-                    pd = true;
+                    pd = false;
                     if (dataGridView1[0, i].Value != null)
                     {
                         HeSuan h = new HeSuan()
