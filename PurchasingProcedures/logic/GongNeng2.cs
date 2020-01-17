@@ -46,7 +46,7 @@ namespace logic
             catch (Exception ex)
             {
 
-                MessageBox.Show("异常：30023 " + ex);
+                MessageBox.Show("异常：52023 " + ex);
                 return null;
 
                 throw;
@@ -620,7 +620,7 @@ namespace logic
             }
             catch (Exception ex)
             {
-                MessageBox.Show("异常：32070223 " + ex);
+                MessageBox.Show("异常：67383 " + ex);
 
                 return null;
 
@@ -655,7 +655,7 @@ namespace logic
             }
             catch (Exception ex)
             {
-                MessageBox.Show("异常：32070223 " + ex);
+                MessageBox.Show("异常：533622 " + ex);
 
                 return null;
 

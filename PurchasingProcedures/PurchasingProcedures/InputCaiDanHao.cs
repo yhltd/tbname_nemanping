@@ -61,7 +61,7 @@ namespace PurchasingProcedures
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("异常：3207023 " + ex);
+                        MessageBox.Show("异常：422363 " + ex);
 
                         return;
                         throw;
@@ -83,7 +83,7 @@ namespace PurchasingProcedures
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("异常：3260023 " + ex);
+                        MessageBox.Show("异常：20023 " + ex);
 
                         return;
                         throw;
@@ -105,7 +105,7 @@ namespace PurchasingProcedures
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("异常：3206023 " + ex);
+                        MessageBox.Show("异常：457443 " + ex);
 
                         return;
                         throw;
@@ -128,7 +128,7 @@ namespace PurchasingProcedures
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("异常：3200623 " + ex);
+                        MessageBox.Show("异常：12314 " + ex);
 
                         return;
                         throw;
@@ -149,7 +149,7 @@ namespace PurchasingProcedures
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("异常：3250023 " + ex);
+                        MessageBox.Show("异常：75564 " + ex);
 
                         return;
 
